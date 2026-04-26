@@ -244,7 +244,7 @@ ch1_pages = [
 ]
 for plist in ch1_pages:
     content = ''.join(ch1_blocks[i] for i in plist)
-    parts.append(f'<div class="page ch1-page"><div class="page-frame" style="max-height: 6.5in; overflow: hidden;">{content}</div></div>')
+    parts.append(f'<div class="page ch1-page"><div class="prose" style="max-height: 6in !important; overflow: hidden !important;">{content}</div></div>')
 
 # 6. Chapters 2-8: chapter cover + recipe pages (2 per page)
 chapter_recipe_groups = {}
@@ -442,8 +442,8 @@ def render_app_table(header, rows, title=''):
     title_html = f'<h3 class="app-h">{esc(title)}</h3>' if title else ''
     return f'{title_html}<table class="data-table app-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>'
 
-# Chunk into 25-row pages for safety in Landscape
-chunk = 25
+# Chunk into 10-row pages for absolute safety in Landscape
+chunk = 10
 chunks = [body_rows[i:i+chunk] for i in range(0, len(body_rows), chunk)]
 for k, c in enumerate(chunks):
     title_html = ''
@@ -455,7 +455,7 @@ for k, c in enumerate(chunks):
 </header>
 <p class="prose"><em>{smart_html(appA['intro'])}</em></p>'''
     table_html = render_app_table(header, c)
-    parts.append(f'<div class="page appendix-page" style="max-height: 6.5in; overflow: hidden;">{title_html}{table_html}</div>')
+    parts.append(f'<div class="page appendix-page"><div class="prose" style="max-height: 5.5in !important; overflow: hidden !important;">{title_html}{table_html}</div></div>')
 
 # 10. Appendix B
 appB = book['appendix_b']
@@ -464,7 +464,7 @@ parts.append(chapter_cover('Appendix B', appB['sub'], 'Reference for everyday co
 # Foods table — split if needed
 foods_header = appB['foods'][0]
 foods_body = appB['foods'][1:]
-food_chunks = [foods_body[i:i+25] for i in range(0, len(foods_body), 25)]
+food_chunks = [foods_body[i:i+10] for i in range(0, len(foods_body), 10)]
 for k, c in enumerate(food_chunks):
     title_html = ''
     if k == 0:
