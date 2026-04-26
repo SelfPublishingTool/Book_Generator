@@ -138,9 +138,10 @@ discl_paras = ''.join(f'<p>{smart_html(p)}</p>' for p in book['disclaimer'])
 parts.append(f'''<div class="page legal-page" data-no-toc="true">
   <div class="legal-inner">
     <p class="copyright-line">{smart_html(book['copyright'])}</p>
-    <hr class="legal-rule">
-    <h2 class="legal-h">Disclaimer</h2>
-    {discl_paras}
+    <div class="legal-rule"></div>
+    <div class="legal-content">
+      {discl_paras}
+    </div>
   </div>
 </div>''')
 
@@ -164,7 +165,7 @@ intro_paras_html = ''.join(f'<p>{smart_html(p)}</p>' for p in intro['paragraphs'
 intro_pages = []
 buf = ""
 is_first_page = True
-threshold = 2400 # Increased for Portrait
+threshold = 1800 # Middle ground for Portrait
 
 for p in intro['paragraphs']:
     add = f'<p>{smart_html(p)}</p>'
@@ -172,7 +173,7 @@ for p in intro['paragraphs']:
         intro_pages.append(buf)
         buf = add
         is_first_page = False
-        threshold = 3200 # Increased for Portrait
+        threshold = 2400 # Middle ground for subsequent pages
     else:
         buf += add
 if buf: intro_pages.append(buf)
@@ -184,12 +185,12 @@ first_intro = f'''<div class="page intro-page">
     <h1 class="chapter-h1">{esc(intro['subtitle'])}</h1>
     <div class="chapter-rule"></div>
   </header>
-  <div class="prose" style="max-height: 8.5in !important; overflow: hidden !important;">{intro_pages[0]}</div>
+  <div class="prose" style="max-height: 7.5in !important; overflow: hidden !important;">{intro_pages[0]}</div>
 </div>'''
 parts.append(first_intro)
 for extra in intro_pages[1:]:
     parts.append(f'''<div class="page intro-page-cont">
-  <div class="prose" style="max-height: 9.2in !important; overflow: hidden !important;">{extra}</div>
+  <div class="prose" style="max-height: 8.8in !important; overflow: hidden !important;">{extra}</div>
 </div>''')
 
 # 5. Chapter 1 — The Prep-Once System
@@ -401,7 +402,7 @@ for b in book['bonus']['bonuses']:
     chunks = []
     cur = ""
     is_first_bonus_page = True
-    threshold = 2400 # Portrait safe
+    threshold = 1800 # Portrait middle ground
     
     # Split body_html into top-level elements
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
@@ -411,7 +412,7 @@ for b in book['bonus']['bonuses']:
         if len(cur) + len(el) > threshold and cur:
             chunks.append(cur); cur = el
             is_first_bonus_page = False
-            threshold = 3200
+            threshold = 2400
         else:
             cur += el
     if cur: chunks.append(cur)
@@ -422,10 +423,10 @@ for b in book['bonus']['bonuses']:
     <h2 class="bonus-h2">{esc(title)}</h2>
     <div class="bonus-rule"></div>
   </header>
-  <div class="prose bonus-body" style="max-height: 8.5in !important; overflow: hidden !important;">{chunks[0]}</div>
+  <div class="prose bonus-body" style="max-height: 7.5in !important; overflow: hidden !important;">{chunks[0]}</div>
 </div>''')
     for ch in chunks[1:]:
-        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body" style="max-height: 9.2in !important; overflow: hidden !important;">{ch}</div></div>')
+        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body" style="max-height: 8.8in !important; overflow: hidden !important;">{ch}</div></div>')
 
 # 9. Appendix A
 appA = book['appendix_a']
