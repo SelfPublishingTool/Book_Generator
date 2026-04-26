@@ -1217,9 +1217,17 @@ html_out = f'''<!DOCTYPE html>
 </body>
 </html>'''
 
-out = Path('../High_Protein_Meal_Prep_Cookbook.html')
-out.write_text(html_out, encoding='utf-8')
-print(f'Wrote {out.absolute()} size: {len(html_out)} bytes')
+out1 = Path('../High_Protein_Meal_Prep_Cookbook.html')
+out1.write_text(html_out, encoding='utf-8')
+print(f'SAVED TO WORKSPACE: {out1.absolute()}')
+
+# Also save to original Claude folder to be sure
+out2 = Path('/Users/michael/Desktop/Self Publishing/Libri in HTML - Claude/High_Protein_Meal_Prep_Cookbook/High_Protein_Meal_Prep_Cookbook.html')
+try:
+    out2.write_text(html_out, encoding='utf-8')
+    print(f'SAVED TO CLAUDE FOLDER: {out2.absolute()}')
+except Exception as e:
+    print(f'COULD NOT SAVE TO CLAUDE FOLDER: {e}')
 
 # Quick sanity counts
 import re as _re
