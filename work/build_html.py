@@ -397,18 +397,21 @@ def render_bonus_body(body_lines):
 for b in book['bonus']['bonuses']:
     title = b['title']
     body_html = render_bonus_body(b['body_lines'])
-    # Split by character length into pages
-    # Use a paragraph-aware split
-    # Approximate: ~3500 chars per page
+    # Split by character length into pages with different thresholds
     chunks = []
-    cur = ''
+    cur = ""
+    is_first_bonus_page = True
+    threshold = 1000 # Smaller for the first page with bonus header
+    
     # Split body_html into top-level elements
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
     if not elems:
         elems = [body_html]
     for el in elems:
-        if len(cur) + len(el) > 2200 and cur:
+        if len(cur) + len(el) > threshold and cur:
             chunks.append(cur); cur = el
+            is_first_bonus_page = False
+            threshold = 2000
         else:
             cur += el
     if cur: chunks.append(cur)
@@ -758,8 +761,9 @@ html,body{
 
 /* Prose */
 .prose{
-  max-height: 6.8in;
+  max-height: 6.4in; /* Reduced to leave more room at bottom */
   overflow: hidden;
+  padding-bottom: 0.5in;
 }
 .prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;overflow-wrap: break-word;}
 .prose p strong{color:var(--green);}
@@ -767,8 +771,8 @@ html,body{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:15pt;color:var(--green);margin:1em 0 0.4em;font-weight:700;
 }
-.intro-page .prose{
-  max-height: 5.2in; /* Smaller because of the header */
+.intro-page .prose, .bonus-page .prose{
+  max-height: 4.8in; /* Even smaller for pages with headers */
 }
 .intro-page .chapter-h1{font-size:24pt;}
 .intro-page-cont{padding-top:0.85in;}
