@@ -164,7 +164,7 @@ intro_paras_html = ''.join(f'<p>{smart_html(p)}</p>' for p in intro['paragraphs'
 intro_pages = []
 buf = ""
 is_first_page = True
-threshold = 1000 # Much smaller for the first page with header
+threshold = 2400 # Increased for Portrait
 
 for p in intro['paragraphs']:
     add = f'<p>{smart_html(p)}</p>'
@@ -172,7 +172,7 @@ for p in intro['paragraphs']:
         intro_pages.append(buf)
         buf = add
         is_first_page = False
-        threshold = 2200 # Normal limit for subsequent pages
+        threshold = 3200 # Increased for Portrait
     else:
         buf += add
 if buf: intro_pages.append(buf)
@@ -184,12 +184,12 @@ first_intro = f'''<div class="page intro-page">
     <h1 class="chapter-h1">{esc(intro['subtitle'])}</h1>
     <div class="chapter-rule"></div>
   </header>
-  <div class="prose" style="max-height: 5in !important; overflow: hidden !important;">{intro_pages[0]}</div>
+  <div class="prose" style="max-height: 8.5in !important; overflow: hidden !important;">{intro_pages[0]}</div>
 </div>'''
 parts.append(first_intro)
 for extra in intro_pages[1:]:
     parts.append(f'''<div class="page intro-page-cont">
-  <div class="prose" style="max-height: 6in !important; overflow: hidden !important;">{extra}</div>
+  <div class="prose" style="max-height: 9.2in !important; overflow: hidden !important;">{extra}</div>
 </div>''')
 
 # 5. Chapter 1 — The Prep-Once System
@@ -401,7 +401,7 @@ for b in book['bonus']['bonuses']:
     chunks = []
     cur = ""
     is_first_bonus_page = True
-    threshold = 1000 # Smaller for the first page with bonus header
+    threshold = 2400 # Portrait safe
     
     # Split body_html into top-level elements
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
@@ -411,7 +411,7 @@ for b in book['bonus']['bonuses']:
         if len(cur) + len(el) > threshold and cur:
             chunks.append(cur); cur = el
             is_first_bonus_page = False
-            threshold = 2000
+            threshold = 3200
         else:
             cur += el
     if cur: chunks.append(cur)
@@ -422,10 +422,10 @@ for b in book['bonus']['bonuses']:
     <h2 class="bonus-h2">{esc(title)}</h2>
     <div class="bonus-rule"></div>
   </header>
-  <div class="prose bonus-body" style="max-height: 5in !important; overflow: hidden !important;">{chunks[0]}</div>
+  <div class="prose bonus-body" style="max-height: 8.5in !important; overflow: hidden !important;">{chunks[0]}</div>
 </div>''')
     for ch in chunks[1:]:
-        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body" style="max-height: 6in !important; overflow: hidden !important;">{ch}</div></div>')
+        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body" style="max-height: 9.2in !important; overflow: hidden !important;">{ch}</div></div>')
 
 # 9. Appendix A
 appA = book['appendix_a']
@@ -442,8 +442,8 @@ def render_app_table(header, rows, title=''):
     title_html = f'<h3 class="app-h">{esc(title)}</h3>' if title else ''
     return f'{title_html}<table class="data-table app-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>'
 
-# Chunk into 10-row pages for absolute safety in Landscape
-chunk = 10
+# Chunk into 32-row pages for Portrait
+chunk = 32
 chunks = [body_rows[i:i+chunk] for i in range(0, len(body_rows), chunk)]
 for k, c in enumerate(chunks):
     title_html = ''
@@ -464,7 +464,7 @@ parts.append(chapter_cover('Appendix B', appB['sub'], 'Reference for everyday co
 # Foods table — split if needed
 foods_header = appB['foods'][0]
 foods_body = appB['foods'][1:]
-food_chunks = [foods_body[i:i+10] for i in range(0, len(foods_body), 10)]
+food_chunks = [foods_body[i:i+32] for i in range(0, len(foods_body), 32)]
 for k, c in enumerate(food_chunks):
     title_html = ''
     if k == 0:
@@ -565,19 +565,17 @@ html,body{
   padding:24px 0;gap:18px;
 }
 
-/* Page - Landscape */
+/* Page - Portrait 8.5x11 */
 .page{
-  width:11in;
-  height:8.5in;
+  width:8.5in;
+  height:11in;
   background:var(--paper);
   position:relative;
-  padding:0.7in 0.8in 0.9in 0.8in;
+  padding:0.8in 0.8in 1in 0.8in;
   overflow:hidden;
   page-break-after:always;
   break-after:page;
   box-shadow:var(--shadow);
-  background-image:
-    radial-gradient(120% 50% at 50% 0%, rgba(220,200,160,0.05) 0%, rgba(255,253,247,0) 60%);
 }
 .page.title-page,
 .page.chapter-cover{
@@ -806,13 +804,13 @@ html,body{
 .data-table tbody tr:nth-child(even) td{background:var(--cream-2);}
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
 
-/* Recipe page - 2 Columns Grid Landscape */
+/* Recipe page - Portrait 2 per page */
 .recipe-page{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5in;
-  padding: 0.6in 0.8in 0.8in;
-  height: 8.5in;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4in;
+  padding: 0.8in 0.8in;
+  height: 11in;
 }
 
 .recipe-card{
@@ -820,7 +818,7 @@ html,body{
   background: transparent;
   display: flex;
   flex-direction: column;
-  height: 7.1in;
+  height: 4.6in; /* Two recipes fit in 11in with gaps */
   overflow: hidden;
 }
 
@@ -864,7 +862,7 @@ html,body{
 
 .recipe-image {
   width: 100%;
-  height: 4in;
+  height: 2.2in;
   object-fit: cover;
   border-radius: 4px;
   margin: 0.4rem 0;
@@ -922,7 +920,7 @@ html,body{
   line-height: 1.1;
 }
 .recipe-card-compact .recipe-image {
-  height: 2.8in;
+  height: 1.4in;
 }
 .recipe-card-compact .recipe-title {
   font-size: 16pt;
