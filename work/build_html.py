@@ -165,7 +165,8 @@ intro_pages = []
 buf = ''
 for p in intro['paragraphs']:
     add = f'<p>{smart_html(p)}</p>'
-    if len(buf) + len(add) > 3200 and buf:
+    # Safer limit for Landscape (approx 2200 chars instead of 3200)
+    if len(buf) + len(add) > 2200 and buf:
         intro_pages.append(buf)
         buf = add
     else:
@@ -402,7 +403,7 @@ for b in book['bonus']['bonuses']:
     if not elems:
         elems = [body_html]
     for el in elems:
-        if len(cur) + len(el) > 3400 and cur:
+        if len(cur) + len(el) > 2200 and cur:
             chunks.append(cur); cur = el
         else:
             cur += el
@@ -563,7 +564,7 @@ html,body{
   height:8.5in;
   background:var(--paper);
   position:relative;
-  padding:0.7in 0.8in 0.8in 0.8in;
+  padding:0.7in 0.8in 0.9in 0.8in;
   overflow:hidden;
   page-break-after:always;
   break-after:page;
