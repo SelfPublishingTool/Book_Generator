@@ -184,12 +184,12 @@ first_intro = f'''<div class="page intro-page">
     <h1 class="chapter-h1">{esc(intro['subtitle'])}</h1>
     <div class="chapter-rule"></div>
   </header>
-  <div class="prose">{intro_pages[0]}</div>
+  <div class="prose" style="max-height: 5in !important; overflow: hidden !important;">{intro_pages[0]}</div>
 </div>'''
 parts.append(first_intro)
 for extra in intro_pages[1:]:
     parts.append(f'''<div class="page intro-page-cont">
-  <div class="prose">{extra}</div>
+  <div class="prose" style="max-height: 6in !important; overflow: hidden !important;">{extra}</div>
 </div>''')
 
 # 5. Chapter 1 — The Prep-Once System
@@ -244,7 +244,7 @@ ch1_pages = [
 ]
 for plist in ch1_pages:
     content = ''.join(ch1_blocks[i] for i in plist)
-    parts.append(f'<div class="page ch1-page"><div class="page-frame">{content}</div></div>')
+    parts.append(f'<div class="page ch1-page"><div class="page-frame" style="max-height: 6.5in; overflow: hidden;">{content}</div></div>')
 
 # 6. Chapters 2-8: chapter cover + recipe pages (2 per page)
 chapter_recipe_groups = {}
@@ -340,7 +340,7 @@ for w in mp['weeks']:
     <h2 class="week-title">{esc(w['title'])}</h2>
     <div class="week-rule"></div>
   </header>
-  <div class="prose week-body">{body_html}</div>
+  <div class="prose week-body" style="max-height: 6.2in; overflow: hidden;">{body_html}</div>
 </div>''')
 
 # 8. Chapter 10 — Bonus Toolkit
@@ -422,10 +422,10 @@ for b in book['bonus']['bonuses']:
     <h2 class="bonus-h2">{esc(title)}</h2>
     <div class="bonus-rule"></div>
   </header>
-  <div class="prose bonus-body">{chunks[0]}</div>
+  <div class="prose bonus-body" style="max-height: 5in !important; overflow: hidden !important;">{chunks[0]}</div>
 </div>''')
     for ch in chunks[1:]:
-        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body">{ch}</div></div>')
+        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body" style="max-height: 6in !important; overflow: hidden !important;">{ch}</div></div>')
 
 # 9. Appendix A
 appA = book['appendix_a']
@@ -442,8 +442,8 @@ def render_app_table(header, rows, title=''):
     title_html = f'<h3 class="app-h">{esc(title)}</h3>' if title else ''
     return f'{title_html}<table class="data-table app-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>'
 
-# Chunk into 32-row pages
-chunk = 32
+# Chunk into 25-row pages for safety in Landscape
+chunk = 25
 chunks = [body_rows[i:i+chunk] for i in range(0, len(body_rows), chunk)]
 for k, c in enumerate(chunks):
     title_html = ''
@@ -455,7 +455,7 @@ for k, c in enumerate(chunks):
 </header>
 <p class="prose"><em>{smart_html(appA['intro'])}</em></p>'''
     table_html = render_app_table(header, c)
-    parts.append(f'<div class="page appendix-page">{title_html}{table_html}</div>')
+    parts.append(f'<div class="page appendix-page" style="max-height: 6.5in; overflow: hidden;">{title_html}{table_html}</div>')
 
 # 10. Appendix B
 appB = book['appendix_b']
@@ -464,7 +464,7 @@ parts.append(chapter_cover('Appendix B', appB['sub'], 'Reference for everyday co
 # Foods table — split if needed
 foods_header = appB['foods'][0]
 foods_body = appB['foods'][1:]
-food_chunks = [foods_body[i:i+34] for i in range(0, len(foods_body), 34)]
+food_chunks = [foods_body[i:i+25] for i in range(0, len(foods_body), 25)]
 for k, c in enumerate(food_chunks):
     title_html = ''
     if k == 0:
@@ -761,9 +761,9 @@ html,body{
 
 /* Prose */
 .prose{
-  max-height: 6.4in; /* Reduced to leave more room at bottom */
+  max-height: 6.2in; /* Global safety limit */
   overflow: hidden;
-  padding-bottom: 0.5in;
+  padding-bottom: 0.6in;
 }
 .prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;overflow-wrap: break-word;}
 .prose p strong{color:var(--green);}
