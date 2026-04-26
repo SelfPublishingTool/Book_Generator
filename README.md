@@ -11,16 +11,15 @@ This is a Python-based generator for a professional 11" x 8.5" (Landscape) cookb
   - `parse_book.py`: Helper script to parse markdown into JSON.
 
 ## How to use locally
-1. **To update the book**:
-   - Edit the data in `work/book.json`.
-   - Run the build script:
+1. **To start the Dev Environment (Live Preview)**:
+   - Run the dev server from the root:
      ```bash
-     cd work
-     python3 build_html.py
+     python3 dev.py
      ```
-   - Open `High_Protein_Meal_Prep_Cookbook.html` in your browser.
+   - Open **`http://localhost:8000/High_Protein_Meal_Prep_Cookbook.html`** in your browser.
+   - Every time a change is made to the data or code, the book will rebuild automatically. Just refresh the browser!
 
-2. **To print to PDF**:
+2. **Manual Update**:
    - Open the HTML file in Chrome.
    - Press `Cmd + P` (Print).
    - Select **Landscape** orientation.
