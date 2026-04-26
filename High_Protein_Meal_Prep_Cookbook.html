@@ -237,11 +237,18 @@ html,body{
 .chapter-cover.chapter-cream{background:linear-gradient(160deg,#a07c2e 0%,#5a4416 80%);}
 
 /* Prose */
-.prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;}
+.prose{
+  max-height: 6.8in;
+  overflow: hidden;
+}
+.prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;overflow-wrap: break-word;}
 .prose p strong{color:var(--green);}
 .prose-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:15pt;color:var(--green);margin:1em 0 0.4em;font-weight:700;
+}
+.intro-page .prose{
+  max-height: 5.2in; /* Smaller because of the header */
 }
 .intro-page .chapter-h1{font-size:24pt;}
 .intro-page-cont{padding-top:0.85in;}
@@ -357,6 +364,8 @@ html,body{
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  max-height: 4.8in;
+  overflow: hidden;
 }
 
 .section-h{
@@ -621,10 +630,13 @@ html,body{
     <h1 class="chapter-h1">You Didn&#x27;t Fail. Your Schedule Did.</h1>
     <div class="chapter-rule"></div>
   </header>
-  <div class="prose"><p>You have been here before. Monday morning hits and you are motivated. You buy the groceries, you start the plan, and for a few days everything works. Then Wednesday comes with a late meeting, and Thursday the kids are sick, and by Friday you are eating whatever is fastest because you are exhausted and there is nothing ready.</p><p>So you tell yourself you failed again. You didn&#x27;t.</p><p>Your schedule failed you. No plan survives contact with a real week unless it was built for one.</p><p>Here is the truth about weight loss that nobody puts on the cover of a diet book: the hardest part is not the eating. It is the deciding. Every single day you have to decide what to eat, whether you have the ingredients, whether you have the time to cook it, and whether it fits your goals. That is four decisions per meal, three meals a day, seven days a week. Decision fatigue is real, and it is the reason most diets fall apart before they get a chance to work.</p><p>This book eliminates the decisions.</p><p>Not by restricting you to one meal or one flavor or one food group. By giving you a system that does the thinking on Sunday so you coast through the week on autopilot. One prep session. One week of meals. Zero nightly stress.</p><p>What makes this book different from every other meal prep book on this shelf:</p><p>Every other book in this category cycles through the same two or three proteins — chicken breast, ground turkey, and maybe some beef on a good week. By Thursday you are eating your fourth chicken bowl and wondering why you even bothered. This book uses six protein sources: chicken, beef, fish, eggs, legumes, and dairy. Real variety. Real flavors. One hundred and one recipes that do not blur together by midweek.</p><p>Every recipe in this book delivers 25 grams of protein or more per serving. Not approximately. Not close. At least 25 grams, every single meal. That is the number that keeps you full, preserves your lean muscle while you lose fat, and shuts down the cravings that derail you every afternoon.</p></div>
+  <div class="prose"><p>You have been here before. Monday morning hits and you are motivated. You buy the groceries, you start the plan, and for a few days everything works. Then Wednesday comes with a late meeting, and Thursday the kids are sick, and by Friday you are eating whatever is fastest because you are exhausted and there is nothing ready.</p><p>So you tell yourself you failed again. You didn&#x27;t.</p><p>Your schedule failed you. No plan survives contact with a real week unless it was built for one.</p><p>Here is the truth about weight loss that nobody puts on the cover of a diet book: the hardest part is not the eating. It is the deciding. Every single day you have to decide what to eat, whether you have the ingredients, whether you have the time to cook it, and whether it fits your goals. That is four decisions per meal, three meals a day, seven days a week. Decision fatigue is real, and it is the reason most diets fall apart before they get a chance to work.</p></div>
 </div>
 <div class="page intro-page-cont">
-  <div class="prose"><p>And every meal is designed to be prepped in advance, stored safely, and reheated without losing its texture or flavor. Because food that tastes like sad leftovers is food you stop making.</p><p>The 3 rules of this book:</p><p>Prep once. Everything you need for the week comes together in one Sunday session of two hours or less.</p><p>Eat real food. Every ingredient in this book is available at your regular supermarket. No specialty stores, no protein powders required, no $15 bags of something you cannot pronounce.</p><p>Never be hungry. Twenty-five grams of protein per meal is not negotiable. You will eat enough. You will feel full. And the weight will follow.</p><p>How to use this book:</p><p>Start with Chapter 1. Read it once. It contains everything you need to understand before you cook a single thing — how much protein your body actually needs, which six sources we use and why, and the exact Sunday method that makes the whole system work.</p><p>Then go straight to Chapter 9, the 30-Day Meal Plan. It tells you exactly what to cook each week, in what order, and what to buy. You do not need to read every recipe before you start. Just follow the plan.</p><p>If you want to customize, use the Mix-and-Match Matrix in Week 4 to build your own combinations once the habits are locked in.</p><p>The quiz in the Bonus Toolkit will help you figure out exactly which week to start based on your current lifestyle. If you have never meal prepped before, it will tell you. If you are already comfortable in the kitchen and want to jump to week three, it will tell you that too.</p><p>You have the system now. Let&#x27;s use it.</p></div>
+  <div class="prose"><p>This book eliminates the decisions.</p><p>Not by restricting you to one meal or one flavor or one food group. By giving you a system that does the thinking on Sunday so you coast through the week on autopilot. One prep session. One week of meals. Zero nightly stress.</p><p>What makes this book different from every other meal prep book on this shelf:</p><p>Every other book in this category cycles through the same two or three proteins — chicken breast, ground turkey, and maybe some beef on a good week. By Thursday you are eating your fourth chicken bowl and wondering why you even bothered. This book uses six protein sources: chicken, beef, fish, eggs, legumes, and dairy. Real variety. Real flavors. One hundred and one recipes that do not blur together by midweek.</p><p>Every recipe in this book delivers 25 grams of protein or more per serving. Not approximately. Not close. At least 25 grams, every single meal. That is the number that keeps you full, preserves your lean muscle while you lose fat, and shuts down the cravings that derail you every afternoon.</p><p>And every meal is designed to be prepped in advance, stored safely, and reheated without losing its texture or flavor. Because food that tastes like sad leftovers is food you stop making.</p><p>The 3 rules of this book:</p><p>Prep once. Everything you need for the week comes together in one Sunday session of two hours or less.</p><p>Eat real food. Every ingredient in this book is available at your regular supermarket. No specialty stores, no protein powders required, no $15 bags of something you cannot pronounce.</p><p>Never be hungry. Twenty-five grams of protein per meal is not negotiable. You will eat enough. You will feel full. And the weight will follow.</p><p>How to use this book:</p><p>Start with Chapter 1. Read it once. It contains everything you need to understand before you cook a single thing — how much protein your body actually needs, which six sources we use and why, and the exact Sunday method that makes the whole system work.</p></div>
+</div>
+<div class="page intro-page-cont">
+  <div class="prose"><p>Then go straight to Chapter 9, the 30-Day Meal Plan. It tells you exactly what to cook each week, in what order, and what to buy. You do not need to read every recipe before you start. Just follow the plan.</p><p>If you want to customize, use the Mix-and-Match Matrix in Week 4 to build your own combinations once the habits are locked in.</p><p>The quiz in the Bonus Toolkit will help you figure out exactly which week to start based on your current lifestyle. If you have never meal prepped before, it will tell you. If you are already comfortable in the kitchen and want to jump to week three, it will tell you that too.</p><p>You have the system now. Let&#x27;s use it.</p></div>
 </div>
 <div class="page chapter-cover chapter-green">
   <div class="chapter-cover-inner">

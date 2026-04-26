@@ -160,15 +160,19 @@ parts.append('''<div class="page toc-page" data-no-toc="true">
 # 4. Introduction (multi-page, allow natural overflow into a 2nd page)
 intro = book['introduction']
 intro_paras_html = ''.join(f'<p>{smart_html(p)}</p>' for p in intro['paragraphs'])
-# Split intro into ~2 pages by character count
+# Split intro into pages with different thresholds
 intro_pages = []
-buf = ''
+buf = ""
+is_first_page = True
+threshold = 1000 # Much smaller for the first page with header
+
 for p in intro['paragraphs']:
     add = f'<p>{smart_html(p)}</p>'
-    # Safer limit for Landscape (approx 2200 chars instead of 3200)
-    if len(buf) + len(add) > 2200 and buf:
+    if len(buf) + len(add) > threshold and buf:
         intro_pages.append(buf)
         buf = add
+        is_first_page = False
+        threshold = 2200 # Normal limit for subsequent pages
     else:
         buf += add
 if buf: intro_pages.append(buf)
@@ -753,11 +757,18 @@ html,body{
 .chapter-cover.chapter-cream{background:linear-gradient(160deg,#a07c2e 0%,#5a4416 80%);}
 
 /* Prose */
-.prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;}
+.prose{
+  max-height: 6.8in;
+  overflow: hidden;
+}
+.prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;overflow-wrap: break-word;}
 .prose p strong{color:var(--green);}
 .prose-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:15pt;color:var(--green);margin:1em 0 0.4em;font-weight:700;
+}
+.intro-page .prose{
+  max-height: 5.2in; /* Smaller because of the header */
 }
 .intro-page .chapter-h1{font-size:24pt;}
 .intro-page-cont{padding-top:0.85in;}
@@ -873,6 +884,8 @@ html,body{
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  max-height: 4.8in;
+  overflow: hidden;
 }
 
 .section-h{
