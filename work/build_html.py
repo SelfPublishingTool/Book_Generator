@@ -1,40 +1,83 @@
 #!/usr/bin/env python3
-"""Build the full HTML cookbook from parsed JSON."""
+"""Build the full HTML cookbook from parsed JSON — v3:
+- 2 columns recipes (cards side-by-side)
+- SVG illustrations per protein source
+- Single Copyright page (text at body size)
+- Theme color #fdc705 (golden yellow)
+- Convert-to-PDF button (window.print() with @page portrait)
+- Live auto-fit JS to prevent overflow / cut-off
+- No hardcoded inner heights"""
 import json, html, re
 from pathlib import Path
 
-book = json.loads(Path('book.json').read_text(encoding='utf-8'))
+book = json.loads(Path('/sessions/charming-exciting-noether/mnt/outputs/work/book.json').read_text(encoding='utf-8'))
 
 def esc(s):
     return html.escape(s, quote=True) if s else ''
 
-# Convert markdown-ish text helpers
 def smart_html(s):
-    """Escape and convert basic markdown like italic _x_ or **x** to HTML."""
     s = esc(s)
-    # bold
     s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
-    # italic
     s = re.sub(r'(^|\W)\*(.+?)\*(?=\W|$)', r'\1<em>\2</em>', s)
     return s
 
-# Helper for chapter cover pages
-def chapter_cover(num_label, ch_title, ch_sub, ch_quote, recipe_count=None, color_class='chapter-green'):
+# ---------------- SVG illustrations per protein source ----------------
+SVG_ILLUSTRATIONS = {
+    'eggs': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>''',
+
+    'chicken': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>''',
+
+    'fish': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>''',
+
+    'beef': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgB" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe19a"/><stop offset="1" stop-color="#e3a854"/></linearGradient><linearGradient id="meat" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a93e2e"/><stop offset="1" stop-color="#6f1f15"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgB)"/><g transform="translate(110 60)"><ellipse cx="0" cy="3" rx="80" ry="16" fill="#3a1a0e" opacity="0.18"/><path d="M -70 -22 q -10 -10 0 -18 q 18 -10 50 -8 q 40 0 60 8 q 18 6 18 22 q 8 4 8 16 q 0 14 -16 16 q -30 6 -70 6 q -36 -2 -54 -6 q -14 -4 -10 -18 q -8 -8 -2 -16 q 4 -4 16 -2 z" fill="url(#meat)" stroke="#4a1610" stroke-width="1.2"/><path d="M -50 -16 q 12 -2 24 4 M -16 -20 q 16 -2 24 0 M 18 -14 q 14 0 22 6 M -40 0 q 16 -2 22 4 M -8 -2 q 14 -2 22 4" stroke="#fff" stroke-width="1.4" fill="none" opacity="0.55"/><ellipse cx="-46" cy="-12" rx="10" ry="6" fill="#fff" opacity="0.18"/><ellipse cx="20" cy="-8" rx="14" ry="6" fill="#fff" opacity="0.18"/></g></svg>''',
+
+    'legumes': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgL" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffeeb6"/><stop offset="1" stop-color="#dba840"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgL)"/><g transform="translate(0 50)"><g fill="#5b3a18"><ellipse cx="36" cy="22" rx="11" ry="8"/><ellipse cx="60" cy="14" rx="10" ry="7"/><ellipse cx="84" cy="22" rx="11" ry="8"/></g><g fill="#a4541f"><ellipse cx="48" cy="34" rx="10" ry="7"/><ellipse cx="72" cy="36" rx="10" ry="7"/><ellipse cx="92" cy="38" rx="11" ry="8"/></g><g fill="#fdc705"><ellipse cx="108" cy="20" rx="10" ry="7"/><ellipse cx="130" cy="14" rx="9" ry="6"/><ellipse cx="120" cy="36" rx="10" ry="7"/></g><g fill="#7a5710"><ellipse cx="146" cy="22" rx="10" ry="7"/><ellipse cx="168" cy="14" rx="9" ry="6"/><ellipse cx="158" cy="36" rx="10" ry="7"/><ellipse cx="184" cy="38" rx="9" ry="6"/></g><g fill="#3c2810"><ellipse cx="20" cy="38" rx="10" ry="7"/><ellipse cx="200" cy="22" rx="10" ry="7"/></g><g fill="#fff" opacity="0.35"><circle cx="34" cy="20" r="2"/><circle cx="58" cy="12" r="2"/><circle cx="106" cy="18" r="2"/><circle cx="144" cy="20" r="2"/><circle cx="166" cy="12" r="2"/></g></g></svg>''',
+
+    'dairy': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#f5d77a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgD)"/><g transform="translate(60 28)"><path d="M 0 0 h 50 v 6 q 0 6 -6 6 h -38 q -6 0 -6 -6 z" fill="#fdc705" stroke="#a08220" stroke-width="1"/><rect x="6" y="12" width="38" height="46" rx="3" fill="#ffffff" stroke="#bfa54a" stroke-width="1"/><circle cx="14" cy="28" r="3" fill="#fde08a"/><circle cx="32" cy="36" r="4" fill="#fde08a"/><circle cx="20" cy="46" r="2.5" fill="#fde08a"/><circle cx="36" cy="50" r="2" fill="#fde08a"/></g><g transform="translate(135 40)"><ellipse cx="0" cy="38" rx="40" ry="6" fill="#1f2418" opacity="0.12"/><rect x="-30" y="-2" width="60" height="40" rx="6" fill="#fafafa" stroke="#bfa54a" stroke-width="1.2"/><rect x="-30" y="-2" width="60" height="14" rx="6" fill="#fdc705"/><circle cx="-12" cy="22" r="3" fill="#fde08a"/><circle cx="6" cy="26" r="2.5" fill="#fde08a"/><circle cx="14" cy="20" r="2" fill="#fde08a"/></g></svg>''',
+
+    'mixed': '''<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgM" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff3c5"/><stop offset="1" stop-color="#e9b94a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgM)"/><g transform="translate(110 60)"><circle cx="0" cy="0" r="46" fill="#fffaee" stroke="#a8821c" stroke-width="1.5"/><circle cx="0" cy="0" r="36" fill="#fffdf3" stroke="#a8821c" stroke-width="0.8"/><path d="M -28 -8 q 0 -16 14 -18 q 14 0 18 12 q -2 14 -16 16 q -14 0 -16 -10 z" fill="#7d5530"/><circle cx="-22" cy="-10" r="2.5" fill="#fff" opacity="0.5"/><g fill="#a07c2e"><ellipse cx="14" cy="-14" rx="8" ry="5" transform="rotate(-20 14 -14)"/><ellipse cx="22" cy="-6" rx="7" ry="4" transform="rotate(15 22 -6)"/></g><g fill="#cf5732"><ellipse cx="6" cy="14" rx="6" ry="4"/><ellipse cx="-12" cy="18" rx="6" ry="4"/><ellipse cx="20" cy="14" rx="5" ry="3.5"/></g><g fill="#fdc705"><circle cx="-2" cy="24" r="3"/><circle cx="14" cy="22" r="2.5"/></g></g><g stroke="#a07c2e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 4 96 q 110 -10 212 0"/></g></svg>''',
+}
+
+PROTEIN_KEYWORDS = [
+    ('eggs', ['egg', 'eggs']),
+    ('chicken', ['chicken', 'poultry', 'turkey', 'pork']),
+    ('fish', ['fish', 'salmon', 'tuna', 'shrimp', 'cod']),
+    ('beef', ['beef']),
+    ('legumes', ['legume', 'legumes']),
+    ('dairy', ['dairy', 'cheese', 'yogurt']),
+]
+
+def pick_illustration(protein_source_text):
+    s = (protein_source_text or '').lower()
+    matches = []
+    for key, kws in PROTEIN_KEYWORDS:
+        for kw in kws:
+            pos = s.find(kw)
+            if pos >= 0:
+                matches.append((pos, key))
+                break
+    if matches:
+        matches.sort()
+        return SVG_ILLUSTRATIONS[matches[0][1]]
+    return SVG_ILLUSTRATIONS['mixed']
+
+# ---------------- Helpers ----------------
+def chapter_cover(num_label, ch_title, ch_sub, ch_quote, recipe_count=None, color_class='cover-night'):
     extra = f'<p class="chapter-cover-count">{recipe_count} recipes</p>' if recipe_count else ''
     return f'''<div class="page chapter-cover {color_class}">
-  <div class="chapter-cover-inner">
-    <p class="chapter-cover-eyebrow">{esc(num_label)}</p>
-    <h1 class="chapter-cover-title">{esc(ch_title)}</h1>
-    <div class="chapter-cover-divider"></div>
-    <p class="chapter-cover-subtitle">{esc(ch_sub)}</p>
-    {extra}
+  <div class="page-content">
+    <div class="chapter-cover-inner">
+      <p class="chapter-cover-eyebrow">{esc(num_label)}</p>
+      <h1 class="chapter-cover-title">{esc(ch_title)}</h1>
+      <div class="chapter-cover-divider"></div>
+      <p class="chapter-cover-subtitle">{esc(ch_sub)}</p>
+      {extra}
+    </div>
   </div>
 </div>'''
 
-# Recipe card builder
 def render_recipe(r):
     ps = r.get('protein_source','')
-    # Split emoji from text
     m = re.match(r'^([\U0001F300-\U0001FAFF\U0001F600-\U0001F64F\U0001F680-\U0001F6FF☀-➿]+\s*\+?\s*[\U0001F300-\U0001FAFF\U0001F600-\U0001F64F\U0001F680-\U0001F6FF☀-➿]*)\s*(.+)$', ps)
     if m:
         ps_emoji = m.group(1).strip()
@@ -42,53 +85,42 @@ def render_recipe(r):
     else:
         ps_emoji = ''
         ps_text = ps
-    # Extract protein grams from nutrition
     nut = r.get('nutrition','')
     pg_match = re.search(r'Protein:\s*(\d+)g', nut)
     protein_g = pg_match.group(1) + 'g' if pg_match else ''
-    # Build nutrition stats
     stats = []
-    for label_re, label in [(r'Calories:\s*(\d+)', 'Calories'),
+    for label_re, label in [(r'Calories:\s*(\d+)', 'Cal'),
                              (r'Protein:\s*(\d+)g?', 'Protein'),
                              (r'Carbs:\s*(\d+)g?', 'Carbs'),
                              (r'Fat:\s*(\d+)g?', 'Fat')]:
         mm = re.search(label_re, nut)
         if mm:
             v = mm.group(1)
-            unit = '' if label == 'Calories' else 'g'
+            unit = '' if label == 'Cal' else 'g'
             stats.append((label, v + unit))
     nut_extra = r.get('nutrition_extra','')
     stats_html = ''.join(f'<div class="nut-stat"><span class="nut-val">{esc(v)}</span><span class="nut-lbl">{esc(l)}</span></div>' for l,v in stats)
     ing_items = ''.join(f'<li>{smart_html(i)}</li>' for i in r['ingredients'])
     inst_items = ''.join(f'<li>{smart_html(i)}</li>' for i in r['instructions'])
-    
-    # Smart shortening logic
-    ing_count = len(r['ingredients'])
-    inst_len = sum(len(i) for i in r['instructions'])
-    card_classes = ["recipe-card"]
-    if ing_count > 12 or inst_len > 500:
-        card_classes.append("recipe-card-compact")
-    elif ing_count > 8 or inst_len > 350:
-        card_classes.append("recipe-card-medium")
-        
     storage = r.get('storage')
     storage_html = f'<div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">{smart_html(storage)}</span></div>' if storage else ''
     cook_label = r.get('cook_label', 'Cook')
-    img_path = r.get('image_path', '')
-    img_html = f'<img src="{esc(img_path)}" class="recipe-image" />' if img_path else '<div class="recipe-image-placeholder">No Image</div>'
-    
-    return f'''<article class="{" ".join(card_classes)}">
+    illustration = pick_illustration(ps)
+    return f'''<article class="recipe-card" data-recipe="{r['number']}">
+  <div class="recipe-illustration">
+    {illustration}
+    <div class="recipe-num-badge">{r['number']:02d}</div>
+    {f'<div class="recipe-protein-badge">{esc(protein_g)} protein</div>' if protein_g else ''}
+  </div>
   <header class="recipe-header">
-    <div class="recipe-id">{r['number']:02d} • RECIPE</div>
     <h3 class="recipe-title">{esc(r['title'])}</h3>
     <div class="recipe-meta">
-      <span class="badge">{esc(ps_emoji)} {esc(ps_text)}</span>
-      <span class="badge">Yield · {esc(r['yield'])}</span>
-      <span class="badge">Prep · {esc(r['prep'])}</span>
-      <span class="badge">{esc(cook_label)} · {esc(r['cook'])}</span>
+      <span class="badge badge-protein-src">{esc(ps_emoji)} {esc(ps_text)}</span>
+      <span class="badge badge-yield">Yield · {esc(r['yield'])}</span>
+      <span class="badge badge-prep">Prep · {esc(r['prep'])}</span>
+      <span class="badge badge-cook">{esc(cook_label)} · {esc(r['cook'])}</span>
     </div>
   </header>
-  {img_html}
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
@@ -102,7 +134,7 @@ def render_recipe(r):
   <footer class="recipe-footer">
     <div class="nutrition-box">
       <div class="nut-head">
-        <span class="nut-title">Nutrition Facts</span>
+        <span class="nut-title">Nutrition</span>
         {f'<span class="nut-extra">{esc(nut_extra)}</span>' if nut_extra else ''}
       </div>
       <div class="nut-stats">{stats_html}</div>
@@ -111,102 +143,105 @@ def render_recipe(r):
   </footer>
 </article>'''
 
-# Helper to chunk recipe lists into pairs
 def chunk_pairs(seq, size=2):
     for i in range(0, len(seq), size):
         yield seq[i:i+size]
 
-# ---------------- Build HTML ----------------
+# ---------------- Build HTML body ----------------
 parts = []
 
 # 1. Title page
-parts.append(f'''<div class="page title-page">
-  <div class="title-page-inner">
-    <p class="tp-eyebrow">Priscilla Quinn</p>
-    <div class="tp-divider"></div>
-    <h1 class="tp-title">{esc(book['title'])}</h1>
-    <p class="tp-subtitle">{esc(book['subtitle'])}</p>
-    <div class="tp-icon-row">
-      <span class="tp-icon">🥚</span><span class="tp-icon">🐔</span><span class="tp-icon">🐟</span><span class="tp-icon">🐄</span><span class="tp-icon">🫘</span><span class="tp-icon">🧀</span>
+parts.append(f'''<div class="page title-page" data-no-toc="true">
+  <div class="page-content">
+    <div class="title-page-inner">
+      <p class="tp-eyebrow">Priscilla Quinn</p>
+      <div class="tp-divider"></div>
+      <h1 class="tp-title">{esc(book['title'])}</h1>
+      <p class="tp-subtitle">{esc(book['subtitle'])}</p>
+      <div class="tp-icon-row">
+        <span class="tp-icon">🥚</span><span class="tp-icon">🐔</span><span class="tp-icon">🐟</span><span class="tp-icon">🐄</span><span class="tp-icon">🫘</span><span class="tp-icon">🧀</span>
+      </div>
+      <p class="tp-author">By <strong>{esc(book['author'].replace('By ',''))}</strong></p>
     </div>
-    <p class="tp-author">By <strong>{esc(book['author'].replace('By ',''))}</strong></p>
   </div>
 </div>''')
 
-# 2. Copyright / disclaimer page
+# 2. Copyright page (single heading, body-size text)
 discl_paras = ''.join(f'<p>{smart_html(p)}</p>' for p in book['disclaimer'])
 parts.append(f'''<div class="page legal-page" data-no-toc="true">
-  <div class="legal-inner">
-    <p class="copyright-line">{smart_html(book['copyright'])}</p>
-    <div class="legal-rule"></div>
-    <div class="legal-content">
+  <div class="page-content">
+    <div class="legal-inner">
+      <h2 class="legal-h">Copyright</h2>
+      <p>{smart_html(book['copyright'])}</p>
       {discl_paras}
     </div>
   </div>
 </div>''')
 
-# 3. TOC page (placeholder; filled in by JS)
+# 3. TOC pages
 parts.append('''<div class="page toc-page" data-no-toc="true">
-  <header class="toc-header">
-    <p class="toc-eyebrow">Cookbook</p>
-    <h2 class="toc-title">Table of Contents</h2>
-    <div class="toc-rule"></div>
-  </header>
-  <nav id="toc-nav" class="toc-list"></nav>
+  <div class="page-content">
+    <header class="toc-header">
+      <p class="toc-eyebrow">Cookbook</p>
+      <h2 class="toc-title">Table of Contents</h2>
+      <div class="toc-rule"></div>
+    </header>
+    <nav id="toc-nav" class="toc-list"></nav>
+  </div>
 </div>
 <div class="page toc-page-2" data-no-toc="true">
-  <nav id="toc-nav-2" class="toc-list"></nav>
+  <div class="page-content">
+    <nav id="toc-nav-2" class="toc-list"></nav>
+  </div>
 </div>''')
 
-# 4. Introduction (multi-page, allow natural overflow into a 2nd page)
+# 4. Introduction
 intro = book['introduction']
-intro_paras_html = ''.join(f'<p>{smart_html(p)}</p>' for p in intro['paragraphs'])
-# Split intro into pages with different thresholds
+# Force page break before any short "label:" paragraph (sub-section heading
+# that introduces a list of items) so labels stay with their content.
 intro_pages = []
-buf = ""
-is_first_page = True
-threshold = 1800 # Middle ground for Portrait
-
-for p in intro['paragraphs']:
+buf = ''
+def _is_label(p):
+    return len(p) < 80 and p.rstrip().endswith(':')
+for i, p in enumerate(intro['paragraphs']):
     add = f'<p>{smart_html(p)}</p>'
-    if len(buf) + len(add) > threshold and buf:
-        intro_pages.append(buf)
-        buf = add
-        is_first_page = False
-        threshold = 2400 # Middle ground for subsequent pages
+    next_is_label = (i + 1 < len(intro['paragraphs']) and _is_label(intro['paragraphs'][i+1]))
+    # Force break BEFORE "How to use this book:" so it starts on a new page
+    is_how_to = p.strip().startswith('How to use this book')
+    if (is_how_to or (len(buf) + len(add) > 3000 and (next_is_label or _is_label(p)))) and buf:
+        intro_pages.append(buf); buf = add
     else:
         buf += add
 if buf: intro_pages.append(buf)
 
-# First page has the title block
-first_intro = f'''<div class="page intro-page">
-  <header class="chapter-head">
-    <p class="chapter-eyebrow">Introduction</p>
-    <h1 class="chapter-h1">{esc(intro['subtitle'])}</h1>
-    <div class="chapter-rule"></div>
-  </header>
-  <div class="prose" style="max-height: 7.5in !important; overflow: hidden !important;">{intro_pages[0]}</div>
-</div>'''
-parts.append(first_intro)
+parts.append(f'''<div class="page intro-page">
+  <div class="page-content">
+    <header class="chapter-head">
+      <p class="chapter-eyebrow">Introduction</p>
+      <h1 class="chapter-h1">{esc(intro['subtitle'])}</h1>
+      <div class="chapter-rule"></div>
+    </header>
+    <div class="prose">{intro_pages[0]}</div>
+  </div>
+</div>''')
 for extra in intro_pages[1:]:
     parts.append(f'''<div class="page intro-page-cont">
-  <div class="prose" style="max-height: 8.8in !important; overflow: hidden !important;">{extra}</div>
+  <div class="page-content">
+    <div class="prose">{extra}</div>
+  </div>
 </div>''')
 
-# 5. Chapter 1 — The Prep-Once System
+# 5. Chapter 1
 ch1 = book['chapter1']
-parts.append(chapter_cover('Chapter 1', ch1['subtitle'], 'The Foundation', 'Everything you need before the first cook', color_class='chapter-green'))
+parts.append(chapter_cover('Chapter 1', ch1['subtitle'], 'The Foundation', '', color_class='cover-night'))
 
-# Render all sections; auto-paginate roughly
 def render_ch1_body_lines(body_lines):
-    """Convert body lines to HTML, handling tables and paragraphs."""
     out = []
     i = 0
     while i < len(body_lines):
         l = body_lines[i].rstrip()
         if not l.strip():
             i += 1; continue
-        # Detect markdown table block
         if l.startswith('|'):
             rows = []
             while i < len(body_lines) and body_lines[i].strip().startswith('|'):
@@ -217,8 +252,7 @@ def render_ch1_body_lines(body_lines):
                         rows.append(cells)
                 i += 1
             if rows:
-                head = rows[0]
-                body = rows[1:]
+                head = rows[0]; body = rows[1:]
                 thead = '<tr>' + ''.join(f'<th>{smart_html(c)}</th>' for c in head) + '</tr>'
                 tbody = ''.join('<tr>' + ''.join(f'<td>{smart_html(c)}</td>' for c in r) + '</tr>' for r in body)
                 out.append(f'<table class="data-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>')
@@ -227,74 +261,60 @@ def render_ch1_body_lines(body_lines):
             i += 1
     return ''.join(out)
 
-# Group ch1 sections to fit ~2 per page
 ch1_blocks = []
 for sec in ch1['sections']:
     body_html = render_ch1_body_lines(sec['body'])
     ch1_blocks.append(f'<section class="prep-section"><h2 class="prep-h2">{esc(sec["heading"])}</h2><div class="prose">{body_html}</div></section>')
 
-# Manually paginate: known content - 7 sections in chapter 1
-# Page 1: How Much Protein + The 6 Protein Sources
-# Page 2: The Simple Plate Formula + The Sunday Method + Fridge vs Freezer
-# Page 3: The High-Protein Pantry Staples + Quick Reference table
-ch1_pages = [
-    [0, 1],
-    [2, 3, 4],
-    [5],
-    [6],
-]
+ch1_pages = [[0], [1], [2, 3, 4], [5], [6]]
 for plist in ch1_pages:
     content = ''.join(ch1_blocks[i] for i in plist)
-    parts.append(f'<div class="page ch1-page"><div class="prose" style="max-height: 6in !important; overflow: hidden !important;">{content}</div></div>')
+    parts.append(f'<div class="page ch1-page"><div class="page-content"><div class="page-frame">{content}</div></div></div>')
 
-# 6. Chapters 2-8: chapter cover + recipe pages (2 per page)
+# 6. Chapters 2-8 with 2-column recipe pages
 chapter_recipe_groups = {}
 for r in book['recipes']:
     chapter_recipe_groups.setdefault(r['chapter'], []).append(r)
-
 chapter_meta_lookup = {c['title']: c for c in book['chapters_meta']}
 
-# Color rotation for chapter covers
-ch_colors = {
-    'Chapter 2': 'chapter-green',
-    'Chapter 3': 'chapter-olive',
-    'Chapter 4': 'chapter-forest',
-    'Chapter 5': 'chapter-sage',
-    'Chapter 6': 'chapter-warm',
-    'Chapter 7': 'chapter-rose',
-    'Chapter 8': 'chapter-cream',
+ch_covers = {
+    'Chapter 2': 'cover-charcoal',
+    'Chapter 3': 'cover-coffee',
+    'Chapter 4': 'cover-night',
+    'Chapter 5': 'cover-olive',
+    'Chapter 6': 'cover-rust',
+    'Chapter 7': 'cover-burgundy',
+    'Chapter 8': 'cover-ink',
 }
 
-for ch_title in ['Chapter 2', 'Chapter 3', 'Chapter 4', 'Chapter 5', 'Chapter 6', 'Chapter 7', 'Chapter 8']:
+for ch_title in ['Chapter 2','Chapter 3','Chapter 4','Chapter 5','Chapter 6','Chapter 7','Chapter 8']:
     meta = chapter_meta_lookup[ch_title]
     rs = chapter_recipe_groups[ch_title]
-    parts.append(chapter_cover(ch_title, meta['subtitle'], meta['quote'], '', recipe_count=len(rs), color_class=ch_colors[ch_title]))
-    # 2 recipes per page
+    parts.append(chapter_cover(ch_title, meta['subtitle'], meta['quote'], '', recipe_count=len(rs), color_class=ch_covers[ch_title]))
     for pair in chunk_pairs(rs, 2):
         cards = ''.join(render_recipe(r) for r in pair)
-        # If only 1 recipe (last page of odd chapter), add a single-recipe class
         cls = 'recipe-page-pair' if len(pair) == 2 else 'recipe-page-single'
-        parts.append(f'<div class="page recipe-page {cls}" data-chapter="{esc(ch_title)}">{cards}</div>')
+        parts.append(f'<div class="page recipe-page {cls}" data-chapter="{esc(ch_title)}"><div class="page-content"><div class="recipe-grid">{cards}</div></div></div>')
 
-# 7. Chapter 9 — Meal Plan
+# 7. Meal Plan
 mp = book['mealplan']
-parts.append(chapter_cover('Chapter 9', mp['subtitle'], mp['quote'], '', color_class='chapter-olive'))
+parts.append(chapter_cover('Chapter 9', mp['subtitle'], mp['quote'], '', color_class='cover-coffee'))
 
-# Intro page for meal plan: includes intro paras + how to read
 intro_html = ''.join(f'<p>{smart_html(p)}</p>' for p in mp['intro_paragraphs'])
 htr_html = ''.join(f'<li>{smart_html(p)}</li>' for p in mp['how_to_read'])
 parts.append(f'''<div class="page mealplan-intro">
-  <header class="chapter-head">
-    <h2 class="chapter-h1">{esc(mp['subtitle'])}</h2>
-    <p class="chapter-h2">{esc(mp['quote'])}</p>
-    <div class="chapter-rule"></div>
-  </header>
-  <div class="prose">{intro_html}</div>
-  <h3 class="prose-h3">How to Read the Plan</h3>
-  <ul class="checklist">{htr_html}</ul>
+  <div class="page-content">
+    <header class="chapter-head">
+      <h2 class="chapter-h1">{esc(mp['subtitle'])}</h2>
+      <p class="chapter-h2">{esc(mp['quote'])}</p>
+      <div class="chapter-rule"></div>
+    </header>
+    <div class="prose">{intro_html}</div>
+    <h3 class="prose-h3">How to Read the Plan</h3>
+    <ul class="checklist">{htr_html}</ul>
+  </div>
 </div>''')
 
-# Each week: 1 page if compact
 def render_week_body(body_lines):
     out = []
     i = 0
@@ -302,11 +322,9 @@ def render_week_body(body_lines):
         l = body_lines[i].rstrip()
         if not l.strip():
             i += 1; continue
-        # Sub-headings inside week (e.g., "Sunday Prep Guide:", "Daily Meal Plan:", "Weekly Win Journal", etc.)
         if l.endswith(':') and not l.startswith('|') and not l.startswith(' '):
             out.append(f'<h4 class="week-h">{esc(l[:-1])}</h4>')
-            i += 1
-            continue
+            i += 1; continue
         if l.startswith('|'):
             rows = []
             while i < len(body_lines) and body_lines[i].strip().startswith('|'):
@@ -317,14 +335,11 @@ def render_week_body(body_lines):
                         rows.append(cells)
                 i += 1
             if rows:
-                # First non-empty row is header
-                head = rows[0]
-                body = rows[1:]
+                head = rows[0]; body = rows[1:]
                 thead = '<tr>' + ''.join(f'<th>{smart_html(c)}</th>' for c in head) + '</tr>'
                 tbody = ''.join('<tr>' + ''.join(f'<td>{smart_html(c)}</td>' for c in r) + '</tr>' for r in body)
                 out.append(f'<table class="data-table compact"><thead>{thead}</thead><tbody>{tbody}</tbody></table>')
         else:
-            # Special highlighted line "Objective: ..."
             if l.startswith('Objective:'):
                 out.append(f'<p class="week-objective">{smart_html(l)}</p>')
             elif l.startswith('Swap It this week:') or l.startswith('Beyond Week'):
@@ -337,15 +352,17 @@ def render_week_body(body_lines):
 for w in mp['weeks']:
     body_html = render_week_body(w['body_lines'])
     parts.append(f'''<div class="page week-page">
-  <header class="week-header">
-    <h2 class="week-title">{esc(w['title'])}</h2>
-    <div class="week-rule"></div>
-  </header>
-  <div class="prose week-body" style="max-height: 6.2in; overflow: hidden;">{body_html}</div>
+  <div class="page-content">
+    <header class="week-header">
+      <h2 class="week-title">{esc(w['title'])}</h2>
+      <div class="week-rule"></div>
+    </header>
+    <div class="prose week-body">{body_html}</div>
+  </div>
 </div>''')
 
-# 8. Chapter 10 — Bonus Toolkit
-parts.append(chapter_cover('Chapter 10', 'Your Bonus Toolkit', 'Beyond the recipes — the tools that make the system stick', '', color_class='chapter-rose'))
+# 8. Bonus Toolkit
+parts.append(chapter_cover('Chapter 10', 'Your Bonus Toolkit', 'Beyond the recipes', '', color_class='cover-burgundy'))
 
 def render_bonus_body(body_lines):
     out = []
@@ -356,13 +373,10 @@ def render_bonus_body(body_lines):
             i += 1; continue
         if l.startswith('### '):
             out.append(f'<h3 class="bonus-h3">{esc(l[4:].strip())}</h3>')
-            i += 1
-            continue
-        # uppercase section labels (LIFESTYLE, FOOD PREFERENCES, etc.)
+            i += 1; continue
         if l == l.upper() and len(l) > 3 and re.match(r'^[A-Z &]+$', l):
             out.append(f'<h4 class="bonus-h4">{esc(l)}</h4>')
-            i += 1
-            continue
+            i += 1; continue
         if l.startswith('|'):
             rows = []
             while i < len(body_lines) and body_lines[i].strip().startswith('|'):
@@ -373,13 +387,11 @@ def render_bonus_body(body_lines):
                         rows.append(cells)
                 i += 1
             if rows:
-                head = rows[0]
-                body = rows[1:]
+                head = rows[0]; body = rows[1:]
                 thead = '<tr>' + ''.join(f'<th>{smart_html(c)}</th>' for c in head) + '</tr>'
                 tbody = ''.join('<tr>' + ''.join(f'<td>{smart_html(c)}</td>' for c in r) + '</tr>' for r in body)
                 out.append(f'<table class="data-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>')
         else:
-            # Score buckets, restaurant blocks
             if re.match(r'^\d+[–\-]\d+ points', l):
                 out.append(f'<p class="score-bucket">{smart_html(l)}</p>')
             elif l.endswith(':') and len(l) < 60 and not l.startswith('✅') and not l.startswith('❌'):
@@ -388,7 +400,6 @@ def render_bonus_body(body_lines):
                 cls = 'pos' if l.startswith('✅') else ('neg' if l.startswith('❌') else 'hack')
                 out.append(f'<p class="hint hint-{cls}">{smart_html(l)}</p>')
             elif re.match(r'^[A-Z][^.]*$', l) and len(l) < 30 and i+1 < len(body_lines) and body_lines[i+1].strip().startswith('✅'):
-                # restaurant name header
                 out.append(f'<h5 class="restaurant-name">{esc(l)}</h5>')
             else:
                 out.append(f'<p>{smart_html(l)}</p>')
@@ -398,55 +409,42 @@ def render_bonus_body(body_lines):
 for b in book['bonus']['bonuses']:
     title = b['title']
     body_html = render_bonus_body(b['body_lines'])
-    # Split by character length into pages with different thresholds
-    chunks = []
-    cur = ""
-    is_first_bonus_page = True
-    threshold = 1800 # Portrait middle ground
-    
-    # Split body_html into top-level elements
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
-    if not elems:
-        elems = [body_html]
+    if not elems: elems = [body_html]
+    chunks = []; cur = ''
     for el in elems:
-        if len(cur) + len(el) > threshold and cur:
+        if len(cur) + len(el) > 3000 and cur:
             chunks.append(cur); cur = el
-            is_first_bonus_page = False
-            threshold = 2400
         else:
             cur += el
     if cur: chunks.append(cur)
-    # First page has the bonus title
     parts.append(f'''<div class="page bonus-page">
-  <header class="bonus-header">
-    <p class="bonus-eyebrow">Bonus Toolkit</p>
-    <h2 class="bonus-h2">{esc(title)}</h2>
-    <div class="bonus-rule"></div>
-  </header>
-  <div class="prose bonus-body" style="max-height: 7.5in !important; overflow: hidden !important;">{chunks[0]}</div>
+  <div class="page-content">
+    <header class="bonus-header">
+      <p class="bonus-eyebrow">Bonus Toolkit</p>
+      <h2 class="bonus-h2">{esc(title)}</h2>
+      <div class="bonus-rule"></div>
+    </header>
+    <div class="prose bonus-body">{chunks[0]}</div>
+  </div>
 </div>''')
     for ch in chunks[1:]:
-        parts.append(f'<div class="page bonus-page-cont"><div class="prose bonus-body" style="max-height: 8.8in !important; overflow: hidden !important;">{ch}</div></div>')
+        parts.append(f'<div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body">{ch}</div></div></div>')
 
 # 9. Appendix A
 appA = book['appendix_a']
-parts.append(chapter_cover('Appendix A', appA['sub'], 'All 101 recipes — calories, protein, carbs, and fat per serving', '', color_class='chapter-cream'))
+parts.append(chapter_cover('Appendix A', appA['sub'], 'All 101 recipes', '', color_class='cover-ink'))
 
-# Build the table; first row is header
 rows = appA['rows']
-header = rows[0]
-body_rows = rows[1:]
-# Split into pages of ~30 rows each
-def render_app_table(header, rows, title=''):
+header = rows[0]; body_rows = rows[1:]
+
+def render_app_table(header, rows):
     thead = '<tr>' + ''.join(f'<th>{smart_html(c)}</th>' for c in header) + '</tr>'
     tbody = ''.join('<tr>' + ''.join(f'<td>{smart_html(c)}</td>' for c in r) + '</tr>' for r in rows)
-    title_html = f'<h3 class="app-h">{esc(title)}</h3>' if title else ''
-    return f'{title_html}<table class="data-table app-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>'
+    return f'<table class="data-table app-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table>'
 
-# Chunk into 32-row pages for Portrait
-chunk = 32
-chunks = [body_rows[i:i+chunk] for i in range(0, len(body_rows), chunk)]
-for k, c in enumerate(chunks):
+chunks_a = [body_rows[i:i+30] for i in range(0, len(body_rows), 30)]
+for k, c in enumerate(chunks_a):
     title_html = ''
     if k == 0:
         title_html = f'''<header class="chapter-head">
@@ -456,15 +454,13 @@ for k, c in enumerate(chunks):
 </header>
 <p class="prose"><em>{smart_html(appA['intro'])}</em></p>'''
     table_html = render_app_table(header, c)
-    parts.append(f'<div class="page appendix-page"><div class="prose" style="max-height: 5.5in !important; overflow: hidden !important;">{title_html}{table_html}</div></div>')
+    parts.append(f'<div class="page appendix-page"><div class="page-content">{title_html}{table_html}</div></div>')
 
 # 10. Appendix B
 appB = book['appendix_b']
-parts.append(chapter_cover('Appendix B', appB['sub'], 'Reference for everyday cooking', '', color_class='chapter-sage'))
+parts.append(chapter_cover('Appendix B', appB['sub'], 'Reference for everyday cooking', '', color_class='cover-olive'))
 
-# Foods table — split if needed
-foods_header = appB['foods'][0]
-foods_body = appB['foods'][1:]
+foods_header = appB['foods'][0]; foods_body = appB['foods'][1:]
 food_chunks = [foods_body[i:i+32] for i in range(0, len(foods_body), 32)]
 for k, c in enumerate(food_chunks):
     title_html = ''
@@ -475,12 +471,10 @@ for k, c in enumerate(food_chunks):
   <div class="chapter-rule"></div>
 </header>'''
     table_html = render_app_table(foods_header, c)
-    parts.append(f'<div class="page appendix-page">{title_html}{table_html}</div>')
+    parts.append(f'<div class="page appendix-page"><div class="page-content">{title_html}{table_html}</div></div>')
 
-# Conversion charts — all on one page
 def render_conv_table(label, rows):
-    head = rows[0]
-    body = rows[1:]
+    head = rows[0]; body = rows[1:]
     thead = '<tr>' + ''.join(f'<th>{smart_html(c)}</th>' for c in head) + '</tr>'
     tbody = ''.join('<tr>' + ''.join(f'<td>{smart_html(c)}</td>' for c in r) + '</tr>' for r in body)
     return f'<div class="conv-card"><h3 class="conv-h">{esc(label)}</h3><table class="data-table conv-table"><thead>{thead}</thead><tbody>{tbody}</tbody></table></div>'
@@ -489,15 +483,13 @@ vol_html = render_conv_table('Volume', appB['volume'])
 wt_html = render_conv_table('Weight', appB['weight'])
 oven_html = render_conv_table('Oven Temperature', appB['oven'])
 parts.append(f'''<div class="page appendix-page conv-page">
-  <header class="chapter-head">
-    <p class="chapter-eyebrow">Appendix B</p>
-    <h2 class="chapter-h1">Measurement Conversion Charts</h2>
-    <div class="chapter-rule"></div>
-  </header>
-  <div class="conv-grid">
-    {vol_html}
-    {wt_html}
-    {oven_html}
+  <div class="page-content">
+    <header class="chapter-head">
+      <p class="chapter-eyebrow">Appendix B</p>
+      <h2 class="chapter-h1">Measurement Conversion Charts</h2>
+      <div class="chapter-rule"></div>
+    </header>
+    <div class="conv-grid">{vol_html}{wt_html}{oven_html}</div>
   </div>
 </div>''')
 
@@ -505,287 +497,286 @@ parts.append(f'''<div class="page appendix-page conv-page">
 conc = book['conclusion']
 conc_paras = ''.join(f'<p>{smart_html(p)}</p>' for p in conc['paragraphs'])
 parts.append(f'''<div class="page conclusion-page">
-  <header class="chapter-head">
-    <p class="chapter-eyebrow">Conclusion</p>
-    <h1 class="chapter-h1">{esc(conc['subtitle'])}</h1>
-    <div class="chapter-rule"></div>
-  </header>
-  <div class="prose">{conc_paras}</div>
+  <div class="page-content">
+    <header class="chapter-head">
+      <p class="chapter-eyebrow">Conclusion</p>
+      <h1 class="chapter-h1">{esc(conc['subtitle'])}</h1>
+      <div class="chapter-rule"></div>
+    </header>
+    <div class="prose">{conc_paras}</div>
+  </div>
 </div>''')
 
 # 12. Review section
 review = book['review_section']
 rev_paras = ''.join(f'<p>{smart_html(p)}</p>' for p in review['paragraphs'])
 parts.append(f'''<div class="page review-page">
-  <header class="chapter-head">
-    <h2 class="chapter-h1">{esc(review['title'])}</h2>
-    <div class="chapter-rule"></div>
-  </header>
-  <div class="prose">{rev_paras}</div>
-  <div class="end-mark">— End —</div>
+  <div class="page-content">
+    <header class="chapter-head">
+      <h2 class="chapter-h1">{esc(review['title'])}</h2>
+      <div class="chapter-rule"></div>
+    </header>
+    <div class="prose">{rev_paras}</div>
+    <div class="end-mark">— End —</div>
+  </div>
 </div>''')
 
 body_html = '\n'.join(parts)
 
-# ----------- CSS + JS -----------
+# ----------- CSS -----------
 css = r'''
 :root{
-  --green:#2c5f3f;
-  --green-light:#7fa68a;
-  --green-soft:#e8f0e9;
-  --olive:#5b6b3e;
-  --sage:#a3b18a;
-  --cream:#f7f1e3;
-  --cream-2:#fdf9ee;
-  --beige:#efe6d2;
+  --primary:#fdc705;
+  --primary-dark:#c69c00;
+  --primary-light:#fde58c;
+  --primary-soft:#fff5ce;
+  --primary-bg:#fffaeb;
+  --ink:#1d1812;
+  --ink-soft:#3a3325;
+  --muted:#7a6c52;
+  --line:#e7dfc4;
+  --paper:#ffffff;
+  --paper-2:#ffffff;
+  --cream:#f7eecf;
+  --cream-2:#fcf6e0;
+  --beige:#efe6cc;
   --rose:#b85f5f;
-  --warm:#a06840;
-  --forest:#1f3d2c;
-  --ink:#1d2a22;
-  --ink-soft:#3a4a40;
-  --muted:#6e7a70;
-  --line:#d8d2c2;
-  --paper:#fffdf7;
-  --paper-2:#fdfaf2;
-  --gold:#a07c2e;
-  --shadow:0 0.5px 0 rgba(0,0,0,0.04), 0 6px 18px rgba(20,40,30,0.06);
+  --night:#1a1a1a;
+  --coffee:#3a2a1a;
+  --olive:#3d3a1a;
+  --rust:#5b3214;
+  --burgundy:#4a1c1c;
+  --ink-deep:#0e1010;
+  --shadow:0 0.5px 0 rgba(0,0,0,0.04), 0 6px 18px rgba(40,30,10,0.08);
 }
 
 *{box-sizing:border-box;}
 html,body{
   margin:0;padding:0;
-  background:#e7e3d4;
+  background:#e7e0c8;
   color:var(--ink);
-  font-family: 'Source Serif Pro', 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  font-family:'Source Serif Pro','Cormorant Garamond','Georgia','Times New Roman',serif;
   line-height:1.45;
   -webkit-print-color-adjust:exact;
   print-color-adjust:exact;
 }
 .book{
   display:flex;flex-direction:column;align-items:center;
-  padding:24px 0;gap:18px;
+  padding:24px 0 80px;gap:18px;
 }
 
-/* Page - Portrait 8.5x11 */
+/* PAGE — fixed 8.5x11 portrait, no inner hardcoded heights */
 .page{
   width:8.5in;
   height:11in;
   background:var(--paper);
   position:relative;
-  padding:0.8in 0.8in 1in 0.8in;
   overflow:hidden;
   page-break-after:always;
   break-after:page;
   box-shadow:var(--shadow);
 }
 .page.title-page,
-.page.chapter-cover{
-  padding:0;
+.page.chapter-cover{padding:0;}
+/* KDP 8.5×11 paperback margins (revised, more efficient — still KDP-compliant):
+   top/left/right 0.5in (above the 0.5in minimum required), bottom 0.75in to
+   reserve space for the page number + 5mm safety. Gutter on bound side is also
+   0.5in which is KDP-safe up to 300 pages. */
+.page{ --bottom-safe: 0.75in; --page-margin: 0.5in; }
+.page-content{
+  width:100%;
+  height:100%;
+  padding:var(--page-margin) var(--page-margin) var(--bottom-safe) var(--page-margin);
+  display:flex;flex-direction:column;
+  /* top center keeps left/right margins symmetric when auto-fit scales the content */
+  transform-origin:top center;
 }
+.page.title-page .page-content,
+.page.chapter-cover .page-content{padding:0;}
 
-/* Page number */
 .page::after{
-  content: attr(data-page);
+  content:attr(data-page);
   position:absolute;
-  bottom:0.35in;
-  left:50%;
-  transform:translateX(-50%);
+  bottom:0.35in;left:50%;transform:translateX(-50%);
   font-family:'Source Sans Pro','Inter','Helvetica Neue',sans-serif;
-  font-size:9pt;
-  color:var(--muted);
-  letter-spacing:0.18em;
+  font-size:9pt;color:var(--muted);letter-spacing:0.18em;
+  z-index:5;
 }
 .page.title-page::after,
 .page.chapter-cover::after,
-.page.legal-page::after{ content:none; }
+.page.legal-page::after{content:none;}
+
+/* Overflow flag (preview only) */
+.page[data-overflow="true"]::before{
+  content:'CONTENT TIGHT';
+  position:absolute;top:8px;right:8px;
+  background:#ffe3a0;color:#7a4f17;font-size:7pt;font-weight:700;
+  padding:2px 6px;border-radius:4px;letter-spacing:0.1em;
+  font-family:'Source Sans Pro',sans-serif;z-index:10;
+}
 
 /* Title page */
 .title-page{
-  background: linear-gradient(160deg, var(--green) 0%, var(--forest) 70%);
-  color:#f4ecd6;
-  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,#1a1a1a 0%,#0e1010 80%);
+  color:#fdc705;
 }
+.title-page .page-content{align-items:center;justify-content:center;}
 .title-page-inner{
   text-align:center;width:78%;
   padding:0.8in;
-  border:1px solid rgba(244,236,214,0.3);
-  background: rgba(0,0,0,0.05);
+  border:1px solid rgba(253,199,5,0.35);
+  background:rgba(255,255,255,0.02);
   border-radius:6px;
 }
 .tp-eyebrow{
   text-transform:uppercase;letter-spacing:0.4em;
-  font-size:11pt;color:#d8c896;font-weight:600;
+  font-size:11pt;color:var(--primary);font-weight:600;
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   margin:0 0 1em;
 }
-.tp-divider{
-  width:60px;height:2px;background:#d8c896;margin:0 auto 1.2em;
-}
+.tp-divider{width:60px;height:2px;background:var(--primary);margin:0 auto 1.2em;}
 .tp-title{
   font-family:'Cormorant Garamond','Playfair Display','Georgia',serif;
-  font-size:46pt;line-height:1.05;font-weight:700;
-  margin:0 0 0.6em;color:#f4ecd6;
-  letter-spacing:-0.01em;
+  font-size:42pt;line-height:1.05;font-weight:700;
+  margin:0 0 0.6em;color:#fff7d6;letter-spacing:-0.01em;
 }
-.tp-subtitle{
-  font-style:italic;font-size:15pt;line-height:1.45;
-  color:#e8dcb6;margin:0 0 2em;
-}
-.tp-icon-row{font-size:24pt;letter-spacing:0.5em;margin:1.5em 0 2em;}
+.tp-subtitle{font-style:italic;font-size:13pt;line-height:1.45;color:#f0e2a8;margin:0 0 2em;}
+.tp-icon-row{font-size:22pt;letter-spacing:0.5em;margin:1.5em 0 2em;}
 .tp-author{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
-  font-size:16pt;letter-spacing:0.2em;text-transform:uppercase;
-  color:#d8c896;margin:0;
+  font-size:14pt;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--primary);margin:0;
 }
 .tp-author strong{color:#fff;}
 
-/* Legal page */
-.legal-page{padding:1in 0.9in;}
-.legal-inner{font-size:9.5pt;line-height:1.55;color:var(--ink-soft);}
-.copyright-line{
-  font-family:'Source Sans Pro',sans-serif;text-align:center;
-  font-size:10pt;color:var(--muted);letter-spacing:0.05em;
-}
-.legal-rule{
-  border:none;border-top:1px solid var(--line);
-  margin:1.4em 0;width:80px;margin-left:auto;margin-right:auto;
-}
+/* Copyright page */
+.legal-page .page-content{padding:1in 0.95in;}
+.legal-inner{font-size:11.2pt;line-height:1.5;color:var(--ink);}
 .legal-h{
   text-align:center;font-family:'Source Sans Pro',sans-serif;
-  text-transform:uppercase;letter-spacing:0.3em;font-size:10pt;
-  color:var(--green);font-weight:700;margin:0 0 1.2em;
+  text-transform:uppercase;letter-spacing:0.3em;font-size:11pt;
+  color:var(--primary-dark);font-weight:700;margin:0 0 1.4em;
 }
-.legal-page p{margin:0 0 0.7em;text-align:justify;}
+.legal-page p{
+  margin:0 0 0.7em;
+  text-align:justify;
+  font-size:11.2pt;
+  line-height:1.5;
+}
 
 /* TOC */
-.toc-page,.toc-page-2{padding:0.8in 0.85in;}
+.toc-page .page-content,
+.toc-page-2 .page-content{padding:0.8in 0.85in;}
 .toc-header{margin-bottom:1.3em;text-align:center;}
 .toc-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.35em;
-  color:var(--green);font-size:9.5pt;margin:0 0 0.5em;font-weight:600;
+  color:var(--primary-dark);font-size:9.5pt;margin:0 0 0.5em;font-weight:600;
 }
 .toc-title{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:30pt;font-weight:700;margin:0;color:var(--ink);
 }
-.toc-rule{
-  width:64px;height:2px;background:var(--green);margin:0.7em auto 0;
-}
+.toc-rule{width:64px;height:2px;background:var(--primary);margin:0.7em auto 0;}
 .toc-list{display:flex;flex-direction:column;gap:0.18em;}
 .toc-list a{
   display:flex;align-items:baseline;gap:0.4em;
   text-decoration:none;color:var(--ink);
-  padding:0.18em 0;border-bottom:1px dotted transparent;
+  padding:0.18em 0;
 }
 .toc-list .toc-text{
   flex:1 1 auto;
-  background-image: linear-gradient(to right, var(--line) 50%, transparent 50%);
-  background-size: 6px 1px;
-  background-position: 0 calc(100% - 0.18em);
-  background-repeat: repeat-x;
+  background-image:linear-gradient(to right,var(--line) 50%,transparent 50%);
+  background-size:6px 1px;
+  background-position:0 calc(100% - 0.18em);
+  background-repeat:repeat-x;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
-.toc-list .toc-text-inner{
-  background:var(--paper);
-  padding-right:0.4em;
-}
+.toc-list .toc-text-inner{background:var(--paper);padding-right:0.4em;}
 .toc-list .toc-num{
   font-family:'Source Sans Pro',sans-serif;
   font-size:10pt;color:var(--muted);min-width:1.4em;text-align:right;
   background:var(--paper);padding-left:0.4em;
 }
 .toc-list .toc-h1{font-weight:700;font-size:12pt;margin-top:0.55em;}
-.toc-list .toc-h1 .toc-text-inner{color:var(--green);text-transform:uppercase;letter-spacing:0.08em;}
+.toc-list .toc-h1 .toc-text-inner{color:var(--primary-dark);text-transform:uppercase;letter-spacing:0.08em;}
 .toc-list .toc-h2{font-size:11pt;padding-left:0.5em;}
 .toc-list .toc-h2 .toc-text-inner{font-style:italic;}
 .toc-list .toc-h3{font-size:9.5pt;padding-left:1.1em;color:var(--ink-soft);}
 
-/* Chapter heads (regular) */
+/* Chapter heads */
 .chapter-head{margin:0 0 1.3em;}
 .chapter-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.35em;
-  color:var(--green);font-size:10pt;font-weight:600;margin:0 0 0.5em;
+  color:var(--primary-dark);font-size:10pt;font-weight:600;margin:0 0 0.5em;
 }
 .chapter-h1{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:36pt;font-weight:700;line-height:1.1;
+  font-size:26pt;font-weight:700;line-height:1.1;
   margin:0 0 0.5em;color:var(--ink);
 }
 .chapter-h2{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:24pt;font-style:italic;color:var(--muted);margin:0 0 0.4em;
+  font-size:14pt;font-style:italic;color:var(--muted);margin:0 0 0.4em;
 }
-.chapter-rule{width:64px;height:2px;background:var(--green);margin:0.4em 0 0;}
+.chapter-rule{width:64px;height:2px;background:var(--primary);margin:0.4em 0 0;}
 
-/* Chapter cover (full bleed) */
-.chapter-cover{
-  display:flex;align-items:center;justify-content:center;
-  color:#f4ecd6;
-}
+/* Chapter cover — solid #fdc705 with black text for high contrast */
+.chapter-cover{color:var(--ink);background:#fdc705;}
+.chapter-cover .page-content{align-items:center;justify-content:center;}
 .chapter-cover-inner{
-  text-align:center;padding:0.8in 1.2in;width:100%;
-  border-top:1px solid rgba(244,236,214,0.3);
-  border-bottom:1px solid rgba(244,236,214,0.3);
-  margin:0;
+  text-align:center;padding:1in;width:100%;
+  border-top:1px solid rgba(0,0,0,0.4);
+  border-bottom:1px solid rgba(0,0,0,0.4);
+  margin:0.8in 0.8in;
 }
 .chapter-cover-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.5em;
-  font-size:11pt;color:#d8c896;font-weight:600;margin:0 0 1em;
+  font-size:11pt;color:#1a1a1a;font-weight:700;margin:0 0 1em;
 }
 .chapter-cover-title{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:48pt;font-weight:700;line-height:1.05;
-  margin:0 0 0.5em;color:#f4ecd6;letter-spacing:-0.01em;
+  margin:0 0 0.5em;color:#0e0e0e;letter-spacing:-0.01em;
 }
-.chapter-cover-divider{width:80px;height:2px;background:#d8c896;margin:0.8em auto;}
+.chapter-cover-divider{width:80px;height:2px;background:#1a1a1a;margin:0.8em auto;}
 .chapter-cover-subtitle{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:14pt;font-style:italic;color:#e8dcb6;margin:0;
+  font-size:14pt;font-style:italic;color:#2a2418;margin:0;
 }
 .chapter-cover-count{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.4em;
-  margin:1.4em 0 0;font-size:10pt;color:#d8c896;
+  margin:1.4em 0 0;font-size:10pt;color:#1a1a1a;font-weight:700;
 }
-.chapter-cover.chapter-green{background:linear-gradient(160deg,#2c5f3f 0%,#1f3d2c 80%);}
-.chapter-cover.chapter-olive{background:linear-gradient(160deg,#5b6b3e 0%,#3b4a28 80%);}
-.chapter-cover.chapter-forest{background:linear-gradient(160deg,#2a4a3a 0%,#0e261a 80%);}
-.chapter-cover.chapter-sage{background:linear-gradient(160deg,#7d9166 0%,#4f6043 80%);}
-.chapter-cover.chapter-warm{background:linear-gradient(160deg,#7c4f31 0%,#3f2615 80%);}
-.chapter-cover.chapter-rose{background:linear-gradient(160deg,#8b3f3f 0%,#4a1c1c 80%);}
-.chapter-cover.chapter-cream{background:linear-gradient(160deg,#a07c2e 0%,#5a4416 80%);}
+/* All chapter cover variants share #fdc705 background; class names kept for compatibility */
+.chapter-cover.cover-night,
+.chapter-cover.cover-charcoal,
+.chapter-cover.cover-coffee,
+.chapter-cover.cover-olive,
+.chapter-cover.cover-rust,
+.chapter-cover.cover-burgundy,
+.chapter-cover.cover-ink{background:#fdc705;}
 
 /* Prose */
-.prose{
-  max-height: 6.2in; /* Global safety limit */
-  overflow: hidden;
-  padding-bottom: 0.6in;
-}
-.prose p{margin:0 0 0.6em;text-align:justify;font-size:12pt;line-height:1.55;overflow-wrap: break-word;}
-.prose p strong{color:var(--green);}
+.prose p{margin:0 0 0.6em;text-align:justify;font-size:11.2pt;line-height:1.5;}
+.prose p strong{color:var(--primary-dark);}
 .prose-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:15pt;color:var(--green);margin:1em 0 0.4em;font-weight:700;
+  font-size:15pt;color:var(--primary-dark);margin:1em 0 0.4em;font-weight:700;
 }
-.intro-page .prose, .bonus-page .prose{
-  max-height: 4.8in; /* Even smaller for pages with headers */
-}
-.intro-page .chapter-h1{font-size:24pt;}
-.intro-page-cont{padding-top:0.85in;}
 
 /* Chapter 1 */
-.ch1-page{padding:0.7in 0.7in 0.85in;}
 .page-frame{display:flex;flex-direction:column;gap:1em;}
 .prep-section{padding:0.5em 0;}
 .prep-h2{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:16pt;font-weight:700;color:var(--green);
+  font-size:16pt;font-weight:700;color:var(--primary-dark);
   margin:0 0 0.5em;border-bottom:1px solid var(--line);padding-bottom:0.3em;
 }
-.prep-section .prose p{font-size:10.5pt;line-height:1.5;margin-bottom:0.45em;}
+.prep-section .prose p{font-size:12pt;line-height:1.5;margin-bottom:0.45em;}
 
 /* Tables */
 .data-table{
@@ -794,8 +785,8 @@ html,body{
   margin:0.4em 0 0.8em;
 }
 .data-table th{
-  background:var(--green);color:#fff;text-align:left;
-  padding:6px 10px;font-weight:600;letter-spacing:0.04em;
+  background:var(--primary);color:var(--ink);text-align:left;
+  padding:6px 10px;font-weight:700;letter-spacing:0.04em;
   font-size:9pt;text-transform:uppercase;
 }
 .data-table td{
@@ -805,246 +796,219 @@ html,body{
 .data-table tbody tr:nth-child(even) td{background:var(--cream-2);}
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
 
-/* Recipe page - Portrait 2 per page */
-.recipe-page{
-  display: flex;
-  flex-direction: column;
-  gap: 0.4in;
-  padding: 0.8in 0.8in;
-  height: 11in;
+/* RECIPE PAGE — 2 columns side by side, same KDP margins as content pages */
+.recipe-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
+.recipe-page::before{
+  content:attr(data-chapter);
+  position:absolute;top:0.35in;right:var(--page-margin);
+  font-family:'Source Sans Pro',sans-serif;
+  font-size:8.5pt;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);
+  z-index:5;
 }
+.recipe-grid{
+  display:grid;
+  /* minmax(0, 1fr) prevents card content from making one column wider than the other */
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  /* 1fr row fills the entire available vertical space — cards stretch to full height */
+  grid-template-rows:1fr;
+  gap:0.18in;
+  flex:1 1 auto;min-height:0;
+  width:100%;
+}
+.recipe-page-single .recipe-grid{grid-template-columns:minmax(0,1fr);}
+.recipe-grid .recipe-card{height:100%;}
+.recipe-page-single .recipe-card{max-width:62%;margin:0 auto;}
 
 .recipe-card{
-  position: relative;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 4.6in; /* Two recipes fit in 11in with gaps */
-  overflow: hidden;
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:8px;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  position:relative;
+}
+.recipe-card::after{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--primary) 0%,var(--primary-dark) 100%);
+  z-index:2;
 }
 
-.recipe-card::before{
-  content:'';
-  position:absolute;left:0;top:0;width:100%;height:3px;
-  background: var(--green);
+/* Illustration banner */
+.recipe-illustration{
+  position:relative;height:1.8in;flex:0 0 auto;
+  border-bottom:1px solid var(--line);
+  background:var(--cream);
+}
+.recipe-illustration svg{display:block;width:100%;height:100%;}
+.recipe-num-badge{
+  position:absolute;top:8px;left:8px;
+  width:34px;height:34px;background:var(--ink);color:var(--primary);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:13pt;font-weight:700;
+  box-shadow:0 2px 6px rgba(0,0,0,0.25), inset 0 0 0 2px rgba(253,199,5,0.4);
+}
+.recipe-protein-badge{
+  position:absolute;top:8px;right:8px;
+  background:var(--primary);color:var(--ink);
+  font-family:'Source Sans Pro',sans-serif;
+  font-size:8pt;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:4px 8px;border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.18);
 }
 
 .recipe-header{
-  margin-top: 10px;
-  margin-bottom: 0.6rem;
+  padding:8px 10px 4px 12px;
+  border-bottom:1px solid var(--line);
 }
-
-.recipe-id{
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 8pt;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
-
 .recipe-title{
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
-  font-size: 18pt;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 0 0 0.2rem;
-  line-height: 1.1;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:14pt;font-weight:700;color:var(--ink);
+  margin:0 0 4px;line-height:1.1;
 }
-
-.recipe-meta{display:flex;flex-wrap:wrap;gap:4px;}
+.recipe-meta{display:flex;flex-wrap:wrap;gap:3px;}
 .badge{
-  font-family:'Source Sans Pro',sans-serif;
-  font-size:7pt;font-weight:600;
-  padding:2px 7px;border-radius:10px;
+  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
+  font-size:6.8pt;font-weight:600;
+  padding:2px 6px;border-radius:9px;
   border:1px solid var(--line);background:var(--cream);
-  color:var(--ink-soft);text-transform:uppercase;
+  color:var(--ink-soft);letter-spacing:0.02em;text-transform:uppercase;
+  white-space:nowrap;
 }
-
-.recipe-image {
-  width: 100%;
-  height: 2.2in;
-  object-fit: cover;
-  border-radius: 4px;
-  margin: 0.4rem 0;
-}
-
-.recipe-image-placeholder {
-  width: 100%;
-  height: 4in;
-  background: var(--cream-2);
-  border: 1px dashed var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10pt;
-  color: var(--muted);
-  margin: 0.4rem 0;
-}
+.badge-protein-src{background:var(--primary-soft);border-color:var(--primary);color:var(--ink);}
+.badge-yield{background:var(--cream);}
+.badge-prep{background:#fff0c2;border-color:var(--primary);color:#5a4106;}
+.badge-cook{background:var(--primary-light);border-color:var(--primary);color:#5a4106;}
 
 .recipe-body{
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  max-height: 4.8in;
-  overflow: hidden;
+  flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column;gap:6px;
+  padding:8px 10px 6px 12px;
 }
-
 .section-h{
-  font-family:'Source Sans Pro',sans-serif;
-  font-size:8pt;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--green);margin:0 0 4px;border-bottom:1px solid var(--green-light);
-  padding-bottom:2px;
+  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
+  font-size:8pt;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--primary-dark);margin:0 0 3px;
+  border-bottom:1px solid var(--primary);padding-bottom:2px;
 }
-
-.ingredients-list, .instructions-list{
-  margin:0;padding-left:1.1rem;font-size:10pt;line-height:1.25;
-  font-family:'Source Sans Pro',sans-serif;color:var(--ink-soft);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+.ingredients-list,.instructions-list{
+  margin:0;padding-left:1em;font-size:11pt;line-height:1.42;
+  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;color:var(--ink-soft);
 }
-
-/* Smart Shortening Classes */
-.recipe-card-medium .ingredients-list,
-.recipe-card-medium .instructions-list {
-  font-size: 9pt;
-  line-height: 1.15;
+.ingredients-list{list-style:none;padding-left:0;}
+.ingredients-list li{
+  position:relative;padding-left:0.8em;margin-bottom:5px;
 }
-.recipe-card-medium .recipe-image {
-  height: 3.2in;
+.ingredients-list li::before{
+  content:'';position:absolute;left:0;top:0.5em;width:4px;height:4px;
+  background:var(--primary);border-radius:50%;
 }
-
-.recipe-card-compact .ingredients-list,
-.recipe-card-compact .instructions-list {
-  font-size: 8.5pt;
-  line-height: 1.1;
+.instructions-list{padding-left:1.3em;}
+.instructions-list li{
+  margin-bottom:6px;padding-left:0.15em;
 }
-.recipe-card-compact .recipe-image {
-  height: 1.4in;
-}
-.recipe-card-compact .recipe-title {
-  font-size: 16pt;
-}
+.instructions-list li::marker{color:var(--primary-dark);font-weight:700;}
 
 .recipe-footer{
-  margin-top: auto;
-  display:flex;flex-direction:column;gap:4px;
+  padding:6px 10px 8px 12px;
+  display:flex;flex-direction:column;gap:5px;
+  border-top:1px solid var(--line);
+  background:var(--cream);
+  /* Fixed min-height keeps nutrition-box anchored at the top (alignment "a pari") */
+  min-height:1.30in;
+  justify-content:flex-start;
 }
-
+.recipe-footer .nutrition-box{flex:0 0 auto;}
+.recipe-footer .recipe-storage{margin-top:auto;}
 .nutrition-box{
-  background: var(--green);
-  color: white;
-  border-radius: 6px;
-  padding: 8px 12px;
+  background:var(--ink);color:var(--primary);
+  border-radius:5px;padding:5px 8px;
+  display:flex;flex-direction:column;gap:3px;
 }
-
-.nut-head {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4px;
+.nut-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
 }
-
-.nut-title {
-  font-size: 8pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.nut-title{font-weight:700;font-size:8pt;letter-spacing:0.18em;text-transform:uppercase;color:var(--primary);}
+.nut-extra{font-size:6.8pt;font-style:italic;color:#d8c466;}
+.nut-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.nut-stat{
+  display:flex;flex-direction:column;align-items:center;
+  background:rgba(253,199,5,0.1);border-radius:3px;padding:2px 0;
 }
-
-.nut-extra {
-  font-size: 7.5pt;
-  opacity: 0.8;
+.nut-val{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:12pt;font-weight:700;color:#fff;line-height:1;
 }
-
-.nut-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+.nut-lbl{
+  font-family:'Source Sans Pro',sans-serif;font-size:6.5pt;
+  color:var(--primary);letter-spacing:0.15em;text-transform:uppercase;margin-top:1px;
 }
-
-.nut-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nut-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14pt;
-  font-weight: 700;
-}
-
-.nut-lbl {
-  font-size: 6pt;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.7;
-}
-
 .recipe-storage{
-  font-size: 8.5pt;
-  line-height: 1.4;
-  color: var(--muted);
-  font-style: italic;
-  border-left: 2px solid var(--green-light);
-  padding-left: 8px;
+  display:flex;gap:5px;align-items:center;
+  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
+  font-size:7.5pt;color:var(--muted);font-style:italic;line-height:1.32;
+  border-left:2px solid var(--primary);padding:1px 0 1px 6px;
+  /* Same height across paired cards regardless of text wrap */
+  min-height:0.5in;height:0.5in;
 }
+.recipe-storage .storage-text{flex:1 1 auto;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 .storage-label{
-  font-style:normal;color:var(--green);font-weight:700;
-  text-transform:uppercase;letter-spacing:0.12em;font-size:7.5pt;
-  background:var(--green-soft);padding:1px 6px;border-radius:4px;flex:0 0 auto;
+  font-style:normal;color:var(--ink);font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;font-size:7pt;
+  background:var(--primary);padding:1px 5px;border-radius:3px;flex:0 0 auto;
 }
 
 /* Meal plan */
-.mealplan-intro,.week-page{padding:0.7in 0.75in 0.85in;}
+.mealplan-intro .page-content,
+.week-page .page-content{padding:0.7in 0.75in 0.85in;}
 .mealplan-intro .chapter-h1{font-size:22pt;}
 .checklist{padding-left:1.2em;font-family:'Source Sans Pro',sans-serif;font-size:10pt;}
 .checklist li{margin-bottom:5px;}
 .week-header{margin-bottom:0.6em;}
 .week-title{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:24pt;color:var(--green);margin:0;font-weight:700;
+  font-size:24pt;color:var(--primary-dark);margin:0;font-weight:700;
 }
-.week-rule{width:80px;height:2px;background:var(--green);margin-top:0.4em;}
+.week-rule{width:80px;height:2px;background:var(--primary);margin-top:0.4em;}
 .week-body p{font-size:10pt;line-height:1.45;}
 .week-h{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   text-transform:uppercase;letter-spacing:0.18em;font-size:9.5pt;
-  color:var(--green);font-weight:700;margin:0.7em 0 0.3em;
-  border-bottom:1px solid var(--green-light);padding-bottom:3px;
+  color:var(--primary-dark);font-weight:700;margin:0.7em 0 0.3em;
+  border-bottom:1px solid var(--primary);padding-bottom:3px;
 }
 .week-objective{
-  background:var(--green-soft);border-left:3px solid var(--green);
+  background:var(--primary-soft);border-left:3px solid var(--primary);
   padding:6px 10px;font-style:italic;font-size:9.5pt;margin:0.4em 0 0.6em;
-  font-family:'Source Sans Pro',sans-serif;color:var(--ink-soft);
+  font-family:'Source Sans Pro',sans-serif;color:var(--ink);
 }
 .week-callout{
-  background:var(--cream);border-left:3px solid var(--gold);
+  background:var(--cream);border-left:3px solid var(--primary-dark);
   padding:6px 10px;font-style:italic;font-size:9.5pt;margin:0.4em 0;
   font-family:'Source Sans Pro',sans-serif;color:var(--ink-soft);
 }
 
 /* Bonus */
-.bonus-page,.bonus-page-cont{padding:0.7in 0.75in 0.85in;}
+.bonus-page .page-content,.bonus-page-cont .page-content{padding:0.7in 0.75in 0.85in;}
 .bonus-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.35em;
-  color:var(--green);font-size:9.5pt;font-weight:600;margin:0 0 0.5em;
+  color:var(--primary-dark);font-size:9.5pt;font-weight:600;margin:0 0 0.5em;
 }
 .bonus-h2{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:22pt;color:var(--ink);font-weight:700;margin:0;
 }
-.bonus-rule{width:80px;height:2px;background:var(--green);margin:0.4em 0 1em;}
+.bonus-rule{width:80px;height:2px;background:var(--primary);margin:0.4em 0 1em;}
 .bonus-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:14pt;color:var(--green);margin:0.8em 0 0.3em;font-weight:700;
+  font-size:14pt;color:var(--primary-dark);margin:0.8em 0 0.3em;font-weight:700;
 }
 .bonus-h4{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   text-transform:uppercase;letter-spacing:0.25em;font-size:9.5pt;
-  color:var(--green);margin:0.9em 0 0.3em;font-weight:700;
+  color:var(--primary-dark);margin:0.9em 0 0.3em;font-weight:700;
 }
 .bonus-q{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
@@ -1052,7 +1016,7 @@ html,body{
 }
 .bonus-body p{font-size:9.8pt;line-height:1.45;margin-bottom:0.4em;}
 .score-bucket{
-  background:var(--green);color:#fff;
+  background:var(--primary);color:var(--ink);
   font-family:'Source Sans Pro',sans-serif;font-weight:700;
   letter-spacing:0.18em;text-transform:uppercase;
   padding:6px 10px;border-radius:4px;font-size:10pt;
@@ -1062,111 +1026,184 @@ html,body{
   font-family:'Source Sans Pro',sans-serif;font-size:9.5pt;
   border-radius:4px;padding:5px 10px;margin:3px 0 !important;
 }
-.hint-pos{background:#e8f0e9;border-left:3px solid var(--green);color:var(--ink);}
+.hint-pos{background:var(--primary-soft);border-left:3px solid var(--primary);color:var(--ink);}
 .hint-neg{background:#fbe8e8;border-left:3px solid var(--rose);color:#5a1f1f;}
-.hint-hack{background:#fdeed3;border-left:3px solid var(--gold);color:#5a3e0c;font-style:italic;}
+.hint-hack{background:var(--primary-light);border-left:3px solid var(--primary-dark);color:#4a3406;font-style:italic;}
 .restaurant-name{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:13pt;font-weight:700;color:var(--green);
+  font-size:13pt;font-weight:700;color:var(--primary-dark);
   margin:0.7em 0 0.2em;border-bottom:1px solid var(--line);padding-bottom:2px;
 }
 
 /* Appendix */
-.appendix-page{padding:0.7in 0.75in 0.85in;}
+.appendix-page .page-content{padding:0.7in 0.75in 0.85in;}
 .app-table th, .app-table td{font-size:8.5pt;padding:4px 8px;}
-.app-h{
-  font-family:'Cormorant Garamond','Georgia',serif;
-  color:var(--green);font-size:14pt;margin:0.3em 0;
-}
-.conv-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:0.3in;
-}
-.conv-card{
-  background:var(--cream-2);border:1px solid var(--line);
-  border-radius:6px;padding:0.18in;
-}
+.conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;}
+.conv-card{background:var(--cream-2);border:1px solid var(--line);border-radius:6px;padding:0.18in;}
 .conv-card:first-child{grid-column:1 / 3;}
 .conv-h{
   font-family:'Cormorant Garamond','Georgia',serif;
-  color:var(--green);font-size:14pt;margin:0 0 0.3em;font-weight:700;
+  color:var(--primary-dark);font-size:14pt;margin:0 0 0.3em;font-weight:700;
 }
 .conv-table th{font-size:8.5pt;}
 .conv-table td{font-size:9.5pt;}
 
-/* Conclusion */
-.conclusion-page{padding:0.85in 0.85in;}
+/* Conclusion / review */
+.conclusion-page .page-content{padding:0.85in 0.85in;}
 .conclusion-page .prose p{font-size:11.5pt;line-height:1.55;}
-.review-page{padding:0.85in 0.85in;text-align:center;}
+.review-page .page-content{padding:0.85in 0.85in;text-align:center;}
 .review-page .prose p{font-size:11pt;line-height:1.55;text-align:left;}
 .end-mark{
   margin-top:1.5em;text-align:center;letter-spacing:0.4em;
-  color:var(--green);font-family:'Source Sans Pro',sans-serif;
+  color:var(--primary-dark);font-family:'Source Sans Pro',sans-serif;
   font-size:10pt;font-weight:600;
 }
 
-/* Print Landscape */
-@page{ size:11in 8.5in; margin:0; }
+/* Toolbar */
+.toolbar{
+  position:fixed;top:14px;right:14px;z-index:1000;
+  display:flex;gap:8px;
+  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
+}
+.toolbar button{
+  border:1px solid var(--line);
+  background:var(--paper);
+  color:var(--ink);
+  padding:8px 14px;
+  border-radius:6px;
+  font-size:10pt;font-weight:600;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:transform 0.15s, background 0.15s;
+}
+.toolbar button:hover{transform:translateY(-1px);}
+.toolbar button.primary{background:var(--primary);color:var(--ink);border-color:var(--primary-dark);}
+.toolbar .status{
+  align-self:center;
+  font-size:9pt;color:var(--muted);
+  background:var(--paper);
+  padding:6px 10px;border-radius:6px;
+  border:1px solid var(--line);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* PRINT — explicit portrait, no toolbar, no overflow indicator */
+@page{size:8.5in 11in portrait;margin:0;}
 @media print{
   html,body{background:#fff;}
   .book{padding:0;gap:0;}
-  .page{box-shadow:none;margin:0;width:11in;height:8.5in;}
-  .page::after{content: attr(data-page);}
+  .page{box-shadow:none;margin:0;}
+  .toolbar{display:none !important;}
+  .page[data-overflow]::before{display:none !important;}
 }
 '''
 
+# ----------- JS: TOC + auto-fit AI + PDF button -----------
 js = r'''
 (function(){
-  function build(){
-    var pages = document.querySelectorAll('.page');
-    var idx = 0;
-    pages.forEach(function(p){
-      idx += 1;
-      p.setAttribute('data-page', idx);
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.from((r||document).querySelectorAll(s));}
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c];});
+  }
+  function ensureId(el){
+    if(!el.id){ el.id = 'p-' + Math.random().toString(36).slice(2,9); }
+    return el.id;
+  }
+
+  // Live overflow guard: shrink content via transform: scale() — works with pt units
+  // (font-size % does not cascade to pt-sized children, so we use transform).
+  // The page number footer sits at bottom: 0.35in. We reserve a SAFE-ZONE at the
+  // bottom of every page (>= 5mm above the page number) where content must not enter.
+  var DPI = 96; // CSS px per inch
+  var SAFE_ZONE_IN = 0.75; // reserve 0.75in at page bottom (page number area + ≥5mm gap)
+  function fitOnePage(page){
+    var content = page.querySelector('.page-content');
+    if(!content) return;
+    // Reset previous scale
+    content.style.transform = '';
+    /* top center keeps left/right margins symmetric when content is scaled down */
+    content.style.transformOrigin = 'top center';
+    page.removeAttribute('data-overflow');
+    // Measure
+    var pageH = page.clientHeight;
+    var safeH = pageH - SAFE_ZONE_IN * DPI;
+    var natural = content.scrollHeight;
+    if(natural <= safeH + 1) return;
+    // Calculate scale to fit within safe area
+    var scale = safeH / natural;
+    var floor = 0.7;
+    if(scale < floor){
+      page.setAttribute('data-overflow', 'true');
+      scale = floor;
+    }
+    content.style.transform = 'scale(' + scale.toFixed(4) + ')';
+  }
+  // Per-card auto-fit: when a recipe-body's ingredients+instructions exceed
+  // the available flex space, scale the body so steps don't disappear behind
+  // the nutrition footer. Uses transform: scale() with top-center origin so
+  // the scaled content stays horizontally centered in the card.
+  function fitOneCard(card){
+    var body = card.querySelector('.recipe-body');
+    if(!body) return;
+    body.style.transform = '';
+    body.style.transformOrigin = 'top center';
+    var natural = body.scrollHeight;
+    var avail = body.clientHeight;
+    if(natural <= avail + 1) return;
+    var scale = avail / natural;
+    var floor = 0.62;
+    if(scale < floor){ scale = floor; }
+    body.style.transform = 'scale(' + scale.toFixed(4) + ')';
+  }
+  function fitAllPages(){
+    $$('.page').forEach(fitOnePage);
+    $$('.recipe-card').forEach(fitOneCard);
+  }
+
+  // Page numbering: front matter (title, copyright, TOC — anything with
+  // data-no-toc) is unnumbered; counting starts at the Introduction.
+  function numberPages(){
+    var n = 0;
+    $$('.page').forEach(function(p){
+      if(p.hasAttribute('data-no-toc')){
+        p.removeAttribute('data-page');
+      } else {
+        n += 1;
+        p.setAttribute('data-page', n);
+      }
     });
+  }
+
+  function buildTOC(){
+    var pages = $$('.page');
     var entries = [];
     pages.forEach(function(p){
       if(p.hasAttribute('data-no-toc')) return;
       var pageNum = p.getAttribute('data-page');
-      // Choose the most representative heading on the page
-      // priority: chapter-cover-title > chapter-h1 > recipe-title (skipped) > h2
       var heading = p.querySelector('.chapter-cover-title');
       if(heading){
         var ey = p.querySelector('.chapter-cover-eyebrow');
-        var sub = p.querySelector('.chapter-cover-subtitle');
-        var label = (ey ? ey.textContent.trim() + ' — ' : '') + heading.textContent.trim();
-        entries.push({level:1, text: label, page: pageNum, id: ensureId(p)});
-        if(sub){ /* skip subtitle in TOC for clarity */ }
+        entries.push({level:1, text:(ey?ey.textContent.trim()+' — ':'')+heading.textContent.trim(), page:pageNum, id:ensureId(p)});
         return;
       }
       var h1 = p.querySelector('.chapter-h1');
       if(h1){
         var ey2 = p.querySelector('.chapter-eyebrow');
-        var label2 = (ey2 ? ey2.textContent.trim() + ' — ' : '') + h1.textContent.trim();
-        entries.push({level:1, text: label2, page: pageNum, id: ensureId(p)});
+        entries.push({level:1, text:(ey2?ey2.textContent.trim()+' — ':'')+h1.textContent.trim(), page:pageNum, id:ensureId(p)});
         return;
       }
-      // Week page
       var wt = p.querySelector('.week-title');
-      if(wt){
-        entries.push({level:2, text: wt.textContent.trim(), page: pageNum, id: ensureId(p)});
-        return;
-      }
-      // Bonus page
+      if(wt){ entries.push({level:2, text:wt.textContent.trim(), page:pageNum, id:ensureId(p)}); return; }
       var bh = p.querySelector('.bonus-h2');
-      if(bh){
-        entries.push({level:2, text: bh.textContent.trim(), page: pageNum, id: ensureId(p)});
-        return;
-      }
+      if(bh){ entries.push({level:2, text:bh.textContent.trim(), page:pageNum, id:ensureId(p)}); return; }
     });
-    // Render TOC
-    var tocA = document.getElementById('toc-nav');
-    var tocB = document.getElementById('toc-nav-2');
+    var tocA = $('#toc-nav'); var tocB = $('#toc-nav-2');
     if(!tocA) return;
-    tocA.innerHTML = ''; if(tocB) tocB.innerHTML = '';
-    var firstHalf, secondHalf;
-    var split = Math.ceil(entries.length / 2);
-    firstHalf = entries.slice(0, split);
-    secondHalf = entries.slice(split);
+    tocA.innerHTML=''; if(tocB) tocB.innerHTML='';
+    var split = Math.ceil(entries.length/2);
+    var firstHalf = entries.slice(0, split);
+    var secondHalf = entries.slice(split);
     function pushTo(target, list){
       list.forEach(function(e){
         var a = document.createElement('a');
@@ -1178,28 +1215,78 @@ js = r'''
     }
     pushTo(tocA, firstHalf);
     if(tocB) pushTo(tocB, secondHalf);
-    // Hide second TOC page if empty
     if(tocB && secondHalf.length === 0){
       var p2 = tocB.closest('.page');
       if(p2) p2.style.display = 'none';
     }
   }
-  function ensureId(el){
-    if(!el.id){ el.id = 'p-' + Math.random().toString(36).slice(2,9); }
-    return el.id;
+
+  function makeToolbar(){
+    var bar = document.createElement('div');
+    bar.className = 'toolbar';
+    bar.innerHTML = ''
+      + '<span class="status" id="fitStatus">Checking layout…</span>'
+      + '<button id="btnFit" title="Re-run live overflow check">↻ Re-check fit</button>'
+      + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 × 11 in portrait)">📄 Convert to PDF</button>';
+    document.body.appendChild(bar);
+    $('#btnPDF').addEventListener('click', function(){
+      fitAllPages();
+      window.print();
+    });
+    $('#btnFit').addEventListener('click', function(){
+      $('#fitStatus').textContent = 'Re-fitting…';
+      requestAnimationFrame(function(){ fitAllPages(); updateStatus(); });
+    });
   }
-  function escapeHtml(s){
-    return String(s).replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c];});
+
+  function updateStatus(){
+    var s = $('#fitStatus');
+    if(!s) return;
+    var total = $$('.page').length;
+    var overflowed = $$('.page[data-overflow="true"]').length;
+    if(overflowed === 0){
+      s.textContent = '✓ All ' + total + ' pages fit';
+      s.style.color = '#1d1812';
+    } else {
+      s.textContent = '⚠ ' + overflowed + '/' + total + ' tight pages';
+      s.style.color = '#c69c00';
+    }
   }
+
+  function debounce(fn, ms){
+    var t;
+    return function(){
+      clearTimeout(t);
+      var args = arguments;
+      t = setTimeout(function(){ fn.apply(null, args); }, ms);
+    };
+  }
+
+  function init(){
+    numberPages();
+    fitAllPages();
+    buildTOC();
+    numberPages();
+    makeToolbar();
+    updateStatus();
+
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(function(){ fitAllPages(); updateStatus(); });
+    }
+    window.addEventListener('resize', debounce(function(){ fitAllPages(); updateStatus(); }, 200));
+    window.addEventListener('beforeprint', function(){ fitAllPages(); });
+    var mo = new MutationObserver(debounce(function(){ fitAllPages(); updateStatus(); }, 250));
+    mo.observe(document.body, {childList:true, subtree:true, characterData:true});
+  }
+
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', build);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    build();
+    init();
   }
 })();
 '''
 
-# Compose final HTML
 html_out = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1216,19 +1303,8 @@ html_out = f'''<!DOCTYPE html>
 </body>
 </html>'''
 
-out1 = Path('../High_Protein_Meal_Prep_Cookbook.html')
-out1.write_text(html_out, encoding='utf-8')
-print(f'SAVED TO WORKSPACE: {out1.absolute()}')
-
-# Also save to original Claude folder to be sure
-out2 = Path('/Users/michael/Desktop/Self Publishing/Libri in HTML - Claude/High_Protein_Meal_Prep_Cookbook/High_Protein_Meal_Prep_Cookbook.html')
-try:
-    out2.write_text(html_out, encoding='utf-8')
-    print(f'SAVED TO CLAUDE FOLDER: {out2.absolute()}')
-except Exception as e:
-    print(f'COULD NOT SAVE TO CLAUDE FOLDER: {e}')
-
-# Quick sanity counts
-import re as _re
-print('Page divs:', html_out.count('class="page'))
-print('Recipe cards:', html_out.count('class="recipe-card'))
+out = Path('/sessions/charming-exciting-noether/mnt/outputs/High_Protein_Meal_Prep_Cookbook.html')
+out.write_text(html_out, encoding='utf-8')
+print('Wrote', out, 'size:', len(html_out), 'bytes')
+print('Pages:', html_out.count('class="page'))
+print('Recipe cards:', html_out.count('class="recipe-card"'))
