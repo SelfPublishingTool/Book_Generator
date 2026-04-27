@@ -10,7 +10,11 @@
 import json, html, re
 from pathlib import Path
 
-book = json.loads(Path('/sessions/charming-exciting-noether/mnt/outputs/work/book.json').read_text(encoding='utf-8'))
+# Use absolute paths relative to the script's directory
+BASE_DIR = Path(__file__).resolve().parent
+ROOT_DIR = BASE_DIR.parent
+
+book = json.loads((BASE_DIR / 'book.json').read_text(encoding='utf-8'))
 
 def esc(s):
     return html.escape(s, quote=True) if s else ''
@@ -178,7 +182,6 @@ parts.append(f'''<div class="page legal-page" data-no-toc="true">
   </div>
 </div>''')
 
-# 3. TOC pages
 parts.append('''<div class="page toc-page" data-no-toc="true">
   <div class="page-content">
     <header class="toc-header">
@@ -187,11 +190,6 @@ parts.append('''<div class="page toc-page" data-no-toc="true">
       <div class="toc-rule"></div>
     </header>
     <nav id="toc-nav" class="toc-list"></nav>
-  </div>
-</div>
-<div class="page toc-page-2" data-no-toc="true">
-  <div class="page-content">
-    <nav id="toc-nav-2" class="toc-list"></nav>
   </div>
 </div>''')
 
@@ -206,9 +204,8 @@ def _is_label(p):
 for i, p in enumerate(intro['paragraphs']):
     add = f'<p>{smart_html(p)}</p>'
     next_is_label = (i + 1 < len(intro['paragraphs']) and _is_label(intro['paragraphs'][i+1]))
-    # Force break BEFORE "How to use this book:" so it starts on a new page
-    is_how_to = p.strip().startswith('How to use this book')
-    if (is_how_to or (len(buf) + len(add) > 3000 and (next_is_label or _is_label(p)))) and buf:
+    # Split around 3200 characters to keep pages balanced
+    if (len(buf) > 3200 and (next_is_label or _is_label(p))) and buf:
         intro_pages.append(buf); buf = add
     else:
         buf += add
@@ -266,7 +263,7 @@ for sec in ch1['sections']:
     body_html = render_ch1_body_lines(sec['body'])
     ch1_blocks.append(f'<section class="prep-section"><h2 class="prep-h2">{esc(sec["heading"])}</h2><div class="prose">{body_html}</div></section>')
 
-ch1_pages = [[0], [1], [2, 3, 4], [5], [6]]
+ch1_pages = [[0], [1], [2, 3], [4, 5]]
 for plist in ch1_pages:
     content = ''.join(ch1_blocks[i] for i in plist)
     parts.append(f'<div class="page ch1-page"><div class="page-content"><div class="page-frame">{content}</div></div></div>')
@@ -394,11 +391,21 @@ def render_bonus_body(body_lines):
         else:
             if re.match(r'^\d+[–\-]\d+ points', l):
                 out.append(f'<p class="score-bucket">{smart_html(l)}</p>')
-            elif l.endswith(':') and len(l) < 60 and not l.startswith('✅') and not l.startswith('❌'):
+            elif l.endswith(':') and len(l) < 60 and not any(l.startswith(x) for x in ['✅','❌','Session','⏱️']):
                 out.append(f'<h4 class="bonus-q">{esc(l[:-1])}</h4>')
-            elif l.startswith('✅') or l.startswith('❌') or l.startswith('Protein hack'):
-                cls = 'pos' if l.startswith('✅') else ('neg' if l.startswith('❌') else 'hack')
-                out.append(f'<p class="hint hint-{cls}">{smart_html(l)}</p>')
+            elif any(l.startswith(x) for x in ['✅','❌','Protein hack','Pro Tip','Session','Session A','Session B','BEGINNER','INTERMEDIATE','ADVANCED']):
+                cls = 'hack'
+                if l.startswith('✅'): cls = 'pos'
+                elif l.startswith('❌'): cls = 'neg'
+                elif 'Session' in l: cls = 'session'
+                elif any(x in l for x in ['BEGINNER','INTERMEDIATE','ADVANCED']): cls = 'level'
+                
+                # Add icons for workout
+                display_l = l
+                if 'Session' in l and not l.startswith('⏱️'): display_l = '⏱️ ' + l
+                elif any(x in l for x in ['BEGINNER','INTERMEDIATE','ADVANCED']) and not l.startswith('💪'): display_l = '💪 ' + l
+                
+                out.append(f'<p class="hint hint-{cls}">{smart_html(display_l)}</p>')
             elif re.match(r'^[A-Z][^.]*$', l) and len(l) < 30 and i+1 < len(body_lines) and body_lines[i+1].strip().startswith('✅'):
                 out.append(f'<h5 class="restaurant-name">{esc(l)}</h5>')
             else:
@@ -413,7 +420,7 @@ for b in book['bonus']['bonuses']:
     if not elems: elems = [body_html]
     chunks = []; cur = ''
     for el in elems:
-        if len(cur) + len(el) > 3000 and cur:
+        if len(cur) + len(el) > 1800 and cur:
             chunks.append(cur); cur = el
         else:
             cur += el
@@ -569,12 +576,15 @@ html,body{
 .page{
   width:8.5in;
   height:11in;
+  min-height:11in;
+  max-height:11in;
   background:var(--paper);
   position:relative;
   overflow:hidden;
   page-break-after:always;
   break-after:page;
   box-shadow:var(--shadow);
+  display: block;
 }
 .page.title-page,
 .page.chapter-cover{padding:0;}
@@ -590,8 +600,6 @@ html,body{
   display:flex;flex-direction:column;
   /* top center keeps left/right margins symmetric when auto-fit scales the content */
   transform-origin:top center;
-  padding-bottom: 10pt !important;
-  margin-top: 10pt !important;
 }
 .page.title-page .page-content,
 .page.chapter-cover .page-content{padding:0;}
@@ -652,7 +660,6 @@ html,body{
 .tp-author strong{color:#fff;}
 
 /* Copyright page */
-.legal-page .page-content{padding:1in 0.95in;}
 .legal-inner{font-size:11.2pt;line-height:1.5;color:var(--ink);}
 .legal-h{
   text-align:center;font-family:'Source Sans Pro',sans-serif;
@@ -665,26 +672,28 @@ html,body{
   font-size:11.2pt;
   line-height:1.5;
 }
-
-/* TOC */
-.toc-page .page-content,
-.toc-page-2 .page-content{padding:0.8in 0.85in;}
-.toc-header{margin-bottom:1.3em;text-align:center;}
+.toc-header{margin-bottom:0.7em;text-align:center;}
 .toc-eyebrow{
-  font-family:'Source Sans Pro',sans-serif;
-  text-transform:uppercase;letter-spacing:0.35em;
-  color:var(--primary-dark);font-size:9.5pt;margin:0 0 0.5em;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.12em;font-size:8pt;
+  color:var(--primary-dark);margin-bottom:0.2em;font-weight:700;
 }
 .toc-title{
-  font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:30pt;font-weight:700;margin:0;color:var(--ink);
+  font-family:'Cormorant Garamond',serif;font-size:20pt;margin:0;
+  color:var(--ink);font-weight:700;
 }
-.toc-rule{width:64px;height:2px;background:var(--primary);margin:0.7em auto 0;}
-.toc-list{display:flex;flex-direction:column;gap:0.18em;}
+.toc-rule{width:40px;height:2px;background:var(--primary);margin:0.3em auto 0;}
+.toc-list{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  column-gap:0.3in !important;
+  row-gap:2px !important;
+  margin-top:1em;
+}
 .toc-list a{
-  display:flex;align-items:baseline;gap:0.4em;
+  display:flex;align-items:baseline;gap:0.3em;
   text-decoration:none;color:var(--ink);
-  padding:0.18em 0;
+  min-width:0;
+  padding:0.12em 0;
 }
 .toc-list .toc-text{
   flex:1 1 auto;
@@ -692,19 +701,20 @@ html,body{
   background-size:6px 1px;
   background-position:0 calc(100% - 0.18em);
   background-repeat:repeat-x;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  white-space:normal !important; /* Fix: allow wrap */
+  overflow:hidden;
 }
 .toc-list .toc-text-inner{background:var(--paper);padding-right:0.4em;}
 .toc-list .toc-num{
   font-family:'Source Sans Pro',sans-serif;
-  font-size:10pt;color:var(--muted);min-width:1.4em;text-align:right;
-  background:var(--paper);padding-left:0.4em;
+  font-size:9pt;color:var(--muted);min-width:1.2em;text-align:right;
+  background:var(--paper);padding-left:0.3em;
 }
-.toc-list .toc-h1{font-weight:700;font-size:12pt;margin-top:0.55em;}
-.toc-list .toc-h1 .toc-text-inner{color:var(--primary-dark);text-transform:uppercase;letter-spacing:0.08em;}
-.toc-list .toc-h2{font-size:11pt;padding-left:0.5em;}
+.toc-list .toc-h1{font-weight:700;font-size:9pt;margin-top:0.35em;}
+.toc-list .toc-h1 .toc-text-inner{color:var(--primary-dark);text-transform:uppercase;letter-spacing:0.02em;}
+.toc-list .toc-h2{font-size:8.5pt;padding-left:0.1em;}
 .toc-list .toc-h2 .toc-text-inner{font-style:italic;}
-.toc-list .toc-h3{font-size:9.5pt;padding-left:1.1em;color:var(--ink-soft);}
+.toc-list .toc-h3{font-size:7.5pt;padding-left:0.3em;color:var(--ink-soft);opacity:0.9;}
 
 /* Chapter heads */
 .chapter-head{margin:0 0 1.3em;}
@@ -992,7 +1002,7 @@ html,body{
 }
 
 /* Bonus */
-.bonus-page .page-content,.bonus-page-cont .page-content{padding:0.7in 0.75in 0.85in;}
+.bonus-header{margin:0 0 1.2em;padding:0;}
 .bonus-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.35em;
@@ -1000,9 +1010,9 @@ html,body{
 }
 .bonus-h2{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:22pt;color:var(--ink);font-weight:700;margin:0;
+  font-size:22pt;color:var(--ink);font-weight:700;margin:0;line-height:1.1;
 }
-.bonus-rule{width:80px;height:2px;background:var(--primary);margin:0.4em 0 1em;}
+.bonus-rule{width:80px;height:2px;background:var(--primary);margin:0.4em 0 0;}
 .bonus-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:14pt;color:var(--primary-dark);margin:0.8em 0 0.3em;font-weight:700;
@@ -1016,6 +1026,8 @@ html,body{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   font-size:10pt;font-weight:600;color:var(--ink);margin:0.5em 0 0.2em;
 }
+.bonus-body{margin-top:1em;}
+.bonus-page-cont .bonus-body{margin-top:0;}
 .bonus-body p{font-size:9.8pt;line-height:1.45;margin-bottom:0.4em;}
 .score-bucket{
   background:var(--primary);color:var(--ink);
@@ -1031,6 +1043,8 @@ html,body{
 .hint-pos{background:var(--primary-soft);border-left:3px solid var(--primary);color:var(--ink);}
 .hint-neg{background:#fbe8e8;border-left:3px solid var(--rose);color:#5a1f1f;}
 .hint-hack{background:var(--primary-light);border-left:3px solid var(--primary-dark);color:#4a3406;font-style:italic;}
+.hint-session{background:#e3f2fd;border-left:3px solid #2196f3;font-weight:700;margin-top:0.8em !important;}
+.hint-level{background:#f3e5f5;border-left:3px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:1.2em !important;}
 .restaurant-name{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:13pt;font-weight:700;color:var(--primary-dark);
@@ -1090,11 +1104,27 @@ html,body{
 }
 
 /* PRINT — explicit portrait, no toolbar, no overflow indicator */
-@page{size:8.5in 11in portrait;margin:0;}
+@page{
+  size:letter portrait !important;
+  margin:0 !important;
+  bleed:0;
+}
 @media print{
-  html,body{background:#fff;}
-  .book{padding:0;gap:0;}
-  .page{box-shadow:none;margin:0;}
+  html,body{
+    background:#fff;
+    width:8.5in !important;
+    height:11in !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .book{padding:0;gap:0;width:8.5in;}
+  .page{
+    box-shadow:none;
+    margin:0;
+    width:8.5in;
+    height:11in;
+    page-break-after:always;
+  }
   .toolbar{display:none !important;}
   .page[data-overflow]::before{display:none !important;}
 }
@@ -1117,24 +1147,21 @@ js = r'''
   // (font-size % does not cascade to pt-sized children, so we use transform).
   // The page number footer sits at bottom: 0.35in. We reserve a SAFE-ZONE at the
   // bottom of every page (>= 5mm above the page number) where content must not enter.
-  var DPI = 96; // CSS px per inch
-  var SAFE_ZONE_IN = 0.75; // reserve 0.75in at page bottom (page number area + ≥5mm gap)
   function fitOnePage(page){
     var content = page.querySelector('.page-content');
     if(!content) return;
-    // Reset previous scale
     content.style.transform = '';
-    /* top center keeps left/right margins symmetric when content is scaled down */
     content.style.transformOrigin = 'top center';
     page.removeAttribute('data-overflow');
-    // Measure
-    var pageH = page.clientHeight;
-    var safeH = pageH - SAFE_ZONE_IN * DPI;
+    
+    var pageH = page.offsetHeight;
     var natural = content.scrollHeight;
-    if(natural <= safeH + 1) return;
-    // Calculate scale to fit within safe area
-    var scale = safeH / natural;
-    var floor = 0.7;
+    // Threshold: page height minus 0.5in safety buffer for the page number
+    var threshold = pageH - 48; 
+    if(natural <= threshold) return;
+    
+    var scale = threshold / natural;
+    var floor = 0.75;
     if(scale < floor){
       page.setAttribute('data-overflow', 'true');
       scale = floor;
@@ -1180,47 +1207,31 @@ js = r'''
   function buildTOC(){
     var pages = $$('.page');
     var entries = [];
+    var pageNum = 0;
     pages.forEach(function(p){
-      if(p.hasAttribute('data-no-toc')) return;
-      var pageNum = p.getAttribute('data-page');
-      var heading = p.querySelector('.chapter-cover-title');
-      if(heading){
-        var ey = p.querySelector('.chapter-cover-eyebrow');
-        entries.push({level:1, text:(ey?ey.textContent.trim()+' — ':'')+heading.textContent.trim(), page:pageNum, id:ensureId(p)});
-        return;
+      var isFront = p.hasAttribute('data-no-toc');
+      if(!isFront) pageNum++;
+      
+      // Look for headings in sequence of priority
+      var h1 = p.querySelector('.chapter-cover-title, .chapter-h1, .bonus-h2, .week-title');
+      if(h1) {
+          var ey = p.querySelector('.chapter-cover-eyebrow, .chapter-eyebrow, .bonus-eyebrow');
+          var text = h1.textContent.trim();
+          if(ey) text = ey.textContent.trim() + ' — ' + text;
+          entries.push({level:1, text:text, page:isFront ? '' : pageNum, id:ensureId(p)});
+          return;
       }
-      var h1 = p.querySelector('.chapter-h1');
-      if(h1){
-        var ey2 = p.querySelector('.chapter-eyebrow');
-        entries.push({level:1, text:(ey2?ey2.textContent.trim()+' — ':'')+h1.textContent.trim(), page:pageNum, id:ensureId(p)});
-        return;
-      }
-      var wt = p.querySelector('.week-title');
-      if(wt){ entries.push({level:2, text:wt.textContent.trim(), page:pageNum, id:ensureId(p)}); return; }
-      var bh = p.querySelector('.bonus-h2');
-      if(bh){ entries.push({level:2, text:bh.textContent.trim(), page:pageNum, id:ensureId(p)}); return; }
     });
-    var tocA = $('#toc-nav'); var tocB = $('#toc-nav-2');
+    var tocA = $('#toc-nav');
     if(!tocA) return;
-    tocA.innerHTML=''; if(tocB) tocB.innerHTML='';
-    var split = Math.ceil(entries.length/2);
-    var firstHalf = entries.slice(0, split);
-    var secondHalf = entries.slice(split);
-    function pushTo(target, list){
-      list.forEach(function(e){
+    tocA.innerHTML='';
+    entries.forEach(function(e){
         var a = document.createElement('a');
         a.href = '#' + e.id;
         a.className = 'toc-h' + e.level;
         a.innerHTML = '<span class="toc-text"><span class="toc-text-inner">' + escapeHtml(e.text) + '</span></span><span class="toc-num">' + e.page + '</span>';
-        target.appendChild(a);
-      });
-    }
-    pushTo(tocA, firstHalf);
-    if(tocB) pushTo(tocB, secondHalf);
-    if(tocB && secondHalf.length === 0){
-      var p2 = tocB.closest('.page');
-      if(p2) p2.style.display = 'none';
-    }
+        tocA.appendChild(a);
+    });
   }
 
   function makeToolbar(){
@@ -1305,7 +1316,7 @@ html_out = f'''<!DOCTYPE html>
 </body>
 </html>'''
 
-out = Path('/sessions/charming-exciting-noether/mnt/outputs/High_Protein_Meal_Prep_Cookbook.html')
+out = ROOT_DIR / 'High_Protein_Meal_Prep_Cookbook.html'
 out.write_text(html_out, encoding='utf-8')
 print('Wrote', out, 'size:', len(html_out), 'bytes')
 print('Pages:', html_out.count('class="page'))

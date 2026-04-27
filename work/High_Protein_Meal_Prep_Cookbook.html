@@ -4531,6 +4531,8 @@ html,body{
   // (font-size % does not cascade to pt-sized children, so we use transform).
   // The page number footer sits at bottom: 0.35in. We reserve a SAFE-ZONE at the
   // bottom of every page (>= 5mm above the page number) where content must not enter.
+  var DPI = 96; // CSS px per inch
+  var SAFE_ZONE_IN = 0.75; // reserve 0.75in at page bottom (page number area + ≥5mm gap)
   function fitOnePage(page){
     var content = page.querySelector('.page-content');
     if(!content) return;
@@ -4540,12 +4542,11 @@ html,body{
     
     var pageH = page.offsetHeight;
     var natural = content.scrollHeight;
-    // Threshold: page height minus 0.5in safety buffer for the page number
-    var threshold = pageH - 48; 
-    if(natural <= threshold) return;
-    
-    var scale = threshold / natural;
-    var floor = 0.75;
+    // Only scale if it actually overflows the physical page
+    if(natural <= pageH + 2) return;
+    // Calculate scale to fit within safe area
+    var scale = safeH / natural;
+    var floor = 0.7;
     if(scale < floor){
       page.setAttribute('data-overflow', 'true');
       scale = floor;

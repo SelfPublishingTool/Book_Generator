@@ -4,21 +4,37 @@ import threading
 import time
 import os
 import subprocess
+import socket
 from pathlib import Path
 
-PORT = 8000
 DIRECTORY = "."
+BASE_PORT = 8000
+
+def find_free_port(start_port):
+    port = start_port
+    while port < start_port + 10:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            try:
+                s.bind(("", port))
+                return port
+            except OSError:
+                port += 1
+    return port
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
-def run_server():
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"\n🚀 AMBIENTE LOCAL ATTIVO")
-        print(f"👉 Visualizza il libro qui: http://localhost:{PORT}/High_Protein_Meal_Prep_Cookbook.html")
-        print(f"Ispirazione: Il server si aggiorna automaticamente se i file cambiano.\n")
-        httpd.serve_forever()
+def run_server(port):
+    socketserver.TCPServer.allow_reuse_address = True
+    try:
+        with socketserver.TCPServer(("", port), Handler) as httpd:
+            print(f"\n🚀 AMBIENTE LOCAL ATTIVO")
+            print(f"👉 Visualizza il libro qui: http://localhost:{port}/High_Protein_Meal_Prep_Cookbook.html")
+            print(f"Ispirazione: Il server si aggiorna automaticamente se i file cambiano.\n")
+            httpd.serve_forever()
+    except Exception as e:
+        print(f"❌ Errore server: {e}")
 
 def watch_and_build():
     files_to_watch = [
@@ -40,26 +56,26 @@ def watch_and_build():
         if changed:
             print("🔄 Modifica rilevata! Rigenerazione libro in corso...")
             try:
-                # Run the build script
-                os.chdir("work")
-                subprocess.run(["python3", "build_html.py"], capture_output=True)
-                os.chdir("..")
+                # build_html.py handles its own paths now
+                subprocess.run(["python3", "work/build_html.py"], capture_output=True)
                 print("✅ Libro aggiornato con successo!")
             except Exception as e:
                 print(f"❌ Errore durante la rigenerazione: {e}")
-                os.chdir(Path(__file__).parent)
                 
         time.sleep(1)
 
 if __name__ == "__main__":
     # Initial build
     print("🔨 Primo avvio: generazione libro...")
-    os.chdir("work")
-    subprocess.run(["python3", "build_html.py"])
-    os.chdir("..")
+    subprocess.run(["python3", "work/build_html.py"])
+    
+    port = find_free_port(BASE_PORT)
     
     # Start threads
-    server_thread = threading.Thread(target=run_server, daemon=True)
+    server_thread = threading.Thread(target=run_server, args=(port,), daemon=True)
     server_thread.start()
     
-    watch_and_build()
+    try:
+        watch_and_build()
+    except KeyboardInterrupt:
+        print("\n👋 Chiusura ambiente di sviluppo.")
