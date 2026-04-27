@@ -590,6 +590,8 @@ html,body{
   display:flex;flex-direction:column;
   /* top center keeps left/right margins symmetric when auto-fit scales the content */
   transform-origin:top center;
+  padding-bottom: 10pt !important;
+  margin-top: 10pt !important;
 }
 .page.title-page .page-content,
 .page.chapter-cover .page-content{padding:0;}
