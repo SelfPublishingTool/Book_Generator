@@ -282,7 +282,7 @@ html,body{
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
 
 /* RECIPE PAGE — 2 columns side by side, same KDP margins as content pages */
-.recipe-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
+.recipe-page .page-content{padding:0.85in var(--page-margin) 0.55in;}
 .recipe-page::before{
   content:attr(data-chapter);
   position:absolute;top:0.35in;right:var(--page-margin);
@@ -320,11 +320,12 @@ html,body{
 
 /* Illustration banner */
 .recipe-illustration{
-  position:relative;height:1.8in;flex:0 0 auto;
+  position:relative;height:1.9in;flex:0 0 auto;
   border-bottom:1px solid var(--line);
   background:var(--cream);
+  overflow:hidden;
 }
-.recipe-illustration svg{display:block;width:100%;height:100%;}
+.recipe-illustration svg, .recipe-img{display:block;width:100%;height:100%;object-fit:cover;}
 .recipe-num-badge{
   position:absolute;top:8px;left:8px;
   width:34px;height:34px;background:var(--ink);color:var(--primary);
@@ -681,7 +682,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="1">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>
+    <img src="images/recipe_1.png?v=1777327938" class="recipe-img" alt="High-Protein Egg &amp; Veggie Muffins">
     <div class="recipe-num-badge">01</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -701,7 +702,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 375°F. Grease a 12-cup muffin tin well with cooking spray.</li><li>In a large bowl, whisk together the eggs and cottage cheese until smooth.</li><li>Stir in the spinach, bell pepper, mushrooms, garlic powder, salt, and pepper.</li><li>Pour the mixture evenly into the prepared muffin cups, filling each about ¾ full.</li><li>Top each cup with a small pinch of shredded cheddar.</li><li>Bake for 20–22 minutes until the egg muffins are set in the center and lightly golden on top.</li></ol>
+      <ol class="instructions-list"><li>Preheat oven to 375°F. Grease a 12-cup muffin tin.</li><li>Whisk eggs and cottage cheese until smooth.</li><li>Stir in spinach, bell pepper, mushrooms, and spices.</li><li>Pour into muffin cups, filling each ¾ full.</li><li>Top with cheddar and bake for 20–22 mins until set.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -712,11 +713,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">285</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">26g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">5g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Let cool for 5 minutes before removing. Store in an airtight container in the fridge for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="2">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#f5d77a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgD)"/><g transform="translate(60 28)"><path d="M 0 0 h 50 v 6 q 0 6 -6 6 h -38 q -6 0 -6 -6 z" fill="#fdc705" stroke="#a08220" stroke-width="1"/><rect x="6" y="12" width="38" height="46" rx="3" fill="#ffffff" stroke="#bfa54a" stroke-width="1"/><circle cx="14" cy="28" r="3" fill="#fde08a"/><circle cx="32" cy="36" r="4" fill="#fde08a"/><circle cx="20" cy="46" r="2.5" fill="#fde08a"/><circle cx="36" cy="50" r="2" fill="#fde08a"/></g><g transform="translate(135 40)"><ellipse cx="0" cy="38" rx="40" ry="6" fill="#1f2418" opacity="0.12"/><rect x="-30" y="-2" width="60" height="40" rx="6" fill="#fafafa" stroke="#bfa54a" stroke-width="1.2"/><rect x="-30" y="-2" width="60" height="14" rx="6" fill="#fdc705"/><circle cx="-12" cy="22" r="3" fill="#fde08a"/><circle cx="6" cy="26" r="2.5" fill="#fde08a"/><circle cx="14" cy="20" r="2" fill="#fde08a"/></g></svg>
+    <img src="images/recipe_2.png?v=1777327938" class="recipe-img" alt="Greek Yogurt Power Bowl with Berries &amp; Almonds">
     <div class="recipe-num-badge">02</div>
     <div class="recipe-protein-badge">27g protein</div>
   </div>
@@ -732,11 +733,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ cups plain Greek yogurt (2% or full-fat)</li><li>½ cup mixed berries (fresh or thawed from frozen)</li><li>2 tbsp sliced almonds</li><li>1 tbsp honey</li><li>1 tbsp chia seeds</li><li>¼ tsp vanilla extract</li></ul>
+      <ul class="ingredients-list"><li>1½ cups plain Greek yogurt (2% or full-fat)</li><li>½ cup mixed berries (fresh or frozen)</li><li>2 tbsp sliced almonds</li><li>1 tbsp honey</li><li>1 tbsp chia seeds</li><li>¼ tsp vanilla extract</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Spoon the Greek yogurt into a bowl or meal prep container.</li><li>Stir in the vanilla extract and chia seeds.</li><li>Top with the mixed berries and sliced almonds.</li><li>Drizzle honey over the top.</li><li>If prepping ahead, keep the berries and almonds in a separate small container and add just before eating to maintain texture.</li></ol>
+      <ol class="instructions-list"><li>Spoon yogurt into a bowl or meal prep container.</li><li>Stir in vanilla and chia seeds.</li><li>Top with berries and almonds.</li><li>Drizzle with honey and serve.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -752,7 +753,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="3">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#f5d77a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgD)"/><g transform="translate(60 28)"><path d="M 0 0 h 50 v 6 q 0 6 -6 6 h -38 q -6 0 -6 -6 z" fill="#fdc705" stroke="#a08220" stroke-width="1"/><rect x="6" y="12" width="38" height="46" rx="3" fill="#ffffff" stroke="#bfa54a" stroke-width="1"/><circle cx="14" cy="28" r="3" fill="#fde08a"/><circle cx="32" cy="36" r="4" fill="#fde08a"/><circle cx="20" cy="46" r="2.5" fill="#fde08a"/><circle cx="36" cy="50" r="2" fill="#fde08a"/></g><g transform="translate(135 40)"><ellipse cx="0" cy="38" rx="40" ry="6" fill="#1f2418" opacity="0.12"/><rect x="-30" y="-2" width="60" height="40" rx="6" fill="#fafafa" stroke="#bfa54a" stroke-width="1.2"/><rect x="-30" y="-2" width="60" height="14" rx="6" fill="#fdc705"/><circle cx="-12" cy="22" r="3" fill="#fde08a"/><circle cx="6" cy="26" r="2.5" fill="#fde08a"/><circle cx="14" cy="20" r="2" fill="#fde08a"/></g></svg>
+    <img src="images/recipe_3.png?v=1777327938" class="recipe-img" alt="Overnight Oats with Cottage Cheese &amp; Chia">
     <div class="recipe-num-badge">03</div>
     <div class="recipe-protein-badge">25g protein</div>
   </div>
@@ -768,11 +769,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>½ cup rolled oats</li><li>½ cup cottage cheese (2%)</li><li>½ cup unsweetened almond milk</li><li>1 tbsp chia seeds</li><li>1 tbsp maple syrup or honey</li><li>½ tsp cinnamon</li><li>½ cup fresh or frozen blueberries</li></ul>
+      <ul class="ingredients-list"><li>½ cup rolled oats</li><li>½ cup cottage cheese (2%)</li><li>½ cup unsweetened almond milk</li><li>1 tbsp chia seeds</li><li>1 tbsp maple syrup or honey</li><li>½ tsp cinnamon</li><li>½ cup blueberries</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a mason jar or airtight container, combine the rolled oats, cottage cheese, almond milk, chia seeds, maple syrup, and cinnamon.</li><li>Stir everything together until well combined.</li><li>Seal the container and refrigerate overnight or for at least 6 hours.</li><li>In the morning, stir well and top with blueberries.</li><li>Eat cold or microwave for 90 seconds if you prefer it warm.</li><li>Stores in the fridge for up to 4 days — prep the full week on Sunday.</li></ol>
+      <ol class="instructions-list"><li>In a jar, mix oats, cottage cheese, milk, chia, syrup, and cinnamon.</li><li>Seal and refrigerate overnight (at least 6 hours).</li><li>In the morning, top with blueberries and serve.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -783,11 +784,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">370</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">25g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">48g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">8g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="4">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_4.png?v=1777327938" class="recipe-img" alt="Turkey Sausage &amp; Sweet Potato Hash">
     <div class="recipe-num-badge">04</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -803,11 +804,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1 lb ground turkey (93/7)</li><li>2 medium sweet potatoes, peeled and diced small</li><li>1 red bell pepper, diced</li><li>½ yellow onion, diced</li><li>2 tbsp olive oil</li><li>1 tsp smoked paprika</li><li>1 tsp garlic powder</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1 lb ground turkey (93/7)</li><li>2 medium sweet potatoes, diced small</li><li>1 red bell pepper, diced</li><li>½ yellow onion, diced</li><li>2 tbsp olive oil</li><li>1 tsp smoked paprika</li><li>1 tsp garlic powder</li><li>Salt and black pepper to taste</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat 1 tbsp olive oil in a large skillet over medium-high heat.</li><li>Add the diced sweet potatoes and cook for 10–12 minutes, stirring occasionally, until tender and lightly browned. Remove and set aside.</li><li>In the same skillet, heat the remaining oil and cook the turkey, breaking it up as it browns, about 6–7 minutes.</li><li>Add the bell pepper and onion to the turkey and cook for another 3–4 minutes until softened.</li><li>Return the sweet potatoes to the pan, add smoked paprika, garlic powder, salt, and pepper. Stir everything together.</li><li>Cook for 2 more minutes until everything is heated through and well combined.</li></ol>
+      <ol class="instructions-list"><li>Cook sweet potatoes in 1 tbsp oil for 10–12 mins until tender.</li><li>In the same skillet, brown turkey with remaining oil (6–7 mins).</li><li>Add pepper and onion; cook 3–4 mins until softened.</li><li>Return potatoes to pan, add seasonings, and stir for 2 mins.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -818,12 +819,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">320</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">24g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">12g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Divide into 4 containers. Store in the fridge for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="5">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>
+    <img src="images/recipe_5.png?v=1777327938" class="recipe-img" alt="Spinach &amp; Feta Egg Bake">
     <div class="recipe-num-badge">05</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -839,11 +840,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>10 large eggs</li><li>1 cup cottage cheese (2%)</li><li>2 cups fresh spinach, roughly chopped</li><li>½ cup crumbled feta cheese</li><li>½ cup cherry tomatoes, halved</li><li>½ tsp garlic powder</li><li>½ tsp dried oregano</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>10 large eggs</li><li>1 cup cottage cheese (2%)</li><li>2 cups fresh spinach, chopped</li><li>½ cup crumbled feta cheese</li><li>½ cup cherry tomatoes, halved</li><li>½ tsp garlic powder</li><li>Salt and black pepper to taste</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 375°F. Grease a 9×13-inch baking dish with cooking spray.</li><li>In a large bowl, whisk together the eggs and cottage cheese until smooth.</li><li>Stir in the spinach, feta, garlic powder, oregano, salt, and pepper.</li><li>Pour the mixture into the prepared baking dish.</li><li>Scatter the cherry tomatoes over the top.</li><li>Bake for 28–32 minutes until the center is fully set and the edges are lightly golden.</li><li>Let cool for 10 minutes before slicing into 6 portions. Store in airtight containers for up to 4 days.</li></ol>
+      <ol class="instructions-list"><li>Preheat oven to 375°F. Grease a 9×13-inch baking dish.</li><li>Whisk eggs and cottage cheese until smooth.</li><li>Stir in spinach, feta, garlic, salt, and pepper.</li><li>Pour into dish and scatter tomatoes on top.</li><li>Bake for 28–32 mins until the center is set.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -854,11 +855,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">240</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">26g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">4g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">14g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="6">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
+    <img src="images/recipe_6.png?v=1777327938" class="recipe-img" alt="Smoked Salmon &amp; Cottage Cheese Toast">
     <div class="recipe-num-badge">06</div>
     <div class="recipe-protein-badge">35g protein</div>
   </div>
@@ -874,11 +875,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>2 slices whole grain bread, toasted</li><li>½ cup cottage cheese (2%)</li><li>3 oz smoked salmon</li><li>¼ small cucumber, thinly sliced</li><li>1 tbsp capers (optional)</li><li>½ tsp everything bagel seasoning</li><li>Fresh dill to taste</li></ul>
+      <ul class="ingredients-list"><li>2 slices whole grain bread, toasted</li><li>½ cup cottage cheese (2%)</li><li>3 oz smoked salmon</li><li>¼ small cucumber, sliced</li><li>1 tbsp capers</li><li>½ tsp everything bagel seasoning</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Toast the bread slices until golden and crisp.</li><li>Spread a generous layer of cottage cheese on each slice.</li><li>Lay the smoked salmon evenly over the cottage cheese.</li><li>Top with cucumber slices and capers if using.</li><li>Sprinkle everything bagel seasoning and fresh dill over the top.</li><li>Serve immediately. For meal prep, store the components separately and assemble in the morning.</li></ol>
+      <ol class="instructions-list"><li>Toast bread until golden.</li><li>Spread cottage cheese on each slice.</li><li>Top with smoked salmon, cucumber, and capers.</li><li>Sprinkle with seasoning and dill; serve immediately.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -889,12 +890,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">360</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">35g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">30g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">10g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">For meal prep, store components separately.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="7">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgL" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffeeb6"/><stop offset="1" stop-color="#dba840"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgL)"/><g transform="translate(0 50)"><g fill="#5b3a18"><ellipse cx="36" cy="22" rx="11" ry="8"/><ellipse cx="60" cy="14" rx="10" ry="7"/><ellipse cx="84" cy="22" rx="11" ry="8"/></g><g fill="#a4541f"><ellipse cx="48" cy="34" rx="10" ry="7"/><ellipse cx="72" cy="36" rx="10" ry="7"/><ellipse cx="92" cy="38" rx="11" ry="8"/></g><g fill="#fdc705"><ellipse cx="108" cy="20" rx="10" ry="7"/><ellipse cx="130" cy="14" rx="9" ry="6"/><ellipse cx="120" cy="36" rx="10" ry="7"/></g><g fill="#7a5710"><ellipse cx="146" cy="22" rx="10" ry="7"/><ellipse cx="168" cy="14" rx="9" ry="6"/><ellipse cx="158" cy="36" rx="10" ry="7"/><ellipse cx="184" cy="38" rx="9" ry="6"/></g><g fill="#3c2810"><ellipse cx="20" cy="38" rx="10" ry="7"/><ellipse cx="200" cy="22" rx="10" ry="7"/></g><g fill="#fff" opacity="0.35"><circle cx="34" cy="20" r="2"/><circle cx="58" cy="12" r="2"/><circle cx="106" cy="18" r="2"/><circle cx="144" cy="20" r="2"/><circle cx="166" cy="12" r="2"/></g></g></svg>
+    <img src="images/recipe_7.png?v=1777327938" class="recipe-img" alt="Black Bean Breakfast Scramble">
     <div class="recipe-num-badge">07</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -910,11 +911,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>5 large eggs</li><li>1 cup canned black beans, drained and rinsed</li><li>½ cup frozen corn, thawed</li><li>½ cup salsa</li><li>½ tsp cumin</li><li>½ tsp chili powder</li><li>1 tbsp olive oil</li><li>2 tbsp shredded Mexican blend cheese</li></ul>
+      <ul class="ingredients-list"><li>5 large eggs</li><li>1 cup canned black beans, rinsed</li><li>½ cup frozen corn, thawed</li><li>½ cup salsa</li><li>½ tsp cumin</li><li>1 tbsp olive oil</li><li>2 tbsp Mexican blend cheese</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat the olive oil in a skillet over medium heat.</li><li>Add the black beans and corn, season with cumin and chili powder, and cook for 2–3 minutes until heated through.</li><li>Push the beans and corn to the edges of the pan. Pour the eggs into the center.</li><li>Scramble the eggs gently, incorporating the beans and corn as they cook.</li><li>Remove from heat when the eggs are just set. Stir in the salsa.</li><li>Top with shredded cheese and serve. For meal prep, divide into 2 containers and refrigerate for up to 3 days.</li></ol>
+      <ol class="instructions-list"><li>Heat oil in a skillet. Cook beans and corn for 2–3 mins.</li><li>Push to the edges and scramble eggs in the center.</li><li>Incorporate beans and corn; stir in salsa and cheese.</li><li>Remove from heat and serve immediately.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -925,11 +926,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">390</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">34g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">15g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 3 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="8">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>
+    <img src="images/recipe_8.png?v=1777327938" class="recipe-img" alt="3-Ingredient Protein Pancakes">
     <div class="recipe-num-badge">08</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -945,11 +946,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1 cup cottage cheese (2%)</li><li>4 large eggs</li><li>½ cup rolled oats</li><li>½ tsp cinnamon</li><li>Cooking spray</li></ul>
+      <ul class="ingredients-list"><li>1 cup cottage cheese (2%)</li><li>4 large eggs</li><li>½ cup rolled oats</li><li>½ tsp cinnamon</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Combine the cottage cheese, eggs, oats, and cinnamon in a blender. Blend until completely smooth, about 30 seconds.</li><li>Let the batter rest for 2 minutes while you heat a nonstick skillet over medium heat. Coat with cooking spray.</li><li>Pour about 3 tablespoons of batter per pancake onto the skillet.</li><li>Cook for 2–3 minutes until the edges look set and small bubbles form on the surface.</li><li>Flip carefully and cook for another 1–2 minutes until golden.</li><li>Serve immediately or cool completely before storing. Stack in airtight containers separated by parchment paper. Refrigerate for up to 4 days or freeze for up to 1 month.</li></ol>
+      <ol class="instructions-list"><li>Blend cottage cheese, eggs, oats, and cinnamon until smooth.</li><li>Let batter rest for 2 mins.</li><li>Pour 3 tbsp batter per pancake onto a greased nonstick skillet.</li><li>Cook for 2–3 mins per side until golden.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -960,12 +961,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">310</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">24g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">11g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="9">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#f5d77a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgD)"/><g transform="translate(60 28)"><path d="M 0 0 h 50 v 6 q 0 6 -6 6 h -38 q -6 0 -6 -6 z" fill="#fdc705" stroke="#a08220" stroke-width="1"/><rect x="6" y="12" width="38" height="46" rx="3" fill="#ffffff" stroke="#bfa54a" stroke-width="1"/><circle cx="14" cy="28" r="3" fill="#fde08a"/><circle cx="32" cy="36" r="4" fill="#fde08a"/><circle cx="20" cy="46" r="2.5" fill="#fde08a"/><circle cx="36" cy="50" r="2" fill="#fde08a"/></g><g transform="translate(135 40)"><ellipse cx="0" cy="38" rx="40" ry="6" fill="#1f2418" opacity="0.12"/><rect x="-30" y="-2" width="60" height="40" rx="6" fill="#fafafa" stroke="#bfa54a" stroke-width="1.2"/><rect x="-30" y="-2" width="60" height="14" rx="6" fill="#fdc705"/><circle cx="-12" cy="22" r="3" fill="#fde08a"/><circle cx="6" cy="26" r="2.5" fill="#fde08a"/><circle cx="14" cy="20" r="2" fill="#fde08a"/></g></svg>
+    <img src="images/recipe_9.png?v=1777327938" class="recipe-img" alt="Cottage Cheese &amp; Pineapple Bowl">
     <div class="recipe-num-badge">09</div>
     <div class="recipe-protein-badge">30g protein</div>
   </div>
@@ -981,11 +982,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ cups cottage cheese (2%)</li><li>½ cup fresh or canned pineapple chunks (in juice, drained)</li><li>2 tbsp chopped walnuts</li><li>1 tsp honey</li><li>¼ tsp ground ginger</li></ul>
+      <ul class="ingredients-list"><li>1½ cups cottage cheese (2%)</li><li>½ cup pineapple chunks</li><li>2 tbsp chopped walnuts</li><li>1 tsp honey</li><li>¼ tsp ground ginger</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Spoon the cottage cheese into a bowl or meal prep container.</li><li>Top with pineapple chunks and walnuts.</li><li>Drizzle with honey and sprinkle with ground ginger.</li><li>If prepping ahead, keep the pineapple and walnuts separate and add just before eating.</li></ol>
+      <ol class="instructions-list"><li>Spoon cottage cheese into a bowl.</li><li>Top with pineapple chunks and walnuts.</li><li>Drizzle with honey and sprinkle with ginger.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1000,7 +1001,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="10">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>
+    <img src="images/recipe_10.png?v=1777327938" class="recipe-img" alt="Sausage &amp; Egg Breakfast Casserole">
     <div class="recipe-num-badge">10</div>
     <div class="recipe-protein-badge">33g protein</div>
   </div>
@@ -1016,11 +1017,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>8 large eggs</li><li>1 lb turkey breakfast sausage, casings removed</li><li>2 cups frozen hash browns, thawed</li><li>1 cup shredded cheddar cheese</li><li>½ cup whole milk</li><li>½ tsp garlic powder</li><li>½ tsp dried thyme</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>8 large eggs</li><li>1 lb turkey sausage, browned</li><li>2 cups frozen hash browns</li><li>1 cup shredded cheddar</li><li>½ cup whole milk</li><li>½ tsp garlic powder</li><li>Salt and pepper</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 375°F. Grease a 9×13-inch baking dish.</li><li>In a skillet over medium heat, cook the turkey sausage, breaking it apart, until fully browned. Drain any excess fat.</li><li>Spread the hash browns in an even layer in the baking dish. Top with the cooked sausage.</li><li>In a bowl, whisk together the eggs, milk, garlic powder, thyme, salt, and pepper.</li><li>Pour the egg mixture evenly over the sausage and hash browns.</li><li>Top with shredded cheddar cheese.</li><li>Bake for 35–40 minutes until the center is fully set and the cheese is golden. Cool before slicing into 6 portions.</li></ol>
+      <ol class="instructions-list"><li>Preheat oven to 375°F. Grease a 9×13-inch baking dish.</li><li>Layer hash browns and browned turkey sausage in dish.</li><li>Whisk eggs, milk, and garlic powder; pour over sausage.</li><li>Top with cheddar and bake for 35–40 mins until set.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1031,12 +1032,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">390</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">33g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">20g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="11">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#f5d77a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgD)"/><g transform="translate(60 28)"><path d="M 0 0 h 50 v 6 q 0 6 -6 6 h -38 q -6 0 -6 -6 z" fill="#fdc705" stroke="#a08220" stroke-width="1"/><rect x="6" y="12" width="38" height="46" rx="3" fill="#ffffff" stroke="#bfa54a" stroke-width="1"/><circle cx="14" cy="28" r="3" fill="#fde08a"/><circle cx="32" cy="36" r="4" fill="#fde08a"/><circle cx="20" cy="46" r="2.5" fill="#fde08a"/><circle cx="36" cy="50" r="2" fill="#fde08a"/></g><g transform="translate(135 40)"><ellipse cx="0" cy="38" rx="40" ry="6" fill="#1f2418" opacity="0.12"/><rect x="-30" y="-2" width="60" height="40" rx="6" fill="#fafafa" stroke="#bfa54a" stroke-width="1.2"/><rect x="-30" y="-2" width="60" height="14" rx="6" fill="#fdc705"/><circle cx="-12" cy="22" r="3" fill="#fde08a"/><circle cx="6" cy="26" r="2.5" fill="#fde08a"/><circle cx="14" cy="20" r="2" fill="#fde08a"/></g></svg>
+    <img src="images/recipe_11.png?v=1777327938" class="recipe-img" alt="Peanut Butter Protein Overnight Oats">
     <div class="recipe-num-badge">11</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -1056,7 +1057,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a mason jar or container, combine the oats, Greek yogurt, almond milk, peanut butter, honey, and chia seeds.</li><li>Stir until the peanut butter is fully incorporated.</li><li>Seal and refrigerate overnight or for at least 6 hours.</li><li>In the morning, stir well and top with banana slices.</li><li>Eat cold or heat in the microwave for 90 seconds if preferred.</li></ol>
+      <ol class="instructions-list"><li>Mix oats, yogurt, milk, peanut butter, honey, and chia seeds.</li><li>Seal and refrigerate for at least 6 hours.</li><li>Top with banana slices before serving.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1067,11 +1068,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">490</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">26g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">56g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge (without banana) for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="12">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>
+    <img src="images/recipe_12.png?v=1777327938" class="recipe-img" alt="Veggie &amp; Cheese Frittata">
     <div class="recipe-num-badge">12</div>
     <div class="recipe-protein-badge">22g protein</div>
   </div>
@@ -1087,11 +1088,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>8 large eggs</li><li>¼ cup whole milk</li><li>1 cup zucchini, diced small</li><li>½ cup cherry tomatoes, halved</li><li>½ cup shredded mozzarella cheese</li><li>2 tbsp fresh basil, chopped (or 1 tsp dried)</li><li>1 tbsp olive oil</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>8 large eggs</li><li>¼ cup whole milk</li><li>1 cup zucchini, diced small</li><li>½ cup cherry tomatoes, halved</li><li>½ cup shredded mozzarella</li><li>2 tbsp fresh basil</li><li>1 tbsp olive oil</li><li>Salt and pepper</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven broiler to high.</li><li>Whisk eggs and milk in a bowl. Season with salt and pepper.</li><li>Heat olive oil in a 10-inch oven-safe skillet over medium heat.</li><li>Add zucchini and cook for 3–4 minutes until slightly softened.</li><li>Add cherry tomatoes and cook for 1 more minute.</li><li>Pour the egg mixture over the vegetables. Scatter mozzarella and basil on top.</li><li>Cook on the stovetop for 4–5 minutes until the edges are set.</li><li>Transfer to the broiler for 3–4 minutes until the top is puffed and golden. Slice into 4 wedges.</li></ol>
+      <ol class="instructions-list"><li>Whisk eggs and milk. Sauté zucchini in oil for 3–4 mins.</li><li>Add tomatoes and pour egg mixture over vegetables.</li><li>Top with mozzarella and cook until edges are set.</li><li>Finish under the broiler for 3–4 mins until golden.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1102,12 +1103,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">270</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">22g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">4g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="13">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgD" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff8de"/><stop offset="1" stop-color="#f5d77a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgD)"/><g transform="translate(60 28)"><path d="M 0 0 h 50 v 6 q 0 6 -6 6 h -38 q -6 0 -6 -6 z" fill="#fdc705" stroke="#a08220" stroke-width="1"/><rect x="6" y="12" width="38" height="46" rx="3" fill="#ffffff" stroke="#bfa54a" stroke-width="1"/><circle cx="14" cy="28" r="3" fill="#fde08a"/><circle cx="32" cy="36" r="4" fill="#fde08a"/><circle cx="20" cy="46" r="2.5" fill="#fde08a"/><circle cx="36" cy="50" r="2" fill="#fde08a"/></g><g transform="translate(135 40)"><ellipse cx="0" cy="38" rx="40" ry="6" fill="#1f2418" opacity="0.12"/><rect x="-30" y="-2" width="60" height="40" rx="6" fill="#fafafa" stroke="#bfa54a" stroke-width="1.2"/><rect x="-30" y="-2" width="60" height="14" rx="6" fill="#fdc705"/><circle cx="-12" cy="22" r="3" fill="#fde08a"/><circle cx="6" cy="26" r="2.5" fill="#fde08a"/><circle cx="14" cy="20" r="2" fill="#fde08a"/></g></svg>
+    <img src="images/recipe_13.png?v=1777327938" class="recipe-img" alt="High-Protein Banana Smoothie Bowl">
     <div class="recipe-num-badge">13</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -1123,11 +1124,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1 frozen banana, sliced</li><li>1 cup plain Greek yogurt (full-fat)</li><li>¼ cup cottage cheese</li><li>2 tbsp almond butter</li><li>¼ cup unsweetened almond milk</li><li>Toppings: sliced almonds, granola, fresh berries</li></ul>
+      <ul class="ingredients-list"><li>1 frozen banana, sliced</li><li>1 cup plain Greek yogurt</li><li>¼ cup cottage cheese</li><li>2 tbsp almond butter</li><li>¼ cup almond milk</li><li>Toppings: almonds, granola, berries</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Combine the frozen banana, Greek yogurt, cottage cheese, almond butter, and almond milk in a blender.</li><li>Blend until thick and smooth. Add more almond milk one tablespoon at a time if needed for blending.</li><li>The consistency should be much thicker than a drinkable smoothie — you want to eat it with a spoon.</li><li>Pour into a bowl and add desired toppings.</li><li>For meal prep, blend without toppings and store in a container for up to 2 days. Add toppings just before eating.</li></ol>
+      <ol class="instructions-list"><li>Blend frozen banana, yogurt, cottage cheese, almond butter, and milk.</li><li>Pour into a bowl and add desired toppings.</li><li>For meal prep, store base for up to 2 days; add toppings later.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1138,11 +1139,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">420</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">38g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">16g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 2 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="14">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgE" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#fde08a"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgE)"/><g transform="translate(48 32)"><ellipse cx="0" cy="40" rx="32" ry="40" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="-2" cy="36" r="14" fill="#fdc705"/><circle cx="-4" cy="34" r="5" fill="#ffe27a" opacity="0.85"/></g><g transform="translate(120 50)"><ellipse cx="0" cy="32" rx="28" ry="34" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="11" fill="#fdc705"/></g><g transform="translate(178 28)" opacity="0.9"><ellipse cx="0" cy="34" rx="22" ry="28" fill="#ffffff" stroke="#bfa54a" stroke-width="1.5"/><circle cx="0" cy="30" r="9" fill="#fdc705"/></g><g stroke="#a48126" stroke-width="0.8" fill="none" opacity="0.4"><path d="M10 95 q 100 -10 200 0"/></g></svg>
+    <img src="images/recipe_14.png?v=1777327938" class="recipe-img" alt="Cottage Cheese Scrambled Eggs">
     <div class="recipe-num-badge">14</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -1158,11 +1159,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>6 large eggs</li><li>½ cup cottage cheese (2%)</li><li>1 tbsp butter</li><li>2 tbsp chives, chopped (or green onion)</li><li>¼ tsp garlic powder</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>6 large eggs</li><li>½ cup cottage cheese (2%)</li><li>1 tbsp butter</li><li>2 tbsp chives</li><li>¼ tsp garlic powder</li><li>Salt and pepper</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Crack the eggs into a bowl, add the cottage cheese, garlic powder, salt, and pepper. Whisk together.</li><li>Melt the butter in a nonstick skillet over low to medium-low heat.</li><li>Pour in the egg mixture. Let it sit for 30 seconds without touching it.</li><li>Using a rubber spatula, slowly push the eggs from the edges toward the center in large folds.</li><li>Continue folding gently every 20–30 seconds. Remove from heat just before the eggs look fully set — residual heat will finish cooking them.</li></ol>
+      <ol class="instructions-list"><li>Whisk eggs, cottage cheese, and seasonings.</li><li>Melt butter in a skillet over medium-low heat.</li><li>Pour in eggs and fold gently until just set.</li><li>Remove from heat immediately to keep creamy.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1173,7 +1174,7 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">290</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">3g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Top with chives and serve. Store in the fridge for up to 2 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 2 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page chapter-cover cover-coffee">
@@ -1183,13 +1184,13 @@ html,body{
       <h1 class="chapter-cover-title">Lunches</h1>
       <div class="chapter-cover-divider"></div>
       <p class="chapter-cover-subtitle">Make It Once. Carry It All Week.</p>
-      <p class="chapter-cover-count">20 recipes</p>
+      <p class="chapter-cover-count">21 recipes</p>
     </div>
   </div>
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="15">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_15.png?v=1777327938" class="recipe-img" alt="Greek Chicken Meal Prep Bowls">
     <div class="recipe-num-badge">15</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -1205,11 +1206,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs chicken breast</li><li>2 tbsp olive oil</li><li>1 tsp dried oregano</li><li>1 tsp garlic powder</li><li>2 cups cooked brown rice</li><li>1 cup cherry tomatoes, halved</li><li>1 cup cucumber, diced</li><li>½ cup kalamata olives, halved</li><li>½ cup crumbled feta cheese</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs chicken breast</li><li>2 tbsp olive oil</li><li>1 tsp oregano</li><li>2 cups cooked brown rice</li><li>1 cup cherry tomatoes</li><li>1 cup cucumber, diced</li><li>½ cup feta cheese</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Slice chicken breast into strips. Toss with olive oil, oregano, garlic powder, salt, and pepper.</li><li>Heat a skillet or grill pan over medium-high heat. Cook chicken strips for 4–5 minutes per side until fully cooked and slightly charred. Rest for 5 minutes before slicing.</li><li>Divide the brown rice equally among 4 meal prep containers.</li><li>Top each with chicken, cherry tomatoes, cucumber, and olives.</li><li>Sprinkle feta cheese over each bowl.</li></ol>
+      <ol class="instructions-list"><li>Season chicken and cook in a skillet (4–5 mins per side).</li><li>Divide rice among 4 containers.</li><li>Top with sliced chicken, tomatoes, cucumber, and feta.</li><li>Store dressing separately and add before eating.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1220,11 +1221,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">440</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">42g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">30g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">15g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days. Add dressing just before eating.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="16">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_16.png?v=1777327938" class="recipe-img" alt="Chipotle Turkey &amp; Black Bean Wraps">
     <div class="recipe-num-badge">16</div>
     <div class="recipe-protein-badge">37g protein</div>
   </div>
@@ -1240,11 +1241,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1 lb ground turkey (93/7)</li><li>1 can (15 oz) black beans, drained and rinsed</li><li>1 tbsp chipotle seasoning (or 1 tsp cumin + 1 tsp chili powder + ½ tsp smoked paprika)</li><li>½ cup salsa</li><li>4 large whole wheat tortillas</li><li>1 cup shredded romaine lettuce</li><li>½ cup shredded Mexican blend cheese</li><li>Salt to taste</li></ul>
+      <ul class="ingredients-list"><li>1 lb ground turkey (93/7)</li><li>1 can black beans, rinsed</li><li>1 tbsp chipotle seasoning</li><li>½ cup salsa</li><li>4 whole wheat tortillas</li><li>1 cup shredded lettuce</li><li>½ cup Mexican cheese</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a skillet over medium-high heat, cook the ground turkey, breaking it apart, until fully browned, about 8 minutes. Drain excess fat.</li><li>Add the black beans and chipotle seasoning. Stir to combine and cook for 2 minutes.</li><li>Stir in the salsa and cook for another 2 minutes until the mixture is slightly thickened.</li><li>Warm the tortillas briefly in the microwave for 20 seconds.</li><li>Divide the turkey and bean mixture among the 4 tortillas. Top with lettuce and cheese.</li><li>Wrap tightly. For meal prep, wrap in foil or store filling and tortillas separately.</li></ol>
+      <ol class="instructions-list"><li>Brown turkey in a skillet; drain fat.</li><li>Add beans, seasoning, and salsa; cook for 4 mins.</li><li>Warm tortillas and fill with turkey mixture.</li><li>Top with lettuce and cheese; wrap tightly.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1255,12 +1256,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">480</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">37g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">42g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">16g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store filling separately for up to 4 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="17">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
+    <img src="images/recipe_17.png?v=1777327938" class="recipe-img" alt="Tuna &amp; White Bean Salad Jars">
     <div class="recipe-num-badge">17</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -1276,11 +1277,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>3 cans (5 oz each) tuna in water, drained</li><li>1 can (15 oz) white beans, drained and rinsed</li><li>½ cup celery, finely diced</li><li>¼ cup red onion, finely diced</li><li>3 tbsp olive oil</li><li>2 tbsp red wine vinegar</li><li>1 tsp Dijon mustard</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>3 cans tuna, drained</li><li>1 can white beans, rinsed</li><li>½ cup celery, diced</li><li>¼ cup red onion, diced</li><li>3 tbsp olive oil</li><li>2 tbsp red wine vinegar</li><li>1 tsp Dijon mustard</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a large bowl, combine the tuna, white beans, celery, and red onion.</li><li>In a small bowl, whisk together the olive oil, red wine vinegar, and Dijon mustard until emulsified.</li><li>Pour the dressing over the tuna and bean mixture. Toss gently to coat.</li><li>Season with salt and pepper.</li><li>Divide among 4 mason jars or airtight containers. Refrigerate for up to 4 days.</li><li>Serve over mixed greens, in a wrap, or straight from the jar.</li></ol>
+      <ol class="instructions-list"><li>Combine tuna, beans, celery, and onion in a bowl.</li><li>Whisk oil, vinegar, and mustard; pour over salad.</li><li>Divide among jars or containers.</li><li>Serve over greens or as a wrap.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1291,11 +1292,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">350</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">36g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">22g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">12g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="18">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
+    <img src="images/recipe_18.png?v=1777327938" class="recipe-img" alt="Lemon Herb Salmon Salad">
     <div class="recipe-num-badge">18</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -1311,11 +1312,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs salmon fillets</li><li>4 tbsp olive oil, divided</li><li>2 tbsp lemon juice</li><li>1 tsp dried dill</li><li>1 tsp garlic powder</li><li>6 cups mixed greens</li><li>1 cup cherry tomatoes, halved</li><li>½ cup cucumber, sliced</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs salmon fillets</li><li>4 tbsp olive oil</li><li>2 tbsp lemon juice</li><li>1 tsp dried dill</li><li>6 cups mixed greens</li><li>1 cup cherry tomatoes</li><li>Salt and pepper</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F. Line a baking sheet with foil.</li><li>Place salmon on the baking sheet. Drizzle with 1 tbsp olive oil, season with salt, pepper, dill, and garlic powder.</li><li>Bake for 12–15 minutes until the salmon flakes easily with a fork. Let cool completely before flaking.</li><li>Whisk together the remaining 3 tbsp olive oil and lemon juice to make the dressing.</li><li>For meal prep, divide the greens, tomatoes, and cucumber among 4 containers. Store salmon and dressing separately.</li><li>Assemble just before eating to keep the greens crisp.</li></ol>
+      <ol class="instructions-list"><li>Season salmon and bake at 400°F for 12–15 mins.</li><li>Whisk 3 tbsp oil with lemon juice for dressing.</li><li>Divide greens and tomatoes among 4 containers.</li><li>Top with flaked salmon and drizzle with dressing.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1326,12 +1327,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">380</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">36g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">6g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">24g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store salmon separately for up to 3 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="19">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_19.png?v=1777327938" class="recipe-img" alt="Chicken Caesar Meal Prep Jars">
     <div class="recipe-num-badge">19</div>
     <div class="recipe-protein-badge">41g protein</div>
   </div>
@@ -1347,11 +1348,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs chicken breast, grilled and sliced</li><li>8 cups romaine lettuce, chopped</li><li>½ cup Parmesan cheese, shaved</li><li>1 cup whole grain croutons</li><li>½ cup High-Protein Caesar Dressing (Chapter 8, Recipe 98)</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs chicken breast, grilled</li><li>8 cups romaine, chopped</li><li>½ cup Parmesan, shaved</li><li>1 cup croutons</li><li>½ cup High-Protein Caesar Dressing</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Grill or pan-sear seasoned chicken breast until fully cooked. Cool completely before slicing.</li><li>Layer each mason jar in this order from bottom: 2 tbsp dressing, sliced chicken, Parmesan, croutons, then romaine on top.</li><li>Seal and refrigerate for up to 4 days. When ready to eat, shake the jar to distribute the dressing or tip into a bowl.</li><li>The dressing stays at the bottom and the lettuce at the top keeps everything crisp.</li></ol>
+      <ol class="instructions-list"><li>Layer jars: 2 tbsp dressing, chicken, Parmesan, croutons.</li><li>Fill the rest of the jar with romaine.</li><li>Seal and refrigerate.</li><li>Shake or empty into a bowl to serve.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1362,11 +1363,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">410</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">41g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
 </article><article class="recipe-card" data-recipe="20">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
+    <img src="images/recipe_20.png?v=1777327938" class="recipe-img" alt="Shrimp &amp; Mango Rice Bowls">
     <div class="recipe-num-badge">20</div>
     <div class="recipe-protein-badge">33g protein</div>
   </div>
@@ -1382,11 +1383,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs shrimp, peeled and deveined</li><li>2 cups cooked brown rice</li><li>1 ripe mango, diced</li><li>1 cup cucumber, diced</li><li>½ cup red bell pepper, diced</li><li>2 tbsp lime juice</li><li>2 tbsp olive oil</li><li>1 tsp chili powder</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs shrimp, peeled</li><li>2 cups cooked brown rice</li><li>1 ripe mango, diced</li><li>1 cup cucumber, diced</li><li>2 tbsp lime juice</li><li>2 tbsp olive oil</li><li>1 tsp chili powder</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Toss shrimp with olive oil, chili powder, salt, and pepper.</li><li>Heat a skillet over medium-high heat. Cook shrimp for 1–2 minutes per side until pink and just cooked through. Do not overcook. Let cool.</li><li>In a small bowl, mix lime juice with a pinch of salt to make a quick dressing.</li><li>Divide brown rice among 4 containers. Top with shrimp, mango, cucumber, and bell pepper.</li><li>Drizzle lime dressing over each bowl. Store dressing separately if prepping ahead.</li></ol>
+      <ol class="instructions-list"><li>Sauté seasoned shrimp for 2 mins per side.</li><li>Whisk lime juice and oil for dressing.</li><li>Divide rice among 4 containers.</li><li>Top with shrimp, mango, and cucumber; add dressing.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1397,7 +1398,7 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">390</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">33g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">42g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">8g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 3 days.</span></div>
   </footer>
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="21">
@@ -1435,9 +1436,45 @@ html,body{
     </div>
     
   </footer>
-</article><article class="recipe-card" data-recipe="22">
+</article><article class="recipe-card" data-recipe="21">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgL" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffeeb6"/><stop offset="1" stop-color="#dba840"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgL)"/><g transform="translate(0 50)"><g fill="#5b3a18"><ellipse cx="36" cy="22" rx="11" ry="8"/><ellipse cx="60" cy="14" rx="10" ry="7"/><ellipse cx="84" cy="22" rx="11" ry="8"/></g><g fill="#a4541f"><ellipse cx="48" cy="34" rx="10" ry="7"/><ellipse cx="72" cy="36" rx="10" ry="7"/><ellipse cx="92" cy="38" rx="11" ry="8"/></g><g fill="#fdc705"><ellipse cx="108" cy="20" rx="10" ry="7"/><ellipse cx="130" cy="14" rx="9" ry="6"/><ellipse cx="120" cy="36" rx="10" ry="7"/></g><g fill="#7a5710"><ellipse cx="146" cy="22" rx="10" ry="7"/><ellipse cx="168" cy="14" rx="9" ry="6"/><ellipse cx="158" cy="36" rx="10" ry="7"/><ellipse cx="184" cy="38" rx="9" ry="6"/></g><g fill="#3c2810"><ellipse cx="20" cy="38" rx="10" ry="7"/><ellipse cx="200" cy="22" rx="10" ry="7"/></g><g fill="#fff" opacity="0.35"><circle cx="34" cy="20" r="2"/><circle cx="58" cy="12" r="2"/><circle cx="106" cy="18" r="2"/><circle cx="144" cy="20" r="2"/><circle cx="166" cy="12" r="2"/></g></g></svg>
+    <img src="images/recipe_21.png?v=1777327938" class="recipe-img" alt="Egg Salad Lettuce Wraps">
+    <div class="recipe-num-badge">21</div>
+    <div class="recipe-protein-badge">22g protein</div>
+  </div>
+  <header class="recipe-header">
+    <h3 class="recipe-title">Egg Salad Lettuce Wraps</h3>
+    <div class="recipe-meta">
+      <span class="badge badge-protein-src">🥚 Eggs</span>
+      <span class="badge badge-yield">Yield · 4 servings</span>
+      <span class="badge badge-prep">Prep · 10 min</span>
+      <span class="badge badge-cook">Cook · 10 min</span>
+    </div>
+  </header>
+  <div class="recipe-body">
+    <section class="recipe-ingredients">
+      <h4 class="section-h">Ingredients</h4>
+      <ul class="ingredients-list"><li>10 large eggs, hard-boiled</li><li>3 tbsp plain Greek yogurt</li><li>1 tbsp Dijon mustard</li><li>¼ cup celery, diced</li><li>8 butter lettuce leaves</li></ul>
+    </section>
+    <section class="recipe-instructions">
+      <h4 class="section-h">Instructions</h4>
+      <ol class="instructions-list"><li>Chop hard-boiled eggs and mix with yogurt, mustard, and celery.</li><li>Season with salt, pepper, and paprika.</li><li>Spoon into lettuce leaves and serve immediately.</li><li>Store egg salad in the fridge for up to 3 days.</li></ol>
+    </section>
+  </div>
+  <footer class="recipe-footer">
+    <div class="nutrition-box">
+      <div class="nut-head">
+        <span class="nut-title">Nutrition</span>
+        <span class="nut-extra">per serving</span>
+      </div>
+      <div class="nut-stats"><div class="nut-stat"><span class="nut-val">280</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">22g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">4g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
+    </div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store egg salad separately from lettuce.</span></div>
+  </footer>
+</article></div></div></div>
+<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="22">
+  <div class="recipe-illustration">
+    <img src="images/recipe_22.png?v=1777327938" class="recipe-img" alt="Chickpea &amp; Roasted Veggie Power Bowl">
     <div class="recipe-num-badge">22</div>
     <div class="recipe-protein-badge">20g protein</div>
   </div>
@@ -1453,11 +1490,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>2 cans (15 oz each) chickpeas, drained and rinsed</li><li>2 medium zucchini, diced</li><li>1 red bell pepper, diced</li><li>1 red onion, diced</li><li>3 tbsp olive oil</li><li>1 tsp cumin</li><li>1 tsp smoked paprika</li><li>2 cups cooked quinoa</li><li>½ cup crumbled feta cheese</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>2 cans chickpeas, rinsed</li><li>2 zucchinis, diced</li><li>1 red bell pepper, diced</li><li>3 tbsp olive oil</li><li>2 cups cooked quinoa</li><li>½ cup feta cheese</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 425°F. Line a large baking sheet with foil.</li><li>Toss chickpeas and all vegetables with olive oil, cumin, smoked paprika, salt, and pepper.</li><li>Spread in a single layer on the baking sheet. Roast for 22–25 minutes until chickpeas are crispy and vegetables are golden.</li><li>Divide quinoa among 4 containers. Top with roasted chickpeas and veggies.</li><li>Sprinkle feta over each bowl. Drizzle with olive oil or the Avocado Lime Crema from Chapter 8.</li></ol>
+      <ol class="instructions-list"><li>Toss chickpeas and veggies with oil and roast at 425°F (22–25 mins).</li><li>Divide quinoa among 4 containers.</li><li>Top with roasted mixture and sprinkle with feta.</li><li>Drizzle with olive oil or Avocado Lime Crema.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1468,12 +1505,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">450</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">20g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">52g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">18g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
-</article></div></div></div>
-<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="23">
+</article><article class="recipe-card" data-recipe="23">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_23.png?v=1777327938" class="recipe-img" alt="Buffalo Chicken Lettuce Cups">
     <div class="recipe-num-badge">23</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1489,11 +1525,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs chicken breast</li><li>3 tbsp buffalo hot sauce</li><li>1 tbsp butter</li><li>½ cup celery, finely diced</li><li>¼ cup carrots, shredded</li><li>¼ cup plain Greek yogurt</li><li>8 large romaine lettuce leaves</li><li>Salt to taste</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs chicken breast</li><li>3 tbsp buffalo hot sauce</li><li>1 tbsp butter</li><li>¼ cup Greek yogurt</li><li>8 romaine lettuce leaves</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Poach chicken breast in simmering water for 18–20 minutes until cooked through. Shred with two forks.</li><li>In a bowl, mix hot sauce and melted butter. Toss shredded chicken in the buffalo sauce.</li><li>In a separate small bowl, mix Greek yogurt with a pinch of salt to make a quick cooling sauce.</li><li>To serve, spoon buffalo chicken into romaine leaves. Top with celery, carrots, and a drizzle of the yogurt sauce.</li></ol>
+      <ol class="instructions-list"><li>Poach and shred chicken. Toss with hot sauce and melted butter.</li><li>Mix yogurt with salt for a quick cooling sauce.</li><li>Spoon chicken into lettuce leaves.</li><li>Top with carrots and a drizzle of yogurt sauce.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1504,11 +1540,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">310</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">38g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">6g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">12g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store all components separately in the fridge for up to 4 days. Assemble just before eating.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store components separately for up to 4 days.</span></div>
   </footer>
-</article><article class="recipe-card" data-recipe="24">
+</article></div></div></div>
+<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="24">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
+    <img src="images/recipe_24.png?v=1777327938" class="recipe-img" alt="Tuna Pasta Salad">
     <div class="recipe-num-badge">24</div>
     <div class="recipe-protein-badge">34g protein</div>
   </div>
@@ -1524,11 +1561,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>3 cans (5 oz each) tuna in water, drained</li><li>2 cups whole wheat rotini, cooked and cooled</li><li>½ cup frozen peas, thawed</li><li>¼ cup red onion, diced</li><li>¼ cup dill pickle, diced</li><li>3 tbsp plain Greek yogurt</li><li>2 tbsp mayonnaise</li><li>1 tsp Dijon mustard</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>3 cans tuna, drained</li><li>2 cups whole wheat rotini</li><li>½ cup peas</li><li>¼ cup red onion</li><li>3 tbsp Greek yogurt</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Cook pasta according to package directions. Drain, rinse with cold water, and let cool completely.</li><li>In a large bowl, combine the cooled pasta, tuna, peas, red onion, and pickle.</li><li>In a small bowl, mix together Greek yogurt, mayonnaise, and Dijon mustard.</li><li>Pour the dressing over the pasta mixture and toss to coat evenly.</li><li>Season with salt and pepper. Refrigerate for at least 30 minutes before serving.</li></ol>
+      <ol class="instructions-list"><li>Cook and cool pasta. Mix with tuna, peas, and onion.</li><li>Combine yogurt, mayo, and mustard for dressing.</li><li>Toss everything together and season.</li><li>Refrigerate for 30 mins before serving.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1539,12 +1576,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">380</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">34g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">36g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">8g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in an airtight container for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
-</article></div></div></div>
-<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="25">
+</article><article class="recipe-card" data-recipe="25">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_25.png?v=1777327938" class="recipe-img" alt="Turkey &amp; Quinoa Stuffed Peppers (Cold)">
     <div class="recipe-num-badge">25</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -1560,11 +1596,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1 lb ground turkey (93/7)</li><li>4 large bell peppers, halved and seeded</li><li>1 cup cooked quinoa</li><li>1 can (15 oz) diced tomatoes, drained</li><li>1 tsp Italian seasoning</li><li>1 tsp garlic powder</li><li>½ cup shredded mozzarella cheese</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1 lb ground turkey</li><li>4 bell peppers, halved</li><li>1 cup cooked quinoa</li><li>1 can diced tomatoes</li><li>½ cup mozzarella</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 375°F.</li><li>Cook the ground turkey in a skillet over medium-high heat, breaking it apart, until fully browned. Drain fat.</li><li>Stir in the diced tomatoes, cooked quinoa, Italian seasoning, and garlic powder. Season with salt and pepper.</li><li>Arrange the pepper halves in a baking dish. Fill each with the turkey-quinoa mixture.</li><li>Top each pepper with shredded mozzarella.</li></ol>
+      <ol class="instructions-list"><li>Brown turkey; stir in tomatoes, quinoa, and seasonings.</li><li>Fill pepper halves with the mixture.</li><li>Top with mozzarella and bake at 375°F for 25–30 mins.</li><li>Cool and store for up to 4 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1575,11 +1611,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">370</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">32g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">12g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Bake for 25–30 minutes until the peppers are tender and the cheese is golden. Store in the fridge for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
-</article><article class="recipe-card" data-recipe="26">
+</article></div></div></div>
+<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="26">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_26.png?v=1777327938" class="recipe-img" alt="Asian Chicken Noodle Salad">
     <div class="recipe-num-badge">26</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1595,11 +1632,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs chicken breast, grilled and shredded</li><li>6 oz whole wheat spaghetti, cooked</li><li>2 cups shredded purple cabbage</li><li>1 cup shredded carrots</li><li>½ cup edamame, shelled</li><li>3 tbsp reduced-sodium soy sauce</li><li>2 tbsp sesame oil</li><li>1 tbsp rice vinegar</li><li>1 tsp fresh ginger, grated (or ½ tsp ground ginger)</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs chicken, shredded</li><li>6 oz whole wheat spaghetti</li><li>2 cups purple cabbage</li><li>1 cup carrots</li><li>½ cup edamame</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Cook pasta according to package directions. Drain, rinse with cold water, and cool completely.</li><li>In a large bowl, whisk together soy sauce, sesame oil, rice vinegar, and ginger.</li><li>Add the shredded chicken, cooled noodles, cabbage, carrots, and edamame to the bowl.</li><li>Toss everything together until well coated.</li><li>Divide among 4 containers. Refrigerate for up to 4 days. This salad actually tastes better the next day as the flavors develop.</li></ol>
+      <ol class="instructions-list"><li>Cook and cool pasta. Whisk soy sauce, sesame oil, and vinegar.</li><li>Toss chicken, noodles, and veggies with dressing.</li><li>Divide among 4 containers and refrigerate.</li><li>Flavors develop better after a day.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1610,12 +1647,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">430</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">38g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">38g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">12g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
-</article></div></div></div>
-<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="27">
+</article><article class="recipe-card" data-recipe="27">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
+    <img src="images/recipe_27.png?v=1777327938" class="recipe-img" alt="White Bean &amp; Tuna Salad">
     <div class="recipe-num-badge">27</div>
     <div class="recipe-protein-badge">30g protein</div>
   </div>
@@ -1631,11 +1667,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>2 cans (5 oz each) tuna in water, drained</li><li>2 cans (15 oz each) white cannellini beans, drained and rinsed</li><li>3 tbsp olive oil</li><li>2 tbsp fresh lemon juice</li><li>1 garlic clove, minced</li><li>¼ cup fresh parsley, chopped</li><li>½ tsp red pepper flakes</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>2 cans tuna, drained</li><li>2 cans white beans, rinsed</li><li>3 tbsp olive oil</li><li>2 tbsp lemon juice</li><li>¼ cup fresh parsley</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a large bowl, gently combine the tuna and white beans, being careful not to mash the beans.</li><li>Add the olive oil, lemon juice, garlic, parsley, and red pepper flakes.</li><li>Toss gently until everything is coated. Season with salt and pepper.</li><li>Let the salad rest for at least 15 minutes before serving to allow the flavors to meld.</li></ol>
+      <ol class="instructions-list"><li>Combine tuna, beans, oil, lemon juice, and seasonings.</li><li>Toss gently and let rest for 15 mins.</li><li>Divide into containers and refrigerate.</li><li>Serve cold over greens if desired.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1646,11 +1682,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">340</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">30g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">28g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">10g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in an airtight container in the fridge for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
-</article><article class="recipe-card" data-recipe="28">
+</article></div></div></div>
+<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="28">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgB" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe19a"/><stop offset="1" stop-color="#e3a854"/></linearGradient><linearGradient id="meat" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a93e2e"/><stop offset="1" stop-color="#6f1f15"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgB)"/><g transform="translate(110 60)"><ellipse cx="0" cy="3" rx="80" ry="16" fill="#3a1a0e" opacity="0.18"/><path d="M -70 -22 q -10 -10 0 -18 q 18 -10 50 -8 q 40 0 60 8 q 18 6 18 22 q 8 4 8 16 q 0 14 -16 16 q -30 6 -70 6 q -36 -2 -54 -6 q -14 -4 -10 -18 q -8 -8 -2 -16 q 4 -4 16 -2 z" fill="url(#meat)" stroke="#4a1610" stroke-width="1.2"/><path d="M -50 -16 q 12 -2 24 4 M -16 -20 q 16 -2 24 0 M 18 -14 q 14 0 22 6 M -40 0 q 16 -2 22 4 M -8 -2 q 14 -2 22 4" stroke="#fff" stroke-width="1.4" fill="none" opacity="0.55"/><ellipse cx="-46" cy="-12" rx="10" ry="6" fill="#fff" opacity="0.18"/><ellipse cx="20" cy="-8" rx="14" ry="6" fill="#fff" opacity="0.18"/></g></svg>
+    <img src="images/recipe_28.png?v=1777327938" class="recipe-img" alt="Beef &amp; Brown Rice Power Bowls">
     <div class="recipe-num-badge">28</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1666,11 +1703,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs lean ground beef (90/10)</li><li>2 cups cooked brown rice</li><li>1 cup broccoli florets, steamed</li><li>1 cup shredded carrots</li><li>3 tbsp reduced-sodium soy sauce</li><li>1 tbsp sesame oil</li><li>1 tsp garlic powder</li><li>½ tsp ground ginger</li><li>2 green onions, sliced</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs ground beef</li><li>2 cups brown rice</li><li>1 cup broccoli, steamed</li><li>1 cup carrots</li><li>3 tbsp soy sauce</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a large skillet over medium-high heat, cook the ground beef, breaking it apart, until fully browned. Drain excess fat.</li><li>Add garlic powder, ground ginger, soy sauce, and sesame oil to the beef. Stir to coat and cook for 2 more minutes.</li><li>Divide brown rice among 4 meal prep containers.</li><li>Top each bowl with the seasoned beef, steamed broccoli, and shredded carrots.</li></ol>
+      <ol class="instructions-list"><li>Brown beef and drain fat. Stir in seasonings and soy sauce.</li><li>Divide rice among 4 containers.</li><li>Top with beef, broccoli, and carrots.</li><li>Garnish with green onions.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1681,12 +1718,11 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">450</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">38g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">32g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">16g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Garnish with sliced green onions. Store in the fridge for up to 4 days.</span></div>
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 4 days.</span></div>
   </footer>
-</article></div></div></div>
-<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="29">
+</article><article class="recipe-card" data-recipe="29">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
+    <img src="images/recipe_29.png?v=1777327938" class="recipe-img" alt="Chicken &amp; Avocado Protein Wraps">
     <div class="recipe-num-badge">29</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -1702,11 +1738,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ lbs rotisserie chicken breast, shredded</li><li>2 ripe avocados, mashed</li><li>1 tbsp lime juice</li><li>½ cup Greek yogurt</li><li>2 tbsp fresh cilantro, chopped</li><li>4 large whole wheat tortillas</li><li>1 cup romaine lettuce, shredded</li><li>½ cup corn kernels (frozen, thawed)</li><li>Salt and pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1½ lbs chicken, shredded</li><li>2 avocados, mashed</li><li>½ cup Greek yogurt</li><li>4 tortillas</li><li>1 cup lettuce</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Mash the avocados with lime juice, salt, and pepper.</li><li>Mix the Greek yogurt into the mashed avocado until smooth.</li><li>Stir in the cilantro and corn.</li><li>Warm the tortillas in the microwave for 20 seconds.</li><li>Spread the avocado-yogurt mixture on each tortilla.</li><li>Top with shredded chicken and romaine lettuce.</li><li>Roll up tightly. For meal prep, store the avocado mixture and chicken separately and assemble daily to prevent browning.</li></ol>
+      <ol class="instructions-list"><li>Mash avocado with lime, yogurt, and cilantro.</li><li>Spread mixture on tortillas.</li><li>Top with chicken and lettuce; roll tightly.</li><li>Store filling and tortillas separately for meal prep.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1717,11 +1753,12 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">480</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">42g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">34g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">20g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Assemble daily to prevent browning.</span></div>
   </footer>
-</article><article class="recipe-card" data-recipe="30">
+</article></div></div></div>
+<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="30">
   <div class="recipe-illustration">
-    <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgL" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffeeb6"/><stop offset="1" stop-color="#dba840"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgL)"/><g transform="translate(0 50)"><g fill="#5b3a18"><ellipse cx="36" cy="22" rx="11" ry="8"/><ellipse cx="60" cy="14" rx="10" ry="7"/><ellipse cx="84" cy="22" rx="11" ry="8"/></g><g fill="#a4541f"><ellipse cx="48" cy="34" rx="10" ry="7"/><ellipse cx="72" cy="36" rx="10" ry="7"/><ellipse cx="92" cy="38" rx="11" ry="8"/></g><g fill="#fdc705"><ellipse cx="108" cy="20" rx="10" ry="7"/><ellipse cx="130" cy="14" rx="9" ry="6"/><ellipse cx="120" cy="36" rx="10" ry="7"/></g><g fill="#7a5710"><ellipse cx="146" cy="22" rx="10" ry="7"/><ellipse cx="168" cy="14" rx="9" ry="6"/><ellipse cx="158" cy="36" rx="10" ry="7"/><ellipse cx="184" cy="38" rx="9" ry="6"/></g><g fill="#3c2810"><ellipse cx="20" cy="38" rx="10" ry="7"/><ellipse cx="200" cy="22" rx="10" ry="7"/></g><g fill="#fff" opacity="0.35"><circle cx="34" cy="20" r="2"/><circle cx="58" cy="12" r="2"/><circle cx="106" cy="18" r="2"/><circle cx="144" cy="20" r="2"/><circle cx="166" cy="12" r="2"/></g></g></svg>
+    <img src="images/recipe_30.png?v=1777327938" class="recipe-img" alt="Lentil &amp; Veggie Mason Jar Salad">
     <div class="recipe-num-badge">30</div>
     <div class="recipe-protein-badge">20g protein</div>
   </div>
@@ -1737,11 +1774,11 @@ html,body{
   <div class="recipe-body">
     <section class="recipe-ingredients">
       <h4 class="section-h">Ingredients</h4>
-      <ul class="ingredients-list"><li>1½ cups dry green lentils</li><li>1 cup cherry tomatoes, halved</li><li>1 cup cucumber, diced</li><li>½ cup red bell pepper, diced</li><li>¼ cup red onion, finely diced</li><li>½ cup feta cheese, crumbled</li><li>3 tbsp olive oil</li><li>2 tbsp red wine vinegar</li><li>1 tsp dried oregano</li><li>Salt and black pepper to taste</li></ul>
+      <ul class="ingredients-list"><li>1½ cups lentils, cooked</li><li>1 cup cherry tomatoes</li><li>1 cup cucumber</li><li>½ cup feta</li><li>3 tbsp olive oil</li></ul>
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Rinse lentils and cook in 3 cups water for 18–20 minutes until tender but not mushy. Drain and cool completely.</li><li>Whisk together olive oil, red wine vinegar, oregano, salt, and pepper.</li><li>In each mason jar, layer from bottom: 2 tbsp dressing, lentils, bell pepper, red onion, cherry tomatoes, cucumber, then feta on top.</li><li>Seal and refrigerate for up to 5 days. Shake before eating or tip into a bowl and toss.</li></ol>
+      <ol class="instructions-list"><li>Whisk dressing and layer at the bottom of 4 jars.</li><li>Add lentils, then veggies, then feta on top.</li><li>Seal and refrigerate for up to 5 days.</li><li>Shake before serving or tip into a bowl.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1752,10 +1789,9 @@ html,body{
       </div>
       <div class="nut-stats"><div class="nut-stat"><span class="nut-val">380</span><span class="nut-lbl">Cal</span></div><div class="nut-stat"><span class="nut-val">20g</span><span class="nut-lbl">Protein</span></div><div class="nut-stat"><span class="nut-val">40g</span><span class="nut-lbl">Carbs</span></div><div class="nut-stat"><span class="nut-val">14g</span><span class="nut-lbl">Fat</span></div></div>
     </div>
-    
+    <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 5 days.</span></div>
   </footer>
-</article></div></div></div>
-<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="31">
+</article><article class="recipe-card" data-recipe="31">
   <div class="recipe-illustration">
     <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
     <div class="recipe-num-badge">31</div>
@@ -1777,7 +1813,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Whisk soy sauce, honey, rice vinegar, garlic powder, and cornstarch in a small bowl.</li><li>Heat a skillet over medium-high heat with a splash of oil. Cook chicken thighs for 5–6 minutes per side until fully cooked. Let rest for 5 minutes, then slice.</li><li>Pour the sauce into the pan over medium heat. Cook for 2–3 minutes until it thickens slightly.</li><li>Toss the sliced chicken in the teriyaki sauce.</li><li>Divide brown rice among 4 containers. Top with chicken and broccoli. Drizzle remaining sauce over each bowl. Sprinkle sesame seeds.</li></ol>
+      <ol class="instructions-list"><li>Spread cottage cheese on each tortilla.</li><li>Top with spinach, bell pepper, and pumpkin seeds.</li><li>Roll up tightly.</li><li>Wrap in foil and store until ready to eat.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1790,7 +1826,8 @@ html,body{
     </div>
     
   </footer>
-</article><article class="recipe-card" data-recipe="32">
+</article></div></div></div>
+<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="32">
   <div class="recipe-illustration">
     <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
     <div class="recipe-num-badge">32</div>
@@ -1812,7 +1849,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Toss shrimp with olive oil, chili powder, salt, and pepper. Cook in a skillet over medium-high heat for 1–2 minutes per side until pink. Cool completely.</li><li>In a large bowl, combine cooled shrimp, avocado, cherry tomatoes, corn, and red onion.</li><li>Drizzle with lime juice and toss gently.</li><li>For meal prep, store avocado separately and add just before eating to prevent browning.</li><li>Refrigerate for up to 3 days.</li></ol>
+      <ol class="instructions-list"><li>Toss shrimp with oil and spices. Sauté until pink (2–3 mins).</li><li>Mix with avocado, tomatoes, corn, and onion.</li><li>Drizzle with lime juice and toss gently.</li><li>Store in the fridge for up to 3 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1825,8 +1862,7 @@ html,body{
     </div>
     
   </footer>
-</article></div></div></div>
-<div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="33">
+</article><article class="recipe-card" data-recipe="33">
   <div class="recipe-illustration">
     <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgC" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset="1" stop-color="#f0c46c"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgC)"/><g transform="translate(110 65)"><ellipse cx="0" cy="0" rx="80" ry="22" fill="#3a2a1a" opacity="0.18"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="#c97a3a"/><path d="M -55 0 q -10 -34 28 -38 q 18 -2 25 6 q 12 -18 32 -10 q 22 8 18 28 q 14 8 14 18 q 0 12 -22 14 q -45 4 -85 -2 q -18 -4 -10 -16z" fill="none" stroke="#7a4a1d" stroke-width="1.2"/><path d="M -32 -10 q 8 -8 22 -6 M 6 -16 q 6 -6 18 -2 M -10 4 q 6 -2 14 0" stroke="#7a4a1d" stroke-width="1" fill="none" opacity="0.5"/><circle cx="-25" cy="-12" r="2" fill="#7a4a1d" opacity="0.5"/><circle cx="6" cy="-8" r="2" fill="#7a4a1d" opacity="0.5"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.45"><path d="M 8 22 q 12 -6 22 0 M 184 22 q 12 -6 22 0"/></g></svg>
     <div class="recipe-num-badge">33</div>
@@ -1848,7 +1884,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F.</li><li>Combine ground turkey, breadcrumbs, egg, garlic powder, oregano, salt, and pepper. Mix just until combined.</li><li>Roll into 20 equal meatballs. Place on a lined baking sheet.</li><li>Bake for 18–20 minutes until cooked through and lightly browned.</li><li>Divide farro among 4 containers. Top with 5 meatballs each, cucumber, tomatoes, and feta.</li><li>Serve with tzatziki from Chapter 8.</li></ol>
+      <ol class="instructions-list"><li>Mix turkey, breadcrumbs, egg, and spices. Form 20 meatballs.</li><li>Bake at 400°F for 18–20 mins until browned.</li><li>Divide farro among 4 containers.</li><li>Top with meatballs, veggies, and feta.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1861,7 +1897,8 @@ html,body{
     </div>
     
   </footer>
-</article><article class="recipe-card" data-recipe="34">
+</article></div></div></div>
+<div class="page recipe-page recipe-page-single" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="34">
   <div class="recipe-illustration">
     <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bgF" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffe9a3"/><stop offset="1" stop-color="#f0bc4d"/></linearGradient><linearGradient id="salmon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff9c7a"/><stop offset="1" stop-color="#e36a48"/></linearGradient></defs><rect width="220" height="110" fill="url(#bgF)"/><g transform="translate(112 60)"><ellipse cx="0" cy="3" rx="80" ry="14" fill="#3a2810" opacity="0.18"/><path d="M -78 0 q 10 -32 60 -32 q 50 0 70 12 l 18 -8 q 8 -2 8 6 v 22 q 0 8 -8 6 l -18 -8 q -20 12 -70 12 q -50 0 -60 -32 z" fill="url(#salmon)" stroke="#a3432a" stroke-width="1.2"/><path d="M -60 -8 q 10 4 24 0 M -50 8 q 10 -4 24 0 M -30 -10 q 10 4 24 0 M -20 8 q 10 -4 24 0 M 0 -10 q 10 4 24 0 M 10 8 q 10 -4 24 0" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.7"/><circle cx="-58" cy="-8" r="3" fill="#3a2810"/></g><g stroke="#a07a3e" stroke-width="0.8" fill="none" opacity="0.4"><path d="M 0 95 q 110 -10 220 0"/><path d="M 12 100 q 100 -8 198 0"/></g></svg>
     <div class="recipe-num-badge">34</div>
@@ -1883,7 +1920,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Mix soy sauce, sesame oil, and rice vinegar in a small bowl for the dipping sauce.</li><li>Fill a wide, shallow bowl with warm water. Dip one rice paper sheet for 10–15 seconds until pliable.</li><li>Lay flat. Place a line of salmon, avocado, cucumber, and carrots across the lower third.</li><li>Fold the bottom up over the filling, tuck in the sides, and roll tightly.</li><li>Repeat with remaining wrappers. Serve with dipping sauce.</li><li>For meal prep, wrap individually in damp paper towels and store in a sealed container for up to 2 days.</li></ol>
+      <ol class="instructions-list"><li>Whisk soy sauce, oil, and vinegar for dipping.</li><li>Dip rice paper in warm water until soft.</li><li>Fill with salmon, avocado, and veggies; roll tightly.</li><li>Wrap in damp towels and store for up to 2 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1930,7 +1967,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F. Line a large baking sheet with foil.</li><li>Mix melted butter with minced garlic, thyme, salt, and pepper.</li><li>Arrange asparagus on one side of the baking sheet. Lay salmon portions on the other side.</li><li>Brush the garlic butter generously over both the salmon and asparagus.</li><li>Place lemon slices on top of the salmon.</li></ol>
+      <ol class="instructions-list"><li>Arrange asparagus and salmon on a tray.</li><li>Brush with garlic butter and add lemon slices.</li><li>Bake at 400°F for 15–18 mins.</li><li>Store in the fridge for up to 3 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -1965,7 +2002,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 425°F.</li><li>Toss sliced peppers and onion with 1 tbsp olive oil, smoked paprika, and salt. Spread on a baking sheet and roast for 20–25 minutes until caramelized.</li><li>In a skillet over medium-high heat, cook the ground beef in remaining oil with garlic powder, cumin, salt, and pepper until fully browned.</li><li>Divide brown rice among 4 containers. Top with beef and roasted peppers.</li></ol>
+      <ol class="instructions-list"><li>Roast peppers and onion at 425°F for 20–25 mins.</li><li>Brown beef in a skillet with seasonings.</li><li>Divide rice among 4 containers.</li><li>Top with beef and roasted veggies.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2001,7 +2038,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F. Line a baking sheet with foil.</li><li>In a bowl, combine ground turkey, breadcrumbs, egg, garlic, oregano, mint, feta, salt, and pepper. Mix gently — do not overwork the meat.</li><li>Shape into 24 equal meatballs. Arrange on the baking sheet without touching.</li><li>Bake for 18–20 minutes until golden and cooked through (internal temp 165°F).</li><li>Serve over quinoa with Tzatziki from Chapter 8. Store meatballs in the fridge for up to 4 days or freeze for up to 2 months.</li></ol>
+      <ol class="instructions-list"><li>Mix turkey, breadcrumbs, egg, and spices. Form 24 meatballs.</li><li>Bake at 400°F for 18–20 mins until cooked through.</li><li>Serve over quinoa with tzatziki.</li><li>Store in the fridge for up to 4 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2036,7 +2073,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Add chicken thighs, white beans, diced tomatoes, chicken broth, garlic, thyme, and rosemary to a slow cooker.</li><li>Season with salt and pepper. Stir briefly.</li><li>Cover and cook on LOW for 6–8 hours or HIGH for 3–4 hours.</li><li>Use two forks to shred the chicken directly in the slow cooker.</li><li>Stir in the fresh spinach during the last 10 minutes before serving.</li><li>Portion into containers. Refrigerate for up to 4 days or freeze for up to 3 months.</li></ol>
+      <ol class="instructions-list"><li>Combine chicken, beans, tomatoes, broth, and spices in slow cooker.</li><li>Cook on LOW for 6–8 hours.</li><li>Shred chicken and stir in spinach until wilted.</li><li>Portion and refrigerate for up to 4 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2072,7 +2109,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 425°F.</li><li>Pat chicken thighs dry with paper towels. Mix olive oil with garlic powder, paprika, Italian seasoning, salt, and pepper.</li><li>Coat chicken thighs with half the seasoned oil. Place skin-side up on a large baking sheet.</li><li>Roast for 20 minutes. Remove from oven and add asparagus alongside the chicken, tossing in remaining oil.</li><li>Return to oven for another 10–12 minutes until chicken skin is crispy and internal temperature reaches 165°F.</li></ol>
+      <ol class="instructions-list"><li>Coat chicken with seasoned oil; roast at 425°F for 20 mins.</li><li>Add asparagus to the tray and toss with oil.</li><li>Roast for 10–12 more mins until crispy.</li><li>Store in the fridge for up to 4 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2107,7 +2144,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 375°F.</li><li>Brown ground turkey in a skillet over medium-high heat. Drain fat.</li><li>Stir in diced tomatoes, cooked rice, Italian seasoning, garlic powder, salt, and pepper.</li><li>Stand bell peppers in a baking dish. Fill each with the turkey and rice mixture, packing it in well.</li><li>Top each pepper with shredded mozzarella.</li><li>Pour ½ cup water into the bottom of the baking dish. Cover tightly with foil.</li><li>Bake for 25 minutes covered, then uncover and bake 10 more minutes until cheese is melted and golden.</li></ol>
+      <ol class="instructions-list"><li>Brown turkey; stir in tomatoes, rice, and spices.</li><li>Fill peppers and top with mozzarella.</li><li>Add water to dish, cover with foil, and bake at 375°F for 25 mins.</li><li>Uncover and bake 10 more mins until cheese is golden.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2143,7 +2180,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground beef in a large pot over medium-high heat. Drain fat.</li><li>Add onion, carrots, celery, and garlic. Cook for 5 minutes until softened.</li><li>Stir in lentils, diced tomatoes, beef broth, paprika, and cumin. Season with salt and pepper.</li><li>Bring to a boil, then reduce heat to low. Simmer covered for 30 minutes until lentils are tender.</li></ol>
+      <ol class="instructions-list"><li>Brown beef and drain fat. Sauté onion, carrots, and celery.</li><li>Add lentils, tomatoes, broth, and spices.</li><li>Simmer covered for 30 mins until lentils are tender.</li><li>Season and portion into 6 containers.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2178,7 +2215,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Season chicken with Italian seasoning, salt, and pepper.</li><li>Heat olive oil in a large skillet over medium-high heat. Cook chicken for 5–6 minutes per side until golden. Remove and let rest.</li><li>In the same skillet, sauté garlic for 1 minute. Add chicken broth and bring to a simmer.</li><li>Remove from heat briefly and stir in Greek yogurt and Parmesan until smooth.</li><li>Return to low heat. Add sun-dried tomatoes and spinach. Stir until spinach wilts.</li><li>Slice the chicken and return to the pan. Simmer for 2–3 minutes. Serve over pasta, rice, or cauliflower rice.</li></ol>
+      <ol class="instructions-list"><li>Season and brown chicken in oil. Sauté garlic.</li><li>Simmer broth, then stir in yogurt and Parmesan.</li><li>Add tomatoes and spinach; simmer until wilted.</li><li>Return chicken to pan and serve over rice or pasta.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2214,7 +2251,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground beef in a large pot over medium-high heat with the onion and garlic. Drain fat.</li><li>Add chili powder, cumin, and smoked paprika. Stir and cook for 1 minute.</li><li>Add crushed tomatoes, black beans, and beef broth. Stir to combine.</li><li>Bring to a boil, then reduce to a simmer. Cook uncovered for 25–30 minutes until thickened.</li><li>Season with salt and pepper. Portion into 8 containers.</li><li>Freeze individual portions for up to 3 months. This is the best freezer meal in the book.</li></ol>
+      <ol class="instructions-list"><li>Brown beef with onion and garlic. Drain fat.</li><li>Stir in spices, tomatoes, beans, and broth.</li><li>Simmer for 25–30 mins until thickened.</li><li>Portion and freeze for up to 3 months.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2249,7 +2286,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Whisk soy sauce, honey, rice vinegar, and garlic powder for the teriyaki sauce.</li><li>Marinate salmon in half the sauce for 10 minutes.</li><li>Heat a nonstick skillet over medium-high heat. Cook salmon skin-side down for 3–4 minutes. Flip and cook 2–3 more minutes. Pour remaining sauce over salmon in the last minute.</li><li>Mix cooked rice and edamame together.</li><li>Divide rice mixture among 4 containers. Top with salmon and sprinkle sesame seeds.</li></ol>
+      <ol class="instructions-list"><li>Whisk sauce and marinate salmon for 10 mins.</li><li>Cook salmon in a skillet (3–4 mins per side).</li><li>Mix cooked rice and edamame.</li><li>Divide among containers and top with salmon.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2285,7 +2322,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F.</li><li>Toss broccoli with 2 tbsp olive oil, salt, and pepper. Spread on a baking sheet.</li><li>Roast broccoli for 10 minutes.</li><li>Push broccoli to the sides and place cod fillets in the center. Mix remaining olive oil with lemon juice, garlic, and dill. Brush over cod.</li><li>Return to oven for another 10–12 minutes until the cod flakes easily.</li></ol>
+      <ol class="instructions-list"><li>Roast broccoli at 400°F for 10 mins.</li><li>Add cod to the tray; brush with lemon-oil mixture.</li><li>Bake for another 10 mins until fish flakes.</li><li>Portion into containers and serve with lemon wedges.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2320,7 +2357,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Mix soy sauce, sesame oil, cornstarch, garlic powder, and ginger in a bowl. Add chicken slices and toss to coat.</li><li>Heat a wok or large skillet over high heat with a splash of oil.</li><li>Cook chicken in a single layer for 2–3 minutes per side until cooked through. Remove and set aside.</li><li>In the same pan, stir-fry broccoli and carrots for 3–4 minutes until tender-crisp.</li><li>Return chicken to the pan. Add any remaining marinade and toss everything together for 1–2 minutes.</li></ol>
+      <ol class="instructions-list"><li>Marinate chicken in soy, sesame oil, and spices.</li><li>Stir-fry chicken for 2–3 mins per side until done.</li><li>Cook broccoli and carrots until tender-crisp.</li><li>Toss chicken and veggies together with marinade.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2356,7 +2393,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 425°F.</li><li>Mix Dijon mustard, honey, thyme, garlic powder, salt, and pepper. Rub all over the pork tenderloin.</li><li>Heat olive oil in an oven-safe skillet over high heat. Sear the pork for 2 minutes per side until browned on all surfaces.</li><li>Arrange apple slices around the pork in the skillet.</li><li>Transfer to the oven. Roast for 18–20 minutes until internal temperature reaches 145°F.</li><li>Let rest for 5 minutes before slicing. Serve with the pan apples and juices.</li></ol>
+      <ol class="instructions-list"><li>Rub pork with Dijon mixture. Sear in a skillet.</li><li>Arrange apple slices around the pork.</li><li>Roast at 425°F for 18–20 mins.</li><li>Rest for 5 mins before slicing and serving.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2391,7 +2428,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground turkey in a skillet over medium-high heat, breaking it apart. Drain fat.</li><li>Add taco seasoning and ¼ cup water. Stir and cook for 2 minutes until sauce thickens.</li><li>Add black beans and cook for another 2 minutes until heated through.</li><li>Divide brown rice among 4 containers. Top with turkey-bean mixture.</li></ol>
+      <ol class="instructions-list"><li>Brown turkey and drain fat. Stir in taco seasoning.</li><li>Add beans and cook until heated through.</li><li>Divide rice among 4 containers.</li><li>Top with turkey-bean mixture and fresh toppings.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2427,7 +2464,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large skillet over medium-high heat. Add garlic and red pepper flakes. Cook for 30 seconds.</li><li>Add shrimp. Cook 1–2 minutes per side until pink. Remove shrimp and set aside.</li><li>Add zucchini noodles to the same pan. Pour in chicken broth and lemon juice. Toss for 2–3 minutes — they cook fast. Do not overcook.</li><li>Return shrimp to the pan. Toss together. Top with Parmesan.</li><li>Best eaten fresh. If prepping ahead, store shrimp and zoodles separately and combine when reheating.</li></ol>
+      <ol class="instructions-list"><li>Sauté garlic and shrimp in oil until pink.</li><li>Remove shrimp. Cook zoodles in broth for 2–3 mins.</li><li>Return shrimp to pan; toss with Parmesan.</li><li>Best eaten fresh or store components separately.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2462,7 +2499,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 425°F.</li><li>Whisk together Dijon mustard, honey, apple cider vinegar, garlic powder, thyme, salt, and pepper.</li><li>Pat chicken thighs dry. Coat thoroughly with the honey-mustard mixture.</li><li>Arrange skin-side up on a foil-lined baking sheet.</li><li>Roast for 28–32 minutes until the skin is golden and caramelized and internal temperature reaches 165°F.</li></ol>
+      <ol class="instructions-list"><li>Coat chicken with honey-mustard mixture.</li><li>Arrange on a tray and roast at 425°F.</li><li>Cook for 28–32 mins until golden.</li><li>Rest before serving for maximum juiciness.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2498,7 +2535,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a bowl, combine soy sauce, oyster sauce, sesame oil, cornstarch, and garlic powder.</li><li>Toss sliced beef in half the sauce. Let marinate for 5 minutes.</li><li>Heat a wok or large skillet over high heat until smoking. Cook beef in batches for 1–2 minutes until seared. Remove.</li><li>Stir-fry broccoli for 3–4 minutes until bright green and tender-crisp.</li><li>Return beef to the pan. Add remaining sauce. Toss everything together for 1 minute.</li></ol>
+      <ol class="instructions-list"><li>Marinate beef in half the sauce for 5 mins.</li><li>Sear beef in a skillet for 1–2 mins; remove.</li><li>Stir-fry broccoli until tender-crisp.</li><li>Return beef to pan and toss with remaining sauce.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2533,7 +2570,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 350°F. Line a loaf pan with parchment paper.</li><li>In a large bowl, combine all ingredients (except the 2 tbsp ketchup for topping). Mix gently until just combined.</li><li>Transfer to the loaf pan and shape into a loaf. Spread the remaining ketchup on top.</li><li>Bake for 50–55 minutes until the internal temperature reaches 165°F.</li></ol>
+      <ol class="instructions-list"><li>Mix all ingredients (except topping ketchup).</li><li>Shape into a loaf in a lined pan.</li><li>Spread remaining ketchup on top.</li><li>Bake at 350°F for 50–55 mins until done.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2569,7 +2606,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F.</li><li>Toss sweet potatoes and Brussels sprouts with 2 tbsp olive oil, smoked paprika, garlic powder, salt, and pepper. Spread on a large baking sheet.</li><li>Roast for 15 minutes.</li><li>Push vegetables to the sides. Add salmon to the center. Brush salmon with remaining olive oil mixed with maple syrup.</li><li>Return to oven for 10–12 minutes until salmon flakes and sweet potatoes are tender.</li></ol>
+      <ol class="instructions-list"><li>Roast sweet potatoes and sprouts at 400°F (15 mins).</li><li>Add salmon to the center and brush with maple-oil.</li><li>Bake for 10–12 more mins until salmon flakes.</li><li>Portion into containers and serve warm.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2604,7 +2641,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large skillet over medium heat. Cook onion for 5 minutes until softened. Add garlic and cook 1 minute.</li><li>Add garam masala, cumin, and paprika. Stir and cook for 30 seconds until fragrant.</li><li>Add chicken cubes. Cook for 5–6 minutes until lightly browned on the outside.</li><li>Pour in crushed tomatoes. Stir to combine. Simmer for 10 minutes.</li><li>Remove from heat and stir in Greek yogurt. Do not boil after adding yogurt.</li><li>Serve over brown rice or with warm whole wheat naan.</li></ol>
+      <ol class="instructions-list"><li>Sauté onion and garlic; add spices and cook until fragrant.</li><li>Stir in chicken cubes and brown lightly.</li><li>Add crushed tomatoes and simmer for 10 mins.</li><li>Remove from heat and stir in Greek yogurt.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2640,7 +2677,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground beef in a large skillet over medium-high heat. Drain excess fat.</li><li>Add chili powder, cumin, garlic powder, and salt. Stir to coat.</li><li>Add black beans, corn, and diced tomatoes. Stir and bring to a simmer.</li><li>Cook for 5–7 minutes until slightly thickened.</li><li>Sprinkle cheddar cheese over the top, cover, and let melt for 2 minutes.</li></ol>
+      <ol class="instructions-list"><li>Brown beef and drain fat. Stir in spices.</li><li>Add beans, corn, and tomatoes; simmer for 5 mins.</li><li>Top with cheese and cover to melt.</li><li>Serve in bowls or with tortillas.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2675,7 +2712,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Mix lemon juice, olive oil, garlic, oregano, thyme, salt, and pepper to make the marinade.</li><li>Coat chicken breasts in the marinade. Let sit for at least 10 minutes (or overnight for more flavor).</li><li>Heat a grill pan or skillet over medium-high heat with a splash of oil.</li><li>Cook chicken for 5–7 minutes per side until fully cooked (internal temp 165°F).</li></ol>
+      <ol class="instructions-list"><li>Mix lemon juice, oil, and herbs for marinade.</li><li>Coat chicken and marinate for 10 mins.</li><li>Grill or sauté for 5–7 mins per side.</li><li>Rest for 5 mins before slicing for meal prep.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2711,7 +2748,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat sesame oil in a large wok or skillet over high heat. Add garlic and cook for 30 seconds.</li><li>Add shrimp. Cook 1–2 minutes per side until pink. Remove and set aside.</li><li>Push everything to the side and scramble the eggs in the center of the pan.</li><li>Add cauliflower rice and peas and carrots. Stir-fry for 3–4 minutes.</li><li>Return shrimp to the pan. Add soy sauce. Toss everything together for 1 minute.</li></ol>
+      <ol class="instructions-list"><li>Sauté garlic and shrimp in oil until pink; remove.</li><li>Scramble eggs in the pan; add veggies and riced cauliflower.</li><li>Stir-fry for 3–4 mins until tender.</li><li>Return shrimp to pan, add soy sauce, and toss.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2746,7 +2783,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Cook pasta per package directions. Drain and reserve ½ cup pasta water.</li><li>In a large skillet, heat olive oil over medium heat. Cook onion for 5 minutes until soft. Add garlic for 1 minute.</li><li>Add turkey, breaking it apart. Cook until fully browned, about 8 minutes. Drain fat.</li><li>Add Italian seasoning and marinara. Stir and simmer for 10 minutes.</li><li>Add pasta to the sauce. Toss to coat, adding pasta water as needed.</li><li>Divide into 6 containers and refrigerate for up to 4 days.</li></ol>
+      <ol class="instructions-list"><li>Cook pasta. Sauté onion and garlic in a skillet.</li><li>Brown turkey and drain fat. Stir in marinara.</li><li>Simmer for 10 mins; toss with cooked pasta.</li><li>Portion into containers and top with Parmesan.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2782,7 +2819,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Place all ingredients in the slow cooker. Stir briefly to combine.</li><li>Cook on LOW for 8 hours or HIGH for 4 hours until the beef is fork-tender and falling apart.</li><li>Taste and adjust seasoning before serving.</li><li>Portion into 6 containers. Refrigerate for up to 4 days or freeze for up to 3 months.</li></ol>
+      <ol class="instructions-list"><li>Place all ingredients in slow cooker; stir briefly.</li><li>Cook on LOW for 8 hours until beef is tender.</li><li>Adjust seasoning and portion into 6 containers.</li><li>Freeze individual portions for easy meal prep.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2817,7 +2854,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 425°F.</li><li>Season chicken thighs with oregano, rosemary, salt, and pepper.</li><li>Heat olive oil in an oven-safe skillet over high heat. Sear chicken skin-side down for 4–5 minutes until golden. Flip.</li><li>Add cherry tomatoes, olives, garlic, and lemon slices around the chicken.</li><li>Transfer to the oven. Roast for 20–22 minutes until cooked through.</li></ol>
+      <ol class="instructions-list"><li>Season and sear chicken skin-side down (4–5 mins).</li><li>Flip chicken; add tomatoes, olives, garlic, and lemon.</li><li>Roast at 425°F for 20–22 mins until done.</li><li>Spoon pan juices over chicken before storing.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2864,7 +2901,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a large bowl, combine all ingredients. Mix until everything is well incorporated. The mixture should be thick and hold together when pressed.</li><li>If the mixture is too sticky, refrigerate for 15 minutes before rolling.</li><li>Roll into 20 equal balls, about 1 inch in diameter.</li><li>Place on a parchment-lined tray and refrigerate for at least 30 minutes until firm.</li></ol>
+      <ol class="instructions-list"><li>Mix all ingredients in a large bowl until thick.</li><li>Refrigerate for 15 mins if too sticky.</li><li>Roll into 20 balls (1 inch each).</li><li>Chill on a tray for 30 mins until firm.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2899,7 +2936,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Hard-boil eggs: place in cold water, bring to a boil, cover and remove from heat. Let sit 10 minutes. Transfer to ice bath. Peel.</li><li>Halve the avocado. Season with everything bagel seasoning, red pepper flakes, and a squeeze of lemon.</li><li>Arrange 4 eggs and avocado half in a meal prep container.</li><li>Prep up to 6 eggs at once on Sunday. Store peeled eggs in cold water in the fridge for up to 5 days.</li></ol>
+      <ol class="instructions-list"><li>Hard-boil and peel eggs; chill in ice bath.</li><li>Halve avocado and season with bagel spices and lemon.</li><li>Arrange eggs and avocado in a container.</li><li>Store peeled eggs in water for up to 5 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2935,7 +2972,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Lay turkey slices flat on a clean surface.</li><li>Spread a thin layer of hummus on each slice.</li><li>Place a few spinach leaves, a strip of roasted red pepper, and a cucumber stick at one end.</li><li>Roll the turkey tightly around the filling.</li><li>Secure with a toothpick if needed. Arrange in a meal prep container.</li></ol>
+      <ol class="instructions-list"><li>Lay turkey slices flat and spread with hummus.</li><li>Add spinach, peppers, and cucumber sticks.</li><li>Roll tightly and secure with toothpicks.</li><li>Arrange in meal prep containers and refrigerate.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -2970,7 +3007,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Blend the cottage cheese briefly in a blender or food processor for a creamier texture (optional — it works chunky too).</li><li>Stir in the cucumber, dill, garlic, lemon juice, salt, and pepper.</li><li>Transfer to a container. Refrigerate for at least 30 minutes to allow flavors to develop.</li></ol>
+      <ol class="instructions-list"><li>Blend cottage cheese until creamy (optional).</li><li>Stir in cucumber, dill, garlic, and lemon.</li><li>Season and transfer to a container.</li><li>Chill for 30 mins before serving with veggies.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3006,7 +3043,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a bowl, stir together Greek yogurt, dill, garlic powder, onion powder, parsley, lemon juice, salt, and pepper.</li><li>Taste and adjust seasoning.</li><li>Divide into 4 small containers with the veggie dippers packaged alongside.</li></ol>
+      <ol class="instructions-list"><li>Whisk yogurt with herbs, lemon, and spices.</li><li>Taste and adjust seasoning as needed.</li><li>Divide into containers with raw veggie sticks.</li><li>Store in the fridge for up to 5 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3041,7 +3078,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a bowl, combine tuna, Greek yogurt, lemon juice, parsley, garlic powder, salt, and pepper. Mix well.</li><li>Spoon the tuna mixture into each pepper half.</li><li>Arrange in a meal prep container in a single layer.</li></ol>
+      <ol class="instructions-list"><li>Mix tuna, yogurt, lemon, and spices in a bowl.</li><li>Spoon the mixture into halved mini peppers.</li><li>Arrange in a single layer in a container.</li><li>Refrigerate and serve cold.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3077,7 +3114,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Bring a pot of water to a boil. Add edamame and cook for 4–5 minutes.</li><li>Drain and transfer to a bowl.</li><li>While still warm, toss with sea salt, garlic powder, and smoked paprika.</li><li>Divide into 2 containers. Serve warm or cold.</li></ol>
+      <ol class="instructions-list"><li>Boil edamame in water for 4–5 mins.</li><li>Drain and toss with salt and garlic powder.</li><li>Divide into containers.</li><li>Serve warm or cold; store for 4 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3112,7 +3149,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Arrange all components in a small divided container or snack bag.</li><li>No preparation required beyond portioning.</li><li>Prep up to 5 packs on Sunday. Store in the fridge for the entire week.</li><li>Grab and go in the morning. Zero effort, consistent protein.</li></ol>
+      <ol class="instructions-list"><li>Portion cheese, almonds, fruit, and turkey slices.</li><li>Arrange in divided containers or snack bags.</li><li>Prep 5 packs on Sunday for the whole week.</li><li>Zero-effort grab-and-go protein snack.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3148,7 +3185,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Spread a small amount of cottage cheese on each cucumber round.</li><li>Top with a piece of smoked salmon.</li><li>Garnish with a caper, a pinch of everything bagel seasoning, and a sprig of dill.</li><li>Arrange on a plate or in a container. Best assembled same-day.</li></ol>
+      <ol class="instructions-list"><li>Spread cottage cheese on cucumber rounds.</li><li>Top with smoked salmon and capers.</li><li>Garnish with bagel seasoning and dill.</li><li>Best assembled same-day for maximum crunch.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3183,7 +3220,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 400°F. Line a baking sheet with foil.</li><li>The key step: dry the chickpeas thoroughly with paper towels. The drier they are, the crunchier they get.</li><li>Toss chickpeas with olive oil and all seasonings. Spread in a single layer on the baking sheet.</li><li>Roast for 25–30 minutes, shaking the pan halfway through, until golden and crunchy.</li><li>Let cool completely before storing. Keep in an airtight container at room temperature for up to 5 days.</li></ol>
+      <ol class="instructions-list"><li>Dry chickpeas thoroughly with paper towels.</li><li>Toss with oil and spices; spread on a tray.</li><li>Roast at 400°F for 25–30 mins until crunchy.</li><li>Cool completely before storing in a container.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3219,7 +3256,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Toast bread until golden and crisp.</li><li>Spread cottage cheese generously on each slice.</li><li>Top with halved cherry tomatoes.</li><li>Drizzle balsamic glaze and sprinkle with oregano, red pepper flakes, salt, and pepper.</li><li>Eat immediately. Store components separately for meal prep and assemble in the morning.</li></ol>
+      <ol class="instructions-list"><li>Toast bread; spread with cottage cheese.</li><li>Top with halved cherry tomatoes.</li><li>Drizzle with balsamic and sprinkle with herbs.</li><li>Assemble in the morning for best texture.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3254,7 +3291,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Lay turkey slices flat. Place a slice of cheese on each.</li><li>Spread a thin layer of Dijon mustard on the cheese.</li><li>Add a few slices of avocado and a small lettuce leaf.</li><li>Roll up tightly and secure with a toothpick.</li></ol>
+      <ol class="instructions-list"><li>Lay turkey flat and top with cheese.</li><li>Spread with Dijon; add avocado and lettuce.</li><li>Roll tightly and secure with a toothpick.</li><li>Store in the fridge for up to 3 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3290,7 +3327,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Spoon Greek yogurt into a bowl.</li><li>Top with walnuts and a sprinkle of cinnamon.</li><li>Drizzle honey over the top.</li><li>Add berries if using.</li><li>For meal prep, pre-portion yogurt into containers. Add dry toppings in a small separate bag.</li></ol>
+      <ol class="instructions-list"><li>Spoon yogurt into a bowl or container.</li><li>Top with walnuts, cinnamon, and berries.</li><li>Drizzle with honey just before serving.</li><li>Store yogurt separately from dry toppings.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3325,7 +3362,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Combine all ingredients in a large bowl and toss to mix evenly.</li><li>Portion into 8 small zip-lock bags or small containers (about ⅓ cup per serving).</li></ol>
+      <ol class="instructions-list"><li>Toss all ingredients in a bowl to mix.</li><li>Portion into 8 small bags or containers.</li><li>Store at room temperature for up to 2 weeks.</li><li>Perfect high-protein snack for on-the-go.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3372,7 +3409,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Add chicken breast, broth, onion, garlic, thyme, and parsley to a large pot. Bring to a boil.</li><li>Reduce to a simmer. Cook for 18–20 minutes until chicken is fully cooked. Remove chicken and shred.</li><li>Add carrots, celery, and noodles to the broth. Simmer for 8–10 minutes until tender.</li><li>Return shredded chicken to the pot. Season with salt and pepper.</li><li>Portion into 6 containers. Refrigerate for up to 4 days or freeze for up to 3 months.</li></ol>
+      <ol class="instructions-list"><li>Boil chicken in broth with herbs until done.</li><li>Remove and shred chicken; return to pot.</li><li>Add carrots, celery, and noodles; simmer until tender.</li><li>Portion and refrigerate for up to 4 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3407,7 +3444,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large pot over medium heat. Cook onion for 5 minutes. Add garlic for 1 minute.</li><li>Add turkey and cook, breaking it apart, until fully browned. Drain fat.</li><li>Add diced tomatoes, white beans, chicken broth, and Italian seasoning. Bring to a boil.</li><li>Reduce heat and simmer for 15 minutes.</li><li>Stir in kale and cook for 5 more minutes until wilted. Season with salt and pepper.</li></ol>
+      <ol class="instructions-list"><li>Brown turkey with onion and garlic; drain fat.</li><li>Add beans, tomatoes, broth, and spices; boil.</li><li>Simmer for 15 mins, then stir in kale.</li><li>Cook until wilted and season with salt.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3443,7 +3480,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground beef in a large pot over medium-high heat with onion and garlic. Drain fat.</li><li>Add cumin, smoked paprika, cayenne, and turmeric. Stir and cook for 1 minute.</li><li>Add lentils, diced tomatoes, and beef broth. Stir well.</li><li>Bring to a boil, then reduce to a simmer. Cook for 25–30 minutes until lentils are completely tender and stew has thickened.</li><li>Season with salt and pepper. Add more cayenne to taste.</li></ol>
+      <ol class="instructions-list"><li>Brown beef with onion and garlic; drain fat.</li><li>Stir in spices, lentils, tomatoes, and broth.</li><li>Simmer for 25–30 mins until thickened.</li><li>Adjust heat with cayenne and serve warm.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3478,7 +3515,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large pot. Cook onion for 5 minutes. Add garlic for 1 minute.</li><li>Add broth and broccoli. Bring to a boil, then simmer for 12–15 minutes until broccoli is very tender.</li><li>Use an immersion blender to blend until smooth. Or blend in batches, leaving some chunks if preferred.</li><li>Return to low heat. Stir in blended cottage cheese and shredded cheddar until fully melted and smooth.</li><li>Season with garlic powder, salt, and pepper. Do not boil after adding dairy.</li></ol>
+      <ol class="instructions-list"><li>Sauté onion and garlic. Simmer broccoli in broth.</li><li>Blend soup until smooth with immersion blender.</li><li>Stir in cottage cheese and cheddar until melted.</li><li>Season and serve; do not boil after adding dairy.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3514,7 +3551,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large pot over medium heat. Cook onion and garlic for 5 minutes.</li><li>Add potatoes and broth. Bring to a boil and cook for 10 minutes until potatoes are tender.</li><li>Add corn and smoked paprika. Simmer for 3 minutes.</li><li>Remove from heat. Stir in Greek yogurt until incorporated. Do not return to a boil.</li><li>Add shrimp to the hot soup. The residual heat will cook the shrimp in 2–3 minutes.</li><li>Season with salt and pepper.</li></ol>
+      <ol class="instructions-list"><li>Boil potatoes in broth with onion until tender.</li><li>Add corn and paprika; simmer for 3 mins.</li><li>Remove from heat and stir in Greek yogurt.</li><li>Add shrimp to hot soup; cook for 2–3 mins.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3549,7 +3586,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large pot. Brown chicken cubes on all sides, about 6 minutes total. Remove.</li><li>Cook onion and garlic in the same pot for 5 minutes.</li><li>Add smoked paprika and cumin. Stir for 30 seconds.</li><li>Return chicken to the pot. Add chickpeas, crushed tomatoes, and broth. Simmer for 15 minutes.</li><li>Stir in spinach and cook for 2 more minutes until wilted.</li></ol>
+      <ol class="instructions-list"><li>Brown chicken in oil; remove. Sauté onion and garlic.</li><li>Add spices, chickpeas, tomatoes, broth, and chicken.</li><li>Simmer for 15 mins, then stir in spinach.</li><li>Cook until wilted and serve in bowls.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3585,7 +3622,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground beef with onion in a large pot over medium-high heat. Drain fat.</li><li>Add carrots, celery, Italian seasoning, and broth. Bring to a boil.</li><li>Add zucchini, kidney beans, diced tomatoes, and pasta. Reduce to a simmer.</li><li>Cook for 15–18 minutes until pasta and vegetables are tender.</li></ol>
+      <ol class="instructions-list"><li>Brown beef with onion; drain fat.</li><li>Add carrots, celery, seasonings, and broth; boil.</li><li>Add zucchini, beans, tomatoes, and pasta.</li><li>Simmer for 15–18 mins until pasta is tender.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3620,7 +3657,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Cook turkey and onion in a large pot over medium-high heat until turkey is browned. Drain fat.</li><li>Add chili powder, cumin, and smoked paprika. Stir for 1 minute.</li><li>Add sweet potatoes, black beans, crushed tomatoes, and broth. Bring to a boil.</li><li>Reduce to a simmer. Cook for 20 minutes until sweet potatoes are tender.</li><li>Season with salt and pepper. Freezes well for up to 3 months.</li></ol>
+      <ol class="instructions-list"><li>Brown turkey and onion; drain fat.</li><li>Stir in chili powder, cumin, and paprika.</li><li>Add sweet potatoes, beans, tomatoes, and broth.</li><li>Simmer for 20 mins until potatoes are tender.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3656,7 +3693,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Melt butter in a large pot over medium heat. Cook onion and garlic for 5 minutes.</li><li>Add potatoes and broth. Simmer for 12 minutes until potatoes are tender.</li><li>Add corn and dill. Cook for 3 minutes.</li><li>Remove from heat. Stir in Greek yogurt until smooth.</li><li>Add salmon to the hot soup. Cover and let sit for 4–5 minutes until salmon is just cooked through.</li><li>Season with salt and pepper. Gently break salmon into large flakes before serving.</li></ol>
+      <ol class="instructions-list"><li>Sauté onion and garlic in butter. Simmer potatoes in broth.</li><li>Add corn and dill; cook for 3 mins.</li><li>Remove from heat and stir in Greek yogurt.</li><li>Add salmon; cover and let sit for 5 mins until done.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3691,7 +3728,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large pot. Cook onion, garlic, and carrots for 5 minutes.</li><li>Add cumin, turmeric, and smoked paprika. Cook for 30 seconds.</li><li>Add lentils, diced tomatoes, and broth. Bring to a boil.</li><li>Reduce to a simmer and cook for 20–25 minutes until lentils are completely tender.</li><li>Stir in spinach and lemon juice. Cook for 2 more minutes. Season with salt and pepper.</li></ol>
+      <ol class="instructions-list"><li>Sauté onion, garlic, and carrots. Add spices and cook.</li><li>Add lentils, tomatoes, and broth; boil.</li><li>Simmer for 20–25 mins until lentils are tender.</li><li>Stir in spinach and lemon juice; season and serve.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3727,7 +3764,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Add chicken, black beans, diced tomatoes, corn, broth, onion, chili powder, cumin, and garlic powder to a large pot. Bring to a boil.</li><li>Reduce to a simmer. Cook for 20 minutes until chicken is fully cooked.</li><li>Remove chicken and shred with two forks. Return to the soup.</li><li>Season with salt and pepper. Simmer for 5 more minutes.</li><li>Serve topped with Greek yogurt (instead of sour cream), avocado, and a small handful of crushed baked tortilla chips.</li></ol>
+      <ol class="instructions-list"><li>Combine chicken, beans, tomatoes, corn, broth, and spices; boil.</li><li>Simmer for 20 mins. Shred chicken and return to pot.</li><li>Season and simmer for 5 more mins.</li><li>Serve with yogurt, avocado, and tortilla chips.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3762,7 +3799,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Brown ground beef with onion and garlic in a large pot over medium-high heat. Drain fat.</li><li>Add cumin, chili powder, and smoked paprika. Stir for 1 minute.</li><li>Add black beans, diced tomatoes, and beef broth. Bring to a boil.</li><li>Reduce heat and simmer for 20 minutes.</li><li>Stir in lime juice before serving. Season with salt and pepper.</li></ol>
+      <ol class="instructions-list"><li>Brown beef with onion and garlic; drain fat.</li><li>Stir in spices. Add beans, tomatoes, and broth; boil.</li><li>Simmer for 20 mins until thickened.</li><li>Stir in lime juice and season before serving.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3798,7 +3835,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Heat olive oil in a large pot over medium heat. Cook onion, garlic, and mushrooms for 8 minutes until softened.</li><li>Add chicken cubes. Cook for 5–6 minutes until lightly browned.</li><li>Add broth, thyme, and rosemary. Simmer for 15 minutes until chicken is fully cooked.</li><li>Remove from heat. Stir in blended cottage cheese until smooth and creamy. Do not return to a boil.</li><li>Season with salt and pepper.</li></ol>
+      <ol class="instructions-list"><li>Sauté onion, garlic, and mushrooms. Brown chicken cubes.</li><li>Add broth and herbs; simmer for 15 mins.</li><li>Remove from heat and stir in blended cottage cheese.</li><li>Season and serve; do not boil after adding dairy.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3845,7 +3882,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a large bowl, mix together peanut butter, Greek yogurt, honey, cocoa powder, vanilla, and salt until smooth.</li><li>Line an 8×8-inch baking pan with parchment paper.</li><li>Pour the mixture into the pan and smooth the top.</li><li>Freeze for at least 2 hours until firm.</li><li>Lift out using the parchment paper and cut into 16 equal squares.</li></ol>
+      <ol class="instructions-list"><li>Mix all ingredients in a bowl until smooth.</li><li>Pour into a lined 8x8 pan and smooth the top.</li><li>Freeze for 2 hours until firm.</li><li>Cut into 16 squares and store in the freezer.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3880,7 +3917,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a food processor, blend the crust ingredients until crumbly. Press firmly into the bottom of a parchment-lined 8×8-inch pan.</li><li>Blend cottage cheese, honey, lemon juice, lemon zest, and vanilla until completely smooth.</li><li>Pour over the crust and smooth the top.</li><li>Refrigerate for at least 4 hours or overnight until firm.</li></ol>
+      <ol class="instructions-list"><li>Blend crust ingredients; press into a lined 8x8 pan.</li><li>Blend filling until smooth; pour over the crust.</li><li>Refrigerate for 4 hours or overnight until firm.</li><li>Cut into 12 bars and store in the fridge.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3916,7 +3953,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Mix Greek yogurt with honey until smooth.</li><li>Line a baking sheet with parchment paper. Spread the yogurt in an even layer about ½ inch thick.</li><li>Scatter berries, sliced almonds, and chia seeds over the surface.</li><li>Freeze for at least 3 hours until completely solid.</li><li>Break into irregular pieces. Store in a sealed bag in the freezer for up to 2 months.</li><li>Eat straight from the freezer — it thaws within 1–2 minutes.</li></ol>
+      <ol class="instructions-list"><li>Mix yogurt and honey. Spread on a parchment-lined tray.</li><li>Scatter berries, almonds, and chia seeds over top.</li><li>Freeze for 3 hours until solid.</li><li>Break into pieces and store in the freezer.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3951,7 +3988,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Combine cottage cheese, cocoa powder, honey, vanilla, and salt in a blender or food processor.</li><li>Blend until completely smooth and creamy — this takes about 60 seconds. Scrape down the sides and blend again.</li><li>Taste and adjust sweetness.</li><li>Divide into 4 small containers or glasses.</li><li>Refrigerate for at least 30 minutes before serving. The mousse thickens as it chills.</li><li>Top with raspberries or chocolate shavings just before eating.</li></ol>
+      <ol class="instructions-list"><li>Blend all ingredients until smooth (about 60 secs).</li><li>Divide into 4 containers or glasses.</li><li>Refrigerate for 30 mins to thicken.</li><li>Top with berries or chocolate shavings before eating.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -3987,7 +4024,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a large microwave-safe mug, mash the banana until smooth.</li><li>Add the egg, Greek yogurt, peanut butter, rolled oats, baking powder, and cinnamon. Stir until well combined.</li><li>Microwave on high for 90 seconds. Check for doneness — the cake should pull away from the sides and not look wet in the center. Microwave for 15–30 seconds more if needed.</li><li>Let cool for 1 minute before eating.</li><li>Top with a dollop of Greek yogurt or a drizzle of honey if desired.</li></ol>
+      <ol class="instructions-list"><li>Mash banana in a mug; stir in all other ingredients.</li><li>Microwave on high for 90 seconds until done.</li><li>Let cool for 1 minute before eating.</li><li>Top with yogurt or honey if desired.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4022,7 +4059,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Preheat oven to 350°F. Line a baking sheet with parchment paper.</li><li>Mix all ingredients in a bowl until smooth.</li><li>Drop rounded tablespoons of dough onto the baking sheet, spacing them 2 inches apart.</li><li>Flatten slightly with a fork in a crisscross pattern.</li><li>Bake for 10–12 minutes until the edges are golden but the centers still look slightly underdone — they firm up as they cool.</li><li>Cool completely before storing. Refrigerate for up to 1 week or freeze for up to 1 month.</li></ol>
+      <ol class="instructions-list"><li>Mix all ingredients until smooth.</li><li>Drop tablespoons of dough onto a lined tray; flatten.</li><li>Bake at 350°F for 10–12 mins until golden.</li><li>Cool completely and store in the fridge or freezer.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4058,7 +4095,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Mix all ingredients in a bowl until fully combined. The mixture should hold together when pressed.</li><li>If too sticky, chill the mixture for 15 minutes before rolling.</li><li>Roll into 20 equal balls.</li><li>Place on a parchment-lined tray and refrigerate for 30 minutes until firm.</li></ol>
+      <ol class="instructions-list"><li>Mix all ingredients until fully combined.</li><li>Chill for 15 mins if too sticky to roll.</li><li>Roll into 20 balls and place on a tray.</li><li>Refrigerate for 30 mins until firm.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4093,7 +4130,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>In a bowl, stir together the cottage cheese, vanilla extract, and honey until well combined.</li><li>In a glass or jar, layer ½ of the vanilla cottage cheese on the bottom.</li><li>Add a layer of granola, then sliced strawberries.</li><li>Repeat the layers. Top with pecans.</li><li>For meal prep, store cottage cheese and granola separately. Assemble just before eating to keep the granola crunchy.</li></ol>
+      <ol class="instructions-list"><li>Stir cottage cheese with vanilla and honey.</li><li>Layer cheese, granola, and strawberries in a jar.</li><li>Repeat layers and top with pecans.</li><li>Store components separately and assemble before eating.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4140,7 +4177,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Whisk all ingredients together in a small bowl until fully combined.</li><li>Use as a marinade for chicken, beef, or shrimp — coat protein and let marinate for at least 30 minutes (up to 24 hours in the fridge).</li><li>Also works as a finishing sauce: drizzle over cooked protein and rice bowls.</li></ol>
+      <ol class="instructions-list"><li>Whisk all ingredients together in a small bowl.</li><li>Marinate protein for 30 mins (up to 24 hours).</li><li>Drizzle over cooked meals as a finishing sauce.</li><li>Store in the fridge for up to 1 week.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4175,7 +4212,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Grate the cucumber. Wrap in a clean towel and squeeze out as much liquid as possible. This step is essential — too much water makes the tzatziki runny.</li><li>In a bowl, combine Greek yogurt, squeezed cucumber, garlic, lemon juice, olive oil, and dill.</li><li>Stir well and season with salt and pepper.</li><li>Refrigerate for at least 30 minutes before serving.</li></ol>
+      <ol class="instructions-list"><li>Grate cucumber and squeeze dry in a towel.</li><li>Combine yogurt, cucumber, garlic, lemon, oil, and dill.</li><li>Stir well and season with salt and pepper.</li><li>Refrigerate for 30 mins before serving.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4211,7 +4248,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Whisk all ingredients together in a bowl until smooth and creamy.</li><li>Taste and adjust lemon and salt.</li><li>If the dressing is too thick, add water one tablespoon at a time until the desired consistency is reached.</li></ol>
+      <ol class="instructions-list"><li>Whisk all ingredients until smooth and creamy.</li><li>Adjust lemon and salt to taste.</li><li>Thin with water if needed to reach desired texture.</li><li>Store in the fridge for up to 5 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4246,7 +4283,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Combine all ingredients in a small bowl or jar. Whisk or shake until fully mixed.</li><li>Taste and adjust lemon and salt.</li><li>Use as a marinade before cooking or as a finishing drizzle over cooked proteins and vegetables.</li></ol>
+      <ol class="instructions-list"><li>Combine all ingredients in a jar and shake well.</li><li>Adjust lemon and salt to taste.</li><li>Use as a marinade or a finishing drizzle.</li><li>Store in the fridge for up to 1 week.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4282,7 +4319,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Whisk together peanut butter, soy sauce, lime juice, honey, sesame oil, ginger, and garlic in a bowl.</li><li>Add warm water one tablespoon at a time until the sauce reaches a pourable consistency.</li><li>Taste and adjust — more lime for brightness, more soy for salt, more honey for sweetness.</li></ol>
+      <ol class="instructions-list"><li>Whisk all ingredients except water in a bowl.</li><li>Add warm water 1 tbsp at a time until pourable.</li><li>Adjust lime, soy, or honey to taste.</li><li>Store in the fridge for up to 1 week.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">
@@ -4317,7 +4354,7 @@ html,body{
     </section>
     <section class="recipe-instructions">
       <h4 class="section-h">Instructions</h4>
-      <ol class="instructions-list"><li>Blend or mash all ingredients until smooth and creamy.</li><li>Taste and adjust lime and salt.</li><li>Press a piece of plastic wrap directly onto the surface of the crema before sealing to prevent browning.</li></ol>
+      <ol class="instructions-list"><li>Blend or mash all ingredients until creamy.</li><li>Adjust lime and salt to taste.</li><li>Press plastic wrap on surface before sealing.</li><li>Store in the fridge for up to 3 days.</li></ol>
     </section>
   </div>
   <footer class="recipe-footer">

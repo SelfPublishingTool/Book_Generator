@@ -7,7 +7,7 @@
 - Convert-to-PDF button (window.print() with @page portrait)
 - Live auto-fit JS to prevent overflow / cut-off
 - No hardcoded inner heights"""
-import json, html, re
+import json, html, re, time
 from pathlib import Path
 
 # Use absolute paths relative to the script's directory
@@ -109,7 +109,14 @@ def render_recipe(r):
     storage = r.get('storage')
     storage_html = f'<div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">{smart_html(storage)}</span></div>' if storage else ''
     cook_label = r.get('cook_label', 'Cook')
-    illustration = pick_illustration(ps)
+    
+    # Image logic: Use image_path if it exists, else fallback to SVG
+    img_path = r.get('image_path')
+    if img_path:
+        illustration = f'<img src="{esc(img_path)}?v={int(time.time())}" class="recipe-img" alt="{esc(r["title"])}">'
+    else:
+        illustration = pick_illustration(ps)
+
     return f'''<article class="recipe-card" data-recipe="{r['number']}">
   <div class="recipe-illustration">
     {illustration}
@@ -809,7 +816,7 @@ html,body{
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
 
 /* RECIPE PAGE — 2 columns side by side, same KDP margins as content pages */
-.recipe-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
+.recipe-page .page-content{padding:0.85in var(--page-margin) 0.55in;}
 .recipe-page::before{
   content:attr(data-chapter);
   position:absolute;top:0.35in;right:var(--page-margin);
@@ -847,11 +854,12 @@ html,body{
 
 /* Illustration banner */
 .recipe-illustration{
-  position:relative;height:1.8in;flex:0 0 auto;
+  position:relative;height:1.9in;flex:0 0 auto;
   border-bottom:1px solid var(--line);
   background:var(--cream);
+  overflow:hidden;
 }
-.recipe-illustration svg{display:block;width:100%;height:100%;}
+.recipe-illustration svg, .recipe-img{display:block;width:100%;height:100%;object-fit:cover;}
 .recipe-num-badge{
   position:absolute;top:8px;left:8px;
   width:34px;height:34px;background:var(--ink);color:var(--primary);
