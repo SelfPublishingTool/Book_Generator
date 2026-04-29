@@ -690,14 +690,15 @@ html,body{
 }
 .toc-rule{width:40px;height:2px;background:var(--primary);margin:0.3em auto 0;}
 .toc-list{
-  display:grid !important;
-  grid-template-columns:1fr 1fr !important;
+  display:block !important;
+  column-count:1 !important;
   column-gap:0.3in !important;
-  row-gap:2px !important;
   margin-top:1em;
 }
 .toc-list a{
   display:flex;align-items:baseline;gap:0.3em;
+  break-inside: avoid;
+  margin-bottom: 8px;
   text-decoration:none;color:var(--ink);
   min-width:0;
   padding:0.12em 0;
