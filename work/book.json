@@ -1,6 +1,6 @@
 {
-  "title": "Super Easy High Protein Meal Prep Cookbook for Fat-Loss",
-  "subtitle": "101 Make-Ahead Low-Carb Recipes with 25g+ Protein Per Meal — Prep Once, Eat All Week, and Finally Lose Fat",
+  "title": "Super Easy High Protein Meal Prep Cookbook for Weight Loss",
+  "subtitle": "102 Make-Ahead Low-Carb Recipes with 25g+ Protein Per Meal — Prep Once, Eat All Week, and Finally Lose Fat",
   "author": "By Priscilla Quinn",
   "copyright": "© Copyright 2026 by Priscilla Quinn - All rights reserved.",
   "disclaimer": [
@@ -16,9 +16,9 @@
     "Chapter 3 — Keto & Low-Carb Lunches (20 recipes)",
     "Chapter 4 — Lean & Low-Carb Dinners (26 recipes)",
     "Chapter 5 — Snacks & Mini Meals (14 recipes)",
-    "Chapter 6 — Soups & Stews (13 recipes)",
+    "Chapter 6 — Soups & Stews (14 recipes)",
     "Chapter 7 — High-Protein Treats (8 recipes)",
-    "Chapter 8 — Sauces, Marinades & Dressings (6 recipes)",
+    "Chapter 8 — Sauces, Marinades & Dressings (4 recipes)",
     "Chapter 9 — The 30-Day Meal Plan",
     "Chapter 10 — Your Bonus Toolkit",
     "Appendix A — Full Nutritional Index",
@@ -38,7 +38,7 @@
       "You might be wondering why we focus so heavily on protein. It isn't just about 'building muscle' for bodybuilders. It is about biology. Protein is the most satiating macronutrient. When you eat protein, your body releases hormones like cholecystokinin (CCK) and glucagon-like peptide-1 (GLP-1), which signal to your brain that you are full. At the same time, it suppresses ghrelin, the 'hunger hormone' that makes you want to raid the pantry.",
       "Research consistently shows that hitting at least 25 to 30 grams of protein in a single sitting is the 'threshold' required to trigger muscle protein synthesis and keep your blood sugar stable for hours. When you drop below that number, you might feel full for an hour, but you'll be looking for a snack by mid-afternoon. By hitting 25g+ at every meal, we are essentially turning off the hunger alarms in your brain.",
       "What makes this book different from every other meal prep book on this shelf:",
-      "Every other book in this category cycles through the same two or three proteins—usually dry chicken breast, ground turkey, and maybe some lean beef on a good week. By Thursday, you are eating your fourth chicken bowl and wondering why you even bothered. You aren't just hungry; you are bored. This book uses six distinct protein sources: chicken, beef, fish, eggs, legumes, and dairy. Real variety. Real global flavors. One hundred and one recipes that do not blur together by midweek.",
+      "Every other book in this category cycles through the same two or three proteins—usually dry chicken breast, ground turkey, and maybe some lean beef on a good week. By Thursday, you are eating your fourth chicken bowl and wondering why you even bothered. You aren't just hungry; you are bored. This book uses six distinct protein sources: chicken, beef, fish, eggs, legumes, and dairy. Real variety. Real global flavors. One hundred and two recipes that do not blur together by midweek.",
       "Every recipe in this book delivers 25 grams of protein or more per serving. Not approximately. Not close. At least 25 grams, every single meal. That is the number that keeps you full, preserves your lean muscle while you lose fat, and shuts down the 'revenge eating' that happens when you've been restricted all day.",
       "And every meal is designed to be prepped in advance, stored safely, and reheated without losing its texture or flavor. Because food that tastes like sad, rubbery leftovers is food you will eventually stop making. We focus on 'shelf-stable' textures—stews, braises, and hearty salads that actually taste better on day three than they did on day one.",
       "The 3 Non-Negotiable Rules of This Book:",
@@ -2822,6 +2822,39 @@
     },
     {
       "number": 90,
+      "title": "Italian Egg Drop Soup (Stracciatella)",
+      "protein_source": "🥚 Eggs + 🧀 Dairy",
+      "yield": "6 servings",
+      "prep": "5 min",
+      "cook": "15 min",
+      "cook_label": "Cook",
+      "ingredients": [
+        "8 cups low-sodium chicken broth",
+        "6 large eggs",
+        "½ cup Parmesan cheese, finely grated",
+        "4 cups fresh spinach, roughly chopped",
+        "2 garlic cloves, minced",
+        "1 tbsp olive oil",
+        "¼ tsp ground nutmeg",
+        "Salt and black pepper to taste",
+        "Fresh parsley for garnish"
+      ],
+      "instructions": [
+        "In a large pot, heat olive oil over medium heat. Sauté garlic for 30 seconds until fragrant.",
+        "Add chicken broth and bring to a gentle boil.",
+        "In a bowl, whisk eggs with Parmesan, nutmeg, salt, and pepper until smooth.",
+        "Reduce heat to a simmer. Slowly pour the egg mixture into the broth in a thin stream while stirring gently with a fork to create ribbons.",
+        "Stir in spinach and cook for 1–2 minutes until wilted.",
+        "Ladle into bowls and garnish with fresh parsley."
+      ],
+      "nutrition": "Calories: 210 | Protein: 28g | Carbs: 4g | Fat: 12g",
+      "nutrition_extra": "per serving",
+      "storage": "Store in the fridge for up to 3 days. Reheat gently — do not boil or eggs will become rubbery.",
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_90.png"
+    },
+    {
+      "number": 91,
       "title": "Chocolate Peanut Butter Protein Fudge",
       "protein_source": "🧀 Dairy",
       "yield": "16 squares (serving = 2 squares)",
@@ -2846,10 +2879,10 @@
       "nutrition_extra": "per serving — 2 squares",
       "storage": "Store in the freezer in a sealed container. Let sit at room temperature for 3 minutes before eating.",
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_90.png"
+      "image_path": "images/recipe_91.png"
     },
     {
-      "number": 91,
+      "number": 92,
       "title": "Lemon Cheesecake Protein Bars",
       "protein_source": "🧀 Dairy",
       "yield": "12 bars",
@@ -2878,10 +2911,10 @@
       "nutrition_extra": "per bar",
       "storage": "Cut into 12 bars. Store in the fridge for up to 5 days.",
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_91.png"
+      "image_path": "images/recipe_92.png"
     },
     {
-      "number": 92,
+      "number": 93,
       "title": "Greek Yogurt Bark with Berries",
       "protein_source": "🧀 Dairy",
       "yield": "6 servings",
@@ -2905,10 +2938,10 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_92.png"
+      "image_path": "images/recipe_93.png"
     },
     {
-      "number": 93,
+      "number": 94,
       "title": "Cottage Cheese Chocolate Mousse",
       "protein_source": "🧀 Dairy",
       "yield": "4 servings",
@@ -2933,10 +2966,10 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_93.png"
+      "image_path": "images/recipe_94.png"
     },
     {
-      "number": 94,
+      "number": 95,
       "title": "Banana Protein Mug Cake",
       "protein_source": "🥚 Eggs + 🧀 Dairy",
       "yield": "1 serving",
@@ -2962,10 +2995,10 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_94.png"
+      "image_path": "images/recipe_95.png"
     },
     {
-      "number": 95,
+      "number": 96,
       "title": "Peanut Butter Protein Cookies",
       "protein_source": "🥚 Eggs + 🧀 Dairy",
       "yield": "16 cookies (serving = 3)",
@@ -2991,10 +3024,10 @@
       "nutrition_extra": "per serving — 3 cookies",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_95.png"
+      "image_path": "images/recipe_96.png"
     },
     {
-      "number": 96,
+      "number": 97,
       "title": "Chocolate Protein Energy Bites",
       "protein_source": "🧀 Dairy",
       "yield": "20 bites (serving = 4)",
@@ -3020,10 +3053,10 @@
       "nutrition_extra": "per serving — 4 bites",
       "storage": "Transfer to an airtight container. Store in the fridge for up to 1 week or freeze for up to 1 month.",
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_96.png"
+      "image_path": "images/recipe_97.png"
     },
     {
-      "number": 97,
+      "number": 98,
       "title": "Vanilla Cottage Cheese Parfait",
       "protein_source": "🧀 Dairy",
       "yield": "2 servings",
@@ -3048,10 +3081,10 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_97.png"
+      "image_path": "images/recipe_98.png"
     },
     {
-      "number": 98,
+      "number": 99,
       "title": "Chipotle Lime Marinade",
       "protein_source": "Mixed",
       "yield": "6 servings",
@@ -3074,14 +3107,14 @@
         "Drizzle over cooked meals as a finishing sauce.",
         "Store in the fridge for up to 1 week."
       ],
-      "nutrition": "",
-      "nutrition_extra": "",
+      "nutrition": "Calories: 70 | Protein: 0g | Carbs: 2g | Fat: 7g",
+      "nutrition_extra": "per serving",
       "storage": "Store in an airtight jar in the fridge for up to 1 week.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_98.png"
+      "image_path": "images/recipe_99.png"
     },
     {
-      "number": 99,
+      "number": 100,
       "title": "Greek Yogurt Tzatziki",
       "protein_source": "🧀 Dairy",
       "yield": "6 servings",
@@ -3107,10 +3140,10 @@
       "nutrition_extra": "per serving — 3 tbsp",
       "storage": "Store in an airtight container in the fridge for up to 4 days.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_99.png"
+      "image_path": "images/recipe_100.png"
     },
     {
-      "number": 100,
+      "number": 101,
       "title": "High-Protein Caesar Dressing",
       "protein_source": "🧀 Dairy",
       "yield": "8 servings",
@@ -3137,10 +3170,10 @@
       "nutrition_extra": "per serving — 2 tbsp",
       "storage": "Store in a sealed jar in the fridge for up to 5 days. Stir well before each use.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_100.png"
+      "image_path": "images/recipe_101.png"
     },
     {
-      "number": 101,
+      "number": 102,
       "title": "Lemon Garlic Herb Sauce",
       "protein_source": "Mixed",
       "yield": "6 servings",
@@ -3162,69 +3195,11 @@
         "Use as a marinade or a finishing drizzle.",
         "Store in the fridge for up to 1 week."
       ],
-      "nutrition": "",
-      "nutrition_extra": "",
+      "nutrition": "Calories: 90 | Protein: 0g | Carbs: 2g | Fat: 9g",
+      "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 1 week. Bring to room temperature and shake before use.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_101.png"
-    },
-    {
-      "number": 102,
-      "title": "Peanut Sauce",
-      "protein_source": "Mixed",
-      "yield": "6 servings",
-      "prep": "5 min",
-      "cook": "0 min",
-      "cook_label": "Cook",
-      "ingredients": [
-        "½ cup natural peanut butter",
-        "3 tbsp reduced-sodium soy sauce",
-        "2 tbsp lime juice",
-        "1 tbsp honey",
-        "1 tsp sesame oil",
-        "1 tsp fresh ginger, grated (or ½ tsp ground)",
-        "1 garlic clove, minced",
-        "2–4 tbsp warm water (to thin)"
-      ],
-      "instructions": [
-        "Whisk all ingredients except water in a bowl.",
-        "Add warm water 1 tbsp at a time until pourable.",
-        "Adjust lime, soy, or honey to taste.",
-        "Store in the fridge for up to 1 week."
-      ],
-      "nutrition": "",
-      "nutrition_extra": "",
-      "storage": "Store in a sealed jar in the fridge for up to 1 week.",
-      "chapter": "Chapter 8",
       "image_path": "images/recipe_102.png"
-    },
-    {
-      "number": 103,
-      "title": "Avocado Lime Crema",
-      "protein_source": "🧀 Dairy",
-      "yield": "6 servings",
-      "prep": "5 min",
-      "cook": "0 min",
-      "cook_label": "Cook",
-      "ingredients": [
-        "2 ripe avocados",
-        "½ cup plain Greek yogurt",
-        "3 tbsp lime juice",
-        "1 garlic clove, minced",
-        "¼ cup fresh cilantro, chopped",
-        "Salt to taste"
-      ],
-      "instructions": [
-        "Blend or mash all ingredients until creamy.",
-        "Adjust lime and salt to taste.",
-        "Press plastic lettuce wraps on surface before sealing.",
-        "Store in the fridge for up to 3 days."
-      ],
-      "nutrition": "Calories: 90 | Protein: 3g | Carbs: 5g | Fat: 7g",
-      "nutrition_extra": "per serving — 2 tbsp",
-      "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 8",
-      "image_path": "images/recipe_103.png"
     }
   ],
   "mealplan": {
@@ -3268,12 +3243,12 @@
           "|  |  |  |  |  |",
           "| :-: | :-: | :-: | :-: | :-: |",
           "| Day | B | L | D | S |",
-          "| Mon | R3 — Overnight Oats | R15 — Greek Chicken Bowls | R56 — Lemon Garlic Chicken | R62 — Egg & Avocado Box |",
-          "| Tue | R3 — Overnight Oats | R17 — Tuna & White Bean Jars | R41 — Beef & Lentil Stew | R63 — Turkey Roll-Ups |",
-          "| Wed | R5 — Spinach Egg Bake | R15 — Greek Chicken Bowls | R56 — Lemon Garlic Chicken | R73 — Greek Yogurt & Honey |",
+          "| Mon | R3 — Overnight Oats | R15 — Greek Chicken Bowls | R58 — Lemon Garlic Chicken | R62 — Egg & Avocado Box |",
+          "| Tue | R3 — Overnight Oats | R17 — Tuna & White Bean Jars | R41 — Beef & Lentil Stew | R65 — Turkey Roll-Ups |",
+          "| Wed | R5 — Spinach Egg Bake | R15 — Greek Chicken Bowls | R58 — Lemon Garlic Chicken | R73 — Greek Yogurt & Honey |",
           "| Thu | R5 — Spinach Egg Bake | R17 — Tuna & White Bean Jars | R41 — Beef & Lentil Stew | R62 — Egg & Avocado Box |",
-          "| Fri | R14 — Cottage Cheese Scramble | R15 — Greek Chicken Bowls | R56 — Lemon Garlic Chicken | R63 — Turkey Roll-Ups |",
-          "| Sat | R4 — Turkey Hash | R17 — Tuna & White Bean Jars | R43 — Black Bean & Beef Chili | R65 — Greek Yogurt Ranch |",
+          "| Fri | R14 — Cottage Cheese Scramble | R15 — Greek Chicken Bowls | R58 — Lemon Garlic Chicken | R65 — Turkey Roll-Ups |",
+          "| Sat | R4 — Turkey Hash | R17 — Tuna & White Bean Jars | R43 — Black Bean & Beef Chili | R67 — Greek Yogurt Ranch |",
           "| Sun | R4 — Turkey Hash | R28 — Beef & Rice Bowls | R43 — Black Bean & Beef Chili | R74 — Protein Trail Mix |",
           "",
           "Week 1 Grocery List:",
@@ -3315,10 +3290,10 @@
           "|  |  |  |  |  |",
           "| :-: | :-: | :-: | :-: | :-: |",
           "| Day | B | L | D | S |",
-          "| Mon | R11 — PB Overnight Oats | R19 — Chicken Caesar Jars | R39 — Sheet Pan Chicken | R70 — Roasted Chickpeas |",
-          "| Tue | R11 — PB Overnight Oats | R23 — Buffalo Chicken Cups | R35 — Garlic Butter Salmon | R62 — Egg & Avocado Box |",
-          "| Wed | R1 — Egg & Veggie Muffins | R19 — Chicken Caesar Jars | R39 — Sheet Pan Chicken | R70 — Roasted Chickpeas |",
-          "| Thu | R1 — Egg & Veggie Muffins | R23 — Buffalo Chicken Cups | R35 — Garlic Butter Salmon | R68 — Almond & Cheese Pack |",
+          "| Mon | R11 — PB Overnight Oats | R19 — Chicken Caesar Jars | R41 — Sheet Pan Chicken | R70 — Roasted Chickpeas |",
+          "| Tue | R11 — PB Overnight Oats | R23 — Buffalo Chicken Cups | R37 — Garlic Butter Salmon | R62 — Egg & Avocado Box |",
+          "| Wed | R1 — Egg & Veggie Muffins | R19 — Chicken Caesar Jars | R41 — Sheet Pan Chicken | R70 — Roasted Chickpeas |",
+          "| Thu | R1 — Egg & Veggie Muffins | R23 — Buffalo Chicken Cups | R37 — Garlic Butter Salmon | R68 — Almond & Cheese Pack |",
           "| Fri | R14 — Cottage Cheese Scramble | R18 — Lemon Herb Salmon | R43 — Chili (from freezer) | R66 — Tuna-Stuffed Peppers |",
           "| Sat | R8 — Protein Pancakes | R21 — Egg Salad Wraps | R31 — Teriyaki Chicken Bowls | R73 — Greek Yogurt & Honey |",
           "| Sun | R8 — Protein Pancakes | R24 — Tuna Pasta Salad | R31 — Teriyaki Chicken Bowls | R61 — PB Protein Balls |",
@@ -3366,8 +3341,8 @@
           "| Tue | R3 — Overnight Oats | R26 — Asian Chicken Noodle Salad | R53 — Salmon Sweet Potato Sheet Pan | R62 — Egg & Avocado Box |",
           "| Wed | R9 — Cottage Cheese Bowl | R22 — Chickpea Veggie Bowl | R82 — Turkey Sweet Potato Chili | R66 — Tuna-Stuffed Peppers |",
           "| Thu | R9 — Cottage Cheese Bowl | R30 — Lentil Mason Jar Salad | R53 — Salmon Sweet Potato Sheet Pan | R64 — Cottage Cheese Dip |",
-          "| Fri | R13 — Banana Smoothie Bowl | R26 — Asian Chicken Noodle Salad | R79 — Shrimp & Corn Chowder | R68 — Almond & Cheese Pack |",
-          "| Sat | R7 — Black Bean Scramble | R30 — Lentil Mason Jar Salad | R79 — Shrimp & Corn Chowder | R71 — Cottage Cheese Toast |",
+          "| Fri | R13 — Banana Smoothie Bowl | R26 — Asian Chicken Noodle Salad | R81 — Shrimp & Corn Chowder | R68 — Almond & Cheese Pack |",
+          "| Sat | R7 — Black Bean Scramble | R30 — Lentil Mason Jar Salad | R81 — Shrimp & Corn Chowder | R71 — Cottage Cheese Toast |",
           "| Sun | R7 — Black Bean Scramble | R27 — White Bean & Tuna Salad | R80 — Smoky Chickpea & Chicken | R61 — PB Protein Balls |",
           "",
           "Swap It this week: Not a fan of salmon? Use cod (R45) instead. No shrimp? Use canned tuna mixed into the chowder. Do not eat legumes? Replace lentil salad with Chicken Caesar Jars (R19).",
@@ -3400,13 +3375,13 @@
           "",
           "|  |  |  |",
           "| :-: | :-: | :-: |",
-          "| Pick Your Protein | \\+ Pick Your Base | \\+ Pick Your Sauce |",
-          "| Grilled Chicken Breast | Brown Rice | Tzatziki (R97) |",
-          "| Ground Turkey | Quinoa | Chipotle Lime (R96) |",
-          "| Salmon | Cauliflower Rice | Peanut Sauce (R100) |",
-          "| Shrimp | Whole Wheat Pasta | Caesar Dressing (R98) |",
-          "| Ground Beef | Sweet Potato | Lemon Garlic (R99) |",
-          "| Hard-Boiled Eggs | Zucchini Noodles | Avocado Lime Crema (R101) |",
+          "| Pick Your Protein | + Pick Your Base | + Pick Your Sauce |",
+          "| Grilled Chicken Breast | Brown Rice | Greek Yogurt Tzatziki (R100) |",
+          "| Ground Turkey | Quinoa | Chipotle Lime Marinade (R99) |",
+          "| Salmon | Cauliflower Rice | Lemon Garlic Herb Sauce (R102) |",
+          "| Shrimp | Whole Wheat Pasta | High-Protein Caesar Dressing (R101) |",
+          "| Ground Beef | Sweet Potato | Lemon Garlic Herb Sauce (R102) |",
+          "| Hard-Boiled Eggs | Zucchini Noodles | Greek Yogurt Tzatziki (R100) |",
           "| Chickpeas | Farro | Any two combined |",
           "",
           "Sample Week 4 Daily Plan:",
@@ -3414,10 +3389,10 @@
           "|  |  |  |  |  |",
           "| :-: | :-: | :-: | :-: | :-: |",
           "| Day | B | L | D | S |",
-          "| Mon | R10 — Sausage Casserole | R32 — Shrimp & Avocado Salad | R42 — Creamy Tuscan Chicken | R95 — Cottage Cheese Parfait |",
-          "| Tue | R10 — Sausage Casserole | R33 — Greek Meatball Bowls | R49 — Garlic Shrimp & Zoodles | R90 — Yogurt Bark |",
-          "| Wed | R2 — Greek Yogurt Bowl | R32 — Shrimp & Avocado Salad | R42 — Creamy Tuscan Chicken | R91 — Chocolate Mousse |",
-          "| Thu | R2 — Greek Yogurt Bowl | R33 — Greek Meatball Bowls | R47 — Pork Tenderloin Apple | R88 — PB Protein Fudge |",
+          "| Mon | R10 — Sausage Casserole | R33 — Shrimp & Avocado Salad | R44 — Creamy Tuscan Chicken | R98 — Cottage Cheese Parfait |",
+          "| Tue | R10 — Sausage Casserole | R34 — Greek Turkey Meatball Bowls | R51 — Garlic Shrimp & Zucchini Noodles | R93 — Yogurt Bark |",
+          "| Wed | R2 — Greek Yogurt Bowl | R33 — Shrimp & Avocado Salad | R44 — Creamy Tuscan Chicken | R94 — Chocolate Mousse |",
+          "| Thu | R2 — Greek Yogurt Bowl | R34 — Greek Turkey Meatball Bowls | R49 — Pork Tenderloin with Apple & Dijon | R91 — Chocolate Peanut Butter Protein Fudge |",
           "| Fri | R6 — Smoked Salmon Toast | Your choice | Your choice | Your choice |",
           "| Sat | R12 — Veggie Frittata | Your choice | Your choice | Your choice |",
           "| Sun | R12 — Veggie Frittata | Your choice | Your choice | Your choice |",
@@ -3790,7 +3765,7 @@
   "appendix_a": {
     "title": "Appendix A",
     "sub": "Full Nutritional Index",
-    "intro": "All 103 recipes — calories, protein, carbs, and fat per serving.",
+    "intro": "All 102 recipes — calories, protein, carbs, and fat per serving.",
     "rows": [
       [
         "#",
@@ -4514,6 +4489,14 @@
       ],
       [
         "90",
+        "Italian Egg Drop Soup (Stracciatella)",
+        "210",
+        "28g",
+        "4g",
+        "12g"
+      ],
+      [
+        "91",
         "Chocolate Peanut Butter Protein Fudge",
         "280",
         "13g",
@@ -4521,7 +4504,7 @@
         "20g"
       ],
       [
-        "91",
+        "92",
         "Lemon Cheesecake Protein Bars",
         "150",
         "8g",
@@ -4529,7 +4512,7 @@
         "4g"
       ],
       [
-        "92",
+        "93",
         "Greek Yogurt Bark with Berries",
         "160",
         "13g",
@@ -4537,7 +4520,7 @@
         "4g"
       ],
       [
-        "93",
+        "94",
         "Cottage Cheese Chocolate Mousse",
         "180",
         "18g",
@@ -4545,7 +4528,7 @@
         "4g"
       ],
       [
-        "94",
+        "95",
         "Banana Protein Mug Cake",
         "340",
         "18g",
@@ -4553,7 +4536,7 @@
         "12g"
       ],
       [
-        "95",
+        "96",
         "Peanut Butter Protein Cookies",
         "320",
         "15g",
@@ -4561,7 +4544,7 @@
         "22g"
       ],
       [
-        "96",
+        "97",
         "Chocolate Protein Energy Bites",
         "240",
         "10g",
@@ -4569,7 +4552,7 @@
         "10g"
       ],
       [
-        "97",
+        "98",
         "Vanilla Cottage Cheese Parfait",
         "360",
         "28g",
@@ -4577,7 +4560,7 @@
         "10g"
       ],
       [
-        "98",
+        "99",
         "Chipotle Lime Marinade",
         "70",
         "0g",
@@ -4585,7 +4568,7 @@
         "7g"
       ],
       [
-        "99",
+        "100",
         "Greek Yogurt Tzatziki",
         "70",
         "5g",
@@ -4593,7 +4576,7 @@
         "4g"
       ],
       [
-        "100",
+        "101",
         "High-Protein Caesar Dressing",
         "55",
         "6g",
@@ -4601,28 +4584,12 @@
         "2g"
       ],
       [
-        "101",
+        "102",
         "Lemon Garlic Herb Sauce",
         "90",
         "0g",
         "2g",
         "9g"
-      ],
-      [
-        "102",
-        "Peanut Sauce",
-        "130",
-        "4g",
-        "8g",
-        "10g"
-      ],
-      [
-        "103",
-        "Avocado Lime Crema (2 tbsp)",
-        "90",
-        "3g",
-        "5g",
-        "7g"
       ]
     ]
   },

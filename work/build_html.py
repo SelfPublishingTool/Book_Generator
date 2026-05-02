@@ -447,7 +447,7 @@ for b in book['bonus']['bonuses']:
 
 # 9. Appendix A
 appA = book['appendix_a']
-parts.append(chapter_cover('Appendix A', appA['sub'], 'All 101 recipes', '', color_class='cover-ink'))
+parts.append(chapter_cover('Appendix A', appA['sub'], 'All 102 recipes', '', color_class='cover-ink'))
 
 rows = appA['rows']
 header = rows[0]; body_rows = rows[1:]
