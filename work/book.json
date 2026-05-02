@@ -261,7 +261,7 @@
       "image_path": "images/recipe_4.png",
       "ingredients": [
         "1 lb ground turkey (93/7)",
-        "2 medium diced zucchini, diced small",
+        "2 medium zucchini, diced",
         "1 red bell pepper, diced",
         "½ yellow onion, diced",
         "2 tbsp olive oil",
@@ -546,19 +546,20 @@
         "6 large eggs",
         "½ cup cottage cheese (2%)",
         "1 tbsp butter",
-        "2 tbsp chives",
+        "2 tbsp fresh chives, chopped",
         "¼ tsp garlic powder",
-        "Salt and pepper"
+        "Salt and black pepper to taste"
       ],
       "instructions": [
-        "Whisk eggs, cottage cheese, and seasonings.",
-        "Melt butter in a skillet over medium-low heat.",
-        "Pour in eggs and fold gently until just set.",
-        "Remove from heat immediately to keep creamy."
+        "Whisk eggs, cottage cheese, garlic powder, salt, and pepper until well combined.",
+        "Melt butter in a nonstick skillet over medium-low heat.",
+        "Pour in the egg mixture and cook slowly, gently folding with a spatula until soft curds form and eggs are just set.",
+        "Remove from heat immediately to keep the texture creamy.",
+        "Sprinkle with fresh chives before serving."
       ],
       "nutrition": "Calories: 290 | Protein: 28g | Carbs: 3g | Fat: 18g",
       "nutrition_extra": "per serving",
-      "storage": "Store in the fridge for up to 2 days.",
+      "storage": "Best eaten fresh. If needed, store in the fridge for up to 2 days and reheat gently.",
       "chapter": "Chapter 2"
     },
     {
@@ -574,7 +575,7 @@
         "1½ lbs chicken breast",
         "2 tbsp olive oil",
         "1 tsp oregano",
-        "2 cups cooked cauliflower cauliflower rice",
+        "2 cups cooked cauliflower rice",
         "1 cup cherry tomatoes",
         "1 cup cucumber, diced",
         "½ cup feta cheese"
@@ -715,7 +716,7 @@
       "image_path": "images/recipe_20.png",
       "ingredients": [
         "1½ lbs shrimp, peeled",
-        "2 cups cooked cauliflower cauliflower rice",
+        "2 cups cooked cauliflower rice",
         "1 ripe mango, diced",
         "1 cup cucumber, diced",
         "2 tbsp lime juice",
@@ -761,44 +762,49 @@
       "nutrition": "Calories: 280 | Protein: 22g | Carbs: 4g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 3"
-    },
-    {
-      "number": 21,
-      "title": "Egg Salad Lettuce Lettuce Wraps",
-      "protein_source": "🥚 Eggs",
-      "yield": "4 servings",
-      "prep": "10 min",
-      "cook": "10 min",
-      "cook_label": "Cook",
-      "image_path": "images/recipe_21.png",
-      "ingredients": [
-        "10 large eggs, hard-boiled",
-        "3 tbsp plain Greek yogurt",
-        "1 tbsp Dijon mustard",
-        "¼ cup celery, diced",
-        "8 butter lettuce leaves"
-      ],
-      "instructions": [
-        "Chop hard-boiled eggs and mix with yogurt, mustard, and celery.",
-        "Season with salt, pepper, and paprika.",
-        "Spoon into lettuce leaves and serve immediately.",
-        "Store egg salad in the fridge for up to 3 days."
-      ],
-      "nutrition": "Calories: 280 | Protein: 22g | Carbs: 4g | Fat: 18g",
-      "nutrition_extra": "per serving",
-      "storage": "Store egg salad separately from lettuce.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "image_path": "images/recipe_21.png"
     },
     {
       "number": 22,
+      "title": "Cottage Cheese & Avocado Protein Bowl",
+      "protein_source": "🧀 Cottage Cheese",
+      "yield": "4 servings",
+      "prep": "10 min",
+      "cook": "0 min",
+      "cook_label": "No Cook",
+      "image_path": "images/recipe_22.png",
+      "ingredients": [
+        "2 cups low-fat cottage cheese",
+        "2 ripe avocados, diced",
+        "1 cup cherry tomatoes, halved",
+        "½ cucumber, diced",
+        "2 tbsp lemon juice",
+        "1 tsp garlic powder",
+        "½ tsp red pepper flakes (optional)",
+        "Salt and black pepper to taste"
+      ],
+      "instructions": [
+        "Divide cottage cheese evenly into 4 meal prep containers.",
+        "Top each with diced avocado, cherry tomatoes, and cucumber.",
+        "Drizzle with lemon juice and season with garlic powder, salt, and pepper.",
+        "Add red pepper flakes if desired.",
+        "Store cottage cheese and toppings in separate containers; combine before serving."
+      ],
+      "nutrition": "Calories: 265 | Protein: 24g | Carbs: 12g | Fat: 14g",
+      "nutrition_extra": "per serving",
+      "storage": "Store cottage cheese and toppings separately for up to 3 days.",
+      "chapter": "Chapter 3"
+    },
+    {
+      "number": 23,
       "title": "Roasted Walnuts & Roasted Veggie Power Bowl",
       "protein_source": "🫘 Legumes",
       "yield": "4 servings",
       "prep": "10 min",
       "cook": "25 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_22.png",
+      "image_path": "images/recipe_23.png",
       "ingredients": [
         "2 cans roasted walnuts, rinsed",
         "2 zucchinis, diced",
@@ -819,14 +825,14 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 23,
+      "number": 24,
       "title": "Buffalo Chicken Lettuce Cups",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
       "prep": "10 min",
       "cook": "20 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_23.png",
+      "image_path": "images/recipe_24.png",
       "ingredients": [
         "1½ lbs chicken breast",
         "3 tbsp buffalo hot sauce",
@@ -846,14 +852,14 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 24,
+      "number": 25,
       "title": "Tuna Zucchini Zucchini Noodles Salad",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
       "prep": "10 min",
       "cook": "10 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_24.png",
+      "image_path": "images/recipe_25.png",
       "ingredients": [
         "3 cans tuna, drained",
         "2 cups whole wheat rotini",
@@ -862,7 +868,7 @@
         "3 tbsp Greek yogurt"
       ],
       "instructions": [
-        "Cook and cool zucchini zucchini noodles. Mix with tuna, peas, and onion.",
+        "Cook and cool zucchini noodles. Mix with tuna, peas, and onion.",
         "Combine yogurt, mayo, and mustard for dressing.",
         "Toss everything together and season.",
         "Refrigerate for 30 mins before serving."
@@ -873,68 +879,84 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 25,
-      "title": "Turkey & Hemp Hearts Stuffed Peppers (Cold)",
+      "number": 26,
+      "title": "Turkey & Hemp Hearts Stuffed Peppers",
       "protein_source": "🐔 Poultry",
       "yield": "4 servings",
       "prep": "15 min",
       "cook": "30 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_25.png",
+      "image_path": "images/recipe_26.png",
       "ingredients": [
-        "1 lb ground turkey",
-        "4 bell peppers, halved",
+        "1 lb ground turkey (93/7)",
+        "4 bell peppers, halved and seeded",
         "1 cup cooked hemp hearts",
-        "1 can diced tomatoes",
-        "½ cup mozzarella"
+        "1 can diced tomatoes, drained",
+        "½ cup shredded mozzarella",
+        "1 tsp garlic powder",
+        "1 tsp Italian seasoning",
+        "Salt and black pepper to taste"
       ],
       "instructions": [
-        "Brown turkey; stir in tomatoes, hemp hearts, and seasonings.",
-        "Fill pepper halves with the mixture.",
-        "Top with mozzarella and bake at 375°F for 25–30 mins.",
-        "Cool and store for up to 4 days."
+        "Preheat oven to 375°F (190°C).",
+        "Brown ground turkey in a skillet over medium heat. Drain excess fat.",
+        "Stir in diced tomatoes, hemp hearts, garlic powder, Italian seasoning, salt, and pepper. Cook for 3–4 minutes until well combined.",
+        "Arrange bell pepper halves in a baking dish. Fill each with the turkey mixture.",
+        "Top with mozzarella cheese.",
+        "Bake for 25–30 minutes until peppers are tender and cheese is melted and lightly golden.",
+        "Let cool before storing."
       ],
       "nutrition": "Calories: 370 | Protein: 32g | Carbs: 28g | Fat: 12g",
       "nutrition_extra": "per serving — 2 pepper halves",
-      "storage": "Store in the fridge for up to 4 days.",
+      "storage": "Store in the fridge for up to 4 days. Reheat before serving.",
       "chapter": "Chapter 3"
     },
     {
-      "number": 26,
+      "number": 27,
       "title": "Asian Chicken Zucchini Noodles Salad",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
       "prep": "15 min",
       "cook": "20 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_26.png",
+      "image_path": "images/recipe_27.png",
       "ingredients": [
-        "1½ lbs chicken, shredded",
-        "6 oz whole wheat spaghetti",
-        "2 cups purple cabbage",
-        "1 cup carrots",
-        "½ cup edamame"
+        "1½ lbs chicken breast, cooked and shredded",
+        "4 medium zucchini, spiralized into noodles",
+        "2 cups purple cabbage, thinly sliced",
+        "1 cup carrots, julienned or shredded",
+        "½ cup edamame, shelled",
+        "3 tbsp reduced-sodium soy sauce",
+        "1 tbsp sesame oil",
+        "1 tbsp rice vinegar",
+        "1 tsp fresh ginger, grated",
+        "1 tsp garlic powder",
+        "1 tsp sriracha (optional)",
+        "2 green onions, sliced",
+        "1 tsp sesame seeds"
       ],
       "instructions": [
-        "Cook and cool zucchini zucchini noodles. Whisk soy sauce, sesame oil, and vinegar.",
-        "Toss chicken, zucchini noodles, and veggies with dressing.",
-        "Divide among 4 containers and refrigerate.",
-        "Flavors develop better after a day."
+        "Season chicken with salt and garlic powder. Cook in a skillet over medium heat 6–7 min per side. Rest 5 min, then shred.",
+        "Whisk together soy sauce, sesame oil, rice vinegar, ginger, garlic powder, and sriracha to make the dressing.",
+        "In a large bowl, combine zucchini noodles, cabbage, carrots, and edamame.",
+        "Add shredded chicken and pour dressing over. Toss well to coat.",
+        "Divide among 4 meal prep containers. Top with sesame seeds and green onions.",
+        "Store in the fridge for up to 4 days. Flavors improve after resting overnight."
       ],
-      "nutrition": "Calories: 430 | Protein: 38g | Carbs: 38g | Fat: 12g",
+      "nutrition": "Calories: 320 | Protein: 38g | Carbs: 18g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
       "chapter": "Chapter 3"
     },
     {
-      "number": 27,
+      "number": 28,
       "title": "Diced Mushrooms & Tuna Salad",
       "protein_source": "🐟 Fish + 🫘 Legumes",
       "yield": "4 servings",
       "prep": "10 min",
       "cook": "0 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_27.png",
+      "image_path": "images/recipe_28.png",
       "ingredients": [
         "2 cans tuna, drained",
         "2 cans diced mushrooms, rinsed",
@@ -954,17 +976,17 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 28,
+      "number": 29,
       "title": "Beef & Cauliflower Cauliflower Rice Power Bowls",
       "protein_source": "🐄 Beef",
       "yield": "4 servings",
       "prep": "10 min",
       "cook": "20 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_28.png",
+      "image_path": "images/recipe_29.png",
       "ingredients": [
         "1½ lbs ground beef",
-        "2 cups cauliflower cauliflower rice",
+        "2 cups cauliflower rice",
         "1 cup broccoli, steamed",
         "1 cup carrots",
         "3 tbsp soy sauce"
@@ -981,14 +1003,14 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 29,
+      "number": 30,
       "title": "Chicken & Avocado Protein Lettuce Wraps",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
       "prep": "10 min",
       "cook": "0 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_29.png",
+      "image_path": "images/recipe_30.png",
       "ingredients": [
         "1½ lbs chicken, shredded",
         "2 avocados, mashed",
@@ -1008,14 +1030,14 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 30,
+      "number": 31,
       "title": "Chopped Mushrooms & Veggie Mason Jar Salad",
       "protein_source": "🫘 Legumes",
       "yield": "4 servings",
       "prep": "15 min",
       "cook": "20 min",
       "cook_label": "Cook",
-      "image_path": "images/recipe_30.png",
+      "image_path": "images/recipe_31.png",
       "ingredients": [
         "1½ cups chopped mushrooms, cooked",
         "1 cup cherry tomatoes",
@@ -1035,7 +1057,7 @@
       "chapter": "Chapter 3"
     },
     {
-      "number": 31,
+      "number": 32,
       "title": "Teriyaki Chicken Cauliflower Rice Bowls",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1046,26 +1068,29 @@
         "1½ lbs chicken thighs, boneless and skinless",
         "¼ cup reduced-sodium soy sauce",
         "2 tbsp honey",
-        "1 tbsp cauliflower rice vinegar",
+        "1 tbsp rice vinegar",
         "1 tsp garlic powder",
         "1 tsp cornstarch",
-        "2 cups cooked cauliflower cauliflower rice",
+        "2 cups cooked cauliflower rice",
         "2 cups steamed broccoli",
         "1 tsp sesame seeds"
       ],
       "instructions": [
-        "Spread cottage cheese on each lettuce wraps.",
-        "Top with spinach, bell pepper, and pumpkin seeds.",
-        "Roll up tightly.",
-        "Lettuce Wraps in foil and store until ready to eat."
+        "Whisk soy sauce, honey, rice vinegar, garlic powder, and cornstarch together to make teriyaki sauce.",
+        "Heat a skillet over medium-high heat. Cook chicken thighs 6–7 minutes per side until cooked through.",
+        "Pour teriyaki sauce over chicken in the last 2 minutes. Let it caramelize and thicken, then remove from heat.",
+        "Rest chicken 5 minutes, then slice or dice.",
+        "Divide cauliflower rice and steamed broccoli into 4 meal prep containers.",
+        "Top with sliced chicken and garnish with sesame seeds. Store in the fridge for up to 4 days."
       ],
       "nutrition": "Calories: 430 | Protein: 38g | Carbs: 34g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "image_path": "images/recipe_32.png"
     },
     {
-      "number": 32,
+      "number": 33,
       "title": "Shrimp & Avocado Salad",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1092,10 +1117,11 @@
       "nutrition": "Calories: 380 | Protein: 32g | Carbs: 18g | Fat: 20g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "image_path": "images/recipe_33.png"
     },
     {
-      "number": 33,
+      "number": 34,
       "title": "Greek Turkey Meatball Bowls",
       "protein_source": "🐔 Poultry",
       "yield": "4 servings",
@@ -1108,7 +1134,7 @@
         "1 egg",
         "1 tsp garlic powder",
         "1 tsp dried oregano",
-        "2 cups cooked farro or cauliflower cauliflower rice",
+        "2 cups cooked farro or cauliflower rice",
         "1 cup diced cucumber",
         "½ cup cherry tomatoes, halved",
         "½ cup crumbled feta cheese",
@@ -1123,10 +1149,11 @@
       "nutrition": "Calories: 450 | Protein: 38g | Carbs: 36g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "image_path": "images/recipe_34.png"
     },
     {
-      "number": 34,
+      "number": 35,
       "title": "Salmon & Cucumber Cauliflower Rice Paper Rolls",
       "protein_source": "🐟 Fish",
       "yield": "4 servings (3 rolls each)",
@@ -1141,7 +1168,7 @@
         "12 cauliflower rice paper wrappers",
         "3 tbsp reduced-sodium soy sauce",
         "1 tbsp sesame oil",
-        "1 tsp cauliflower rice vinegar"
+        "1 tsp rice vinegar"
       ],
       "instructions": [
         "Whisk soy sauce, oil, and vinegar for dipping.",
@@ -1152,10 +1179,42 @@
       "nutrition": "Calories: 310 | Protein: 26g | Carbs: 32g | Fat: 12g",
       "nutrition_extra": "per serving — 3 rolls",
       "storage": null,
+      "chapter": "Chapter 3",
+      "image_path": "images/recipe_35.png"
+    },
+    {
+      "number": 36,
+      "title": "Greek-Style Grilled Chicken Souvlaki Bowls",
+      "protein_source": "🐔 Chicken",
+      "yield": "4 servings",
+      "prep": "15 min",
+      "cook": "15 min",
+      "cook_label": "Cook",
+      "image_path": "images/recipe_36.png",
+      "ingredients": [
+        "1½ lbs chicken breast, cubed",
+        "2 tbsp olive oil",
+        "1 tbsp dried oregano",
+        "2 cloves garlic, minced",
+        "1 cup cucumber, diced",
+        "1 cup cherry tomatoes, halved",
+        "½ cup Kalamata olives",
+        "¼ cup red onion, sliced",
+        "½ cup feta cheese"
+      ],
+      "instructions": [
+        "Toss chicken with olive oil, oregano, and garlic.",
+        "Grill or sauté chicken until cooked through (6–8 mins).",
+        "Divide chicken, cucumber, tomatoes, olives, and onion among 4 bowls.",
+        "Top with crumbled feta before serving."
+      ],
+      "nutrition": "Calories: 380 | Protein: 42g | Carbs: 8g | Fat: 18g",
+      "nutrition_extra": "per serving",
+      "storage": "Store in the fridge for up to 4 days.",
       "chapter": "Chapter 3"
     },
     {
-      "number": 35,
+      "number": 37,
       "title": "Garlic Butter Salmon Tray Bake",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1180,10 +1239,11 @@
       "nutrition": "Calories: 380 | Protein: 37g | Carbs: 6g | Fat: 23g",
       "nutrition_extra": "per serving",
       "storage": "Bake for 15–18 minutes until the salmon flakes easily and asparagus is tender. Serve immediately or cool and store in the fridge for up to 3 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_37.png"
     },
     {
-      "number": 36,
+      "number": 38,
       "title": "Beef Power Bowls with Roasted Peppers",
       "protein_source": "🐄 Beef",
       "yield": "4 servings",
@@ -1194,7 +1254,7 @@
         "1½ lbs lean ground beef (90/10)",
         "3 bell peppers (mixed colors), sliced",
         "1 red onion, sliced",
-        "2 cups cooked cauliflower cauliflower rice",
+        "2 cups cooked cauliflower rice",
         "2 tbsp olive oil",
         "1 tsp smoked paprika",
         "1 tsp garlic powder",
@@ -1210,10 +1270,11 @@
       "nutrition": "Calories: 450 | Protein: 36g | Carbs: 34g | Fat: 16g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_38.png"
     },
     {
-      "number": 37,
+      "number": 39,
       "title": "Mediterranean Turkey Meatballs with Tzatziki",
       "protein_source": "🐔 Poultry",
       "yield": "4 servings",
@@ -1240,10 +1301,11 @@
       "nutrition": "Calories: 430 | Protein: 38g | Carbs: 28g | Fat: 16g",
       "nutrition_extra": "per serving — 6 meatballs + ½ cup quinoa",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_39.png"
     },
     {
-      "number": 38,
+      "number": 40,
       "title": "Slow Cooker Chicken & Diced Mushrooms Stew",
       "protein_source": "🐔 Chicken + 🫘 Legumes",
       "yield": "6 servings",
@@ -1270,10 +1332,11 @@
       "nutrition": "Calories: 360 | Protein: 38g | Carbs: 28g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_40.png"
     },
     {
-      "number": 39,
+      "number": 41,
       "title": "Sheet Pan Chicken Thighs & Asparagus",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1298,10 +1361,11 @@
       "nutrition": "Calories: 420 | Protein: 36g | Carbs: 5g | Fat: 28g",
       "nutrition_extra": "per serving — 2 thighs",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_41.png"
     },
     {
-      "number": 40,
+      "number": 42,
       "title": "Ground Turkey Stuffed Bell Peppers",
       "protein_source": "🐔 Poultry",
       "yield": "4 servings",
@@ -1311,7 +1375,7 @@
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
         "4 large bell peppers, tops cut off and seeded",
-        "1 cup cooked cauliflower cauliflower rice",
+        "1 cup cooked cauliflower rice",
         "1 can (15 oz) diced tomatoes with green chilies",
         "1 cup shredded mozzarella cheese",
         "1 tsp Italian seasoning",
@@ -1327,10 +1391,11 @@
       "nutrition": "Calories: 390 | Protein: 36g | Carbs: 28g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_42.png"
     },
     {
-      "number": 41,
+      "number": 43,
       "title": "Beef & Chopped Mushrooms One-Pot Stew",
       "protein_source": "🐄 Beef + 🫘 Legumes",
       "yield": "6 servings",
@@ -1359,10 +1424,11 @@
       "nutrition": "Calories: 350 | Protein: 32g | Carbs: 30g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": "Adjust seasoning and serve. Store in the fridge for up to 4 days or freeze for up to 3 months.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_43.png"
     },
     {
-      "number": 42,
+      "number": 44,
       "title": "Creamy Tuscan Chicken",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1385,15 +1451,16 @@
         "Season and brown chicken in oil. Sauté garlic.",
         "Simmer broth, then stir in yogurt and Parmesan.",
         "Add tomatoes and spinach; simmer until wilted.",
-        "Return chicken to pan and serve over cauliflower rice or zucchini zucchini noodles."
+        "Return chicken to pan and serve over cauliflower rice or zucchini noodles."
       ],
       "nutrition": "Calories: 360 | Protein: 42g | Carbs: 12g | Fat: 14g",
       "nutrition_extra": "per serving, chicken and sauce only",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_44.png"
     },
     {
-      "number": 43,
+      "number": 45,
       "title": "Diced Bell Peppers & Beef Chili",
       "protein_source": "🐄 Beef + 🫘 Legumes",
       "yield": "8 servings",
@@ -1421,10 +1488,11 @@
       "nutrition": "Calories: 310 | Protein: 28g | Carbs: 22g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_45.png"
     },
     {
-      "number": 44,
+      "number": 46,
       "title": "Teriyaki Salmon with Edamame Cauliflower Rice",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1435,9 +1503,9 @@
         "1½ lbs salmon fillets, cut into 4 portions",
         "¼ cup reduced-sodium soy sauce",
         "2 tbsp honey",
-        "1 tbsp cauliflower rice vinegar",
+        "1 tbsp rice vinegar",
         "1 tsp garlic powder",
-        "2 cups cooked cauliflower cauliflower rice",
+        "2 cups cooked cauliflower rice",
         "1 cup shelled edamame, cooked",
         "1 tsp sesame seeds"
       ],
@@ -1450,10 +1518,11 @@
       "nutrition": "Calories: 430 | Protein: 40g | Carbs: 38g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_46.png"
     },
     {
-      "number": 45,
+      "number": 47,
       "title": "Lemon Baked Cod with Roasted Broccoli",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1478,10 +1547,11 @@
       "nutrition": "Calories: 300 | Protein: 35g | Carbs: 8g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": "Store broccoli and cod separately in the fridge for up to 3 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_47.png"
     },
     {
-      "number": 46,
+      "number": 48,
       "title": "Chicken & Broccoli Stir-Fry",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1497,7 +1567,7 @@
         "1 tbsp cornstarch",
         "1 tsp garlic powder",
         "1 tsp fresh ginger, grated",
-        "2 cups cooked cauliflower cauliflower rice"
+        "2 cups cooked cauliflower rice"
       ],
       "instructions": [
         "Marinate chicken in soy, sesame oil, and spices.",
@@ -1508,10 +1578,11 @@
       "nutrition": "Calories: 400 | Protein: 40g | Carbs: 34g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": "Serve over brown rice. Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_48.png"
     },
     {
-      "number": 47,
+      "number": 49,
       "title": "Pork Tenderloin with Apple & Dijon",
       "protein_source": "🐖 Pork",
       "yield": "4 servings",
@@ -1537,10 +1608,11 @@
       "nutrition": "Calories: 340 | Protein: 38g | Carbs: 22g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_49.png"
     },
     {
-      "number": 48,
+      "number": 50,
       "title": "Turkey Taco Bowls",
       "protein_source": "🐔 Poultry",
       "yield": "4 servings",
@@ -1551,7 +1623,7 @@
         "1½ lbs ground turkey (93/7)",
         "1 packet taco seasoning (low-sodium)",
         "1 can (15 oz) diced bell peppers, drained",
-        "2 cups cooked cauliflower cauliflower rice",
+        "2 cups cooked cauliflower rice",
         "1 cup shredded romaine lettuce",
         "½ cup fresh salsa",
         "½ cup plain Greek yogurt (as sour cream substitute)",
@@ -1566,10 +1638,11 @@
       "nutrition": "Calories: 470 | Protein: 38g | Carbs: 40g | Fat: 14g",
       "nutrition_extra": "per serving, assembled",
       "storage": "Store separately: romaine, salsa, Greek yogurt, and cheese. Add toppings just before eating.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_50.png"
     },
     {
-      "number": 49,
+      "number": 51,
       "title": "Garlic Shrimp & Zucchini Zucchini Noodles",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1578,7 +1651,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "2 lbs shrimp, peeled and deveined",
-        "4 medium zucchini, spiralized (or use store-bought zucchini zucchini noodles)",
+        "4 medium zucchini, spiralized (or use store-bought zucchini noodles)",
         "4 garlic cloves, minced",
         "3 tbsp olive oil",
         "¼ cup low-sodium chicken broth",
@@ -1596,10 +1669,11 @@
       "nutrition": "Calories: 340 | Protein: 42g | Carbs: 10g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_51.png"
     },
     {
-      "number": 50,
+      "number": 52,
       "title": "Honey Mustard Chicken Thighs",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1624,10 +1698,11 @@
       "nutrition": "Calories: 410 | Protein: 36g | Carbs: 10g | Fat: 24g",
       "nutrition_extra": "per serving — 2 thighs",
       "storage": "Store in the fridge for up to 4 days. Reheat in the oven at 375°F for 10 minutes to restore crispiness.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_52.png"
     },
     {
-      "number": 51,
+      "number": 53,
       "title": "Beef & Broccoli with Cauliflower Cauliflower Rice",
       "protein_source": "🐄 Beef",
       "yield": "4 servings",
@@ -1642,7 +1717,7 @@
         "1 tbsp sesame oil",
         "1 tbsp cornstarch",
         "1 tsp garlic powder",
-        "2 cups cooked cauliflower cauliflower rice"
+        "2 cups cooked cauliflower rice"
       ],
       "instructions": [
         "Marinate beef in half the sauce for 5 mins.",
@@ -1653,10 +1728,11 @@
       "nutrition": "Calories: 430 | Protein: 38g | Carbs: 34g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": "Serve over brown rice. Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_53.png"
     },
     {
-      "number": 52,
+      "number": 54,
       "title": "Baked Turkey Meatloaf",
       "protein_source": "🐔 Poultry",
       "yield": "6 servings",
@@ -1683,10 +1759,11 @@
       "nutrition": "Calories: 340 | Protein: 38g | Carbs: 12g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": "Let rest 10 minutes before slicing into 6 portions. Store in the fridge for up to 4 days or freeze slices for up to 2 months.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_54.png"
     },
     {
-      "number": 53,
+      "number": 55,
       "title": "Salmon & Sweet Potato Sheet Pan",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1712,10 +1789,11 @@
       "nutrition": "Calories: 440 | Protein: 36g | Carbs: 32g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_55.png"
     },
     {
-      "number": 54,
+      "number": 56,
       "title": "Chicken Tikka-Style Skillet",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1743,10 +1821,11 @@
       "nutrition": "Calories: 350 | Protein: 40g | Carbs: 14g | Fat: 12g",
       "nutrition_extra": "per serving, sauce and chicken only",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_56.png"
     },
     {
-      "number": 55,
+      "number": 57,
       "title": "Beef Taco Skillet",
       "protein_source": "🐄 Beef",
       "yield": "4 servings",
@@ -1773,10 +1852,11 @@
       "nutrition": "Calories: 430 | Protein: 38g | Carbs: 26g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Serve over rice, in tortillas, or with a side salad. Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_57.png"
     },
     {
-      "number": 56,
+      "number": 58,
       "title": "Lemon Garlic Chicken Breast",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1801,10 +1881,11 @@
       "nutrition": "Calories: 300 | Protein: 40g | Carbs: 2g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": "Let rest 5 minutes before slicing. This is the perfect \"base protein\" for bowls, salads, and wraps. Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_58.png"
     },
     {
-      "number": 57,
+      "number": 59,
       "title": "Shrimp & Cauliflower Cauliflower Rice Stir-Fry",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
@@ -1813,7 +1894,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs shrimp, peeled and deveined",
-        "4 cups cauliflower cauliflower rice (frozen, thawed)",
+        "4 cups cauliflower rice (frozen, thawed)",
         "2 cups frozen peas and carrots, thawed",
         "3 tbsp reduced-sodium soy sauce",
         "1 tbsp sesame oil",
@@ -1830,10 +1911,11 @@
       "nutrition": "Calories: 320 | Protein: 36g | Carbs: 14g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_59.png"
     },
     {
-      "number": 58,
+      "number": 60,
       "title": "Turkey Bolognese with Zucchini Zucchini Noodles",
       "protein_source": "🐔 Poultry",
       "yield": "6 servings",
@@ -1852,18 +1934,19 @@
         "Salt and pepper to taste"
       ],
       "instructions": [
-        "Cook zucchini zucchini noodles. Sauté onion and garlic in a skillet.",
+        "Cook zucchini noodles. Sauté onion and garlic in a skillet.",
         "Brown turkey and drain fat. Stir in marinara.",
-        "Simmer for 10 mins; toss with cooked zucchini zucchini noodles.",
+        "Simmer for 10 mins; toss with cooked zucchini noodles.",
         "Portion into containers and top with Parmesan."
       ],
       "nutrition": "Calories: 460 | Protein: 36g | Carbs: 52g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_60.png"
     },
     {
-      "number": 59,
+      "number": 61,
       "title": "Slow Cooker Beef & Diced Mushrooms Stew",
       "protein_source": "🐄 Beef + 🫘 Legumes",
       "yield": "6 servings",
@@ -1891,10 +1974,11 @@
       "nutrition": "Calories: 380 | Protein: 34g | Carbs: 28g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_61.png"
     },
     {
-      "number": 60,
+      "number": 62,
       "title": "Greek Chicken Thighs with Olives & Tomatoes",
       "protein_source": "🐔 Chicken",
       "yield": "4 servings",
@@ -1921,10 +2005,11 @@
       "nutrition": "Calories: 420 | Protein: 36g | Carbs: 6g | Fat: 28g",
       "nutrition_extra": "per serving — 2 thighs",
       "storage": "Spoon the pan juices over the chicken before serving. Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 4"
+      "chapter": "Chapter 4",
+      "image_path": "images/recipe_62.png"
     },
     {
-      "number": 61,
+      "number": 63,
       "title": "No-Bake Peanut Butter Protein Balls",
       "protein_source": "🧀 Dairy",
       "yield": "20 balls (serving = 3 balls)",
@@ -1948,10 +2033,11 @@
       "nutrition": "Calories: 280 | Protein: 12g | Carbs: 28g | Fat: 14g",
       "nutrition_extra": "per serving — 3 balls",
       "storage": "Transfer to an airtight container. Store in the fridge for up to 1 week or freeze for up to 1 month.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_63.png"
     },
     {
-      "number": 62,
+      "number": 64,
       "title": "Hard-Boiled Egg & Avocado Snack Box",
       "protein_source": "🥚 Eggs",
       "yield": "1 serving",
@@ -1974,10 +2060,11 @@
       "nutrition": "Calories: 380 | Protein: 26g | Carbs: 8g | Fat: 28g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_64.png"
     },
     {
-      "number": 63,
+      "number": 65,
       "title": "Turkey Roll-Ups with Hummus",
       "protein_source": "🐔 Poultry",
       "yield": "2 servings",
@@ -2000,10 +2087,11 @@
       "nutrition": "Calories: 220 | Protein: 26g | Carbs: 12g | Fat: 6g",
       "nutrition_extra": "per serving — 4 roll-ups",
       "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_65.png"
     },
     {
-      "number": 64,
+      "number": 66,
       "title": "Cottage Cheese & Cucumber Dip",
       "protein_source": "🧀 Dairy",
       "yield": "2 servings",
@@ -2028,10 +2116,11 @@
       "nutrition": "Calories: 190 | Protein: 24g | Carbs: 10g | Fat: 4g",
       "nutrition_extra": "per serving, dip only",
       "storage": "Store for up to 4 days. Serve alongside vegetable dippers.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_66.png"
     },
     {
-      "number": 65,
+      "number": 67,
       "title": "Greek Yogurt Ranch Dip with Veggies",
       "protein_source": "🧀 Dairy",
       "yield": "4 servings",
@@ -2057,10 +2146,11 @@
       "nutrition": "Calories: 100 | Protein: 14g | Carbs: 6g | Fat: 0g",
       "nutrition_extra": "per serving, dip only",
       "storage": "Store in the fridge for up to 5 days.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_67.png"
     },
     {
-      "number": 66,
+      "number": 68,
       "title": "Tuna-Stuffed Mini Peppers",
       "protein_source": "🐟 Fish",
       "yield": "2 servings (12 stuffed peppers)",
@@ -2085,10 +2175,11 @@
       "nutrition": "Calories: 220 | Protein: 32g | Carbs: 10g | Fat: 2g",
       "nutrition_extra": "per serving — 6 stuffed peppers",
       "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_68.png"
     },
     {
-      "number": 67,
+      "number": 69,
       "title": "High-Protein Edamame with Sea Salt",
       "protein_source": "🫘 Legumes",
       "yield": "2 servings",
@@ -2110,10 +2201,11 @@
       "nutrition": "Calories: 180 | Protein: 16g | Carbs: 14g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_69.png"
     },
     {
-      "number": 68,
+      "number": 70,
       "title": "Almond & String Cheese Snack Pack",
       "protein_source": "🧀 Dairy",
       "yield": "1 serving",
@@ -2135,10 +2227,11 @@
       "nutrition": "Calories: 350 | Protein: 28g | Carbs: 16g | Fat: 20g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_70.png"
     },
     {
-      "number": 69,
+      "number": 71,
       "title": "Smoked Salmon Cucumber Rounds",
       "protein_source": "🐟 Fish + 🧀 Dairy",
       "yield": "2 servings",
@@ -2162,10 +2255,11 @@
       "nutrition": "Calories: 190 | Protein: 24g | Carbs: 6g | Fat: 6g",
       "nutrition_extra": "per serving — 10 rounds",
       "storage": "Store components separately for up to 3 days.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_71.png"
     },
     {
-      "number": 70,
+      "number": 72,
       "title": "Roasted Roasted Walnuts",
       "protein_source": "🫘 Legumes",
       "yield": "4 servings",
@@ -2189,10 +2283,11 @@
       "nutrition": "Calories: 200 | Protein: 10g | Carbs: 24g | Fat: 7g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_72.png"
     },
     {
-      "number": 71,
+      "number": 73,
       "title": "Cottage Cheese & Tomato Keto Toast",
       "protein_source": "🧀 Dairy",
       "yield": "1 serving",
@@ -2217,10 +2312,11 @@
       "nutrition": "Calories: 320 | Protein: 26g | Carbs: 38g | Fat: 6g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_73.png"
     },
     {
-      "number": 72,
+      "number": 74,
       "title": "Turkey & Cheese Roll-Ups",
       "protein_source": "🐔 Poultry + 🧀 Dairy",
       "yield": "2 servings",
@@ -2243,10 +2339,11 @@
       "nutrition": "Calories: 300 | Protein: 30g | Carbs: 6g | Fat: 18g",
       "nutrition_extra": "per serving — 4 roll-ups",
       "storage": "Store in a container in the fridge for up to 3 days.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_74.png"
     },
     {
-      "number": 73,
+      "number": 75,
       "title": "Greek Yogurt with Honey & Walnuts",
       "protein_source": "🧀 Dairy",
       "yield": "1 serving",
@@ -2269,10 +2366,11 @@
       "nutrition": "Calories: 290 | Protein: 20g | Carbs: 22g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_75.png"
     },
     {
-      "number": 74,
+      "number": 76,
       "title": "Protein-Packed Trail Mix",
       "protein_source": "🧀 Dairy + 🫘 Legumes",
       "yield": "8 servings",
@@ -2296,10 +2394,11 @@
       "nutrition": "Calories: 280 | Protein: 12g | Carbs: 18g | Fat: 18g",
       "nutrition_extra": "per serving — ⅓ cup",
       "storage": "Store at room temperature for up to 2 weeks or in the fridge for up to 1 month.",
-      "chapter": "Chapter 5"
+      "chapter": "Chapter 5",
+      "image_path": "images/recipe_76.png"
     },
     {
-      "number": 75,
+      "number": 77,
       "title": "High-Protein Chicken Zucchini Noodles Soup",
       "protein_source": "🐔 Chicken",
       "yield": "6 servings",
@@ -2327,10 +2426,11 @@
       "nutrition": "Calories: 320 | Protein: 35g | Carbs: 28g | Fat: 6g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_77.png"
     },
     {
-      "number": 76,
+      "number": 78,
       "title": "Diced Mushrooms & Kale Turkey Soup",
       "protein_source": "🐔 Poultry + 🫘 Legumes",
       "yield": "6 servings",
@@ -2358,10 +2458,11 @@
       "nutrition": "Calories: 330 | Protein: 28g | Carbs: 28g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_78.png"
     },
     {
-      "number": 77,
+      "number": 79,
       "title": "Spicy Beef & Chopped Mushrooms Stew",
       "protein_source": "🐄 Beef + 🫘 Legumes",
       "yield": "6 servings",
@@ -2390,10 +2491,11 @@
       "nutrition": "Calories: 340 | Protein: 30g | Carbs: 30g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_79.png"
     },
     {
-      "number": 78,
+      "number": 80,
       "title": "Creamy Broccoli & Cheddar Protein Soup",
       "protein_source": "🧀 Dairy",
       "yield": "6 servings",
@@ -2420,10 +2522,11 @@
       "nutrition": "Calories: 290 | Protein: 26g | Carbs: 12g | Fat: 16g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_80.png"
     },
     {
-      "number": 79,
+      "number": 81,
       "title": "Shrimp & Corn Chowder",
       "protein_source": "🐟 Fish",
       "yield": "6 servings",
@@ -2433,7 +2536,7 @@
       "ingredients": [
         "1½ lbs shrimp, peeled and deveined",
         "3 cups frozen corn kernels",
-        "2 medium diced zucchini, peeled and diced small",
+        "2 medium potatoes, peeled and diced small",
         "1 cup plain Greek yogurt",
         "3 cups low-sodium chicken broth",
         "1 yellow onion, diced",
@@ -2451,10 +2554,11 @@
       "nutrition": "Calories: 310 | Protein: 28g | Carbs: 32g | Fat: 6g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_81.png"
     },
     {
-      "number": 80,
+      "number": 82,
       "title": "Smoky Roasted Walnuts & Chicken Stew",
       "protein_source": "🐔 Chicken + 🫘 Legumes",
       "yield": "6 servings",
@@ -2483,10 +2587,11 @@
       "nutrition": "Calories: 360 | Protein: 32g | Carbs: 26g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_82.png"
     },
     {
-      "number": 81,
+      "number": 83,
       "title": "Beef & Vegetable Minestrone",
       "protein_source": "🐄 Beef + 🫘 Legumes",
       "yield": "8 servings",
@@ -2497,7 +2602,7 @@
         "1 lb lean ground beef (90/10)",
         "1 can (15 oz) kidney diced mushrooms, drained",
         "1 can (14.5 oz) diced tomatoes",
-        "1 cup whole wheat elbow zucchini zucchini noodles, dry",
+        "1 cup whole wheat elbow pasta, dry",
         "6 cups low-sodium beef broth",
         "2 medium zucchini, diced",
         "2 large carrots, diced",
@@ -2509,16 +2614,17 @@
       "instructions": [
         "Brown beef with onion; drain fat.",
         "Add carrots, celery, seasonings, and broth; boil.",
-        "Add zucchini, diced mushrooms, tomatoes, and zucchini zucchini noodles.",
-        "Simmer for 15–18 mins until zucchini zucchini noodles is tender."
+        "Add zucchini, diced mushrooms, tomatoes, and zucchini noodles.",
+        "Simmer for 15–18 mins until zucchini noodles is tender."
       ],
       "nutrition": "Calories: 300 | Protein: 26g | Carbs: 28g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": "Season with salt and pepper. Store in the fridge for up to 4 days or freeze.",
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_83.png"
     },
     {
-      "number": 82,
+      "number": 84,
       "title": "Turkey & Sweet Potato Chili",
       "protein_source": "🐔 Poultry",
       "yield": "6 servings",
@@ -2527,7 +2633,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
-        "2 medium diced zucchini, peeled and diced",
+        "2 medium sweet potatoes, peeled and diced",
         "1 can (15 oz) diced bell peppers, drained",
         "1 can (28 oz) crushed tomatoes",
         "2 cups low-sodium chicken broth",
@@ -2546,10 +2652,11 @@
       "nutrition": "Calories: 350 | Protein: 32g | Carbs: 32g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_84.png"
     },
     {
-      "number": 83,
+      "number": 85,
       "title": "Salmon & Potato Chowder",
       "protein_source": "🐟 Fish",
       "yield": "6 servings",
@@ -2558,7 +2665,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs salmon fillet, skinless and cubed",
-        "3 medium Yukon Gold diced zucchini, diced",
+        "3 medium Yukon Gold potatoes, diced",
         "1 cup frozen corn",
         "1 cup plain Greek yogurt",
         "4 cups low-sodium chicken broth",
@@ -2577,10 +2684,11 @@
       "nutrition": "Calories: 340 | Protein: 32g | Carbs: 28g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_85.png"
     },
     {
-      "number": 84,
+      "number": 86,
       "title": "Chopped Mushrooms & Spinach Soup",
       "protein_source": "🫘 Legumes",
       "yield": "6 servings",
@@ -2611,10 +2719,11 @@
       "nutrition": "Calories: 260 | Protein: 16g | Carbs: 40g | Fat: 4g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_86.png"
     },
     {
-      "number": 85,
+      "number": 87,
       "title": "Chicken Lettuce Wraps Soup",
       "protein_source": "🐔 Chicken",
       "yield": "6 servings",
@@ -2643,10 +2752,11 @@
       "nutrition": "Calories: 300 | Protein: 34g | Carbs: 24g | Fat: 4g",
       "nutrition_extra": "per serving, soup only",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_87.png"
     },
     {
-      "number": 86,
+      "number": 88,
       "title": "Diced Bell Peppers & Beef Soup",
       "protein_source": "🐄 Beef + 🫘 Legumes",
       "yield": "6 servings",
@@ -2675,10 +2785,11 @@
       "nutrition": "Calories: 310 | Protein: 28g | Carbs: 24g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_88.png"
     },
     {
-      "number": 87,
+      "number": 89,
       "title": "Creamy Chicken & Mushroom Soup",
       "protein_source": "🐔 Chicken",
       "yield": "6 servings",
@@ -2706,10 +2817,11 @@
       "nutrition": "Calories: 280 | Protein: 36g | Carbs: 8g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 6"
+      "chapter": "Chapter 6",
+      "image_path": "images/recipe_89.png"
     },
     {
-      "number": 88,
+      "number": 90,
       "title": "Chocolate Peanut Butter Protein Fudge",
       "protein_source": "🧀 Dairy",
       "yield": "16 squares (serving = 2 squares)",
@@ -2733,10 +2845,11 @@
       "nutrition": "Calories: 280 | Protein: 13g | Carbs: 16g | Fat: 20g",
       "nutrition_extra": "per serving — 2 squares",
       "storage": "Store in the freezer in a sealed container. Let sit at room temperature for 3 minutes before eating.",
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_90.png"
     },
     {
-      "number": 89,
+      "number": 91,
       "title": "Lemon Cheesecake Protein Bars",
       "protein_source": "🧀 Dairy",
       "yield": "12 bars",
@@ -2764,10 +2877,11 @@
       "nutrition": "Calories: 150 | Protein: 8g | Carbs: 20g | Fat: 4g",
       "nutrition_extra": "per bar",
       "storage": "Cut into 12 bars. Store in the fridge for up to 5 days.",
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_91.png"
     },
     {
-      "number": 90,
+      "number": 92,
       "title": "Greek Yogurt Bark with Berries",
       "protein_source": "🧀 Dairy",
       "yield": "6 servings",
@@ -2790,10 +2904,11 @@
       "nutrition": "Calories: 160 | Protein: 13g | Carbs: 16g | Fat: 4g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_92.png"
     },
     {
-      "number": 91,
+      "number": 93,
       "title": "Cottage Cheese Chocolate Mousse",
       "protein_source": "🧀 Dairy",
       "yield": "4 servings",
@@ -2817,10 +2932,11 @@
       "nutrition": "Calories: 180 | Protein: 18g | Carbs: 22g | Fat: 4g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_93.png"
     },
     {
-      "number": 92,
+      "number": 94,
       "title": "Banana Protein Mug Cake",
       "protein_source": "🥚 Eggs + 🧀 Dairy",
       "yield": "1 serving",
@@ -2845,10 +2961,11 @@
       "nutrition": "Calories: 340 | Protein: 18g | Carbs: 40g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_94.png"
     },
     {
-      "number": 93,
+      "number": 95,
       "title": "Peanut Butter Protein Cookies",
       "protein_source": "🥚 Eggs + 🧀 Dairy",
       "yield": "16 cookies (serving = 3)",
@@ -2873,10 +2990,11 @@
       "nutrition": "Calories: 320 | Protein: 15g | Carbs: 18g | Fat: 22g",
       "nutrition_extra": "per serving — 3 cookies",
       "storage": null,
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_95.png"
     },
     {
-      "number": 94,
+      "number": 96,
       "title": "Chocolate Protein Energy Bites",
       "protein_source": "🧀 Dairy",
       "yield": "20 bites (serving = 4)",
@@ -2901,10 +3019,11 @@
       "nutrition": "Calories: 240 | Protein: 10g | Carbs: 28g | Fat: 10g",
       "nutrition_extra": "per serving — 4 bites",
       "storage": "Transfer to an airtight container. Store in the fridge for up to 1 week or freeze for up to 1 month.",
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_96.png"
     },
     {
-      "number": 95,
+      "number": 97,
       "title": "Vanilla Cottage Cheese Parfait",
       "protein_source": "🧀 Dairy",
       "yield": "2 servings",
@@ -2928,10 +3047,11 @@
       "nutrition": "Calories: 360 | Protein: 28g | Carbs: 38g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": null,
-      "chapter": "Chapter 7"
+      "chapter": "Chapter 7",
+      "image_path": "images/recipe_97.png"
     },
     {
-      "number": 96,
+      "number": 98,
       "title": "Chipotle Lime Marinade",
       "protein_source": "Mixed",
       "yield": "6 servings",
@@ -2957,10 +3077,11 @@
       "nutrition": "",
       "nutrition_extra": "",
       "storage": "Store in an airtight jar in the fridge for up to 1 week.",
-      "chapter": "Chapter 8"
+      "chapter": "Chapter 8",
+      "image_path": "images/recipe_98.png"
     },
     {
-      "number": 97,
+      "number": 99,
       "title": "Greek Yogurt Tzatziki",
       "protein_source": "🧀 Dairy",
       "yield": "6 servings",
@@ -2985,10 +3106,11 @@
       "nutrition": "Calories: 70 | Protein: 5g | Carbs: 4g | Fat: 4g",
       "nutrition_extra": "per serving — 3 tbsp",
       "storage": "Store in an airtight container in the fridge for up to 4 days.",
-      "chapter": "Chapter 8"
+      "chapter": "Chapter 8",
+      "image_path": "images/recipe_99.png"
     },
     {
-      "number": 98,
+      "number": 100,
       "title": "High-Protein Caesar Dressing",
       "protein_source": "🧀 Dairy",
       "yield": "8 servings",
@@ -3014,10 +3136,11 @@
       "nutrition": "Calories: 55 | Protein: 6g | Carbs: 3g | Fat: 2g",
       "nutrition_extra": "per serving — 2 tbsp",
       "storage": "Store in a sealed jar in the fridge for up to 5 days. Stir well before each use.",
-      "chapter": "Chapter 8"
+      "chapter": "Chapter 8",
+      "image_path": "images/recipe_100.png"
     },
     {
-      "number": 99,
+      "number": 101,
       "title": "Lemon Garlic Herb Sauce",
       "protein_source": "Mixed",
       "yield": "6 servings",
@@ -3042,10 +3165,11 @@
       "nutrition": "",
       "nutrition_extra": "",
       "storage": "Store in the fridge for up to 1 week. Bring to room temperature and shake before use.",
-      "chapter": "Chapter 8"
+      "chapter": "Chapter 8",
+      "image_path": "images/recipe_101.png"
     },
     {
-      "number": 100,
+      "number": 102,
       "title": "Peanut Sauce",
       "protein_source": "Mixed",
       "yield": "6 servings",
@@ -3071,10 +3195,11 @@
       "nutrition": "",
       "nutrition_extra": "",
       "storage": "Store in a sealed jar in the fridge for up to 1 week.",
-      "chapter": "Chapter 8"
+      "chapter": "Chapter 8",
+      "image_path": "images/recipe_102.png"
     },
     {
-      "number": 101,
+      "number": 103,
       "title": "Avocado Lime Crema",
       "protein_source": "🧀 Dairy",
       "yield": "6 servings",
@@ -3098,7 +3223,8 @@
       "nutrition": "Calories: 90 | Protein: 3g | Carbs: 5g | Fat: 7g",
       "nutrition_extra": "per serving — 2 tbsp",
       "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 8"
+      "chapter": "Chapter 8",
+      "image_path": "images/recipe_103.png"
     }
   ],
   "mealplan": {
@@ -3664,7 +3790,7 @@
   "appendix_a": {
     "title": "Appendix A",
     "sub": "Full Nutritional Index",
-    "intro": "All 101 recipes — calories, protein, carbs, and fat per serving.",
+    "intro": "All 103 recipes — calories, protein, carbs, and fat per serving.",
     "rows": [
       [
         "#",
@@ -3844,14 +3970,22 @@
       ],
       [
         "22",
-        "Chickpea & Roasted Veggie Power Bowl",
+        "Cottage Cheese & Avocado Protein Bowl",
+        "265",
+        "24g",
+        "12g",
+        "14g"
+      ],
+      [
+        "23",
+        "Roasted Walnuts & Veggie Power Bowl",
         "450",
         "20g",
         "52g",
         "18g"
       ],
       [
-        "23",
+        "24",
         "Buffalo Chicken Lettuce Cups",
         "310",
         "38g",
@@ -3859,71 +3993,71 @@
         "12g"
       ],
       [
-        "24",
-        "Tuna Pasta Salad",
+        "25",
+        "Tuna Zucchini Noodles Salad",
         "380",
         "34g",
         "36g",
         "8g"
       ],
       [
-        "25",
-        "Turkey & Quinoa Stuffed Peppers",
+        "26",
+        "Turkey & Hemp Hearts Stuffed Peppers",
         "370",
         "32g",
         "28g",
         "12g"
       ],
       [
-        "26",
-        "Asian Chicken Noodle Salad",
+        "27",
+        "Asian Chicken Zucchini Noodles Salad",
         "430",
         "38g",
         "38g",
         "12g"
       ],
       [
-        "27",
-        "White Bean & Tuna Salad",
+        "28",
+        "Diced Mushrooms & Tuna Salad",
         "340",
         "30g",
         "28g",
         "10g"
       ],
       [
-        "28",
-        "Beef & Brown Rice Power Bowls",
+        "29",
+        "Beef & Cauliflower Rice Power Bowls",
         "450",
         "38g",
         "32g",
         "16g"
       ],
       [
-        "29",
-        "Chicken & Avocado Protein Wraps",
+        "30",
+        "Chicken & Avocado Protein Lettuce Wraps",
         "480",
         "42g",
         "34g",
         "20g"
       ],
       [
-        "30",
-        "Lentil & Veggie Mason Jar Salad",
+        "31",
+        "Chopped Mushrooms & Veggie Mason Jar Salad",
         "380",
         "20g",
         "40g",
         "14g"
       ],
       [
-        "31",
-        "Teriyaki Chicken Rice Bowls",
+        "32",
+        "Teriyaki Chicken Cauliflower Rice Bowls",
         "430",
         "38g",
         "34g",
         "14g"
       ],
       [
-        "32",
+        "33",
         "Shrimp & Avocado Salad",
         "380",
         "32g",
@@ -3931,7 +4065,7 @@
         "20g"
       ],
       [
-        "33",
+        "34",
         "Greek Turkey Meatball Bowls",
         "450",
         "38g",
@@ -3939,15 +4073,23 @@
         "14g"
       ],
       [
-        "34",
-        "Salmon & Cucumber Rice Paper Rolls (3 rolls)",
+        "35",
+        "Salmon & Cucumber Cauliflower Rice Paper Rolls",
         "310",
         "26g",
         "32g",
         "12g"
       ],
       [
-        "35",
+        "36",
+        "Greek-Style Grilled Chicken Souvlaki Bowls",
+        "380",
+        "42g",
+        "8g",
+        "18g"
+      ],
+      [
+        "37",
         "Garlic Butter Salmon Tray Bake",
         "380",
         "37g",
@@ -3955,7 +4097,7 @@
         "23g"
       ],
       [
-        "36",
+        "38",
         "Beef Power Bowls with Roasted Peppers",
         "450",
         "36g",
@@ -3963,23 +4105,23 @@
         "16g"
       ],
       [
-        "37",
-        "Mediterranean Turkey Meatballs",
+        "39",
+        "Mediterranean Turkey Meatballs with Tzatziki",
         "430",
         "38g",
         "28g",
         "16g"
       ],
       [
-        "38",
-        "Slow Cooker Chicken & White Bean Stew",
+        "40",
+        "Slow Cooker Chicken & Mushrooms Stew",
         "360",
         "38g",
         "28g",
         "8g"
       ],
       [
-        "39",
+        "41",
         "Sheet Pan Chicken Thighs & Asparagus",
         "420",
         "36g",
@@ -3987,7 +4129,7 @@
         "28g"
       ],
       [
-        "40",
+        "42",
         "Ground Turkey Stuffed Bell Peppers",
         "390",
         "36g",
@@ -3995,15 +4137,15 @@
         "14g"
       ],
       [
-        "41",
-        "Beef & Lentil One-Pot Stew",
+        "43",
+        "Beef & Mushrooms One-Pot Stew",
         "350",
         "32g",
         "30g",
         "10g"
       ],
       [
-        "42",
+        "44",
         "Creamy Tuscan Chicken",
         "360",
         "42g",
@@ -4011,23 +4153,23 @@
         "14g"
       ],
       [
-        "43",
-        "Black Bean & Beef Chili",
+        "45",
+        "Diced Bell Peppers & Beef Chili",
         "310",
         "28g",
         "22g",
         "10g"
       ],
       [
-        "44",
-        "Teriyaki Salmon with Edamame Rice",
+        "46",
+        "Teriyaki Salmon with Edamame Cauliflower Rice",
         "430",
         "40g",
         "38g",
         "12g"
       ],
       [
-        "45",
+        "47",
         "Lemon Baked Cod with Roasted Broccoli",
         "300",
         "35g",
@@ -4035,7 +4177,7 @@
         "14g"
       ],
       [
-        "46",
+        "48",
         "Chicken & Broccoli Stir-Fry",
         "400",
         "40g",
@@ -4043,7 +4185,7 @@
         "8g"
       ],
       [
-        "47",
+        "49",
         "Pork Tenderloin with Apple & Dijon",
         "340",
         "38g",
@@ -4051,7 +4193,7 @@
         "10g"
       ],
       [
-        "48",
+        "50",
         "Turkey Taco Bowls",
         "470",
         "38g",
@@ -4059,7 +4201,7 @@
         "14g"
       ],
       [
-        "49",
+        "51",
         "Garlic Shrimp & Zucchini Noodles",
         "340",
         "42g",
@@ -4067,7 +4209,7 @@
         "14g"
       ],
       [
-        "50",
+        "52",
         "Honey Mustard Chicken Thighs",
         "410",
         "36g",
@@ -4075,15 +4217,15 @@
         "24g"
       ],
       [
-        "51",
-        "Beef & Broccoli with Brown Rice",
+        "53",
+        "Beef & Broccoli with Cauliflower Rice",
         "430",
         "38g",
         "34g",
         "12g"
       ],
       [
-        "52",
+        "54",
         "Baked Turkey Meatloaf",
         "340",
         "38g",
@@ -4091,7 +4233,7 @@
         "14g"
       ],
       [
-        "53",
+        "55",
         "Salmon & Sweet Potato Sheet Pan",
         "440",
         "36g",
@@ -4099,7 +4241,7 @@
         "18g"
       ],
       [
-        "54",
+        "56",
         "Chicken Tikka-Style Skillet",
         "350",
         "40g",
@@ -4107,7 +4249,7 @@
         "12g"
       ],
       [
-        "55",
+        "57",
         "Beef Taco Skillet",
         "430",
         "38g",
@@ -4115,7 +4257,7 @@
         "18g"
       ],
       [
-        "56",
+        "58",
         "Lemon Garlic Chicken Breast",
         "300",
         "40g",
@@ -4123,7 +4265,7 @@
         "14g"
       ],
       [
-        "57",
+        "59",
         "Shrimp & Cauliflower Rice Stir-Fry",
         "320",
         "36g",
@@ -4131,23 +4273,23 @@
         "10g"
       ],
       [
-        "58",
-        "Turkey Bolognese with Whole Wheat Pasta",
+        "60",
+        "Turkey Bolognese with Zucchini Noodles",
         "460",
         "36g",
         "52g",
         "10g"
       ],
       [
-        "59",
-        "Slow Cooker Beef & Bean Stew",
+        "61",
+        "Slow Cooker Beef & Mushrooms Stew",
         "380",
         "34g",
         "28g",
         "10g"
       ],
       [
-        "60",
+        "62",
         "Greek Chicken Thighs with Olives & Tomatoes",
         "420",
         "36g",
@@ -4155,15 +4297,15 @@
         "28g"
       ],
       [
-        "61",
-        "No-Bake PB Protein Balls (3 balls)",
+        "63",
+        "No-Bake Peanut Butter Protein Balls",
         "280",
         "12g",
         "28g",
         "14g"
       ],
       [
-        "62",
+        "64",
         "Hard-Boiled Egg & Avocado Snack Box",
         "380",
         "26g",
@@ -4171,15 +4313,15 @@
         "28g"
       ],
       [
-        "63",
-        "Turkey Roll-Ups with Hummus (4 roll-ups)",
+        "65",
+        "Turkey Roll-Ups with Hummus",
         "220",
         "26g",
         "12g",
         "6g"
       ],
       [
-        "64",
+        "66",
         "Cottage Cheese & Cucumber Dip",
         "190",
         "24g",
@@ -4187,31 +4329,31 @@
         "4g"
       ],
       [
-        "65",
-        "Greek Yogurt Ranch Dip",
+        "67",
+        "Greek Yogurt Ranch Dip with Veggies",
         "100",
         "14g",
         "6g",
         "0g"
       ],
       [
-        "66",
-        "Tuna-Stuffed Mini Peppers (6 peppers)",
+        "68",
+        "Tuna-Stuffed Mini Peppers",
         "220",
         "32g",
         "10g",
         "2g"
       ],
       [
-        "67",
-        "High-Protein Edamame",
+        "69",
+        "High-Protein Edamame with Sea Salt",
         "180",
         "16g",
         "14g",
         "8g"
       ],
       [
-        "68",
+        "70",
         "Almond & String Cheese Snack Pack",
         "350",
         "28g",
@@ -4219,39 +4361,39 @@
         "20g"
       ],
       [
-        "69",
-        "Smoked Salmon Cucumber Rounds (10 pieces)",
+        "71",
+        "Smoked Salmon Cucumber Rounds",
         "190",
         "24g",
         "6g",
         "6g"
       ],
       [
-        "70",
-        "Roasted Chickpeas",
+        "72",
+        "Roasted Walnuts",
         "200",
         "10g",
         "24g",
         "7g"
       ],
       [
-        "71",
-        "Cottage Cheese & Tomato Toast",
+        "73",
+        "Cottage Cheese & Tomato Keto Toast",
         "320",
         "26g",
         "38g",
         "6g"
       ],
       [
-        "72",
-        "Turkey & Cheese Roll-Ups (4 roll-ups)",
+        "74",
+        "Turkey & Cheese Roll-Ups",
         "300",
         "30g",
         "6g",
         "18g"
       ],
       [
-        "73",
+        "75",
         "Greek Yogurt with Honey & Walnuts",
         "290",
         "20g",
@@ -4259,39 +4401,39 @@
         "14g"
       ],
       [
-        "74",
-        "Protein-Packed Trail Mix (⅓ cup)",
+        "76",
+        "Protein-Packed Trail Mix",
         "280",
         "12g",
         "18g",
         "18g"
       ],
       [
-        "75",
-        "High-Protein Chicken Noodle Soup",
+        "77",
+        "High-Protein Chicken Zucchini Noodles Soup",
         "320",
         "35g",
         "28g",
         "6g"
       ],
       [
-        "76",
-        "White Bean & Kale Turkey Soup",
+        "78",
+        "Mushrooms & Kale Turkey Soup",
         "330",
         "28g",
         "28g",
         "8g"
       ],
       [
-        "77",
-        "Spicy Beef & Lentil Stew",
+        "79",
+        "Spicy Beef & Mushrooms Stew",
         "340",
         "30g",
         "30g",
         "8g"
       ],
       [
-        "78",
+        "80",
         "Creamy Broccoli & Cheddar Protein Soup",
         "290",
         "26g",
@@ -4299,7 +4441,7 @@
         "16g"
       ],
       [
-        "79",
+        "81",
         "Shrimp & Corn Chowder",
         "310",
         "28g",
@@ -4307,15 +4449,15 @@
         "6g"
       ],
       [
-        "80",
-        "Smoky Chickpea & Chicken Stew",
+        "82",
+        "Smoky Walnuts & Chicken Stew",
         "360",
         "32g",
         "26g",
         "12g"
       ],
       [
-        "81",
+        "83",
         "Beef & Vegetable Minestrone",
         "300",
         "26g",
@@ -4323,7 +4465,7 @@
         "8g"
       ],
       [
-        "82",
+        "84",
         "Turkey & Sweet Potato Chili",
         "350",
         "32g",
@@ -4331,7 +4473,7 @@
         "8g"
       ],
       [
-        "83",
+        "85",
         "Salmon & Potato Chowder",
         "340",
         "32g",
@@ -4339,31 +4481,31 @@
         "10g"
       ],
       [
-        "84",
-        "Lentil & Spinach Soup",
+        "86",
+        "Mushrooms & Spinach Soup",
         "260",
         "16g",
         "40g",
         "4g"
       ],
       [
-        "85",
-        "Chicken Tortilla Soup",
+        "87",
+        "Chicken Lettuce Wraps Soup",
         "300",
         "34g",
         "24g",
         "4g"
       ],
       [
-        "86",
-        "Black Bean & Beef Soup",
+        "88",
+        "Diced Bell Peppers & Beef Soup",
         "310",
         "28g",
         "24g",
         "8g"
       ],
       [
-        "87",
+        "89",
         "Creamy Chicken & Mushroom Soup",
         "280",
         "36g",
@@ -4371,31 +4513,31 @@
         "8g"
       ],
       [
-        "88",
-        "Chocolate PB Protein Fudge (2 squares)",
+        "90",
+        "Chocolate Peanut Butter Protein Fudge",
         "280",
         "13g",
         "16g",
         "20g"
       ],
       [
-        "89",
-        "Lemon Cheesecake Protein Bars (1 bar)",
+        "91",
+        "Lemon Cheesecake Protein Bars",
         "150",
         "8g",
         "20g",
         "4g"
       ],
       [
-        "90",
-        "Greek Yogurt Bark",
+        "92",
+        "Greek Yogurt Bark with Berries",
         "160",
         "13g",
         "16g",
         "4g"
       ],
       [
-        "91",
+        "93",
         "Cottage Cheese Chocolate Mousse",
         "180",
         "18g",
@@ -4403,7 +4545,7 @@
         "4g"
       ],
       [
-        "92",
+        "94",
         "Banana Protein Mug Cake",
         "340",
         "18g",
@@ -4411,23 +4553,23 @@
         "12g"
       ],
       [
-        "93",
-        "Peanut Butter Protein Cookies (3 cookies)",
+        "95",
+        "Peanut Butter Protein Cookies",
         "320",
         "15g",
         "18g",
         "22g"
       ],
       [
-        "94",
-        "Chocolate Protein Energy Bites (4 bites)",
+        "96",
+        "Chocolate Protein Energy Bites",
         "240",
         "10g",
         "28g",
         "10g"
       ],
       [
-        "95",
+        "97",
         "Vanilla Cottage Cheese Parfait",
         "360",
         "28g",
@@ -4435,7 +4577,7 @@
         "10g"
       ],
       [
-        "96",
+        "98",
         "Chipotle Lime Marinade",
         "70",
         "0g",
@@ -4443,23 +4585,23 @@
         "7g"
       ],
       [
-        "97",
-        "Greek Yogurt Tzatziki (3 tbsp)",
+        "99",
+        "Greek Yogurt Tzatziki",
         "70",
         "5g",
         "4g",
         "4g"
       ],
       [
-        "98",
-        "High-Protein Caesar Dressing (2 tbsp)",
+        "100",
+        "High-Protein Caesar Dressing",
         "55",
         "6g",
         "3g",
         "2g"
       ],
       [
-        "99",
+        "101",
         "Lemon Garlic Herb Sauce",
         "90",
         "0g",
@@ -4467,15 +4609,15 @@
         "9g"
       ],
       [
-        "100",
-        "Peanut Sauce (2 tbsp)",
+        "102",
+        "Peanut Sauce",
         "130",
         "4g",
         "8g",
         "10g"
       ],
       [
-        "101",
+        "103",
         "Avocado Lime Crema (2 tbsp)",
         "90",
         "3g",
