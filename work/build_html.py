@@ -81,7 +81,7 @@ def chapter_cover(num_label, ch_title, ch_sub, ch_quote, recipe_count=None, colo
     for p in paras:
         if not p.strip(): continue
         p += '</p>'
-        if len(cur) + len(p) > 3200 and cur:
+        if len(cur) + len(p) > 8000 and cur:
             pages.append(cur)
             cur = p
         else:
@@ -464,7 +464,11 @@ def render_bonus_body(body_lines):
                 elif any(x in l for x in ['BEGINNER','INTERMEDIATE','ADVANCED']) and not l.startswith('💪'): display_l = '💪 ' + l
                 
                 out.append(f'<p class="hint hint-{cls}">{smart_html(display_l)}</p>')
-            elif re.match(r'^[A-Z][^.]*$', l) and len(l) < 30 and i+1 < len(body_lines) and body_lines[i+1].strip().startswith('✅'):
+            elif re.search(r'[abc]\) .*\| [abc]\) ', l):
+                opts = [o.strip() for o in l.split('|')]
+                opts_html = ''.join(f'<div class="quiz-opt">{smart_html(o)}</div>' for o in opts)
+                out.append(f'<div class="quiz-opts">{opts_html}</div>')
+            elif len(l) < 40 and not any(l.startswith(x) for x in ['✅','❌','Protein hack','Session','⏱️']) and i+1 < len(body_lines) and any(body_lines[i+1].strip().startswith(x) for x in ['✅','❌','Protein hack']):
                 out.append(f'<h5 class="restaurant-name">{esc(l)}</h5>')
             else:
                 out.append(f'<p>{smart_html(l)}</p>')
@@ -476,19 +480,20 @@ for b in book['bonus']['bonuses']:
     body_html = render_bonus_body(b['body_lines'])
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
     if not elems: elems = [body_html]
-    chunks = []; cur = ''
+    chunks = []; cur = ''; limit = 1600 # Higher limit because layout is now more compact
     for el in elems:
-        if len(cur) + len(el) > 1800 and cur:
+        if len(cur) + len(el) > limit and cur:
             chunks.append(cur); cur = el
+            limit = 2200 # More for subsequent pages
         else:
             cur += el
     if cur: chunks.append(cur)
     parts.append(f'''<div class="page bonus-page">
   <div class="page-content">
-    <header class="bonus-header">
-      <p class="bonus-eyebrow">Bonus Toolkit</p>
-      <h2 class="bonus-h2">{esc(title)}</h2>
-      <div class="bonus-rule"></div>
+    <header class="chapter-head">
+      <p class="chapter-eyebrow">Bonus Toolkit</p>
+      <h1 class="chapter-h1">{esc(title)}</h1>
+      <div class="chapter-rule"></div>
     </header>
     <div class="prose bonus-body">{chunks[0]}</div>
   </div>
@@ -498,7 +503,6 @@ for b in book['bonus']['bonuses']:
 
 # 9. Appendix A
 appA = book['appendix_a']
-parts.append(chapter_cover('Appendix A', appA['sub'], 'All 102 recipes', '', color_class='cover-ink'))
 
 rows = appA['rows']
 header = rows[0]; body_rows = rows[1:]
@@ -514,7 +518,7 @@ for k, c in enumerate(chunks_a):
     if k == 0:
         title_html = f'''<header class="chapter-head">
   <p class="chapter-eyebrow">Appendix A</p>
-  <h2 class="chapter-h1">{esc(appA['sub'])}</h2>
+  <h1 class="chapter-h1">{esc(appA['sub'])}</h1>
   <div class="chapter-rule"></div>
 </header>
 <p class="prose"><em>{smart_html(appA['intro'])}</em></p>'''
@@ -523,7 +527,6 @@ for k, c in enumerate(chunks_a):
 
 # 10. Appendix B
 appB = book['appendix_b']
-parts.append(chapter_cover('Appendix B', appB['sub'], 'Reference for everyday cooking', '', color_class='cover-olive'))
 
 foods_header = appB['foods'][0]; foods_body = appB['foods'][1:]
 food_chunks = [foods_body[i:i+32] for i in range(0, len(foods_body), 32)]
@@ -532,7 +535,7 @@ for k, c in enumerate(food_chunks):
     if k == 0:
         title_html = f'''<header class="chapter-head">
   <p class="chapter-eyebrow">Appendix B</p>
-  <h2 class="chapter-h1">Protein Content of 50 Common Foods</h2>
+  <h1 class="chapter-h1">Protein Content of 50 Common Foods</h1>
   <div class="chapter-rule"></div>
 </header>'''
     table_html = render_app_table(foods_header, c)
@@ -650,11 +653,15 @@ html,body{
    top/left/right 0.5in (above the 0.5in minimum required), bottom 0.75in to
    reserve space for the page number + 5mm safety. Gutter on bound side is also
    0.5in which is KDP-safe up to 300 pages. */
-.page{ --bottom-safe: 0.75in; --page-margin: 0.5in; }
+.page{ 
+  --page-margin-x: 0.6in; 
+  --page-margin-top: 0.6in; 
+  --page-margin-bottom: 0.85in; 
+}
 .page-content{
   width:100%;
   height:100%;
-  padding:var(--page-margin) var(--page-margin) var(--bottom-safe) var(--page-margin);
+  padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
   display:flex;flex-direction:column;
   /* top center keeps left/right margins symmetric when auto-fit scales the content */
   transform-origin:top center;
@@ -776,7 +783,7 @@ html,body{
 .toc-list .toc-h3{font-size:7.5pt;padding-left:0.3em;color:var(--ink-soft);opacity:0.9;}
 
 /* Chapter heads */
-.chapter-head{margin:0 0 1.3em;}
+.chapter-head{margin:0 0 1.0em;}
 .chapter-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.35em;
@@ -797,10 +804,12 @@ html,body{
 .chapter-cover{color:var(--ink);background:var(--paper);}
 .chapter-cover .page-content{align-items:center;justify-content:center;}
 .chapter-cover-inner{
-  text-align:center;padding:1in;width:100%;
+  text-align:center;
+  padding:0.6in var(--page-margin-x);
+  width:100%;
   border-top:2px solid var(--primary);
   border-bottom:2px solid var(--primary);
-  margin:0.8in 0.8in;
+  margin:auto 0;
 }
 .chapter-cover-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
@@ -823,11 +832,11 @@ html,body{
   background:var(--cream-2);
   border:1px solid var(--primary);
   border-radius:6px;
-  padding:1.2em 1.5em;
-  margin-bottom:1.8em;
+  padding:0.8em 1.2em;
+  margin-bottom:1.2em;
 }
 .chapter-strategy h3{
-  margin:0 0 0.8em;
+  margin:0 0 0.5em;
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.15em;
   font-size:9.5pt;color:var(--primary-dark);
@@ -841,7 +850,7 @@ html,body{
 .chapter-strategy li{
   font-family:'Source Sans Pro',sans-serif;
   font-size:10pt;color:var(--ink);
-  margin-bottom:0.5em;
+  margin-bottom:0.3em;
   position:relative;
 }
 .chapter-strategy li::before{
@@ -893,10 +902,10 @@ html,body{
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
 
 /* RECIPE PAGE — 2 columns side by side, same KDP margins as content pages */
-.recipe-page .page-content{padding:0.85in var(--page-margin) 0.55in;}
+.recipe-page .page-content{padding:0.85in var(--page-margin-x) var(--page-margin-bottom);}
 .recipe-page::before{
   content:attr(data-chapter);
-  position:absolute;top:0.35in;right:var(--page-margin);
+  position:absolute;top:0.35in;right:var(--page-margin-x);
   font-family:'Source Sans Pro',sans-serif;
   font-size:8.5pt;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);
   z-index:5;
@@ -1058,7 +1067,7 @@ html,body{
 
 /* Meal plan */
 .mealplan-intro .page-content,
-.week-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
+.week-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
 .mealplan-intro .chapter-h1{font-size:22pt;}
 .checklist{padding-left:1.2em;font-family:'Source Sans Pro',sans-serif;font-size:10pt;}
 .checklist li{margin-bottom:5px;}
@@ -1103,41 +1112,83 @@ html,body{
   font-size:14pt;color:var(--primary-dark);margin:0.8em 0 0.3em;font-weight:700;
 }
 .bonus-h4{
-  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
-  text-transform:uppercase;letter-spacing:0.25em;font-size:9.5pt;
-  color:var(--primary-dark);margin:0.9em 0 0.3em;font-weight:700;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 9pt;
+  color: var(--primary-dark);
+  margin: 1.5em 0 0.5em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bonus-h4::after{
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--primary-soft);
 }
 .bonus-q{
-  font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
-  font-size:10pt;font-weight:600;color:var(--ink);margin:0.5em 0 0.2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1em 0 0.4em;
+  line-height: 1.3;
+}
+.quiz-opts{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1em;
+}
+.quiz-opt{
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 8.5pt;
+  color: var(--ink-soft);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .bonus-body{margin-top:1em;}
 .bonus-page-cont .bonus-body{margin-top:0;}
-.bonus-body p{font-size:9.8pt;line-height:1.45;margin-bottom:0.4em;}
+.bonus-body p{font-size:9.5pt;line-height:1.4;margin-bottom:0.35em;}
 .score-bucket{
-  background:var(--primary);color:var(--ink);
-  font-family:'Source Sans Pro',sans-serif;font-weight:700;
-  letter-spacing:0.18em;text-transform:uppercase;
-  padding:6px 10px;border-radius:4px;font-size:10pt;
-  margin:0.6em 0 0.3em !important;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--ink);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 10.5pt;
+  margin: 1.2em 0 0.6em !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .hint{
-  font-family:'Source Sans Pro',sans-serif;font-size:9.5pt;
-  border-radius:4px;padding:5px 10px;margin:3px 0 !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 9.5pt;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin: 0.3em 0 !important;
+  border: 1px solid transparent;
 }
-.hint-pos{background:var(--primary-soft);border-left:3px solid var(--primary);color:var(--ink);}
-.hint-neg{background:#fbe8e8;border-left:3px solid var(--rose);color:#5a1f1f;}
-.hint-hack{background:var(--primary-light);border-left:3px solid var(--primary-dark);color:#4a3406;font-style:italic;}
-.hint-session{background:#e3f2fd;border-left:3px solid #2196f3;font-weight:700;margin-top:0.8em !important;}
-.hint-level{background:#f3e5f5;border-left:3px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:1.2em !important;}
+.hint-pos{background:var(--primary-soft);border-left:4px solid var(--primary);color:var(--ink);border-color:var(--primary);}
+.hint-neg{background:#fff1f1;border-left:4px solid var(--rose);color:#7a1c1c;border-color:var(--rose);}
+.hint-hack{background:var(--primary-bg);border-left:4px solid var(--primary-dark);color:var(--ink-soft);font-style:italic;border-color:var(--primary-dark);}
+.hint-session{background:#f0f7ff;border-left:4px solid #2196f3;font-weight:700;margin-top:0.6em !important;border-color:#2196f3;}
+.hint-level{background:#fdf4ff;border-left:4px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.8em !important;border-color:#9c27b0;}
 .restaurant-name{
   font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:13pt;font-weight:700;color:var(--primary-dark);
-  margin:0.7em 0 0.2em;border-bottom:1px solid var(--line);padding-bottom:2px;
+  font-size:14pt;font-weight:700;color:var(--ink);
+  margin:0.8em 0 0.25em;border-bottom:2px solid var(--primary-soft);padding-bottom:3px;
 }
 
 /* Appendix */
-.appendix-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
+.appendix-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
 .app-table th, .app-table td{font-size:8.5pt;padding:4px 8px;}
 .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;}
 .conv-card{background:var(--cream-2);border:1px solid var(--line);border-radius:6px;padding:0.18in;}
@@ -1150,9 +1201,9 @@ html,body{
 .conv-table td{font-size:9.5pt;}
 
 /* Conclusion / review */
-.conclusion-page .page-content{padding:0.85in 0.85in;}
+.conclusion-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
 .conclusion-page .prose p{font-size:11.5pt;line-height:1.55;}
-.review-page .page-content{padding:0.85in 0.85in;text-align:center;}
+.review-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);text-align:center;}
 .review-page .prose p{font-size:11pt;line-height:1.55;text-align:left;}
 .end-mark{
   margin-top:1.5em;text-align:center;letter-spacing:0.4em;
