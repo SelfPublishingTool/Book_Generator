@@ -66,19 +66,72 @@ def pick_illustration(protein_source_text):
     return SVG_ILLUSTRATIONS['mixed']
 
 # ---------------- Helpers ----------------
-def chapter_cover(num_label, ch_title, ch_sub, ch_quote, recipe_count=None, color_class='cover-night'):
-    extra = f'<p class="chapter-cover-count">{recipe_count} recipes</p>' if recipe_count else ''
-    return f'''<div class="page chapter-cover {color_class}">
+def chapter_cover(num_label, ch_title, ch_sub, ch_quote, recipe_count=None, color_class='cover-night', ch_intro=None):
+    # Convert newlines to paragraphs
+    if ch_intro:
+        paras_raw = ch_intro.split('\n\n')
+        intro_html = ''.join(f'<p>{smart_html(p.strip())}</p>' for p in paras_raw if p.strip())
+    else:
+        intro_html = ''
+    
+    # Split into pages if long
+    paras = intro_html.split('</p>')
+    pages = []
+    cur = ''
+    for p in paras:
+        if not p.strip(): continue
+        p += '</p>'
+        if len(cur) + len(p) > 3200 and cur:
+            pages.append(cur)
+            cur = p
+        else:
+            cur += p
+    if cur: pages.append(cur)
+    
+    # Generate 3 "Strategy" bullet points based on the title (placeholders for layout)
+    strategies = {
+        'Introduction': ['Master the Protein Leverage Protocol', 'Eliminate Decision Fatigue', 'Set Up Your Fail-Safe Infrastructure'],
+        'Chapter 1': ['Audit Your Kitchen Tools', 'Master Sunday Prep Sessions', 'Learn the 4-Day Fridge Rule'],
+        'Chapter 2': ['Stabilize Morning Blood Sugar', 'Prep Grab-and-Go Egg Bites', 'Hit 25g Protein Before Your First Meeting'],
+        'Chapter 3': ['Build Resilient Salad Jars', 'Beat the 3:00 PM Slump', 'Reclaim 5 Hours of Your Work Week'],
+        'Chapter 4': ['Master Sheet-Pan Efficiency', 'Support Overnight Recovery', 'Minimize Post-Work Cooking Friction'],
+        'Chapter 5': ['Create a Tactical Snack Defense', 'Bridge the Gap Between Meals', 'Optimize Your Satiety-to-Calorie Ratio'],
+        'Chapter 6': ['Build a Freezer Library', 'Master High-Volume Satiety', 'Experience One-Pot Simplicity'],
+        'Chapter 7': ['Enjoy Metabolic Dessert Hacks', 'Experience Guilt-Free Consistency', 'Satisfy Cravings with Real Food'],
+        'Chapter 8': ['Build Your Flavor Infrastructure', 'Master High-Protein Bases', 'Control Your Satiety with Custom Sauces'],
+        'Chapter 9': ['Navigate the 21-Day Roadmap', 'Master the Art of the Batch', 'Follow the Shopping Blueprint'],
+        'Chapter 10': ['Survive Any Restaurant Menu', 'Apply Real-World Efficiency Hacks', 'Build Your High-Protein Pantry']
+    }
+    strategy_list = strategies.get(num_label if 'Chapter' in num_label or 'Intro' in num_label else ch_title, ['Maximize Protein Intake', 'Maintain Low-Carb Consistency', 'Automate Your Weekly Success'])
+    strategy_html = '<div class="chapter-strategy"><h3>Chapter Strategy</h3><ul>' + ''.join(f'<li>{s}</li>' for s in strategy_list) + '</ul></div>'
+
+    out = []
+    # Page 1: Header + Strategy + Start of Intro
+    out.append(f'''<div class="page chapter-cover-new">
   <div class="page-content">
-    <div class="chapter-cover-inner">
-      <p class="chapter-cover-eyebrow">{esc(num_label)}</p>
-      <h1 class="chapter-cover-title">{esc(ch_title)}</h1>
-      <div class="chapter-cover-divider"></div>
-      <p class="chapter-cover-subtitle">{esc(ch_sub)}</p>
-      {extra}
+    <header class="chapter-head">
+      <p class="chapter-eyebrow">{esc(num_label)}</p>
+      <h1 class="chapter-h1">{esc(ch_title)}</h1>
+      <p class="chapter-h2">{esc(ch_sub)}</p>
+      <div class="chapter-rule"></div>
+    </header>
+    <div class="prose">
+      {f'<p class="chapter-quote">“{esc(ch_quote)}”</p>' if ch_quote else ''}
+      {strategy_html}
+      {pages[0] if pages else ''}
     </div>
   </div>
-</div>'''
+</div>''')
+    
+    # Subsequent pages for intro
+    for p_content in pages[1:]:
+        out.append(f'''<div class="page chapter-intro-cont">
+  <div class="page-content">
+    <div class="prose">{p_content}</div>
+  </div>
+</div>''')
+    
+    return '\n'.join(out)
 
 def render_recipe(r):
     ps = r.get('protein_source','')
@@ -165,8 +218,6 @@ parts = []
 parts.append(f'''<div class="page title-page" data-no-toc="true">
   <div class="page-content">
     <div class="title-page-inner">
-      <p class="tp-eyebrow">Priscilla Quinn</p>
-      <div class="tp-divider"></div>
       <h1 class="tp-title">{esc(book['title'])}</h1>
       <p class="tp-subtitle">{esc(book['subtitle'])}</p>
       <div class="tp-icon-row">
@@ -237,7 +288,7 @@ for extra in intro_pages[1:]:
 
 # 5. Chapter 1
 ch1 = book['chapter1']
-parts.append(chapter_cover('Chapter 1', ch1['subtitle'], 'The Foundation', '', color_class='cover-night'))
+parts.append(chapter_cover('Chapter 1', ch1['subtitle'], 'The Foundation', '', color_class='cover-night', ch_intro=ch1.get('intro')))
 
 def render_ch1_body_lines(body_lines):
     out = []
@@ -294,7 +345,7 @@ ch_covers = {
 for ch_title in ['Chapter 2','Chapter 3','Chapter 4','Chapter 5','Chapter 6','Chapter 7','Chapter 8']:
     meta = chapter_meta_lookup[ch_title]
     rs = chapter_recipe_groups[ch_title]
-    parts.append(chapter_cover(ch_title, meta['subtitle'], meta['quote'], '', recipe_count=len(rs), color_class=ch_covers[ch_title]))
+    parts.append(chapter_cover(ch_title, meta['subtitle'], meta['quote'], '', recipe_count=len(rs), color_class=ch_covers[ch_title], ch_intro=meta.get('intro')))
     for pair in chunk_pairs(rs, 2):
         cards = ''.join(render_recipe(r) for r in pair)
         cls = 'recipe-page-pair' if len(pair) == 2 else 'recipe-page-single'
@@ -302,7 +353,7 @@ for ch_title in ['Chapter 2','Chapter 3','Chapter 4','Chapter 5','Chapter 6','Ch
 
 # 7. Meal Plan
 mp = book['mealplan']
-parts.append(chapter_cover('Chapter 9', mp['subtitle'], mp['quote'], '', color_class='cover-coffee'))
+parts.append(chapter_cover('Chapter 9', mp['subtitle'], mp['quote'], '', color_class='cover-coffee', ch_intro=mp.get('intro')))
 
 intro_html = ''.join(f'<p>{smart_html(p)}</p>' for p in mp['intro_paragraphs'])
 htr_html = ''.join(f'<li>{smart_html(p)}</li>' for p in mp['how_to_read'])
@@ -366,7 +417,7 @@ for w in mp['weeks']:
 </div>''')
 
 # 8. Bonus Toolkit
-parts.append(chapter_cover('Chapter 10', 'Your Bonus Toolkit', 'Beyond the recipes', '', color_class='cover-burgundy'))
+parts.append(chapter_cover('Chapter 10', 'Your Bonus Toolkit', 'Beyond the recipes', '', color_class='cover-burgundy', ch_intro=book['bonus'].get('intro')))
 
 def render_bonus_body(body_lines):
     out = []
@@ -634,20 +685,20 @@ html,body{
 
 /* Title page */
 .title-page{
-  background:linear-gradient(160deg,#1a1a1a 0%,#0e1010 80%);
-  color:#fdc705;
+  background:var(--paper);
+  color:var(--ink);
 }
 .title-page .page-content{align-items:center;justify-content:center;}
 .title-page-inner{
   text-align:center;width:78%;
   padding:0.8in;
-  border:1px solid rgba(253,199,5,0.35);
-  background:rgba(255,255,255,0.02);
+  border:2px solid var(--primary);
+  background:var(--paper);
   border-radius:6px;
 }
 .tp-eyebrow{
   text-transform:uppercase;letter-spacing:0.4em;
-  font-size:11pt;color:var(--primary);font-weight:600;
+  font-size:11pt;color:var(--primary-dark);font-weight:600;
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   margin:0 0 1em;
 }
@@ -655,16 +706,16 @@ html,body{
 .tp-title{
   font-family:'Cormorant Garamond','Playfair Display','Georgia',serif;
   font-size:42pt;line-height:1.05;font-weight:700;
-  margin:0 0 0.6em;color:#fff7d6;letter-spacing:-0.01em;
+  margin:0 0 0.6em;color:var(--ink);letter-spacing:-0.01em;
 }
-.tp-subtitle{font-style:italic;font-size:13pt;line-height:1.45;color:#f0e2a8;margin:0 0 2em;}
+.tp-subtitle{font-style:italic;font-size:13pt;line-height:1.45;color:var(--muted);margin:0 0 2em;}
 .tp-icon-row{font-size:22pt;letter-spacing:0.5em;margin:1.5em 0 2em;}
 .tp-author{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   font-size:14pt;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--primary);margin:0;
+  color:var(--primary-dark);margin:0;
 }
-.tp-author strong{color:#fff;}
+.tp-author strong{color:var(--ink);}
 
 /* Copyright page */
 .legal-inner{font-size:11.2pt;line-height:1.5;color:var(--ink);}
@@ -742,46 +793,71 @@ html,body{
 }
 .chapter-rule{width:64px;height:2px;background:var(--primary);margin:0.4em 0 0;}
 
-/* Chapter cover — solid #fdc705 with black text for high contrast */
-.chapter-cover{color:var(--ink);background:#fdc705;}
+/* Chapter cover — white background, no heavy ink for lower KDP cost */
+.chapter-cover{color:var(--ink);background:var(--paper);}
 .chapter-cover .page-content{align-items:center;justify-content:center;}
 .chapter-cover-inner{
   text-align:center;padding:1in;width:100%;
-  border-top:1px solid rgba(0,0,0,0.4);
-  border-bottom:1px solid rgba(0,0,0,0.4);
+  border-top:2px solid var(--primary);
+  border-bottom:2px solid var(--primary);
   margin:0.8in 0.8in;
 }
 .chapter-cover-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
   text-transform:uppercase;letter-spacing:0.5em;
-  font-size:11pt;color:#1a1a1a;font-weight:700;margin:0 0 1em;
+  font-size:11pt;color:var(--primary-dark);font-weight:700;margin:0 0 1em;
 }
 .chapter-cover-title{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:48pt;font-weight:700;line-height:1.05;
-  margin:0 0 0.5em;color:#0e0e0e;letter-spacing:-0.01em;
+  margin:0 0 0.5em;color:var(--ink);letter-spacing:-0.01em;
 }
-.chapter-cover-divider{width:80px;height:2px;background:#1a1a1a;margin:0.8em auto;}
-.chapter-cover-subtitle{
-  font-family:'Cormorant Garamond','Georgia',serif;
-  font-size:14pt;font-style:italic;color:#2a2418;margin:0;
+.chapter-cover-divider{width:80px;height:2px;background:var(--primary);margin:0.8em auto;}
+.chapter-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16pt;font-style:italic;color:var(--primary-dark);
+  margin-bottom:1.2em !important;text-align:center !important;
+  border-left:none !important;padding:0 !important;
 }
-.chapter-cover-count{
+.chapter-strategy{
+  background:var(--cream-2);
+  border:1px solid var(--primary);
+  border-radius:6px;
+  padding:1.2em 1.5em;
+  margin-bottom:1.8em;
+}
+.chapter-strategy h3{
+  margin:0 0 0.8em;
   font-family:'Source Sans Pro',sans-serif;
-  text-transform:uppercase;letter-spacing:0.4em;
-  margin:1.4em 0 0;font-size:10pt;color:#1a1a1a;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.15em;
+  font-size:9.5pt;color:var(--primary-dark);
+  border-bottom:1px solid var(--primary-soft);
+  padding-bottom:0.4em;
 }
-/* All chapter cover variants share #fdc705 background; class names kept for compatibility */
+.chapter-strategy ul{
+  margin:0;padding-left:1.2em;
+  list-style:none;
+}
+.chapter-strategy li{
+  font-family:'Source Sans Pro',sans-serif;
+  font-size:10pt;color:var(--ink);
+  margin-bottom:0.5em;
+  position:relative;
+}
+.chapter-strategy li::before{
+  content:'✓';position:absolute;left:-1.2em;color:var(--primary-dark);font-weight:700;
+}
+/* All chapter cover variants use white background for low ink cost */
 .chapter-cover.cover-night,
 .chapter-cover.cover-charcoal,
 .chapter-cover.cover-coffee,
 .chapter-cover.cover-olive,
 .chapter-cover.cover-rust,
 .chapter-cover.cover-burgundy,
-.chapter-cover.cover-ink{background:#fdc705;}
+.chapter-cover.cover-ink{background:var(--paper);}
 
 /* Prose */
-.prose p{margin:0 0 0.6em;text-align:justify;font-size:11.2pt;line-height:1.5;}
+.prose p{margin:0 0 1.2em;text-align:justify;font-size:11.2pt;line-height:1.55;}
 .prose p strong{color:var(--primary-dark);}
 .prose-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
@@ -982,7 +1058,7 @@ html,body{
 
 /* Meal plan */
 .mealplan-intro .page-content,
-.week-page .page-content{padding:0.7in 0.75in 0.85in;}
+.week-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
 .mealplan-intro .chapter-h1{font-size:22pt;}
 .checklist{padding-left:1.2em;font-family:'Source Sans Pro',sans-serif;font-size:10pt;}
 .checklist li{margin-bottom:5px;}
@@ -1061,7 +1137,7 @@ html,body{
 }
 
 /* Appendix */
-.appendix-page .page-content{padding:0.7in 0.75in 0.85in;}
+.appendix-page .page-content{padding:var(--page-margin) var(--page-margin) var(--bottom-safe);}
 .app-table th, .app-table td{font-size:8.5pt;padding:4px 8px;}
 .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;}
 .conv-card{background:var(--cream-2);border:1px solid var(--line);border-radius:6px;padding:0.18in;}
