@@ -279,14 +279,14 @@ html,body{
 }
 
 /* Chapter 1 */
-.page-frame{display:flex;flex-direction:column;gap:1em;}
-.prep-section{padding:0.5em 0;}
+.page-frame{display:flex;flex-direction:column;gap:0.5em;}
+.prep-section{padding:0.2em 0;}
 .prep-h2{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:16pt;font-weight:700;color:var(--primary-dark);
-  margin:0 0 0.5em;border-bottom:1px solid var(--line);padding-bottom:0.3em;
+  margin:0 0 0.3em;border-bottom:1px solid var(--line);padding-bottom:0.2em;
 }
-.prep-section .prose p{font-size:12pt;line-height:1.5;margin-bottom:0.45em;}
+.prep-section .prose p{font-size:11pt;line-height:1.4;margin-bottom:0.4em;}
 
 /* Tables */
 .data-table{
@@ -305,6 +305,9 @@ html,body{
 }
 .data-table tbody tr:nth-child(even) td{background:var(--cream-2);}
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
+.bonus-body .data-table{margin:0.15em 0 0.3em;}
+.bonus-body .data-table th{padding:3px 8px;font-size:8.5pt;}
+.bonus-body .data-table td{padding:2px 8px;font-size:8.5pt;}
 
 /* RECIPE PAGE — 2 columns side by side; extra top margin needed for chapter name badge at 0.35in */
 .recipe-page .page-content{padding:0.85in var(--page-margin-x) var(--page-margin-bottom);}
@@ -482,11 +485,11 @@ html,body{
   font-size:24pt;color:var(--primary-dark);margin:0;font-weight:700;
 }
 .week-rule{width:80px;height:2px;background:var(--primary);margin-top:0.3em;}
-.week-body p{font-size:10pt;line-height:1.2;}
+.week-body p{font-size:10pt;line-height:1.2;margin-bottom:0.3em;}
 .week-h{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   text-transform:uppercase;letter-spacing:0.18em;font-size:9.5pt;
-  color:var(--primary-dark);font-weight:700;margin:0.5em 0 0.2em;
+  color:var(--primary-dark);font-weight:700;margin:0.3em 0 0.1em;
   border-bottom:1px solid var(--primary);padding-bottom:2px;
 }
 .week-objective{
@@ -559,7 +562,7 @@ html,body{
 }
 .bonus-body{margin-top:0;}
 .bonus-page-cont .bonus-body{margin-top:0;}
-.bonus-body p{font-size:9.5pt;line-height:1.4;margin-bottom:0.35em;}
+.bonus-body p{font-size:9.5pt;line-height:1.35;margin-bottom:0.2em;}
 .score-bucket{
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--ink);
@@ -578,14 +581,14 @@ html,body{
   font-size: 9.5pt;
   border-radius: 6px;
   padding: 5px 10px;
-  margin: 0.3em 0 !important;
+  margin: 0.15em 0 !important;
   border: 1px solid transparent;
 }
 .hint-pos{background:var(--primary-soft);border-left:4px solid var(--primary);color:var(--ink);border-color:var(--primary);}
 .hint-neg{background:#fff1f1;border-left:4px solid var(--rose);color:#7a1c1c;border-color:var(--rose);}
 .hint-hack{background:var(--primary-bg);border-left:4px solid var(--primary-dark);color:var(--ink-soft);font-style:italic;border-color:var(--primary-dark);}
-.hint-session{background:#f0f7ff;border-left:4px solid #2196f3;font-weight:700;margin-top:0.6em !important;border-color:#2196f3;}
-.hint-level{background:#fdf4ff;border-left:4px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.8em !important;border-color:#9c27b0;}
+.hint-session{background:#f0f7ff;border-left:4px solid #2196f3;font-weight:700;margin-top:0.3em !important;border-color:#2196f3;}
+.hint-level{background:#fdf4ff;border-left:4px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.4em !important;border-color:#9c27b0;}
 .restaurant-name{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:14pt;font-weight:700;color:var(--ink);
@@ -646,26 +649,40 @@ html,body{
 
 /* PRINT — explicit portrait, no toolbar, no overflow indicator */
 @page{
-  size:letter portrait !important;
-  margin:0 !important;
-  bleed:0;
+  size:8.5in 11in portrait;
+  margin:0;
+  marks:none;
 }
+@page:left{margin:0;}
+@page:right{margin:0;}
 @media print{
   html,body{
-    background:#fff;
+    background:#fff !important;
     width:8.5in !important;
-    height:11in !important;
+    height:auto !important;
     margin:0 !important;
     padding:0 !important;
   }
   .book{padding:0;gap:0;width:8.5in;}
   .page{
-    box-shadow:none;
-    margin:0;
-    width:8.5in;
-    height:11in;
+    box-shadow:none !important;
+    margin:0 !important;
+    width:8.5in !important;
+    height:11in !important;
     page-break-after:always;
+    break-after:page;
+    overflow:hidden !important;
   }
+  /* prevent mid-block splits inside a page */
+  .quiz-opts,.hint,.score-bucket,.week-objective,.chapter-strategy{
+    break-inside:avoid;page-break-inside:avoid;
+  }
+  .data-table tr{break-inside:avoid;page-break-inside:avoid;}
+  .bonus-h4,.week-h,.prep-h2,.section-h{
+    break-after:avoid;page-break-after:avoid;
+  }
+  /* crisp images — browser renders at natural resolution */
+  img{image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;}
   .toolbar{display:none !important;}
   .page[data-overflow]::before{display:none !important;}
 }
@@ -4638,14 +4655,17 @@ html,body{
   }
 
   function fitOnePage(page){
+    if(page.classList.contains('recipe-page')) return;
     var content = page.querySelector('.page-content');
     if(!content) return;
     content.style.transform = '';
     page.removeAttribute('data-overflow');
     var pageH = page.offsetHeight;
+    /* temporarily lift height:100% so scrollHeight reflects actual content */
+    content.style.height = 'auto';
     var natural = content.scrollHeight;
-    var threshold = pageH - 48;
-    if(natural > threshold){
+    content.style.height = '';
+    if(natural > pageH - 10){
       page.setAttribute('data-overflow', 'true');
     }
   }
@@ -4706,8 +4726,43 @@ html,body{
       + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 × 11 in portrait)">📄 Convert to PDF</button>';
     document.body.appendChild(bar);
     $('#btnPDF').addEventListener('click', function(){
+      var btn = $('#btnPDF');
+      if(btn.disabled) return;
+      btn.disabled = true;
+      btn.textContent = '⏳ Compressing…';
       fitAllPages();
-      window.print();
+      numberPages();
+
+      /* Compress recipe images to JPEG 72% — data URLs load synchronously, no onload needed */
+      var imgs = $$('.recipe-img');
+      var origSrcs = imgs.map(function(img){ return img.src; });
+
+      imgs.forEach(function(img){
+        if(!img.complete || img.naturalWidth === 0) return;
+        try{
+          var c = document.createElement('canvas');
+          var scale = Math.min(1, 540 / img.naturalWidth);
+          c.width  = Math.round(img.naturalWidth  * scale);
+          c.height = Math.round(img.naturalHeight * scale);
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+          img.src = c.toDataURL('image/jpeg', 0.72);
+        } catch(e){}
+      });
+
+      function restore(){
+        imgs.forEach(function(img,i){ img.src = origSrcs[i]; });
+        btn.disabled = false;
+        btn.textContent = '📄 Convert to PDF';
+      }
+
+      /* Use afterprint to restore exactly once — remove listener immediately */
+      function onAfterPrint(){
+        window.removeEventListener('afterprint', onAfterPrint);
+        restore();
+      }
+      window.addEventListener('afterprint', onAfterPrint);
+
+      setTimeout(function(){ window.print(); }, 60);
     });
     $('#btnFit').addEventListener('click', function(){
       $('#fitStatus').textContent = 'Re-fitting…';
@@ -4719,13 +4774,21 @@ html,body{
     var s = $('#fitStatus');
     if(!s) return;
     var total = $$('.page').length;
-    var overflowed = $$('.page[data-overflow="true"]').length;
+    var tightPages = $$('.page[data-overflow="true"]');
+    var overflowed = tightPages.length;
     if(overflowed === 0){
       s.textContent = '✓ All ' + total + ' pages fit';
       s.style.color = '#1d1812';
+      s.style.cursor = 'default';
+      s.onclick = null;
     } else {
-      s.textContent = '⚠ ' + overflowed + '/' + total + ' tight pages';
+      var nums = tightPages.map(function(p){ return p.getAttribute('data-page') || '?'; });
+      s.textContent = '⚠ ' + overflowed + '/' + total + ' tight — click to list';
       s.style.color = '#c69c00';
+      s.style.cursor = 'pointer';
+      s.onclick = function(){
+        alert('Tight pages (' + overflowed + '):\n' + nums.join(', '));
+      };
     }
   }
 
