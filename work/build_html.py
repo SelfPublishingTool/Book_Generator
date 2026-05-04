@@ -1230,6 +1230,12 @@ html,body{
 }
 .toolbar button:hover{transform:translateY(-1px);}
 .toolbar button.primary{background:var(--primary);color:var(--ink);border-color:var(--primary-dark);}
+.toolbar-link{
+  display:inline-flex;align-items:center;
+  border:1px solid var(--line);background:var(--paper);color:var(--ink);
+  padding:8px 14px;border-radius:6px;font-size:10pt;font-weight:600;
+  text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
 .toolbar .status{
   align-self:center;
   font-size:9pt;color:var(--muted);
@@ -1374,6 +1380,7 @@ js = r'''
     var bar = document.createElement('div');
     bar.className = 'toolbar';
     bar.innerHTML = ''
+      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html">📱 Kindle</a>'
       + '<span class="status" id="fitStatus">Checking layout…</span>'
       + '<button id="btnFit" title="Re-run live overflow check">↻ Re-check fit</button>'
       + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 × 11 in portrait)">📄 Convert to PDF</button>';
