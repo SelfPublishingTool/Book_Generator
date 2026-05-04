@@ -183,6 +183,7 @@ def render_recipe(r):
       <span class="badge badge-yield">Yield · {esc(r['yield'])}</span>
       <span class="badge badge-prep">Prep · {esc(r['prep'])}</span>
       <span class="badge badge-cook">{esc(cook_label)} · {esc(r['cook'])}</span>
+      {f'<span class="badge badge-cost">💲 {esc(r["cost_per_serving"])}/serving</span>' if r.get('cost_per_serving') else ''}
     </div>
   </header>
   <div class="recipe-body">
@@ -985,6 +986,7 @@ html,body{
 .badge-yield{background:var(--cream);}
 .badge-prep{background:#fff0c2;border-color:var(--primary);color:#5a4106;}
 .badge-cook{background:var(--primary-light);border-color:var(--primary);color:#5a4106;}
+.badge-cost{background:#e8f5e9;border-color:#66bb6a;color:#1b5e20;}
 
 .recipe-body{
   flex:1 1 auto;min-height:0;

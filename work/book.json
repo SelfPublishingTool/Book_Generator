@@ -160,10 +160,7 @@
         "½ cup cottage cheese (2%)",
         "1 cup fresh spinach, chopped",
         "½ cup red bell pepper, diced",
-        "½ cup mushrooms, diced",
-        "¼ cup shredded cheddar cheese",
-        "½ tsp garlic powder",
-        "Salt and black pepper to taste"
+        "garlic powder, salt and black pepper"
       ],
       "instructions": [
         "Preheat **oven** to 375°F. Grease a 12-cup muffin tin.",
@@ -175,7 +172,8 @@
       "nutrition": "Calories: 285 | Protein: 26g | Carbs: 5g | Fat: 18g",
       "nutrition_extra": "per serving — 3 muffins",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.60"
     },
     {
       "number": 2,
@@ -191,8 +189,7 @@
         "½ cup mixed berries (fresh or frozen)",
         "2 tbsp sliced almonds",
         "1 tbsp honey",
-        "1 tbsp chia seeds",
-        "¼ tsp vanilla extract"
+        "1 tbsp chia seeds"
       ],
       "instructions": [
         "Spoon yogurt into a bowl or **meal prep** container.",
@@ -203,7 +200,8 @@
       "nutrition": "Calories: 340 | Protein: 27g | Carbs: 32g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 3,
@@ -219,9 +217,7 @@
         "½ cup cottage cheese (2%)",
         "½ cup unsweetened almond milk",
         "1 tbsp chia seeds",
-        "1 tbsp maple syrup or honey",
-        "½ tsp cinnamon",
-        "½ cup blueberries"
+        "1 tbsp maple syrup, ½ tsp cinnamon"
       ],
       "instructions": [
         "In a jar, mix chia seeds, cottage cheese, milk, chia, syrup, and cinnamon.",
@@ -231,7 +227,8 @@
       "nutrition": "Calories: 370 | Protein: 25g | Carbs: 48g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 4,
@@ -246,11 +243,8 @@
         "1 lb ground turkey (93/7)",
         "2 medium sweet potatoes, peeled and diced",
         "1 red bell pepper, diced",
-        "½ yellow onion, diced",
         "2 tbsp olive oil",
-        "1 tsp smoked paprika",
-        "1 tsp garlic powder",
-        "Salt and black pepper to taste"
+        "smoked paprika, garlic powder, salt and pepper"
       ],
       "instructions": [
         "Cook diced sweet potato in 1 tbsp oil for 10–12 mins until tender.",
@@ -261,7 +255,8 @@
       "nutrition": "Calories: 320 | Protein: 28g | Carbs: 24g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$2.30"
     },
     {
       "number": 5,
@@ -277,9 +272,7 @@
         "1 cup cottage cheese (2%)",
         "2 cups fresh spinach, chopped",
         "½ cup crumbled feta cheese",
-        "½ cup cherry tomatoes, halved",
-        "½ tsp garlic powder",
-        "Salt and black pepper to taste"
+        "½ cup cherry tomatoes, halved"
       ],
       "instructions": [
         "Preheat **oven** to 375°F. Grease a 9×13-inch baking dish.",
@@ -291,7 +284,8 @@
       "nutrition": "Calories: 240 | Protein: 26g | Carbs: 4g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.50"
     },
     {
       "number": 6,
@@ -307,8 +301,7 @@
         "½ cup cottage cheese (2%)",
         "3 oz smoked salmon",
         "¼ small cucumber, sliced",
-        "1 tbsp capers",
-        "½ tsp everything keto bagels seasoning"
+        "½ tsp everything bagel seasoning"
       ],
       "instructions": [
         "Keto Toast keto bread until golden.",
@@ -319,7 +312,8 @@
       "nutrition": "Calories: 360 | Protein: 35g | Carbs: 30g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": "For meal prep, store components separately.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$4.50"
     },
     {
       "number": 7,
@@ -333,9 +327,7 @@
       "ingredients": [
         "5 large eggs",
         "1 cup canned diced bell peppers, rinsed",
-        "½ cup frozen corn, thawed",
         "½ cup salsa",
-        "½ tsp cumin",
         "1 tbsp olive oil",
         "2 tbsp Mexican blend cheese"
       ],
@@ -348,7 +340,8 @@
       "nutrition": "Calories: 390 | Protein: 28g | Carbs: 34g | Fat: 15g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.40"
     },
     {
       "number": 8,
@@ -374,7 +367,8 @@
       "nutrition": "Calories: 310 | Protein: 28g | Carbs: 24g | Fat: 11g",
       "nutrition_extra": "per serving — 4 pancakes",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.20"
     },
     {
       "number": 9,
@@ -400,7 +394,8 @@
       "nutrition": "Calories: 340 | Protein: 30g | Carbs: 28g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$2.10"
     },
     {
       "number": 10,
@@ -416,9 +411,7 @@
         "1 lb turkey sausage, browned",
         "2 cups frozen hash browns",
         "1 cup shredded cheddar",
-        "½ cup whole milk",
-        "½ tsp garlic powder",
-        "Salt and pepper"
+        "½ cup whole milk"
       ],
       "instructions": [
         "Preheat **oven** to 375°F. Grease a 9×13-inch baking dish.",
@@ -429,7 +422,8 @@
       "nutrition": "Calories: 390 | Protein: 33g | Carbs: 18g | Fat: 20g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 11,
@@ -443,11 +437,9 @@
       "ingredients": [
         "½ cup rolled oats",
         "¾ cup plain Greek yogurt (2%)",
-        "¼ cup unsweetened almond milk",
         "2 tbsp natural peanut butter",
         "1 tbsp honey",
-        "½ banana, sliced",
-        "1 tbsp chia seeds"
+        "½ banana, sliced"
       ],
       "instructions": [
         "Mix chia seeds, yogurt, milk, peanut butter, honey, and chia seeds.",
@@ -457,7 +449,8 @@
       "nutrition": "Calories: 490 | Protein: 26g | Carbs: 56g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.70"
     },
     {
       "number": 12,
@@ -470,13 +463,10 @@
       "image_path": "images/recipe_12.png",
       "ingredients": [
         "8 large eggs",
-        "¼ cup whole milk",
         "1 cup zucchini, diced small",
         "½ cup cherry tomatoes, halved",
         "½ cup shredded mozzarella",
-        "2 tbsp fresh basil",
-        "1 tbsp olive oil",
-        "Salt and pepper"
+        "1 tbsp olive oil, salt and pepper"
       ],
       "instructions": [
         "Whisk eggs and milk. Sauté zucchini in oil for 3–4 mins.",
@@ -487,7 +477,8 @@
       "nutrition": "Calories: 270 | Protein: 22g | Carbs: 4g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 13,
@@ -503,8 +494,7 @@
         "1 cup plain Greek yogurt",
         "¼ cup cottage cheese",
         "2 tbsp almond butter",
-        "¼ cup almond milk",
-        "Toppings: almonds, granola, berries"
+        "¼ cup almond milk"
       ],
       "instructions": [
         "Blend frozen banana, yogurt, cottage cheese, almond butter, and milk.",
@@ -514,7 +504,8 @@
       "nutrition": "Calories: 420 | Protein: 28g | Carbs: 38g | Fat: 16g",
       "nutrition_extra": "per serving, base only",
       "storage": "Store in the fridge for up to 2 days.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$2.30"
     },
     {
       "number": 14,
@@ -529,9 +520,7 @@
         "6 large eggs",
         "½ cup cottage cheese (2%)",
         "1 tbsp butter",
-        "2 tbsp fresh chives, chopped",
-        "¼ tsp garlic powder",
-        "Salt and black pepper to taste"
+        "garlic powder, salt and black pepper"
       ],
       "instructions": [
         "Whisk eggs, cottage cheese, garlic powder, salt, and pepper until well combined.",
@@ -543,7 +532,8 @@
       "nutrition": "Calories: 290 | Protein: 28g | Carbs: 3g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Best eaten fresh. If needed, store in the fridge for up to 2 days and reheat gently.",
-      "chapter": "Chapter 2"
+      "chapter": "Chapter 2",
+      "cost_per_serving": "~$1.30"
     },
     {
       "number": 15,
@@ -556,8 +546,6 @@
       "image_path": "images/recipe_15.png",
       "ingredients": [
         "1½ lbs chicken breast",
-        "2 tbsp olive oil",
-        "1 tsp oregano",
         "2 cups cooked cauliflower rice",
         "1 cup cherry tomatoes",
         "1 cup cucumber, diced",
@@ -572,7 +560,8 @@
       "nutrition": "Calories: 440 | Protein: 42g | Carbs: 30g | Fat: 15g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 16,
@@ -588,8 +577,6 @@
         "1 can diced bell peppers, rinsed",
         "1 tbsp chipotle seasoning",
         "½ cup salsa",
-        "4 whole wheat lettuce wraps",
-        "1 cup shredded lettuce",
         "½ cup Mexican cheese"
       ],
       "instructions": [
@@ -601,7 +588,8 @@
       "nutrition": "Calories: 480 | Protein: 37g | Carbs: 42g | Fat: 16g",
       "nutrition_extra": "per serving",
       "storage": "Store filling separately for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 17,
@@ -616,10 +604,8 @@
         "3 cans tuna, drained",
         "1 can diced mushrooms, rinsed",
         "½ cup celery, diced",
-        "¼ cup red onion, diced",
         "3 tbsp olive oil",
-        "2 tbsp red wine vinegar",
-        "1 tsp Dijon mustard"
+        "2 tbsp red wine vinegar, 1 tsp Dijon mustard"
       ],
       "instructions": [
         "Combine tuna, diced mushrooms, celery, and onion in a bowl.",
@@ -630,7 +616,8 @@
       "nutrition": "Calories: 350 | Protein: 36g | Carbs: 22g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.40"
     },
     {
       "number": 18,
@@ -645,10 +632,8 @@
         "1½ lbs salmon fillets",
         "4 tbsp olive oil",
         "2 tbsp lemon juice",
-        "1 tsp dried dill",
         "6 cups mixed greens",
-        "1 cup cherry tomatoes",
-        "Salt and pepper"
+        "1 cup cherry tomatoes"
       ],
       "instructions": [
         "Season salmon and bake at 400°F for 12–15 mins.",
@@ -659,7 +644,8 @@
       "nutrition": "Calories: 380 | Protein: 36g | Carbs: 6g | Fat: 24g",
       "nutrition_extra": "per serving",
       "storage": "Store salmon separately for up to 3 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.20"
     },
     {
       "number": 19,
@@ -686,7 +672,8 @@
       "nutrition": "Calories: 410 | Protein: 41g | Carbs: 18g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 20,
@@ -701,10 +688,8 @@
         "1½ lbs shrimp, peeled",
         "2 cups cooked cauliflower rice",
         "1 ripe mango, diced",
-        "1 cup cucumber, diced",
         "2 tbsp lime juice",
-        "2 tbsp olive oil",
-        "1 tsp chili powder"
+        "1 tsp chili powder, salt and pepper"
       ],
       "instructions": [
         "Sauté seasoned shrimp for 2 mins per side.",
@@ -715,7 +700,8 @@
       "nutrition": "Calories: 390 | Protein: 33g | Carbs: 42g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 3 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.20"
     },
     {
       "number": 21,
@@ -730,10 +716,7 @@
         "3 tbsp plain Greek yogurt",
         "1 tbsp Dijon mustard",
         "¼ cup celery, finely diced",
-        "2 tbsp red onion, finely diced",
-        "1 tsp smoked paprika",
-        "8 large butter lettuce leaves",
-        "Salt and black pepper to taste"
+        "smoked paprika, salt and black pepper"
       ],
       "instructions": [
         "Hard-boil eggs: place in cold water, bring to a boil, cook for **10 minutes**, then transfer to an ice bath. Peel and chop.",
@@ -746,7 +729,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 3",
-      "image_path": "images/recipe_21.png"
+      "image_path": "images/recipe_21.png",
+      "cost_per_serving": "~$1.60"
     },
     {
       "number": 22,
@@ -762,10 +746,7 @@
         "2 ripe avocados, diced",
         "1 cup cherry tomatoes, halved",
         "½ cucumber, diced",
-        "2 tbsp lemon juice",
-        "1 tsp garlic powder",
-        "½ tsp red pepper flakes (optional)",
-        "Salt and black pepper to taste"
+        "2 tbsp lemon juice, garlic powder, salt and pepper"
       ],
       "instructions": [
         "Divide cottage cheese evenly into 4 **meal prep** containers.",
@@ -777,7 +758,8 @@
       "nutrition": "Calories: 265 | Protein: 24g | Carbs: 12g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": "Store cottage cheese and toppings separately for up to 3 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.50"
     },
     {
       "number": 23,
@@ -792,7 +774,6 @@
         "2 cans canned chickpeas, rinsed",
         "2 zucchinis, diced",
         "1 red bell pepper, diced",
-        "3 tbsp olive oil",
         "2 cups cooked hemp hearts",
         "½ cup feta cheese"
       ],
@@ -805,7 +786,8 @@
       "nutrition": "Calories: 450 | Protein: 20g | Carbs: 52g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 24,
@@ -832,7 +814,8 @@
       "nutrition": "Calories: 310 | Protein: 38g | Carbs: 6g | Fat: 12g",
       "nutrition_extra": "per serving",
       "storage": "Store components separately for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 25,
@@ -859,7 +842,8 @@
       "nutrition": "Calories: 380 | Protein: 34g | Carbs: 36g | Fat: 8g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.40"
     },
     {
       "number": 26,
@@ -875,10 +859,7 @@
         "4 bell peppers, halved and seeded",
         "1 cup cooked hemp hearts",
         "1 can diced tomatoes, drained",
-        "½ cup shredded mozzarella",
-        "1 tsp garlic powder",
-        "1 tsp Italian seasoning",
-        "Salt and black pepper to taste"
+        "½ cup shredded mozzarella"
       ],
       "instructions": [
         "Preheat **oven** to 375°F (190°C).",
@@ -892,7 +873,8 @@
       "nutrition": "Calories: 370 | Protein: 32g | Carbs: 28g | Fat: 12g",
       "nutrition_extra": "per serving — 2 pepper halves",
       "storage": "Store in the fridge for up to 4 days. Reheat before serving.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 27,
@@ -907,16 +889,8 @@
         "1½ lbs chicken breast, cooked and shredded",
         "4 medium zucchini, spiralized into noodles",
         "2 cups purple cabbage, thinly sliced",
-        "1 cup carrots, julienned or shredded",
-        "½ cup edamame, shelled",
-        "3 tbsp reduced-sodium soy sauce",
-        "1 tbsp sesame oil",
-        "1 tbsp rice vinegar",
-        "1 tsp fresh ginger, grated",
-        "1 tsp garlic powder",
-        "1 tsp sriracha (optional)",
-        "2 green onions, sliced",
-        "1 tsp sesame seeds"
+        "3 tbsp soy sauce, 1 tbsp sesame oil, 1 tbsp rice vinegar",
+        "garlic powder, ginger, sriracha (optional)"
       ],
       "instructions": [
         "Season chicken with salt and garlic powder. Cook in a **skillet** over medium heat 6–7 min per side. Rest 5 min, then shred.",
@@ -929,7 +903,8 @@
       "nutrition": "Calories: 320 | Protein: 38g | Carbs: 18g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.90"
     },
     {
       "number": 28,
@@ -945,11 +920,7 @@
         "2 cups fresh mushrooms, sliced",
         "2 cups baby arugula",
         "1 tbsp olive oil",
-        "2 tbsp apple cider vinegar",
-        "1 tsp Dijon mustard",
-        "1 tsp honey",
-        "¼ cup red onion, thinly sliced",
-        "Salt and black pepper to taste"
+        "2 tbsp apple cider vinegar, 1 tsp Dijon mustard, 1 tsp honey"
       ],
       "instructions": [
         "Heat olive oil in a **skillet** over medium heat. Sauté mushrooms for 4–5 mins until golden.",
@@ -960,7 +931,8 @@
       "nutrition": "Calories: 340 | Protein: 30g | Carbs: 28g | Fat: 10g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.10"
     },
     {
       "number": 29,
@@ -987,7 +959,8 @@
       "nutrition": "Calories: 450 | Protein: 38g | Carbs: 32g | Fat: 16g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.40"
     },
     {
       "number": 30,
@@ -1014,7 +987,8 @@
       "nutrition": "Calories: 480 | Protein: 42g | Carbs: 34g | Fat: 20g",
       "nutrition_extra": "per serving",
       "storage": "Assemble daily to prevent browning.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.10"
     },
     {
       "number": 31,
@@ -1041,7 +1015,8 @@
       "nutrition": "Calories: 380 | Protein: 20g | Carbs: 40g | Fat: 14g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 5 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$2.00"
     },
     {
       "number": 32,
@@ -1055,12 +1030,8 @@
         "1½ lbs chicken thighs, boneless and skinless",
         "¼ cup reduced-sodium soy sauce",
         "2 tbsp honey",
-        "1 tbsp rice vinegar",
-        "1 tsp garlic powder",
-        "1 tsp cornstarch",
         "2 cups cooked cauliflower rice",
-        "2 cups steamed broccoli",
-        "1 tsp sesame seeds"
+        "2 cups steamed broccoli"
       ],
       "instructions": [
         "Whisk soy sauce, honey, rice vinegar, garlic powder, and cornstarch together to make teriyaki sauce.",
@@ -1074,7 +1045,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 3",
-      "image_path": "images/recipe_32.png"
+      "image_path": "images/recipe_32.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 33,
@@ -1088,12 +1060,8 @@
         "1½ lbs shrimp, peeled and deveined",
         "2 avocados, diced",
         "1 cup cherry tomatoes, halved",
-        "½ cup corn, fresh or thawed",
-        "¼ cup red onion, finely diced",
         "3 tbsp lime juice",
-        "2 tbsp olive oil",
-        "1 tsp chili powder",
-        "Salt and pepper to taste"
+        "chili powder, salt and pepper"
       ],
       "instructions": [
         "Toss shrimp with oil and spices. Sauté until pink (2–3 mins).",
@@ -1105,7 +1073,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 3",
-      "image_path": "images/recipe_33.png"
+      "image_path": "images/recipe_33.png",
+      "cost_per_serving": "~$3.40"
     },
     {
       "number": 34,
@@ -1117,19 +1086,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
-        "¼ cup breadcrumbs (whole wheat)",
-        "1 egg",
-        "1 tsp garlic powder",
-        "1 tsp dried oregano",
-        "1 tbsp lemon zest",
-        "2 cups cauliflower rice, sautéed with 1 tsp lemon juice and fresh parsley",
-        "1 cup diced cucumber",
-        "½ cup cherry tomatoes, halved",
-        "2 tbsp fresh parsley, chopped",
-        "2 tbsp lemon juice",
-        "1 tbsp olive oil",
+        "2 cups cauliflower rice",
+        "1 cup diced cucumber, ½ cup cherry tomatoes",
         "½ cup crumbled feta cheese",
-        "Salt and pepper to taste"
+        "garlic powder, oregano, lemon juice"
       ],
       "instructions": [
         "Mix turkey, breadcrumbs, egg, garlic powder, oregano, and lemon zest. Form 20 meatballs.",
@@ -1142,7 +1102,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 3",
-      "image_path": "images/recipe_34.png"
+      "image_path": "images/recipe_34.png",
+      "cost_per_serving": "~$3.10"
     },
     {
       "number": 35,
@@ -1156,11 +1117,8 @@
         "2 cans (5 oz each) salmon in water, drained",
         "1 avocado, sliced",
         "1 cucumber, cut into matchsticks",
-        "1 cup shredded carrots",
-        "12 cauliflower rice paper wrappers",
-        "3 tbsp reduced-sodium soy sauce",
-        "1 tbsp sesame oil",
-        "1 tsp rice vinegar"
+        "12 rice paper wrappers",
+        "3 tbsp soy sauce, 1 tbsp sesame oil"
       ],
       "instructions": [
         "Whisk soy sauce, oil, and vinegar for dipping.",
@@ -1172,7 +1130,8 @@
       "nutrition_extra": "per serving — 3 rolls",
       "storage": null,
       "chapter": "Chapter 3",
-      "image_path": "images/recipe_35.png"
+      "image_path": "images/recipe_35.png",
+      "cost_per_serving": "~$2.50"
     },
     {
       "number": 36,
@@ -1186,13 +1145,9 @@
       "ingredients": [
         "1½ lbs chicken breast, cubed",
         "2 tbsp olive oil",
-        "1 tbsp dried oregano",
-        "2 cloves garlic, minced",
-        "1 cup cucumber, diced",
         "1 cup cherry tomatoes, halved",
-        "½ cup Kalamata olives",
-        "¼ cup red onion, sliced",
-        "½ cup feta cheese"
+        "½ cup feta cheese",
+        "oregano, garlic, salt and pepper"
       ],
       "instructions": [
         "Toss chicken with olive oil, oregano, and garlic.",
@@ -1203,7 +1158,8 @@
       "nutrition": "Calories: 380 | Protein: 42g | Carbs: 8g | Fat: 18g",
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
-      "chapter": "Chapter 3"
+      "chapter": "Chapter 3",
+      "cost_per_serving": "~$3.20"
     },
     {
       "number": 37,
@@ -1218,9 +1174,7 @@
         "3 tbsp butter, melted",
         "4 garlic cloves, minced",
         "1 lb asparagus, trimmed",
-        "1 lemon, sliced",
-        "1 tsp dried thyme",
-        "Salt and black pepper to taste"
+        "thyme, salt and black pepper"
       ],
       "instructions": [
         "Arrange asparagus and salmon on a tray.",
@@ -1232,7 +1186,8 @@
       "nutrition_extra": "per serving",
       "storage": "Bake for 15–18 minutes until the salmon flakes easily and asparagus is tender. Serve immediately or cool and store in the fridge for up to 3 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_37.png"
+      "image_path": "images/recipe_37.png",
+      "cost_per_serving": "~$3.80"
     },
     {
       "number": 38,
@@ -1245,13 +1200,9 @@
       "ingredients": [
         "1½ lbs lean ground beef (90/10)",
         "3 bell peppers (mixed colors), sliced",
-        "1 red onion, sliced",
         "2 cups cooked cauliflower rice",
         "2 tbsp olive oil",
-        "1 tsp smoked paprika",
-        "1 tsp garlic powder",
-        "1 tsp cumin",
-        "Salt and black pepper to taste"
+        "smoked paprika, garlic powder, cumin, salt and pepper"
       ],
       "instructions": [
         "Roast peppers and onion at 425°F for 20–25 mins.",
@@ -1263,7 +1214,8 @@
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_38.png"
+      "image_path": "images/recipe_38.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 39,
@@ -1275,17 +1227,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
-        "¼ cup whole wheat breadcrumbs",
-        "1 egg",
-        "2 garlic cloves, minced",
-        "1 tsp dried oregano",
-        "1 tsp dried mint",
+        "1 cup tzatziki sauce",
         "½ cup crumbled feta cheese",
-        "8 large romaine or butter lettuce leaves (for serving as cups)",
-        "1 cup tzatziki sauce (store-bought or homemade)",
-        "½ cup sliced cherry tomatoes",
-        "¼ cup red onion, thinly sliced",
-        "Salt and pepper to taste"
+        "8 romaine lettuce leaves",
+        "garlic, oregano, dried mint, salt and pepper"
       ],
       "instructions": [
         "Mix turkey, breadcrumbs, egg, garlic, oregano, mint, and feta. Form 24 meatballs.",
@@ -1298,7 +1243,8 @@
       "nutrition_extra": "per serving — 6 meatballs + ½ cup quinoa",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_39.png"
+      "image_path": "images/recipe_39.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 40,
@@ -1310,14 +1256,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "2 lbs chicken thighs, boneless and skinless",
-        "2 cans (15 oz each) diced mushrooms, drained",
         "1 can (14.5 oz) diced tomatoes",
         "3 cups low-sodium chicken broth",
-        "4 garlic cloves, minced",
-        "1 tsp dried thyme",
-        "1 tsp dried rosemary",
         "2 cups fresh spinach",
-        "Salt and black pepper to taste"
+        "thyme, rosemary, garlic, salt and pepper"
       ],
       "instructions": [
         "Combine chicken, diced mushrooms, tomatoes, broth, and spices in slow cooker.",
@@ -1329,7 +1271,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_40.png"
+      "image_path": "images/recipe_40.png",
+      "cost_per_serving": "~$2.40"
     },
     {
       "number": 41,
@@ -1343,10 +1286,7 @@
         "8 bone-in, skin-on chicken thighs (about 2 lbs)",
         "1 lb asparagus, trimmed",
         "3 tbsp olive oil",
-        "1 tsp garlic powder",
-        "1 tsp smoked paprika",
-        "1 tsp Italian seasoning",
-        "Salt and black pepper to taste"
+        "garlic powder, smoked paprika, Italian seasoning, salt and pepper"
       ],
       "instructions": [
         "Coat chicken with seasoned oil; roast at 425°F for 20 mins.",
@@ -1358,7 +1298,8 @@
       "nutrition_extra": "per serving — 2 thighs",
       "storage": "Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_41.png"
+      "image_path": "images/recipe_41.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 42,
@@ -1372,13 +1313,8 @@
         "1½ lbs ground turkey (93/7)",
         "4 large bell peppers, tops cut off and seeded",
         "1 can (15 oz) black beans, drained and rinsed",
-        "1 cup salsa (store-bought or homemade)",
-        "1 tsp cumin",
-        "1 tsp chili powder",
-        "½ tsp smoked paprika",
-        "1 tsp garlic powder",
-        "½ cup shredded Mexican blend cheese",
-        "Salt and black pepper to taste"
+        "1 cup salsa",
+        "½ cup shredded Mexican blend cheese"
       ],
       "instructions": [
         "Preheat **oven** to 375°F (190°C).",
@@ -1393,7 +1329,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_42.png"
+      "image_path": "images/recipe_42.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 43,
@@ -1405,16 +1342,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1 lb lean ground beef (90/10)",
-        "1 cup dry green chopped mushrooms, rinsed",
         "1 can (14.5 oz) diced tomatoes",
         "4 cups low-sodium beef broth",
         "2 large carrots, diced",
-        "2 celery stalks, diced",
-        "½ yellow onion, diced",
-        "2 garlic cloves, minced",
-        "1 tsp smoked paprika",
-        "1 tsp cumin",
-        "Salt and pepper to taste"
+        "smoked paprika, cumin, garlic, salt and pepper"
       ],
       "instructions": [
         "Brown beef and drain fat. Sauté onion, carrots, and celery.",
@@ -1426,7 +1357,8 @@
       "nutrition_extra": "per serving",
       "storage": "Adjust seasoning and serve. Store in the fridge for up to 4 days or freeze for up to 3 months.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_43.png"
+      "image_path": "images/recipe_43.png",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 44,
@@ -1438,15 +1370,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs chicken breast",
-        "3 garlic cloves, minced",
-        "1 cup low-sodium chicken broth",
-        "½ cup Greek yogurt (full-fat)",
-        "¼ cup Parmesan cheese, grated",
         "1 cup sun-dried tomatoes, chopped",
         "2 cups fresh spinach",
-        "1 tbsp olive oil",
-        "1 tsp Italian seasoning",
-        "Salt and black pepper to taste"
+        "½ cup Greek yogurt (full-fat)",
+        "garlic, Italian seasoning, salt and pepper"
       ],
       "instructions": [
         "Season and brown chicken in oil. Sauté garlic.",
@@ -1458,7 +1385,8 @@
       "nutrition_extra": "per serving, chicken and sauce only",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_44.png"
+      "image_path": "images/recipe_44.png",
+      "cost_per_serving": "~$3.20"
     },
     {
       "number": 45,
@@ -1473,12 +1401,7 @@
         "2 cans (15 oz each) diced bell peppers, drained",
         "1 can (28 oz) crushed tomatoes",
         "2 cups low-sodium beef broth",
-        "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "2 tbsp chili powder",
-        "1 tsp cumin",
-        "1 tsp smoked paprika",
-        "Salt and pepper to taste"
+        "chili powder, cumin, smoked paprika, garlic, salt and pepper"
       ],
       "instructions": [
         "Brown beef with onion and garlic. Drain fat.",
@@ -1490,7 +1413,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_45.png"
+      "image_path": "images/recipe_45.png",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 46,
@@ -1504,11 +1428,8 @@
         "1½ lbs salmon fillets, cut into 4 portions",
         "¼ cup reduced-sodium soy sauce",
         "2 tbsp honey",
-        "1 tbsp rice vinegar",
-        "1 tsp garlic powder",
         "2 cups cooked cauliflower rice",
-        "1 cup shelled edamame, cooked",
-        "1 tsp sesame seeds"
+        "1 cup shelled edamame, cooked"
       ],
       "instructions": [
         "Whisk sauce and marinate salmon for 10 mins.",
@@ -1520,7 +1441,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_46.png"
+      "image_path": "images/recipe_46.png",
+      "cost_per_serving": "~$3.50"
     },
     {
       "number": 47,
@@ -1533,11 +1455,9 @@
       "ingredients": [
         "1½ lbs cod fillets",
         "4 cups broccoli florets",
-        "3 tbsp olive oil, divided",
+        "3 tbsp olive oil",
         "2 tbsp lemon juice",
-        "2 garlic cloves, minced",
-        "1 tsp dried dill",
-        "Salt and black pepper to taste"
+        "garlic, dill, salt and black pepper"
       ],
       "instructions": [
         "Roast broccoli at 400°F for 10 mins.",
@@ -1549,7 +1469,8 @@
       "nutrition_extra": "per serving",
       "storage": "Store broccoli and cod separately in the fridge for up to 3 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_47.png"
+      "image_path": "images/recipe_47.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 48,
@@ -1562,13 +1483,9 @@
       "ingredients": [
         "1½ lbs chicken breast, thinly sliced",
         "3 cups broccoli florets",
-        "1 cup shredded carrots",
         "3 tbsp reduced-sodium soy sauce",
         "1 tbsp sesame oil",
-        "1 tbsp cornstarch",
-        "1 tsp garlic powder",
-        "1 tsp fresh ginger, grated",
-        "2 cups cooked cauliflower rice"
+        "garlic powder, ginger"
       ],
       "instructions": [
         "Marinate chicken in soy, sesame oil, and spices.",
@@ -1580,7 +1497,8 @@
       "nutrition_extra": "per serving",
       "storage": "Serve over brown rice. Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_48.png"
+      "image_path": "images/recipe_48.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 49,
@@ -1594,11 +1512,8 @@
         "1½ lbs pork tenderloin",
         "2 apples, cored and thinly sliced",
         "2 tbsp Dijon mustard",
-        "1 tbsp olive oil",
         "1 tbsp honey",
-        "1 tsp dried thyme",
-        "½ tsp garlic powder",
-        "Salt and black pepper to taste"
+        "thyme, garlic powder, salt and black pepper"
       ],
       "instructions": [
         "Rub pork with Dijon mixture. Sear in a **skillet**.",
@@ -1610,7 +1525,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_49.png"
+      "image_path": "images/recipe_49.png",
+      "cost_per_serving": "~$3.20"
     },
     {
       "number": 50,
@@ -1623,11 +1539,8 @@
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
         "1 packet taco seasoning (low-sodium)",
-        "1 can (15 oz) diced bell peppers, drained",
         "2 cups cooked cauliflower rice",
-        "1 cup shredded romaine lettuce",
         "½ cup fresh salsa",
-        "½ cup plain Greek yogurt (as sour cream substitute)",
         "½ cup shredded Mexican cheese blend"
       ],
       "instructions": [
@@ -1640,7 +1553,8 @@
       "nutrition_extra": "per serving, assembled",
       "storage": "Store separately: romaine, salsa, Greek yogurt, and cheese. Add toppings just before eating.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_50.png"
+      "image_path": "images/recipe_50.png",
+      "cost_per_serving": "~$2.50"
     },
     {
       "number": 51,
@@ -1652,14 +1566,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "2 lbs shrimp, peeled and deveined",
-        "4 medium zucchini, spiralized (or use store-bought zucchini noodles)",
+        "4 medium zucchini, spiralized",
         "4 garlic cloves, minced",
         "3 tbsp olive oil",
-        "¼ cup low-sodium chicken broth",
-        "2 tbsp lemon juice",
-        "½ tsp red pepper flakes",
-        "¼ cup Parmesan cheese, grated",
-        "Salt and pepper to taste"
+        "¼ cup Parmesan cheese, grated"
       ],
       "instructions": [
         "Sauté garlic and shrimp in oil until pink.",
@@ -1671,7 +1581,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_51.png"
+      "image_path": "images/recipe_51.png",
+      "cost_per_serving": "~$3.60"
     },
     {
       "number": 52,
@@ -1685,10 +1596,7 @@
         "8 bone-in, skin-on chicken thighs (about 2 lbs)",
         "3 tbsp Dijon mustard",
         "2 tbsp honey",
-        "1 tbsp apple cider vinegar",
-        "1 tsp garlic powder",
-        "1 tsp dried thyme",
-        "Salt and black pepper to taste"
+        "garlic powder, dried thyme, salt and black pepper"
       ],
       "instructions": [
         "Coat chicken with honey-mustard mixture.",
@@ -1700,7 +1608,8 @@
       "nutrition_extra": "per serving — 2 thighs",
       "storage": "Store in the fridge for up to 4 days. Reheat in the oven at 375°F for 10 minutes to restore crispiness.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_52.png"
+      "image_path": "images/recipe_52.png",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 53,
@@ -1711,13 +1620,10 @@
       "cook": "15 min",
       "cook_label": "Cook",
       "ingredients": [
-        "1½ lbs sirloin steak, thinly sliced against the grain",
+        "1½ lbs sirloin steak, thinly sliced",
         "3 cups broccoli florets",
         "¼ cup reduced-sodium soy sauce",
         "2 tbsp oyster sauce",
-        "1 tbsp sesame oil",
-        "1 tbsp cornstarch",
-        "1 tsp garlic powder",
         "2 cups cooked cauliflower rice"
       ],
       "instructions": [
@@ -1730,7 +1636,8 @@
       "nutrition_extra": "per serving",
       "storage": "Serve over brown rice. Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_53.png"
+      "image_path": "images/recipe_53.png",
+      "cost_per_serving": "~$3.80"
     },
     {
       "number": 54,
@@ -1742,14 +1649,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "2 lbs ground turkey (93/7)",
-        "½ cup whole wheat breadcrumbs",
         "2 eggs",
-        "½ cup finely diced onion",
-        "2 garlic cloves, minced",
+        "½ cup whole wheat breadcrumbs",
         "¼ cup low-sodium ketchup (plus 2 tbsp for topping)",
-        "1 tbsp Worcestershire sauce",
-        "1 tsp dried thyme",
-        "Salt and black pepper to taste"
+        "garlic, thyme, salt and black pepper"
       ],
       "instructions": [
         "Mix all ingredients (except topping ketchup).",
@@ -1761,7 +1664,8 @@
       "nutrition_extra": "per serving",
       "storage": "Let rest 10 minutes before slicing into 6 portions. Store in the fridge for up to 4 days or freeze slices for up to 2 months.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_54.png"
+      "image_path": "images/recipe_54.png",
+      "cost_per_serving": "~$2.30"
     },
     {
       "number": 55,
@@ -1776,10 +1680,7 @@
         "2 medium sweet potatoes, peeled and cubed",
         "2 cups Brussels sprouts, halved",
         "3 tbsp olive oil",
-        "1 tsp smoked paprika",
-        "1 tsp garlic powder",
-        "1 tbsp maple syrup",
-        "Salt and black pepper to taste"
+        "smoked paprika, garlic powder, maple syrup"
       ],
       "instructions": [
         "Roast sweet potato and sprouts at 400°F (15 mins).",
@@ -1791,7 +1692,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_55.png"
+      "image_path": "images/recipe_55.png",
+      "cost_per_serving": "~$3.60"
     },
     {
       "number": 56,
@@ -1806,12 +1708,7 @@
         "1 can (14.5 oz) crushed tomatoes",
         "½ cup plain Greek yogurt",
         "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "2 tsp garam masala",
-        "1 tsp cumin",
-        "1 tsp smoked paprika",
-        "1 tbsp olive oil",
-        "Salt to taste"
+        "garam masala, cumin, smoked paprika, garlic"
       ],
       "instructions": [
         "Sauté onion and garlic; add spices and cook until fragrant.",
@@ -1823,7 +1720,8 @@
       "nutrition_extra": "per serving, sauce and chicken only",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_56.png"
+      "image_path": "images/recipe_56.png",
+      "cost_per_serving": "~$2.60"
     },
     {
       "number": 57,
@@ -1836,13 +1734,9 @@
       "ingredients": [
         "1½ lbs lean ground beef (90/10)",
         "1 can (15 oz) diced bell peppers, drained",
-        "1 cup frozen corn, thawed",
         "1 can (14.5 oz) diced tomatoes with green chilies",
-        "2 tsp chili powder",
-        "1 tsp cumin",
-        "1 tsp garlic powder",
         "½ cup shredded cheddar cheese",
-        "Salt and pepper to taste"
+        "chili powder, cumin, garlic powder, salt and pepper"
       ],
       "instructions": [
         "Brown beef and drain fat. Stir in spices.",
@@ -1854,7 +1748,8 @@
       "nutrition_extra": "per serving",
       "storage": "Serve over rice, in tortillas, or with a side salad. Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_57.png"
+      "image_path": "images/recipe_57.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 58,
@@ -1869,9 +1764,7 @@
         "4 garlic cloves, minced",
         "3 tbsp lemon juice",
         "2 tbsp olive oil",
-        "1 tsp dried oregano",
-        "1 tsp dried thyme",
-        "Salt and black pepper to taste"
+        "oregano, thyme, salt and black pepper"
       ],
       "instructions": [
         "Mix lemon juice, oil, and herbs for marinade.",
@@ -1883,7 +1776,8 @@
       "nutrition_extra": "per serving",
       "storage": "Let rest 5 minutes before slicing. This is the perfect \"base protein\" for bowls, salads, and wraps. Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_58.png"
+      "image_path": "images/recipe_58.png",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 59,
@@ -1898,10 +1792,7 @@
         "4 cups cauliflower rice (frozen, thawed)",
         "2 cups frozen peas and carrots, thawed",
         "3 tbsp reduced-sodium soy sauce",
-        "1 tbsp sesame oil",
-        "2 eggs, lightly beaten",
-        "2 garlic cloves, minced",
-        "Salt and pepper to taste"
+        "2 eggs, lightly beaten"
       ],
       "instructions": [
         "Sauté garlic and shrimp in oil until pink; remove.",
@@ -1913,7 +1804,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_59.png"
+      "image_path": "images/recipe_59.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 60,
@@ -1928,11 +1820,7 @@
         "12 oz whole wheat penne",
         "1 jar (24 oz) marinara sauce",
         "1 yellow onion, finely diced",
-        "3 garlic cloves, minced",
-        "1 tsp Italian seasoning",
-        "2 tbsp Parmesan cheese (per serving, for topping)",
-        "1 tbsp olive oil",
-        "Salt and pepper to taste"
+        "Italian seasoning, garlic, salt and pepper"
       ],
       "instructions": [
         "Cook penne according to package directions; drain. Sauté onion and garlic in a **skillet**.",
@@ -1944,7 +1832,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_60.png"
+      "image_path": "images/recipe_60.png",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 61,
@@ -1956,15 +1845,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs beef stew meat, cubed",
-        "1 can (15 oz) kidney diced mushrooms, drained",
         "1 can (14.5 oz) diced tomatoes",
         "3 cups low-sodium beef broth",
-        "2 medium diced zucchini, cubed",
         "2 large carrots, sliced",
-        "1 yellow onion, diced",
-        "2 garlic cloves, minced",
-        "1 tsp dried thyme",
-        "Salt and black pepper to taste"
+        "thyme, garlic, salt and black pepper"
       ],
       "instructions": [
         "Place all ingredients in slow cooker; stir briefly.",
@@ -1976,7 +1860,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_61.png"
+      "image_path": "images/recipe_61.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 62,
@@ -1990,12 +1875,8 @@
         "8 bone-in, skin-on chicken thighs (about 2 lbs)",
         "1 cup cherry tomatoes",
         "½ cup kalamata olives, pitted",
-        "4 garlic cloves, minced",
         "2 tbsp olive oil",
-        "1 tsp dried oregano",
-        "½ tsp dried rosemary",
-        "½ lemon, sliced",
-        "Salt and black pepper to taste"
+        "oregano, rosemary, garlic, salt and pepper"
       ],
       "instructions": [
         "Season and sear chicken skin-side down (4–5 mins).",
@@ -2007,7 +1888,8 @@
       "nutrition_extra": "per serving — 2 thighs",
       "storage": "Spoon the pan juices over the chicken before serving. Store in the fridge for up to 4 days.",
       "chapter": "Chapter 4",
-      "image_path": "images/recipe_62.png"
+      "image_path": "images/recipe_62.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 63,
@@ -2022,8 +1904,7 @@
         "½ cup natural peanut butter",
         "½ cup plain Greek yogurt",
         "3 tbsp honey",
-        "¼ cup mini chocolate chips",
-        "1 tsp vanilla extract"
+        "¼ cup mini chocolate chips"
       ],
       "instructions": [
         "Mix all ingredients in a large bowl until thick.",
@@ -2035,7 +1916,8 @@
       "nutrition_extra": "per serving — 3 balls",
       "storage": "Transfer to an airtight container. Store in the fridge for up to 1 week or freeze for up to 1 month.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_63.png"
+      "image_path": "images/recipe_63.png",
+      "cost_per_serving": "~$0.90"
     },
     {
       "number": 64,
@@ -2062,7 +1944,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_64.png"
+      "image_path": "images/recipe_64.png",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 65,
@@ -2089,7 +1972,8 @@
       "nutrition_extra": "per serving — 4 roll-ups",
       "storage": "Store in the fridge for up to 3 days.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_65.png"
+      "image_path": "images/recipe_65.png",
+      "cost_per_serving": "~$2.20"
     },
     {
       "number": 66,
@@ -2104,9 +1988,7 @@
         "½ cucumber, finely diced",
         "1 tbsp fresh dill (or 1 tsp dried dill)",
         "1 garlic clove, minced",
-        "1 tsp lemon juice",
-        "Salt and black pepper to taste",
-        "Vegetable dippers: carrots, celery, bell pepper strips"
+        "salt and black pepper to taste"
       ],
       "instructions": [
         "Blend cottage cheese until creamy (optional).",
@@ -2118,7 +2000,8 @@
       "nutrition_extra": "per serving, dip only",
       "storage": "Store for up to 4 days. Serve alongside vegetable dippers.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_66.png"
+      "image_path": "images/recipe_66.png",
+      "cost_per_serving": "~$1.20"
     },
     {
       "number": 67,
@@ -2133,10 +2016,7 @@
         "1 tbsp dried dill",
         "1 tsp garlic powder",
         "1 tsp onion powder",
-        "½ tsp dried parsley",
-        "1 tbsp lemon juice",
-        "Salt and black pepper to taste",
-        "Veggie dippers: 4 cups mixed raw vegetables"
+        "1 tbsp lemon juice, salt and black pepper"
       ],
       "instructions": [
         "Whisk yogurt with herbs, lemon, and spices.",
@@ -2148,7 +2028,8 @@
       "nutrition_extra": "per serving, dip only",
       "storage": "Store in the fridge for up to 5 days.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_67.png"
+      "image_path": "images/recipe_67.png",
+      "cost_per_serving": "~$1.50"
     },
     {
       "number": 68,
@@ -2159,13 +2040,11 @@
       "cook": "0 min",
       "cook_label": "Cook",
       "ingredients": [
-        "12 mini sweet peppers, halved lengthwise and seeded",
+        "12 mini sweet peppers, halved and seeded",
         "2 cans (5 oz each) tuna in water, drained",
         "2 tbsp plain Greek yogurt",
         "1 tbsp lemon juice",
-        "1 tbsp fresh parsley, chopped",
-        "½ tsp garlic powder",
-        "Salt and pepper to taste"
+        "garlic powder, salt and pepper"
       ],
       "instructions": [
         "Mix tuna, yogurt, lemon, and spices in a bowl.",
@@ -2177,7 +2056,8 @@
       "nutrition_extra": "per serving — 6 stuffed peppers",
       "storage": "Store in the fridge for up to 3 days.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_68.png"
+      "image_path": "images/recipe_68.png",
+      "cost_per_serving": "~$2.30"
     },
     {
       "number": 69,
@@ -2203,7 +2083,8 @@
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 4 days.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_69.png"
+      "image_path": "images/recipe_69.png",
+      "cost_per_serving": "~$1.50"
     },
     {
       "number": 70,
@@ -2229,7 +2110,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_70.png"
+      "image_path": "images/recipe_70.png",
+      "cost_per_serving": "~$3.50"
     },
     {
       "number": 71,
@@ -2244,8 +2126,7 @@
         "4 oz smoked salmon, torn into pieces",
         "½ cup cottage cheese",
         "1 tbsp capers",
-        "½ tsp everything keto bagels seasoning",
-        "Fresh dill for garnish"
+        "½ tsp everything bagel seasoning"
       ],
       "instructions": [
         "Spread cottage cheese on cucumber rounds.",
@@ -2257,7 +2138,8 @@
       "nutrition_extra": "per serving — 10 rounds",
       "storage": "Store components separately for up to 3 days.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_71.png"
+      "image_path": "images/recipe_71.png",
+      "cost_per_serving": "~$3.80"
     },
     {
       "number": 72,
@@ -2270,10 +2152,7 @@
       "ingredients": [
         "2 cans (15 oz each) canned chickpeas, drained, rinsed, and dried",
         "2 tbsp olive oil",
-        "1 tsp smoked paprika",
-        "1 tsp garlic powder",
-        "½ tsp cumin",
-        "½ tsp salt"
+        "smoked paprika, garlic powder, cumin, salt"
       ],
       "instructions": [
         "Dry chickpeas thoroughly with paper towels.",
@@ -2285,7 +2164,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_72.png"
+      "image_path": "images/recipe_72.png",
+      "cost_per_serving": "~$0.70"
     },
     {
       "number": 73,
@@ -2300,9 +2180,7 @@
         "¾ cup cottage cheese (2%)",
         "½ cup cherry tomatoes, halved",
         "1 tsp balsamic glaze",
-        "½ tsp dried oregano",
-        "Red pepper flakes to taste",
-        "Salt and pepper to taste"
+        "dried oregano, salt and pepper"
       ],
       "instructions": [
         "Keto Toast keto bread; spread with cottage cheese.",
@@ -2314,7 +2192,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_73.png"
+      "image_path": "images/recipe_73.png",
+      "cost_per_serving": "~$2.50"
     },
     {
       "number": 74,
@@ -2341,7 +2220,8 @@
       "nutrition_extra": "per serving — 4 roll-ups",
       "storage": "Store in a container in the fridge for up to 3 days.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_74.png"
+      "image_path": "images/recipe_74.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 75,
@@ -2368,7 +2248,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_75.png"
+      "image_path": "images/recipe_75.png",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 76,
@@ -2383,8 +2264,7 @@
         "1 cup roasted pumpkin seeds (pepitas)",
         "1 cup dried edamame (roasted, salted)",
         "½ cup dark chocolate chips",
-        "½ cup dried cranberries (no sugar added)",
-        "¼ cup coconut flakes (unsweetened)"
+        "½ cup dried cranberries (no sugar added)"
       ],
       "instructions": [
         "Toss all ingredients in a bowl to mix.",
@@ -2396,7 +2276,8 @@
       "nutrition_extra": "per serving — ⅓ cup",
       "storage": "Store at room temperature for up to 2 weeks or in the fridge for up to 1 month.",
       "chapter": "Chapter 5",
-      "image_path": "images/recipe_76.png"
+      "image_path": "images/recipe_76.png",
+      "cost_per_serving": "~$1.50"
     },
     {
       "number": 77,
@@ -2411,12 +2292,7 @@
         "6 oz whole wheat egg zucchini noodles",
         "4 medium carrots, sliced",
         "4 celery stalks, sliced",
-        "1 yellow onion, diced",
-        "4 garlic cloves, minced",
-        "8 cups low-sodium chicken broth",
-        "1 tsp dried thyme",
-        "1 tsp dried parsley",
-        "Salt and black pepper to taste"
+        "8 cups low-sodium chicken broth"
       ],
       "instructions": [
         "Boil chicken in broth with herbs until done.",
@@ -2428,7 +2304,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_77.png"
+      "image_path": "images/recipe_77.png",
+      "cost_per_serving": "~$2.10"
     },
     {
       "number": 78,
@@ -2443,12 +2320,7 @@
         "2 cans (15 oz each) white cannellini beans, drained",
         "4 cups fresh kale, roughly chopped",
         "1 can (14.5 oz) diced tomatoes",
-        "5 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "1 tsp Italian seasoning",
-        "1 tbsp olive oil",
-        "Salt and pepper to taste"
+        "Italian seasoning, garlic, salt and pepper"
       ],
       "instructions": [
         "Brown turkey with onion and garlic; drain fat.",
@@ -2460,7 +2332,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_78.png"
+      "image_path": "images/recipe_78.png",
+      "cost_per_serving": "~$2.00"
     },
     {
       "number": 79,
@@ -2472,16 +2345,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1 lb lean ground beef (90/10)",
-        "1½ cups dry red chopped mushrooms, rinsed",
         "1 can (14.5 oz) diced tomatoes",
         "5 cups low-sodium beef broth",
         "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "1 tsp cumin",
-        "1 tsp smoked paprika",
-        "½ tsp cayenne pepper",
-        "1 tsp turmeric",
-        "Salt and pepper to taste"
+        "cumin, smoked paprika, cayenne, turmeric, garlic"
       ],
       "instructions": [
         "Brown beef with onion and garlic; drain fat.",
@@ -2493,7 +2360,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_79.png"
+      "image_path": "images/recipe_79.png",
+      "cost_per_serving": "~$2.00"
     },
     {
       "number": 80,
@@ -2508,11 +2376,7 @@
         "2 cups shredded sharp cheddar cheese",
         "2 cups cottage cheese (2%), blended smooth",
         "4 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "2 garlic cloves, minced",
-        "1 tbsp olive oil",
-        "½ tsp garlic powder",
-        "Salt and pepper to taste"
+        "garlic, onion, salt and pepper"
       ],
       "instructions": [
         "Sauté onion and garlic. Simmer broccoli in broth.",
@@ -2524,7 +2388,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_80.png"
+      "image_path": "images/recipe_80.png",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 81,
@@ -2539,12 +2404,7 @@
         "3 cups frozen corn kernels",
         "2 medium potatoes, peeled and diced small",
         "1 cup plain Greek yogurt",
-        "3 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "2 garlic cloves, minced",
-        "1 tbsp olive oil",
-        "1 tsp smoked paprika",
-        "Salt and pepper to taste"
+        "3 cups low-sodium chicken broth"
       ],
       "instructions": [
         "Boil diced zucchini in broth with onion until tender.",
@@ -2556,7 +2416,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_81.png"
+      "image_path": "images/recipe_81.png",
+      "cost_per_serving": "~$2.80"
     },
     {
       "number": 82,
@@ -2571,13 +2432,7 @@
         "2 cans (15 oz each) canned chickpeas, drained",
         "1 can (14.5 oz) crushed tomatoes",
         "4 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "2 tsp smoked paprika",
-        "1 tsp cumin",
-        "2 cups fresh spinach",
-        "1 tbsp olive oil",
-        "Salt and pepper to taste"
+        "smoked paprika, cumin, garlic, salt and pepper"
       ],
       "instructions": [
         "Brown chicken in oil; remove. Sauté onion and garlic.",
@@ -2589,7 +2444,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_82.png"
+      "image_path": "images/recipe_82.png",
+      "cost_per_serving": "~$2.40"
     },
     {
       "number": 83,
@@ -2601,16 +2457,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1 lb lean ground beef (90/10)",
-        "1 can (15 oz) kidney diced mushrooms, drained",
-        "1 can (14.5 oz) diced tomatoes",
+        "1 can (15 oz) kidney beans, drained",
         "1 cup whole wheat elbow pasta, dry",
         "6 cups low-sodium beef broth",
-        "2 medium zucchini, diced",
-        "2 large carrots, diced",
-        "2 celery stalks, diced",
-        "1 yellow onion, diced",
-        "1 tsp Italian seasoning",
-        "Salt and pepper to taste"
+        "Italian seasoning, onion, carrots, salt and pepper"
       ],
       "instructions": [
         "Brown beef with onion; drain fat.",
@@ -2622,7 +2472,8 @@
       "nutrition_extra": "per serving",
       "storage": "Season with salt and pepper. Store in the fridge for up to 4 days or freeze.",
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_83.png"
+      "image_path": "images/recipe_83.png",
+      "cost_per_serving": "~$1.70"
     },
     {
       "number": 84,
@@ -2635,14 +2486,9 @@
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
         "2 medium sweet potatoes, peeled and diced",
-        "1 can (15 oz) diced bell peppers, drained",
         "1 can (28 oz) crushed tomatoes",
         "2 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "2 tsp chili powder",
-        "1 tsp cumin",
-        "1 tsp smoked paprika",
-        "Salt and pepper to taste"
+        "chili powder, cumin, smoked paprika, garlic"
       ],
       "instructions": [
         "Brown turkey and onion; drain fat.",
@@ -2654,7 +2500,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_84.png"
+      "image_path": "images/recipe_84.png",
+      "cost_per_serving": "~$2.40"
     },
     {
       "number": 85,
@@ -2667,14 +2514,9 @@
       "ingredients": [
         "1½ lbs salmon fillet, skinless and cubed",
         "3 medium Yukon Gold potatoes, diced",
-        "1 cup frozen corn",
         "1 cup plain Greek yogurt",
         "4 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "2 garlic cloves, minced",
-        "1 tbsp butter",
-        "1 tsp dried dill",
-        "Salt and pepper to taste"
+        "dill, garlic, onion, salt and pepper"
       ],
       "instructions": [
         "Sauté onion and garlic in butter. Simmer diced zucchini in broth.",
@@ -2686,7 +2528,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_85.png"
+      "image_path": "images/recipe_85.png",
+      "cost_per_serving": "~$3.00"
     },
     {
       "number": 86,
@@ -2697,19 +2540,11 @@
       "cook": "30 min",
       "cook_label": "Cook",
       "ingredients": [
-        "1½ cups dry green chopped mushrooms, rinsed",
+        "1½ cups dry green lentils, rinsed",
         "4 cups fresh spinach",
         "1 can (14.5 oz) diced tomatoes",
         "6 cups low-sodium vegetable broth",
-        "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "2 large carrots, diced",
-        "1 tsp cumin",
-        "1 tsp turmeric",
-        "½ tsp smoked paprika",
-        "2 tbsp lemon juice",
-        "1 tbsp olive oil",
-        "Salt and pepper to taste"
+        "cumin, turmeric, smoked paprika, garlic, lemon juice"
       ],
       "instructions": [
         "Sauté onion, garlic, and carrots. Add spices and cook.",
@@ -2721,7 +2556,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_86.png"
+      "image_path": "images/recipe_86.png",
+      "cost_per_serving": "~$1.30"
     },
     {
       "number": 87,
@@ -2733,16 +2569,10 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs chicken breast",
-        "1 can (15 oz) diced bell peppers, drained",
         "1 can (14.5 oz) diced tomatoes with green chilies",
         "1 cup frozen corn",
         "4 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "2 tsp chili powder",
-        "1 tsp cumin",
-        "1 tsp garlic powder",
-        "Salt and pepper to taste",
-        "Toppings: Greek yogurt, avocado, crushed baked lettuce wraps chips"
+        "chili powder, cumin, garlic powder, salt and pepper"
       ],
       "instructions": [
         "Combine chicken, diced mushrooms, tomatoes, corn, broth, and spices; boil.",
@@ -2754,7 +2584,8 @@
       "nutrition_extra": "per serving, soup only",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_87.png"
+      "image_path": "images/recipe_87.png",
+      "cost_per_serving": "~$2.30"
     },
     {
       "number": 88,
@@ -2769,13 +2600,7 @@
         "2 cans (15 oz each) diced bell peppers, drained",
         "1 can (14.5 oz) diced tomatoes",
         "5 cups low-sodium beef broth",
-        "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "1 tsp cumin",
-        "1 tsp chili powder",
-        "1 tsp smoked paprika",
-        "2 tbsp lime juice",
-        "Salt and pepper to taste"
+        "cumin, chili powder, smoked paprika, lime juice"
       ],
       "instructions": [
         "Brown beef with onion and garlic; drain fat.",
@@ -2787,7 +2612,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_88.png"
+      "image_path": "images/recipe_88.png",
+      "cost_per_serving": "~$2.00"
     },
     {
       "number": 89,
@@ -2802,12 +2628,7 @@
         "3 cups cremini mushrooms, sliced",
         "1 cup cottage cheese (2%), blended smooth",
         "4 cups low-sodium chicken broth",
-        "1 yellow onion, diced",
-        "3 garlic cloves, minced",
-        "1 tsp dried thyme",
-        "1 tsp dried rosemary",
-        "1 tbsp olive oil",
-        "Salt and pepper to taste"
+        "thyme, rosemary, garlic, salt and pepper"
       ],
       "instructions": [
         "Sauté onion, garlic, and mushrooms. Brown chicken cubes.",
@@ -2819,7 +2640,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_89.png"
+      "image_path": "images/recipe_89.png",
+      "cost_per_serving": "~$2.50"
     },
     {
       "number": 90,
@@ -2834,11 +2656,7 @@
         "6 large eggs",
         "½ cup Parmesan cheese, finely grated",
         "4 cups fresh spinach, roughly chopped",
-        "2 garlic cloves, minced",
-        "1 tbsp olive oil",
-        "¼ tsp ground nutmeg",
-        "Salt and black pepper to taste",
-        "Fresh parsley for garnish"
+        "2 garlic cloves, minced"
       ],
       "instructions": [
         "In a large pot, heat olive oil over medium heat. Sauté garlic for 30 seconds until fragrant.",
@@ -2852,7 +2670,8 @@
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 3 days. Reheat gently — do not boil or eggs will become rubbery.",
       "chapter": "Chapter 6",
-      "image_path": "images/recipe_90.png"
+      "image_path": "images/recipe_90.png",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 91,
@@ -2867,8 +2686,7 @@
         "1 cup plain Greek yogurt (full-fat)",
         "3 tbsp honey",
         "¼ cup cocoa powder (unsweetened)",
-        "1 tsp vanilla extract",
-        "Pinch of sea salt"
+        "pinch of sea salt"
       ],
       "instructions": [
         "Mix all ingredients in a bowl until smooth.",
@@ -2880,7 +2698,8 @@
       "nutrition_extra": "per serving — 2 squares",
       "storage": "Store in the freezer in a sealed container. Let sit at room temperature for 3 minutes before eating.",
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_91.png"
+      "image_path": "images/recipe_91.png",
+      "cost_per_serving": "~$1.20"
     },
     {
       "number": 92,
@@ -2892,15 +2711,10 @@
       "cook_label": "Chill",
       "ingredients": [
         "2 cups cottage cheese (2%)",
+        "1 cup rolled oats",
         "¼ cup honey",
         "3 tbsp lemon juice",
-        "1 tsp lemon zest",
-        "1 tsp vanilla extract",
-        "Crust:",
-        "1 cup rolled oats",
-        "2 tbsp honey",
-        "2 tbsp peanut butter",
-        "Pinch of salt"
+        "2 tbsp peanut butter"
       ],
       "instructions": [
         "Blend crust ingredients; press into a lined 8x8 pan.",
@@ -2912,7 +2726,8 @@
       "nutrition_extra": "per bar",
       "storage": "Cut into 12 bars. Store in the fridge for up to 5 days.",
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_92.png"
+      "image_path": "images/recipe_92.png",
+      "cost_per_serving": "~$0.80"
     },
     {
       "number": 93,
@@ -2939,7 +2754,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_93.png"
+      "image_path": "images/recipe_93.png",
+      "cost_per_serving": "~$1.30"
     },
     {
       "number": 94,
@@ -2954,8 +2770,7 @@
         "3 tbsp cocoa powder (unsweetened)",
         "3 tbsp honey or maple syrup",
         "1 tsp vanilla extract",
-        "Pinch of sea salt",
-        "Optional toppings: fresh raspberries, dark chocolate shavings"
+        "pinch of sea salt"
       ],
       "instructions": [
         "Blend all ingredients until smooth (about 60 secs).",
@@ -2967,7 +2782,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_94.png"
+      "image_path": "images/recipe_94.png",
+      "cost_per_serving": "~$1.00"
     },
     {
       "number": 95,
@@ -2982,9 +2798,7 @@
         "1 egg",
         "3 tbsp rolled oats",
         "2 tbsp plain Greek yogurt",
-        "1 tbsp peanut butter",
-        "½ tsp baking powder",
-        "½ tsp cinnamon"
+        "1 tbsp peanut butter"
       ],
       "instructions": [
         "Mash banana in a mug; stir in all other ingredients.",
@@ -2996,7 +2810,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_95.png"
+      "image_path": "images/recipe_95.png",
+      "cost_per_serving": "~$0.90"
     },
     {
       "number": 96,
@@ -3011,9 +2826,7 @@
         "½ cup plain Greek yogurt",
         "2 eggs",
         "¼ cup honey",
-        "1 tsp vanilla extract",
-        "1 tsp baking soda",
-        "Pinch of sea salt"
+        "1 tsp baking soda"
       ],
       "instructions": [
         "Mix all ingredients until smooth.",
@@ -3025,7 +2838,8 @@
       "nutrition_extra": "per serving — 3 cookies",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_96.png"
+      "image_path": "images/recipe_96.png",
+      "cost_per_serving": "~$1.00"
     },
     {
       "number": 97,
@@ -3040,8 +2854,6 @@
         "½ cup plain Greek yogurt",
         "3 tbsp almond butter",
         "2 tbsp cocoa powder",
-        "2 tbsp honey",
-        "1 tsp vanilla extract",
         "¼ cup mini chocolate chips"
       ],
       "instructions": [
@@ -3054,7 +2866,8 @@
       "nutrition_extra": "per serving — 4 bites",
       "storage": "Transfer to an airtight container. Store in the fridge for up to 1 week or freeze for up to 1 month.",
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_97.png"
+      "image_path": "images/recipe_97.png",
+      "cost_per_serving": "~$0.90"
     },
     {
       "number": 98,
@@ -3069,8 +2882,7 @@
         "1 tsp vanilla extract",
         "1 tbsp honey",
         "½ cup granola (low-sugar)",
-        "½ cup fresh strawberries, sliced",
-        "2 tbsp chopped pecans"
+        "½ cup fresh strawberries, sliced"
       ],
       "instructions": [
         "Stir cottage cheese with vanilla and honey.",
@@ -3082,7 +2894,8 @@
       "nutrition_extra": "per serving",
       "storage": null,
       "chapter": "Chapter 7",
-      "image_path": "images/recipe_98.png"
+      "image_path": "images/recipe_98.png",
+      "cost_per_serving": "~$1.80"
     },
     {
       "number": 99,
@@ -3096,11 +2909,8 @@
         "3 tbsp olive oil",
         "3 tbsp lime juice (about 2 limes)",
         "2 chipotle peppers in adobo sauce, minced",
-        "1 tsp adobo sauce (from the can)",
         "2 garlic cloves, minced",
-        "1 tsp cumin",
-        "1 tsp smoked paprika",
-        "Salt and pepper to taste"
+        "cumin, smoked paprika, salt and pepper"
       ],
       "instructions": [
         "Whisk all ingredients together in a small bowl.",
@@ -3112,7 +2922,8 @@
       "nutrition_extra": "per serving",
       "storage": "Store in an airtight jar in the fridge for up to 1 week.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_99.png"
+      "image_path": "images/recipe_99.png",
+      "cost_per_serving": "~$0.30"
     },
     {
       "number": 100,
@@ -3127,9 +2938,7 @@
         "1 cup cucumber, grated and squeezed dry",
         "2 garlic cloves, minced",
         "2 tbsp lemon juice",
-        "1 tbsp olive oil",
-        "2 tbsp fresh dill (or 1 tsp dried)",
-        "Salt and pepper to taste"
+        "2 tbsp fresh dill (or 1 tsp dried)"
       ],
       "instructions": [
         "Grate cucumber and squeeze dry in a towel.",
@@ -3141,7 +2950,8 @@
       "nutrition_extra": "per serving — 3 tbsp",
       "storage": "Store in an airtight container in the fridge for up to 4 days.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_100.png"
+      "image_path": "images/recipe_100.png",
+      "cost_per_serving": "~$0.60"
     },
     {
       "number": 101,
@@ -3154,12 +2964,9 @@
       "ingredients": [
         "1 cup plain Greek yogurt (2%)",
         "2 tbsp lemon juice",
-        "1 tbsp Worcestershire sauce",
         "2 garlic cloves, minced",
         "¼ cup Parmesan cheese, finely grated",
-        "1 tsp Dijon mustard",
-        "1 tsp anchovy paste (optional but highly recommended)",
-        "Salt and black pepper to taste"
+        "1 tsp Dijon mustard, Worcestershire, salt and pepper"
       ],
       "instructions": [
         "Whisk all ingredients until smooth and creamy.",
@@ -3171,7 +2978,8 @@
       "nutrition_extra": "per serving — 2 tbsp",
       "storage": "Store in a sealed jar in the fridge for up to 5 days. Stir well before each use.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_101.png"
+      "image_path": "images/recipe_101.png",
+      "cost_per_serving": "~$0.50"
     },
     {
       "number": 102,
@@ -3186,9 +2994,7 @@
         "3 tbsp lemon juice",
         "3 garlic cloves, minced",
         "2 tbsp fresh parsley, finely chopped",
-        "1 tbsp fresh thyme (or 1 tsp dried thyme)",
-        "½ tsp red pepper flakes",
-        "Salt and black pepper to taste"
+        "thyme, red pepper flakes, salt and black pepper"
       ],
       "instructions": [
         "Combine all ingredients in a jar and shake well.",
@@ -3200,7 +3006,8 @@
       "nutrition_extra": "per serving",
       "storage": "Store in the fridge for up to 1 week. Bring to room temperature and shake before use.",
       "chapter": "Chapter 8",
-      "image_path": "images/recipe_102.png"
+      "image_path": "images/recipe_102.png",
+      "cost_per_serving": "~$0.30"
     }
   ],
   "mealplan": {
@@ -4396,7 +4203,7 @@
       ],
       [
         "78",
-        "Mushrooms & Kale Turkey Soup",
+        "White Bean & Kale Turkey Soup",
         "330",
         "28g",
         "28g",
