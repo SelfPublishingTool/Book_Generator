@@ -1248,8 +1248,8 @@ html,body{
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 9.5pt;
   border-radius: 6px;
-  padding: 5px 10px;
-  margin: 0.3em 0 !important;
+  padding: 3px 10px;
+  margin: 0.15em 0 !important;
   border: 1px solid transparent;
 }
 .hint-pos{background:var(--primary-soft);border-left:4px solid var(--primary);color:var(--ink);border-color:var(--primary);}
@@ -1260,7 +1260,7 @@ html,body{
 .restaurant-name{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:14pt;font-weight:700;color:var(--ink);
-  margin:0.8em 0 0.25em;border-bottom:2px solid var(--primary-soft);padding-bottom:3px;
+  margin:0.4em 0 0.15em;border-bottom:2px solid var(--primary-soft);padding-bottom:2px;
 }
 
 /* Appendix */
@@ -1404,7 +1404,6 @@ js = r'''
     body.style.transform = 'scale(' + scale.toFixed(4) + ')';
   }
   function fitAllPages(){
-    $$('.page').forEach(fitOnePage);
     $$('.recipe-card').forEach(fitOneCard);
   }
 
