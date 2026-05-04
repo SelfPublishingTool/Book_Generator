@@ -57,6 +57,10 @@ echo "Compressing..."
   -dEmbedAllFonts=true \
   -dSubsetFonts=true \
   -dCompressFonts=true \
+  -dFIXEDMEDIA \
+  -dDEVICEWIDTHPOINTS=612 \
+  -dDEVICEHEIGHTPOINTS=792 \
+  -dAutoRotatePages=/None \
   "-sOutputFile=$OUTPUT" \
   "$INPUT"
 

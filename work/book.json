@@ -13,7 +13,7 @@
     "Introduction — You Didn't Fail. Your Schedule Did.",
     "Chapter 1 — The Prep-Once System",
     "Chapter 2 — Low-Carb Breakfasts (14 recipes)",
-    "Chapter 3 — Keto & Low-Carb Lunches (20 recipes)",
+    "Chapter 3 — Keto & Low-Carb Lunches (22 recipes)",
     "Chapter 4 — Lean & Low-Carb Dinners (26 recipes)",
     "Chapter 5 — Snacks & Mini Meals (14 recipes)",
     "Chapter 6 — Soups & Stews (14 recipes)",
@@ -215,7 +215,7 @@
       "cook_label": "Chill",
       "image_path": "images/recipe_3.png",
       "ingredients": [
-        "½ cup rolled chia seeds",
+        "½ cup rolled oats",
         "½ cup cottage cheese (2%)",
         "½ cup unsweetened almond milk",
         "1 tbsp chia seeds",
@@ -244,7 +244,7 @@
       "image_path": "images/recipe_4.png",
       "ingredients": [
         "1 lb ground turkey (93/7)",
-        "2 medium zucchini, diced",
+        "2 medium sweet potatoes, peeled and diced",
         "1 red bell pepper, diced",
         "½ yellow onion, diced",
         "2 tbsp olive oil",
@@ -253,10 +253,10 @@
         "Salt and black pepper to taste"
       ],
       "instructions": [
-        "Cook diced zucchini in 1 tbsp oil for 10–12 mins until tender.",
+        "Cook diced sweet potato in 1 tbsp oil for 10–12 mins until tender.",
         "In the same **skillet**, brown turkey with remaining oil (6–7 mins).",
         "Add pepper and onion; cook 3–4 mins until softened.",
-        "Return diced zucchini to pan, add seasonings, and stir for 2 mins."
+        "Return diced sweet potato to pan, add seasonings, and stir for 2 mins."
       ],
       "nutrition": "Calories: 320 | Protein: 28g | Carbs: 24g | Fat: 12g",
       "nutrition_extra": "per serving",
@@ -362,7 +362,7 @@
       "ingredients": [
         "1 cup cottage cheese (2%)",
         "4 large eggs",
-        "½ cup rolled chia seeds",
+        "½ cup rolled oats",
         "½ tsp cinnamon"
       ],
       "instructions": [
@@ -441,7 +441,7 @@
       "cook_label": "Chill",
       "image_path": "images/recipe_11.png",
       "ingredients": [
-        "½ cup rolled chia seeds",
+        "½ cup rolled oats",
         "¾ cup plain Greek yogurt (2%)",
         "¼ cup unsweetened almond milk",
         "2 tbsp natural peanut butter",
@@ -781,7 +781,7 @@
     },
     {
       "number": 23,
-      "title": "Roasted Walnuts & Roasted Veggie Power Bowl",
+      "title": "Roasted Chickpea & Roasted Veggie Power Bowl",
       "protein_source": "🫘 Legumes",
       "yield": "4 servings",
       "prep": "10 min",
@@ -789,7 +789,7 @@
       "cook_label": "Cook",
       "image_path": "images/recipe_23.png",
       "ingredients": [
-        "2 cans roasted walnuts, rinsed",
+        "2 cans canned chickpeas, rinsed",
         "2 zucchinis, diced",
         "1 red bell pepper, diced",
         "3 tbsp olive oil",
@@ -797,7 +797,7 @@
         "½ cup feta cheese"
       ],
       "instructions": [
-        "Toss roasted walnuts and veggies with oil and roast at 425°F (22–25 mins).",
+        "Toss chickpeas and veggies with oil and roast at 425°F (22–25 mins).",
         "Divide hemp hearts among 4 containers.",
         "Top with roasted mixture and sprinkle with feta.",
         "Drizzle with olive oil or Avocado Lime Crema."
@@ -836,7 +836,7 @@
     },
     {
       "number": 25,
-      "title": "Tuna Zucchini Noodles Salad",
+      "title": "Tuna Pasta Salad",
       "protein_source": "🐟 Fish",
       "yield": "4 servings",
       "prep": "10 min",
@@ -851,7 +851,7 @@
         "3 tbsp Greek yogurt"
       ],
       "instructions": [
-        "Cook and cool zucchini noodles. Mix with tuna, peas, and onion.",
+        "Cook rotini pasta according to package directions; drain and cool. Mix with tuna, peas, and onion.",
         "Combine yogurt, mayo, and mustard for dressing.",
         "Toss everything together and season.",
         "Refrigerate for 30 mins before serving."
@@ -933,25 +933,29 @@
     },
     {
       "number": 28,
-      "title": "Diced Mushrooms & Tuna Salad",
+      "title": "Warm Tuna & Mushroom Salad",
       "protein_source": "🐟 Fish + 🫘 Legumes",
       "yield": "4 servings",
       "prep": "10 min",
-      "cook": "0 min",
+      "cook": "10 min",
       "cook_label": "Cook",
       "image_path": "images/recipe_28.png",
       "ingredients": [
         "2 cans tuna, drained",
-        "2 cans diced mushrooms, rinsed",
-        "3 tbsp olive oil",
-        "2 tbsp lemon juice",
-        "¼ cup fresh parsley"
+        "2 cups fresh mushrooms, sliced",
+        "2 cups baby arugula",
+        "1 tbsp olive oil",
+        "2 tbsp apple cider vinegar",
+        "1 tsp Dijon mustard",
+        "1 tsp honey",
+        "¼ cup red onion, thinly sliced",
+        "Salt and black pepper to taste"
       ],
       "instructions": [
-        "Combine tuna, diced mushrooms, oil, lemon juice, and seasonings.",
-        "Toss gently and let rest for 15 mins.",
-        "Divide into containers and refrigerate.",
-        "Serve cold over greens if desired."
+        "Heat olive oil in a **skillet** over medium heat. Sauté mushrooms for 4–5 mins until golden.",
+        "Whisk apple cider vinegar, Dijon mustard, and honey together to make the warm dressing.",
+        "Add tuna to the skillet, stir gently with mushrooms, and pour dressing over. Heat for 1–2 mins.",
+        "Serve immediately over a bed of arugula, topped with red onion. Store tuna mixture separately from arugula for **meal prep**."
       ],
       "nutrition": "Calories: 340 | Protein: 30g | Carbs: 28g | Fat: 10g",
       "nutrition_extra": "per serving",
@@ -1117,17 +1121,22 @@
         "1 egg",
         "1 tsp garlic powder",
         "1 tsp dried oregano",
-        "2 cups cooked farro or cauliflower rice",
+        "1 tbsp lemon zest",
+        "2 cups cauliflower rice, sautéed with 1 tsp lemon juice and fresh parsley",
         "1 cup diced cucumber",
         "½ cup cherry tomatoes, halved",
+        "2 tbsp fresh parsley, chopped",
+        "2 tbsp lemon juice",
+        "1 tbsp olive oil",
         "½ cup crumbled feta cheese",
         "Salt and pepper to taste"
       ],
       "instructions": [
-        "Mix turkey, breadcrumbs, egg, and spices. Form 20 meatballs.",
+        "Mix turkey, breadcrumbs, egg, garlic powder, oregano, and lemon zest. Form 20 meatballs.",
         "Bake at 400°F for 18–20 mins until browned.",
-        "Divide farro among 4 containers.",
-        "Top with meatballs, veggies, and feta."
+        "Sauté cauliflower rice with lemon juice and parsley for 3–4 mins; divide among 4 containers.",
+        "Toss cucumber, tomatoes, parsley, lemon juice, and olive oil to make a quick cucumber-tomato salad.",
+        "Top cauliflower rice with meatballs, cucumber-tomato salad, and feta."
       ],
       "nutrition": "Calories: 450 | Protein: 38g | Carbs: 36g | Fat: 14g",
       "nutrition_extra": "per serving",
@@ -1272,14 +1281,18 @@
         "1 tsp dried oregano",
         "1 tsp dried mint",
         "½ cup crumbled feta cheese",
-        "1 cup cooked hemp hearts (per serving, as base)",
+        "8 large romaine or butter lettuce leaves (for serving as cups)",
+        "1 cup tzatziki sauce (store-bought or homemade)",
+        "½ cup sliced cherry tomatoes",
+        "¼ cup red onion, thinly sliced",
         "Salt and pepper to taste"
       ],
       "instructions": [
-        "Mix turkey, breadcrumbs, egg, and spices. Form 24 meatballs.",
+        "Mix turkey, breadcrumbs, egg, garlic, oregano, mint, and feta. Form 24 meatballs.",
         "Bake at 400°F for 18–20 mins until cooked through.",
-        "Serve over hemp hearts with tzatziki.",
-        "Store in the fridge for up to 4 days."
+        "Let meatballs cool slightly. Place 3 meatballs in each lettuce cup.",
+        "Spoon tzatziki generously over meatballs. Top with sliced cherry tomatoes and red onion.",
+        "Serve immediately or store meatballs and lettuce separately for **meal prep**; assemble before eating."
       ],
       "nutrition": "Calories: 430 | Protein: 38g | Carbs: 28g | Fat: 16g",
       "nutrition_extra": "per serving — 6 meatballs + ½ cup quinoa",
@@ -1358,18 +1371,23 @@
       "ingredients": [
         "1½ lbs ground turkey (93/7)",
         "4 large bell peppers, tops cut off and seeded",
-        "1 cup cooked cauliflower rice",
-        "1 can (15 oz) diced tomatoes with green chilies",
-        "1 cup shredded mozzarella cheese",
-        "1 tsp Italian seasoning",
+        "1 can (15 oz) black beans, drained and rinsed",
+        "1 cup salsa (store-bought or homemade)",
+        "1 tsp cumin",
+        "1 tsp chili powder",
+        "½ tsp smoked paprika",
         "1 tsp garlic powder",
+        "½ cup shredded Mexican blend cheese",
         "Salt and black pepper to taste"
       ],
       "instructions": [
-        "Brown turkey; stir in tomatoes, cauliflower rice, and spices.",
-        "Fill peppers and top with mozzarella.",
-        "Add water to dish, cover with foil, and bake at 375°F for 25 mins.",
-        "Uncover and bake 10 more mins until cheese is golden."
+        "Preheat **oven** to 375°F (190°C).",
+        "Brown turkey in a **skillet** over medium heat with cumin, chili powder, smoked paprika, and garlic powder. Drain excess fat.",
+        "Stir in black beans and ½ cup salsa; cook for 2–3 mins until well combined.",
+        "Arrange bell pepper halves in a baking dish. Fill each with the turkey-bean mixture.",
+        "Spoon remaining salsa over each pepper and top with Mexican blend cheese.",
+        "Cover with foil and bake for 25 mins, then uncover and bake 10 more mins until cheese is bubbly and peppers are tender.",
+        "Let cool before storing."
       ],
       "nutrition": "Calories: 390 | Protein: 36g | Carbs: 28g | Fat: 14g",
       "nutrition_extra": "per serving",
@@ -1755,7 +1773,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs salmon fillet, cut into 4 portions",
-        "2 medium diced zucchini, peeled and cubed",
+        "2 medium sweet potatoes, peeled and cubed",
         "2 cups Brussels sprouts, halved",
         "3 tbsp olive oil",
         "1 tsp smoked paprika",
@@ -1764,7 +1782,7 @@
         "Salt and black pepper to taste"
       ],
       "instructions": [
-        "Roast diced zucchini and sprouts at 400°F (15 mins).",
+        "Roast sweet potato and sprouts at 400°F (15 mins).",
         "Add salmon to the center and brush with maple-oil.",
         "Bake for 10–12 more mins until salmon flakes.",
         "Portion into containers and serve warm."
@@ -1899,7 +1917,7 @@
     },
     {
       "number": 60,
-      "title": "Turkey Bolognese with Zucchini Noodles",
+      "title": "Turkey Bolognese with Penne",
       "protein_source": "🐔 Poultry",
       "yield": "6 servings",
       "prep": "10 min",
@@ -1917,9 +1935,9 @@
         "Salt and pepper to taste"
       ],
       "instructions": [
-        "Cook zucchini noodles. Sauté onion and garlic in a **skillet**.",
+        "Cook penne according to package directions; drain. Sauté onion and garlic in a **skillet**.",
         "Brown turkey and drain fat. Stir in marinara.",
-        "Simmer for 10 mins; toss with cooked zucchini noodles.",
+        "Simmer for 10 mins; toss with cooked penne.",
         "Portion into containers and top with Parmesan."
       ],
       "nutrition": "Calories: 460 | Protein: 36g | Carbs: 52g | Fat: 10g",
@@ -2000,7 +2018,7 @@
       "cook": "30 min",
       "cook_label": "Chill",
       "ingredients": [
-        "1 cup rolled chia seeds",
+        "1 cup rolled oats",
         "½ cup natural peanut butter",
         "½ cup plain Greek yogurt",
         "3 tbsp honey",
@@ -2243,14 +2261,14 @@
     },
     {
       "number": 72,
-      "title": "Roasted Walnuts",
+      "title": "Roasted Chickpeas",
       "protein_source": "🫘 Legumes",
       "yield": "4 servings",
       "prep": "5 min",
       "cook": "30 min",
       "cook_label": "Cook",
       "ingredients": [
-        "2 cans (15 oz each) roasted walnuts, drained, rinsed, and dried",
+        "2 cans (15 oz each) canned chickpeas, drained, rinsed, and dried",
         "2 tbsp olive oil",
         "1 tsp smoked paprika",
         "1 tsp garlic powder",
@@ -2258,7 +2276,7 @@
         "½ tsp salt"
       ],
       "instructions": [
-        "Dry roasted walnuts thoroughly with paper towels.",
+        "Dry chickpeas thoroughly with paper towels.",
         "Toss with oil and spices; spread on a tray.",
         "Roast at 400°F for 25–30 mins until crunchy.",
         "Cool completely before storing in a container."
@@ -2414,7 +2432,7 @@
     },
     {
       "number": 78,
-      "title": "Diced Mushrooms & Kale Turkey Soup",
+      "title": "White Bean & Kale Turkey Soup",
       "protein_source": "🐔 Poultry + 🫘 Legumes",
       "yield": "6 servings",
       "prep": "10 min",
@@ -2422,7 +2440,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "1 lb ground turkey (93/7)",
-        "2 cans (15 oz each) white cannellini diced mushrooms, drained",
+        "2 cans (15 oz each) white cannellini beans, drained",
         "4 cups fresh kale, roughly chopped",
         "1 can (14.5 oz) diced tomatoes",
         "5 cups low-sodium chicken broth",
@@ -2434,7 +2452,7 @@
       ],
       "instructions": [
         "Brown turkey with onion and garlic; drain fat.",
-        "Add diced mushrooms, tomatoes, broth, and spices; boil.",
+        "Add white beans, tomatoes, broth, and spices; boil.",
         "Simmer for 15 mins, then stir in kale.",
         "Cook until wilted and season with salt."
       ],
@@ -2542,7 +2560,7 @@
     },
     {
       "number": 82,
-      "title": "Smoky Roasted Walnuts & Chicken Stew",
+      "title": "Smoky Chickpea & Chicken Stew",
       "protein_source": "🐔 Chicken + 🫘 Legumes",
       "yield": "6 servings",
       "prep": "10 min",
@@ -2550,7 +2568,7 @@
       "cook_label": "Cook",
       "ingredients": [
         "1½ lbs chicken thighs, boneless, cubed",
-        "2 cans (15 oz each) roasted walnuts, drained",
+        "2 cans (15 oz each) canned chickpeas, drained",
         "1 can (14.5 oz) crushed tomatoes",
         "4 cups low-sodium chicken broth",
         "1 yellow onion, diced",
@@ -2563,7 +2581,7 @@
       ],
       "instructions": [
         "Brown chicken in oil; remove. Sauté onion and garlic.",
-        "Add spices, roasted walnuts, tomatoes, broth, and chicken.",
+        "Add spices, chickpeas, tomatoes, broth, and chicken.",
         "Simmer for 15 mins, then stir in spinach.",
         "Cook until wilted and serve in bowls."
       ],
@@ -2879,7 +2897,7 @@
         "1 tsp lemon zest",
         "1 tsp vanilla extract",
         "Crust:",
-        "1 cup rolled chia seeds",
+        "1 cup rolled oats",
         "2 tbsp honey",
         "2 tbsp peanut butter",
         "Pinch of salt"
@@ -2962,7 +2980,7 @@
       "ingredients": [
         "1 ripe banana, mashed",
         "1 egg",
-        "3 tbsp rolled chia seeds",
+        "3 tbsp rolled oats",
         "2 tbsp plain Greek yogurt",
         "1 tbsp peanut butter",
         "½ tsp baking powder",
@@ -3018,7 +3036,7 @@
       "cook": "30 min",
       "cook_label": "Chill",
       "ingredients": [
-        "1 cup rolled chia seeds",
+        "1 cup rolled oats",
         "½ cup plain Greek yogurt",
         "3 tbsp almond butter",
         "2 tbsp cocoa powder",
@@ -3938,7 +3956,7 @@
       ],
       [
         "23",
-        "Roasted Walnuts & Veggie Power Bowl",
+        "Roasted Chickpea & Roasted Veggie Power Bowl",
         "450",
         "20g",
         "52g",
@@ -3954,7 +3972,7 @@
       ],
       [
         "25",
-        "Tuna Zucchini Noodles Salad",
+        "Tuna Pasta Salad",
         "380",
         "34g",
         "36g",
@@ -3978,7 +3996,7 @@
       ],
       [
         "28",
-        "Diced Mushrooms & Tuna Salad",
+        "Warm Tuna & Mushroom Salad",
         "340",
         "30g",
         "28g",
@@ -4234,7 +4252,7 @@
       ],
       [
         "60",
-        "Turkey Bolognese with Zucchini Noodles",
+        "Turkey Bolognese with Penne",
         "460",
         "36g",
         "52g",
@@ -4330,7 +4348,7 @@
       ],
       [
         "72",
-        "Roasted Walnuts",
+        "Roasted Chickpeas",
         "200",
         "10g",
         "24g",
@@ -4410,7 +4428,7 @@
       ],
       [
         "82",
-        "Smoky Walnuts & Chicken Stew",
+        "Smoky Chickpea & Chicken Stew",
         "360",
         "32g",
         "26g",
