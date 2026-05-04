@@ -921,45 +921,8 @@ toc_nav = f'''<nav epub:type="toc" id="toc">
 # Replace placeholder
 body_html = '\n'.join(s if s != TOC_PLACEHOLDER else toc_nav for s in sections)
 
-# ─── Browser-only toolbar (hidden in Kindle/print, ignored by KDP converter) ────
-BROWSER_TOOLBAR = f'''<div class="browser-toolbar" aria-hidden="true">
-  <a class="btb-link" href="High_Protein_Meal_Prep_Cookbook.html">📄 Paperback</a>
-  <a class="btb-link btb-download" href="High_Protein_Meal_Prep_Cookbook_Kindle.zip" download="High_Protein_Meal_Prep_Cookbook_Kindle.zip">⬇ Download Kindle ZIP</a>
-  <span class="btb-note">Preview — submit the ZIP to Amazon KDP</span>
-</div>'''
-
-BROWSER_TOOLBAR_CSS = '''
-/* Browser preview toolbar — hidden by Kindle readers and in print */
-.browser-toolbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: #1a1a1a;
-  color: #fdc705;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 16px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-.btb-link {
-  color: #fde08a;
-  text-decoration: none;
-  border: 1px solid #4a3a00;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: #2a2000;
-  font-weight: 600;
-}
-.btb-link:hover { background: #3a2e00; }
-.btb-link.btb-download { background: #c69c00; color: #1a1a1a; border-color: #a07a00; }
-.btb-link.btb-download:hover { background: #fdc705; }
-.btb-note { font-size: 11px; color: #888; margin-left: auto; }
-body { padding-top: 42px; }
-@media print { .browser-toolbar { display: none !important; } body { padding-top: 0; } }
-'''
+BROWSER_TOOLBAR = ''
+BROWSER_TOOLBAR_CSS = ''
 
 # ─── Final HTML ────────────────────────────────────────────────────────────────
 html_out = f'''<?xml version="1.0" encoding="UTF-8"?>

@@ -1457,6 +1457,7 @@ js = r'''
     bar.className = 'toolbar';
     bar.innerHTML = ''
       + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html">📱 Kindle</a>'
+      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html" download="High_Protein_Meal_Prep_Cookbook_Kindle.html">⬇ Download Kindle</a>'
       + '<span class="status" id="fitStatus">Checking layout…</span>'
       + '<button id="btnFit" title="Re-run live overflow check">↻ Re-check fit</button>'
       + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 × 11 in portrait)">📄 Convert to PDF</button>';
