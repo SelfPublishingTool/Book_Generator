@@ -186,7 +186,7 @@ h1.chapter-title {
   position: relative;
 }
 .strategy-box ul li::before {
-  content: "✓";
+  content: "*";
   position: absolute;
   left: 0;
   color: #c69c00;
@@ -921,8 +921,113 @@ toc_nav = f'''<nav epub:type="toc" id="toc">
 # Replace placeholder
 body_html = '\n'.join(s if s != TOC_PLACEHOLDER else toc_nav for s in sections)
 
-BROWSER_TOOLBAR = ''
-BROWSER_TOOLBAR_CSS = ''
+BROWSER_TOOLBAR = '''<div class="toolbar" id="kindle-toolbar" data-preview-only>
+  <a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook.html">📖 Paperback</a>
+  <button id="btnDownload" onclick="downloadClean()">⬇ Download Kindle</button>
+  <button id="btnPreview" onclick="document.body.classList.toggle('kindle-device');this.textContent=document.body.classList.contains('kindle-device')?'✕ Exit Preview':'📱 Kindle Preview'">📱 Kindle Preview</button>
+</div>
+<div class="kindle-frame" id="kindleFrame" data-preview-only>
+  <div class="kindle-screen" id="kindleScreen"></div>
+  <button class="kindle-nav kindle-prev" onclick="kindleNav(-1)">‹</button>
+  <button class="kindle-nav kindle-next" onclick="kindleNav(1)">›</button>
+</div>
+<script data-preview-only>
+(function(){
+  var pages=[], cur=0;
+  function buildPages(){
+    pages=[];
+    var sects=document.querySelectorAll('.chapter-section,.title-page,.copyright-page,nav#toc');
+    sects.forEach(function(s){pages.push(s);});
+    showPage(0);
+  }
+  function showPage(i){
+    cur=Math.max(0,Math.min(i,pages.length-1));
+    var scr=document.getElementById('kindleScreen');
+    if(!scr)return;
+    scr.innerHTML='';
+    var cl=pages[cur].cloneNode(true);
+    cl.style.pageBreakBefore='auto';
+    scr.appendChild(cl);
+  }
+  window.kindleNav=function(d){showPage(cur+d);};
+
+  /* Download a clean version: strip all preview-only elements and toolbar CSS */
+  window.downloadClean=function(){
+    var clone=document.documentElement.cloneNode(true);
+    /* Remove all elements marked data-preview-only */
+    clone.querySelectorAll('[data-preview-only]').forEach(function(el){el.remove();});
+    /* Remove the toolbar CSS block from <style> */
+    clone.querySelectorAll('style').forEach(function(st){
+      st.textContent=st.textContent.replace(/\\/\\*\\s*===\\s*Toolbar[\\s\\S]*$/, '');
+    });
+    /* Remove kindle-device class if active */
+    clone.querySelector('body').classList.remove('kindle-device');
+    var html='<?xml version="1.0" encoding="UTF-8"?>\\n<!DOCTYPE html>\\n'+clone.outerHTML;
+    var blob=new Blob([html],{type:'text/html;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='High_Protein_Meal_Prep_Cookbook_Kindle.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  document.addEventListener('DOMContentLoaded',buildPages);
+})();
+</script>'''
+
+BROWSER_TOOLBAR_CSS = '''
+/* === Toolbar (preview-only — stripped on download) === */
+.toolbar {
+  position: fixed; top: 14px; right: 14px; z-index: 1000;
+  display: flex; gap: 8px;
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+}
+.toolbar-link, .toolbar button {
+  display: inline-flex; align-items: center;
+  border: 1px solid #e0d5b0; background: #fff; color: #1a1a1a;
+  padding: 8px 14px; border-radius: 6px;
+  font-size: 10pt; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.15s, background 0.15s;
+}
+.toolbar-link:hover, .toolbar button:hover {
+  transform: translateY(-1px);
+}
+@media print {
+  .toolbar { display: none !important; }
+  .kindle-frame { display: none !important; }
+}
+
+/* === Kindle Device Preview === */
+.kindle-frame {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 900;
+  justify-content: center; align-items: center;
+}
+body.kindle-device .kindle-frame { display: flex; }
+body.kindle-device > *:not(.kindle-frame):not(.toolbar):not(script) { display: none; }
+.kindle-screen {
+  width: 600px; max-height: 800px; overflow-y: auto;
+  background: #fff; border-radius: 4px;
+  padding: 2em 1.5em;
+  box-shadow: 0 0 0 18px #222, 0 0 0 22px #111, 0 20px 60px rgba(0,0,0,0.5);
+  font-family: Georgia, serif; font-size: 0.95em; line-height: 1.6;
+}
+.kindle-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 54px; height: 54px; border-radius: 50%;
+  background: rgba(255,255,255,0.15); border: none;
+  color: #fff; font-size: 28px; cursor: pointer;
+  transition: background 0.2s;
+  z-index: 950;
+}
+.kindle-nav:hover { background: rgba(255,255,255,0.3); }
+.kindle-prev { left: 20px; }
+.kindle-next { right: 20px; }
+'''
 
 # ─── Final HTML ────────────────────────────────────────────────────────────────
 html_out = f'''<?xml version="1.0" encoding="UTF-8"?>
@@ -976,6 +1081,19 @@ try:
     print(f'Images embedded ({len(_cache)} files)')
 except ImportError:
     print('WARNING: Pillow not installed — images NOT embedded (run: pip install Pillow)')
+
+# ─── Strip emoji (KDP rejects them — triggers LucidaGrande-Bold error) ─────────
+EMOJI_MAP = {
+    '🥚': '', '🐔': '', '🐟': '', '🐄': '', '🫘': '', '🧀': '', '🐖': '',
+    '✅': '[OK]', '❌': '[X]', '⏱️': '', '⏱': '', '💪': '',
+    '✓': '*',  '✕': 'x',
+    '📖': '', '📱': '', '⬇': '',
+}
+for emoji, replacement in EMOJI_MAP.items():
+    html_out = html_out.replace(emoji, replacement)
+# Catch any remaining emoji
+html_out = re.sub(r'[\U0001F300-\U0001FAFF\U0001F600-\U0001F64F\U0001F680-\U0001F6FF\u2600-\u27BF\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF]', '', html_out)
+print('Emoji stripped')
 
 out = ROOT_DIR / 'High_Protein_Meal_Prep_Cookbook_Kindle.html'
 out.write_text(html_out, encoding='utf-8')

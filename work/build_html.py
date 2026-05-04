@@ -183,7 +183,7 @@ def render_recipe(r):
       <span class="badge badge-yield">Yield · {esc(r['yield'])}</span>
       <span class="badge badge-prep">Prep · {esc(r['prep'])}</span>
       <span class="badge badge-cook">{esc(cook_label)} · {esc(r['cook'])}</span>
-      {f'<span class="badge badge-cost">💲 {esc(r["cost_per_serving"])}/serving</span>' if r.get('cost_per_serving') else ''}
+      {f'<span class="badge badge-cost">~{esc(r["cost_per_serving"])}/serving</span>' if r.get('cost_per_serving') else ''}
     </div>
   </header>
   <div class="recipe-body">
@@ -222,7 +222,7 @@ parts.append(f'''<div class="page title-page" data-no-toc="true">
       <h1 class="tp-title">{esc(book['title'])}</h1>
       <p class="tp-subtitle">{esc(book['subtitle'])}</p>
       <div class="tp-icon-row">
-        <span class="tp-icon">🥚</span><span class="tp-icon">🐔</span><span class="tp-icon">🐟</span><span class="tp-icon">🐄</span><span class="tp-icon">🫘</span><span class="tp-icon">🧀</span>
+        <span class="tp-icon">Eggs</span> <span class="tp-icon">Chicken</span> <span class="tp-icon">Fish</span> <span class="tp-icon">Beef</span> <span class="tp-icon">Legumes</span> <span class="tp-icon">Dairy</span>
       </div>
       <p class="tp-author">By <strong>{esc(book['author'].replace('By ',''))}</strong></p>
     </div>
@@ -463,19 +463,16 @@ def render_bonus_body(body_lines):
         else:
             if re.match(r'^\d+[–\-]\d+ points', l):
                 out.append(f'<p class="score-bucket">{smart_html(l)}</p>')
-            elif l.endswith(':') and len(l) < 60 and not any(l.startswith(x) for x in ['✅','❌','Session','⏱️']):
+            elif l.endswith(':') and len(l) < 60 and not any(l.startswith(x) for x in ['[OK]','[X]','Session']):
                 out.append(f'<h4 class="bonus-q">{esc(l[:-1])}</h4>')
-            elif any(l.startswith(x) for x in ['✅','❌','Protein hack','Pro Tip','Session','Session A','Session B','BEGINNER','INTERMEDIATE','ADVANCED']):
+            elif any(l.startswith(x) for x in ['[OK]','[X]','Protein hack','Pro Tip','Session','Session A','Session B','BEGINNER','INTERMEDIATE','ADVANCED']):
                 cls = 'hack'
-                if l.startswith('✅'): cls = 'pos'
-                elif l.startswith('❌'): cls = 'neg'
+                if l.startswith('[OK]'): cls = 'pos'
+                elif l.startswith('[X]'): cls = 'neg'
                 elif 'Session' in l: cls = 'session'
                 elif any(x in l for x in ['BEGINNER','INTERMEDIATE','ADVANCED']): cls = 'level'
                 
-                # Add icons for workout
                 display_l = l
-                if 'Session' in l and not l.startswith('⏱️'): display_l = '⏱️ ' + l
-                elif any(x in l for x in ['BEGINNER','INTERMEDIATE','ADVANCED']) and not l.startswith('💪'): display_l = '💪 ' + l
                 
                 out.append(f'<p class="hint hint-{cls}">{smart_html(display_l)}</p>')
             elif re.search(r'[abc]\) .*\| [abc]\) ', l):
@@ -487,7 +484,7 @@ def render_bonus_body(body_lines):
                     return f'<li class="quiz-opt">{smart_html(o)}</li>'
                 opts_html = ''.join(fmt_opt(o) for o in opts)
                 out.append(f'<ul class="quiz-opts">{opts_html}</ul>')
-            elif len(l) < 40 and not any(l.startswith(x) for x in ['✅','❌','Protein hack','Session','⏱️']):
+            elif len(l) < 40 and not any(l.startswith(x) for x in ['[OK]','[X]','Protein hack','Session']):
                 j = i + 1
                 while j < len(body_lines) and not body_lines[j].strip():
                     j += 1
@@ -537,7 +534,7 @@ for b in book['bonus']['bonuses']:
     elif 'Workout' in title:
         limit, cont_limit = 1100, 2200
     else:
-        limit, cont_limit = 2200, 2200
+        limit, cont_limit = 2600, 2200
     chunks = []; cur = ''
     for el in elems:
         if len(cur) + len(el) > limit and cur:
@@ -928,7 +925,7 @@ html,body{
   position:relative;
 }
 .chapter-strategy li::before{
-  content:'✓';position:absolute;left:-1.2em;color:var(--primary-dark);font-weight:700;
+  content:'*';position:absolute;left:-1.2em;color:var(--primary-dark);font-weight:700;
 }
 /* All chapter cover variants use white background for low ink cost */
 .chapter-cover.cover-night,
@@ -1456,11 +1453,11 @@ js = r'''
     var bar = document.createElement('div');
     bar.className = 'toolbar';
     bar.innerHTML = ''
-      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html">📱 Kindle</a>'
-      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html" download="High_Protein_Meal_Prep_Cookbook_Kindle.html">⬇ Download Kindle</a>'
-      + '<span class="status" id="fitStatus">Checking layout…</span>'
-      + '<button id="btnFit" title="Re-run live overflow check">↻ Re-check fit</button>'
-      + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 × 11 in portrait)">📄 Convert to PDF</button>';
+      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html">Kindle</a>'
+      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html" download="High_Protein_Meal_Prep_Cookbook_Kindle.html">Download Kindle</a>'
+      + '<span class="status" id="fitStatus">Checking layout...</span>'
+      + '<button id="btnFit" title="Re-run live overflow check">Re-check fit</button>'
+      + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 x 11 in portrait)">Convert to PDF</button>';
     document.body.appendChild(bar);
     $('#btnPDF').addEventListener('click', function(){
       fitAllPages();
@@ -1478,10 +1475,10 @@ js = r'''
     var total = $$('.page').length;
     var overflowed = $$('.page[data-overflow="true"]').length;
     if(overflowed === 0){
-      s.textContent = '✓ All ' + total + ' pages fit';
+      s.textContent = 'OK - All ' + total + ' pages fit';
       s.style.color = '#1d1812';
     } else {
-      s.textContent = '⚠ ' + overflowed + '/' + total + ' tight pages';
+      s.textContent = '! ' + overflowed + '/' + total + ' tight pages';
       s.style.color = '#c69c00';
     }
   }
