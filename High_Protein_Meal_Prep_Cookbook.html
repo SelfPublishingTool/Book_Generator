@@ -505,6 +505,10 @@ html,body{
   padding:6px 10px;font-style:italic;font-size:9.5pt;margin:0.4em 0 0.6em;
   font-family:'Source Sans Pro',sans-serif;color:var(--ink);
 }
+.grocery-item{
+  font-size:8.5pt;line-height:1.2;margin-bottom:0.1em;color:var(--ink-soft);
+}
+.grocery-item strong{color:var(--primary-dark);text-transform:uppercase;font-size:7.5pt;letter-spacing:0.04em;}
 .week-callout{
   background:var(--cream);border-left:3px solid var(--primary-dark);
   padding:6px 10px;font-style:italic;font-size:9.5pt;margin:0.4em 0;
@@ -571,7 +575,42 @@ html,body{
   font-family: 'Source Sans Pro', sans-serif;
 }
 .bonus-body{margin-top:0;}
-.bonus-body p{font-size:9.5pt;line-height:1.35;margin-bottom:0.2em;}
+.bonus-body p{font-size:9pt;line-height:1.3;margin-bottom:0.15em;}
+
+/* Eating Out Guide Grid */
+.eating-out-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 5px;
+}
+.eo-card {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  border-radius: 5px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.eo-name {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0 0 2px;
+  letter-spacing: 0.05em;
+}
+.eo-order, .eo-hack {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 7.8pt;
+  margin: 0 0 1px;
+  line-height: 1.15;
+  color: var(--ink-soft);
+}
+.eo-order strong, .eo-hack strong { color: var(--ink); }
+
 .score-bucket{
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--ink);
@@ -719,7 +758,6 @@ html,body{
     <nav id="toc-nav" class="toc-list"></nav>
   </div>
 </div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page intro-page">
   <div class="page-content">
     <header class="chapter-head">
@@ -730,7 +768,6 @@ html,body{
     <div class="prose"><p><strong>Most nutritional plans fail because they are built for perfect days.</strong> We have all had those Mondays where everything goes right—you have the energy, the time, and the motivation to cook a gourmet healthy meal. But life isn&#x27;t a series of Mondays. Life is the unexpected traffic jam on a Wednesday, the late-night deadline on a Thursday, and the total exhaustion that hits by Friday evening. This book is not a collection of recipes for your best days; it is a <strong>fail-safe infrastructure</strong> for your busiest ones.</p><p><strong>The traditional approach to dieting relies on constant decision-making.</strong> Every single meal requires you to choose between what is fast and what is healthy. By the time you reach 7:00 PM, your brain has experienced &#x27;decision fatigue.&#x27; You no longer have the mental bandwidth to weigh the pros and cons of steamed broccoli versus a box of pizza. Our <strong>Protein Leverage Protocol</strong> removes the choice entirely. By front-loading your effort into a single weekly session, you automate your success. You don&#x27;t have to &#x27;decide&#x27; to be healthy on Wednesday night—you just have to open the fridge.</p><p><strong>We prioritize protein not just for muscle, but for metabolic leverage.</strong> Protein is the only macronutrient that effectively signals the &#x27;stop&#x27; button in your brain. This is known as the Protein Leverage Hypothesis: your body will continue to drive hunger until its protein requirements are met. By hitting <strong>25 to 30 grams of protein</strong> at every meal, you are effectively turning off the hunger alarms that lead to binge eating and sugar cravings later in the day.</p><p><strong>This book provides a roadmap across six distinct protein landscapes.</strong> We have moved beyond the &#x27;chicken and broccoli&#x27; stereotype to include beef, fish, eggs, legumes, and high-protein dairy. This <strong>One Hundred and Two Recipe</strong> collection ensures that your palate never gets bored. Variety is the antidote to diet fatigue. When your food is vibrant, global, and satisfying, &#x27;sticking to the plan&#x27; doesn&#x27;t feel like a sacrifice—it feels like a gourmet lifestyle.</p><p><strong>Every recipe in this book costs under $7 a day to eat.</strong> That is the full day — breakfast, lunch, dinner, and a snack — built from ingredients you can find at any supermarket. We priced every recipe using standard US grocery costs and designed the portions to stay within a budget that makes healthy eating accessible, not expensive. The $7-a-day ceiling was not an afterthought. It shaped every recipe, every portion size, and every ingredient choice in this book.</p></div>
   </div>
 </div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
@@ -750,7 +787,6 @@ html,body{
 <div class="page ch1-page"><div class="page-content"><div class="page-frame"><section class="prep-section"><h2 class="prep-h2">The 6 Strategic Protein Sources in This Book</h2><div class="prose"><p>Variety is the key to longevity in any eating plan. To prevent &#x27;chicken breast burnout,&#x27; we rotate through six distinct sources, each offering unique nutritional benefits:</p><p>1. Chicken &amp; Poultry — Lean, versatile, and the most affordable high-protein option. We use both chicken breast and thighs. <strong>Pro Tip:</strong> Chicken thighs add more flavor and hold up significantly better in meal prep containers without drying out during reheating compared to breasts.</p><p>2. Beef — Ground beef (90/10 or leaner), sirloin, and stew meat bring essential iron, zinc, and B-vitamins. Beef has a high &#x27;satiety score,&#x27; meaning it keeps you feeling full for longer than almost any other food. We use it in hearty bowls, stews, and chili to provide that &#x27;heavy&#x27; meal feel that many diets lack.</p><p>3. Fish &amp; Seafood — Salmon, cod, tuna, and shrimp deliver omega-3 fatty acids alongside high-quality protein. Salmon in particular is a weight-loss &#x27;superfood&#x27; because it contains healthy fats that satisfy the brain&#x27;s hunger signals. <strong>Pro Tip:</strong> Frozen shrimp is one of the fastest proteins to cook—it goes from frozen to finished in under 5 minutes.</p><p>4. Eggs — Often called the &#x27;perfect protein&#x27; because they contain all the essential amino acids in the right proportions. Whole eggs, egg whites, and hard-boiled eggs appear throughout our breakfast and snack chapters. They are the ultimate budget-friendly protein source.</p><p>5. Legumes — Black beans, white beans, chickpeas, and lentils bring plant-based protein plus a massive amount of fiber. Fiber extends the feeling of fullness and keeps your digestion regular. We often pair legumes with animal proteins to boost the total protein count while adding satisfying volume to the meal.</p><p>6. Dairy — Greek yogurt, cottage cheese, and reduced-fat cheeses are protein powerhouses hiding in plain sight. Plain Greek yogurt has twice the protein of regular yogurt, and cottage cheese is arguably the most versatile ingredient in this book, used in everything from pancakes to savory scrambles.</p><p>No single protein source exceeds 30 percent of the total recipes in this book. That is our variety guarantee—you will never eat the same thing two days in a row unless you choose to.</p></div></section></div></div></div>
 <div class="page ch1-page"><div class="page-content"><div class="page-frame"><section class="prep-section"><h2 class="prep-h2">The Simple Plate Formula: The 50/25/25 Rule</h2><div class="prose"><p>While every recipe in this book is already balanced, understanding the formula behind them will help you when you are eating out or traveling. Every meal follows the same invisible structure:</p><p><strong>50% High-Quality Protein:</strong> This is the anchor of your plate. It should be the first thing you put on your plate and the primary focus of the meal.</p><p><strong>25% Smart Carbohydrates:</strong> We focus on complex, slow-digesting carbs like brown rice, quinoa, sweet potatoes, and oats. These provide the energy your brain needs without the &#x27;crash&#x27; associated with white bread or sugar.</p><p><strong>25% Fibrous Vegetables:</strong> Broccoli, spinach, peppers, and greens add volume and micronutrients. They allow you to eat a larger portion of food for very few calories.</p><p>Add a small amount of healthy fats (olive oil, avocado, nuts) or one of our custom sauces from Chapter 8, and you have a perfect, metabolism-boosting meal. Once you start seeing your meals through this 50/25/25 lens, you will never look at a plate of pasta or a sandwich the same way again.</p></div></section><section class="prep-section"><h2 class="prep-h2">The Sunday Method: The 2-Hour Master Workflow</h2><div class="prose"><p>The entire week of food comes together in one organized prep session. The key is &#x27;parallel processing&#x27;—doing multiple things at once so you aren&#x27;t waiting around. Here is the master sequence:</p><p><strong>0:00 - 0:15: The Pre-Heat &amp; Chop.</strong> Preheat your oven to 400°F. While it heats, chop all the vegetables for the week&#x27;s recipes. Group them by recipe so they are ready to go.</p><p><strong>0:15 - 1:00: The Big Heat.</strong> Start with the proteins that take the longest. Sheet pan chicken or salmon goes in the oven. Ground meat goes on the stovetop. While the meat browns, get your &#x27;batch bases&#x27; started—boil a large pot of water for hard-boiled eggs and start your rice cooker or quinoa pot. These are &#x27;passive&#x27; tasks; they don&#x27;t need your constant attention.</p><p><strong>1:00 - 1:30: The Assembly Line.</strong> As the proteins come out of the oven or off the stove, let them rest for 5 minutes. While they rest, mix any sauces or dressings from Chapter 8. Line up your meal prep containers like an assembly line.</p><p><strong>1:30 - 2:00: The Portion &amp; Pack.</strong> Divide your bases (rice/quinoa) into the containers first, followed by the vegetables, and finally the protein. Let everything cool slightly before putting the lids on to prevent excess condensation, which makes food soggy.</p><p>Total active time: under 2 hours. You have just saved yourself 10+ hours of cooking and cleaning during the work week.</p></div></section></div></div></div>
 <div class="page ch1-page"><div class="page-content"><div class="page-frame"><section class="prep-section"><h2 class="prep-h2">Fridge vs. Freezer: The Golden Rules of Food Safety</h2><div class="prose"><p>To keep your food tasting fresh on Wednesday and Thursday, follow these storage guidelines:</p><p><strong>The 4-Day Fridge Rule:</strong> Most cooked proteins (chicken, beef, pork) and vegetables stay fresh and safe in the fridge for up to 4 days. If you prep on Sunday, your Thursday lunch is the &#x27;cutoff&#x27; for peak freshness.</p><p><strong>The Freezer Backup:</strong> If you prep a full 7 days of meals on Sunday, put the meals for Friday, Saturday, and Sunday in the freezer immediately. Transfer them to the fridge on Thursday night to thaw safely.</p><p><strong>What Freezes Well:</strong> Chili, soups, stews, meatballs, cooked ground beef, and most casseroles freeze beautifully. <strong>What Does NOT Freeze Well:</strong> Fried eggs, cooked fish (it becomes rubbery), raw leafy greens, and anything with avocado or mayo.</p><p><strong>Pro Tip:</strong> Use clear glass containers if possible. They don&#x27;t stain, they are safe for the microwave, and seeing the beautiful food you made makes you much more likely to actually eat it instead of ordering takeout.</p></div></section><section class="prep-section"><h2 class="prep-h2">The High-Protein Pantry: Your &#x27;Emergency&#x27; Kit</h2><div class="prose"><p>Life happens. Sometimes you miss your Sunday prep session. Keep these &#x27;Emergency 5-Minute Protein&#x27; staples in your kitchen at all times, and you&#x27;ll never be tempted by the drive-thru:</p><p>- <strong>Canned Tuna &amp; Salmon:</strong> The ultimate &#x27;no-cook&#x27; protein. Mix with Greek yogurt and lemon for a 30g protein snack in 60 seconds.</p><p>- <strong>Cottage Cheese:</strong> High protein, zero prep. Eat it with fruit for breakfast or black pepper for a savory snack.</p><p>- <strong>Hard-Boiled Eggs:</strong> Keep a dozen in the fridge at all times. They are the perfect &#x27;grab-and-go&#x27; fuel.</p><p>- <strong>Frozen Shrimp:</strong> Defrosts in 5 minutes under cold water and cooks in 3 minutes in a pan.</p><p>- <strong>Greek Yogurt (Plain):</strong> Use it as a base for smoothies, a topping for chili, or as a high-protein substitute for sour cream.</p><p>- <strong>Canned Beans &amp; Lentils:</strong> Drained and rinsed, they add instant protein and fiber to any salad or soup.</p><p>If you have these staples, you are always less than five minutes away from a goal-aligned meal.</p></div></section></div></div></div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
@@ -768,7 +804,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="1">
   <div class="recipe-illustration">
-    <img src="images/recipe_1.png?v=1777930817" class="recipe-img" alt="High-Protein Egg &amp; Veggie Muffins">
+    <img src="images/recipe_1.png?v=1777931339" class="recipe-img" alt="High-Protein Egg &amp; Veggie Muffins">
     <div class="recipe-num-badge">01</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -804,7 +840,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="2">
   <div class="recipe-illustration">
-    <img src="images/recipe_2.png?v=1777930817" class="recipe-img" alt="Greek Yogurt Power Bowl with Berries &amp; Almonds">
+    <img src="images/recipe_2.png?v=1777931339" class="recipe-img" alt="Greek Yogurt Power Bowl with Berries &amp; Almonds">
     <div class="recipe-num-badge">02</div>
     <div class="recipe-protein-badge">27g protein</div>
   </div>
@@ -841,7 +877,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="3">
   <div class="recipe-illustration">
-    <img src="images/recipe_3.png?v=1777930817" class="recipe-img" alt="Overnight Chia Seeds with Cottage Cheese">
+    <img src="images/recipe_3.png?v=1777931339" class="recipe-img" alt="Overnight Chia Seeds with Cottage Cheese">
     <div class="recipe-num-badge">03</div>
     <div class="recipe-protein-badge">25g protein</div>
   </div>
@@ -877,7 +913,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="4">
   <div class="recipe-illustration">
-    <img src="images/recipe_4.png?v=1777930817" class="recipe-img" alt="Turkey Sausage &amp; Sweet Potato Hash">
+    <img src="images/recipe_4.png?v=1777931339" class="recipe-img" alt="Turkey Sausage &amp; Sweet Potato Hash">
     <div class="recipe-num-badge">04</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -914,7 +950,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="5">
   <div class="recipe-illustration">
-    <img src="images/recipe_5.png?v=1777930817" class="recipe-img" alt="Spinach &amp; Feta Egg Bake">
+    <img src="images/recipe_5.png?v=1777931339" class="recipe-img" alt="Spinach &amp; Feta Egg Bake">
     <div class="recipe-num-badge">05</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -950,7 +986,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="6">
   <div class="recipe-illustration">
-    <img src="images/recipe_6.png?v=1777930817" class="recipe-img" alt="Smoked Salmon &amp; Cottage Cheese Keto Toast">
+    <img src="images/recipe_6.png?v=1777931339" class="recipe-img" alt="Smoked Salmon &amp; Cottage Cheese Keto Toast">
     <div class="recipe-num-badge">06</div>
     <div class="recipe-protein-badge">35g protein</div>
   </div>
@@ -987,7 +1023,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="7">
   <div class="recipe-illustration">
-    <img src="images/recipe_7.png?v=1777930817" class="recipe-img" alt="Diced Bell Peppers Breakfast Scramble">
+    <img src="images/recipe_7.png?v=1777931339" class="recipe-img" alt="Diced Bell Peppers Breakfast Scramble">
     <div class="recipe-num-badge">07</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -1023,7 +1059,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="8">
   <div class="recipe-illustration">
-    <img src="images/recipe_8.png?v=1777930817" class="recipe-img" alt="3-Ingredient Protein Pancakes">
+    <img src="images/recipe_8.png?v=1777931339" class="recipe-img" alt="3-Ingredient Protein Pancakes">
     <div class="recipe-num-badge">08</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -1060,7 +1096,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="9">
   <div class="recipe-illustration">
-    <img src="images/recipe_9.png?v=1777930817" class="recipe-img" alt="Cottage Cheese &amp; Pineapple Bowl">
+    <img src="images/recipe_9.png?v=1777931339" class="recipe-img" alt="Cottage Cheese &amp; Pineapple Bowl">
     <div class="recipe-num-badge">09</div>
     <div class="recipe-protein-badge">30g protein</div>
   </div>
@@ -1096,7 +1132,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="10">
   <div class="recipe-illustration">
-    <img src="images/recipe_10.png?v=1777930817" class="recipe-img" alt="Sausage &amp; Egg Breakfast Casserole">
+    <img src="images/recipe_10.png?v=1777931339" class="recipe-img" alt="Sausage &amp; Egg Breakfast Casserole">
     <div class="recipe-num-badge">10</div>
     <div class="recipe-protein-badge">33g protein</div>
   </div>
@@ -1133,7 +1169,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="11">
   <div class="recipe-illustration">
-    <img src="images/recipe_11.png?v=1777930817" class="recipe-img" alt="Peanut Butter Protein Overnight Chia seeds">
+    <img src="images/recipe_11.png?v=1777931339" class="recipe-img" alt="Peanut Butter Protein Overnight Chia seeds">
     <div class="recipe-num-badge">11</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -1169,7 +1205,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="12">
   <div class="recipe-illustration">
-    <img src="images/recipe_12.png?v=1777930817" class="recipe-img" alt="Veggie &amp; Cheese Frittata">
+    <img src="images/recipe_12.png?v=1777931339" class="recipe-img" alt="Veggie &amp; Cheese Frittata">
     <div class="recipe-num-badge">12</div>
     <div class="recipe-protein-badge">22g protein</div>
   </div>
@@ -1206,7 +1242,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 2"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="13">
   <div class="recipe-illustration">
-    <img src="images/recipe_13.png?v=1777930817" class="recipe-img" alt="High-Protein Banana Smoothie Bowl">
+    <img src="images/recipe_13.png?v=1777931339" class="recipe-img" alt="High-Protein Banana Smoothie Bowl">
     <div class="recipe-num-badge">13</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -1242,7 +1278,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="14">
   <div class="recipe-illustration">
-    <img src="images/recipe_14.png?v=1777930817" class="recipe-img" alt="Cottage Cheese Scrambled Eggs">
+    <img src="images/recipe_14.png?v=1777931339" class="recipe-img" alt="Cottage Cheese Scrambled Eggs">
     <div class="recipe-num-badge">14</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -1294,7 +1330,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="15">
   <div class="recipe-illustration">
-    <img src="images/recipe_15.png?v=1777930817" class="recipe-img" alt="Greek Chicken Meal Prep Bowls">
+    <img src="images/recipe_15.png?v=1777931339" class="recipe-img" alt="Greek Chicken Meal Prep Bowls">
     <div class="recipe-num-badge">15</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -1330,7 +1366,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="16">
   <div class="recipe-illustration">
-    <img src="images/recipe_16.png?v=1777930817" class="recipe-img" alt="Chipotle Turkey &amp; Diced Bell Peppers Lettuce Wraps">
+    <img src="images/recipe_16.png?v=1777931339" class="recipe-img" alt="Chipotle Turkey &amp; Diced Bell Peppers Lettuce Wraps">
     <div class="recipe-num-badge">16</div>
     <div class="recipe-protein-badge">37g protein</div>
   </div>
@@ -1367,7 +1403,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="17">
   <div class="recipe-illustration">
-    <img src="images/recipe_17.png?v=1777930817" class="recipe-img" alt="Tuna &amp; Diced Mushrooms Salad Jars">
+    <img src="images/recipe_17.png?v=1777931339" class="recipe-img" alt="Tuna &amp; Diced Mushrooms Salad Jars">
     <div class="recipe-num-badge">17</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -1403,7 +1439,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="18">
   <div class="recipe-illustration">
-    <img src="images/recipe_18.png?v=1777930817" class="recipe-img" alt="Lemon Herb Salmon Salad">
+    <img src="images/recipe_18.png?v=1777931339" class="recipe-img" alt="Lemon Herb Salmon Salad">
     <div class="recipe-num-badge">18</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -1440,7 +1476,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="19">
   <div class="recipe-illustration">
-    <img src="images/recipe_19.png?v=1777930817" class="recipe-img" alt="Chicken Caesar Meal Prep Jars">
+    <img src="images/recipe_19.png?v=1777931339" class="recipe-img" alt="Chicken Caesar Meal Prep Jars">
     <div class="recipe-num-badge">19</div>
     <div class="recipe-protein-badge">41g protein</div>
   </div>
@@ -1476,7 +1512,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="20">
   <div class="recipe-illustration">
-    <img src="images/recipe_20.png?v=1777930817" class="recipe-img" alt="Shrimp &amp; Mango Cauliflower Rice Bowls">
+    <img src="images/recipe_20.png?v=1777931339" class="recipe-img" alt="Shrimp &amp; Mango Cauliflower Rice Bowls">
     <div class="recipe-num-badge">20</div>
     <div class="recipe-protein-badge">33g protein</div>
   </div>
@@ -1513,7 +1549,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="21">
   <div class="recipe-illustration">
-    <img src="images/recipe_21.png?v=1777930817" class="recipe-img" alt="Egg Salad Lettuce Wraps">
+    <img src="images/recipe_21.png?v=1777931339" class="recipe-img" alt="Egg Salad Lettuce Wraps">
     <div class="recipe-num-badge">21</div>
     <div class="recipe-protein-badge">22g protein</div>
   </div>
@@ -1549,7 +1585,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="22">
   <div class="recipe-illustration">
-    <img src="images/recipe_22.png?v=1777930817" class="recipe-img" alt="Cottage Cheese &amp; Avocado Protein Bowl">
+    <img src="images/recipe_22.png?v=1777931339" class="recipe-img" alt="Cottage Cheese &amp; Avocado Protein Bowl">
     <div class="recipe-num-badge">22</div>
     <div class="recipe-protein-badge">24g protein</div>
   </div>
@@ -1586,7 +1622,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="23">
   <div class="recipe-illustration">
-    <img src="images/recipe_23.png?v=1777930817" class="recipe-img" alt="Roasted Chickpea &amp; Roasted Veggie Power Bowl">
+    <img src="images/recipe_23.png?v=1777931339" class="recipe-img" alt="Roasted Chickpea &amp; Roasted Veggie Power Bowl">
     <div class="recipe-num-badge">23</div>
     <div class="recipe-protein-badge">20g protein</div>
   </div>
@@ -1622,7 +1658,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="24">
   <div class="recipe-illustration">
-    <img src="images/recipe_24.png?v=1777930817" class="recipe-img" alt="Buffalo Chicken Lettuce Cups">
+    <img src="images/recipe_24.png?v=1777931339" class="recipe-img" alt="Buffalo Chicken Lettuce Cups">
     <div class="recipe-num-badge">24</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1659,7 +1695,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="25">
   <div class="recipe-illustration">
-    <img src="images/recipe_25.png?v=1777930817" class="recipe-img" alt="Tuna Pasta Salad">
+    <img src="images/recipe_25.png?v=1777931339" class="recipe-img" alt="Tuna Pasta Salad">
     <div class="recipe-num-badge">25</div>
     <div class="recipe-protein-badge">34g protein</div>
   </div>
@@ -1695,7 +1731,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="26">
   <div class="recipe-illustration">
-    <img src="images/recipe_26.png?v=1777930817" class="recipe-img" alt="Turkey &amp; Hemp Hearts Stuffed Peppers">
+    <img src="images/recipe_26.png?v=1777931339" class="recipe-img" alt="Turkey &amp; Hemp Hearts Stuffed Peppers">
     <div class="recipe-num-badge">26</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -1732,7 +1768,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="27">
   <div class="recipe-illustration">
-    <img src="images/recipe_27.png?v=1777930817" class="recipe-img" alt="Asian Chicken Zucchini Noodles Salad">
+    <img src="images/recipe_27.png?v=1777931339" class="recipe-img" alt="Asian Chicken Zucchini Noodles Salad">
     <div class="recipe-num-badge">27</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1768,7 +1804,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="28">
   <div class="recipe-illustration">
-    <img src="images/recipe_28.png?v=1777930817" class="recipe-img" alt="Warm Tuna &amp; Mushroom Salad">
+    <img src="images/recipe_28.png?v=1777931339" class="recipe-img" alt="Warm Tuna &amp; Mushroom Salad">
     <div class="recipe-num-badge">28</div>
     <div class="recipe-protein-badge">30g protein</div>
   </div>
@@ -1805,7 +1841,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="29">
   <div class="recipe-illustration">
-    <img src="images/recipe_29.png?v=1777930817" class="recipe-img" alt="Beef &amp; Cauliflower Rice Power Bowls">
+    <img src="images/recipe_29.png?v=1777931339" class="recipe-img" alt="Beef &amp; Cauliflower Rice Power Bowls">
     <div class="recipe-num-badge">29</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1841,7 +1877,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="30">
   <div class="recipe-illustration">
-    <img src="images/recipe_30.png?v=1777930817" class="recipe-img" alt="Chicken &amp; Avocado Protein Lettuce Wraps">
+    <img src="images/recipe_30.png?v=1777931339" class="recipe-img" alt="Chicken &amp; Avocado Protein Lettuce Wraps">
     <div class="recipe-num-badge">30</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -1878,7 +1914,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="31">
   <div class="recipe-illustration">
-    <img src="images/recipe_31.png?v=1777930817" class="recipe-img" alt="Chopped Mushrooms &amp; Veggie Mason Jar Salad">
+    <img src="images/recipe_31.png?v=1777931339" class="recipe-img" alt="Chopped Mushrooms &amp; Veggie Mason Jar Salad">
     <div class="recipe-num-badge">31</div>
     <div class="recipe-protein-badge">20g protein</div>
   </div>
@@ -1914,7 +1950,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="32">
   <div class="recipe-illustration">
-    <img src="images/recipe_32.png?v=1777930817" class="recipe-img" alt="Teriyaki Chicken Cauliflower Rice Bowls">
+    <img src="images/recipe_32.png?v=1777931339" class="recipe-img" alt="Teriyaki Chicken Cauliflower Rice Bowls">
     <div class="recipe-num-badge">32</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -1951,7 +1987,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="33">
   <div class="recipe-illustration">
-    <img src="images/recipe_33.png?v=1777930817" class="recipe-img" alt="Shrimp &amp; Avocado Salad">
+    <img src="images/recipe_33.png?v=1777931339" class="recipe-img" alt="Shrimp &amp; Avocado Salad">
     <div class="recipe-num-badge">33</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -1987,7 +2023,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="34">
   <div class="recipe-illustration">
-    <img src="images/recipe_34.png?v=1777930817" class="recipe-img" alt="Greek Turkey Meatball Bowls">
+    <img src="images/recipe_34.png?v=1777931339" class="recipe-img" alt="Greek Turkey Meatball Bowls">
     <div class="recipe-num-badge">34</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2024,7 +2060,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 3"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="35">
   <div class="recipe-illustration">
-    <img src="images/recipe_35.png?v=1777930817" class="recipe-img" alt="Salmon &amp; Cucumber Cauliflower Rice Paper Rolls">
+    <img src="images/recipe_35.png?v=1777931339" class="recipe-img" alt="Salmon &amp; Cucumber Cauliflower Rice Paper Rolls">
     <div class="recipe-num-badge">35</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -2060,7 +2096,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="36">
   <div class="recipe-illustration">
-    <img src="images/recipe_36.png?v=1777930817" class="recipe-img" alt="Greek-Style Grilled Chicken Souvlaki Bowls">
+    <img src="images/recipe_36.png?v=1777931339" class="recipe-img" alt="Greek-Style Grilled Chicken Souvlaki Bowls">
     <div class="recipe-num-badge">36</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -2112,7 +2148,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="37">
   <div class="recipe-illustration">
-    <img src="images/recipe_37.png?v=1777930817" class="recipe-img" alt="Garlic Butter Salmon Tray Bake">
+    <img src="images/recipe_37.png?v=1777931339" class="recipe-img" alt="Garlic Butter Salmon Tray Bake">
     <div class="recipe-num-badge">37</div>
     <div class="recipe-protein-badge">37g protein</div>
   </div>
@@ -2148,7 +2184,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="38">
   <div class="recipe-illustration">
-    <img src="images/recipe_38.png?v=1777930817" class="recipe-img" alt="Beef Power Bowls with Roasted Peppers">
+    <img src="images/recipe_38.png?v=1777931339" class="recipe-img" alt="Beef Power Bowls with Roasted Peppers">
     <div class="recipe-num-badge">38</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2185,7 +2221,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="39">
   <div class="recipe-illustration">
-    <img src="images/recipe_39.png?v=1777930817" class="recipe-img" alt="Mediterranean Turkey Meatballs with Tzatziki">
+    <img src="images/recipe_39.png?v=1777931339" class="recipe-img" alt="Mediterranean Turkey Meatballs with Tzatziki">
     <div class="recipe-num-badge">39</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2221,7 +2257,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="40">
   <div class="recipe-illustration">
-    <img src="images/recipe_40.png?v=1777930817" class="recipe-img" alt="Slow Cooker Chicken &amp; Diced Mushrooms Stew">
+    <img src="images/recipe_40.png?v=1777931339" class="recipe-img" alt="Slow Cooker Chicken &amp; Diced Mushrooms Stew">
     <div class="recipe-num-badge">40</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2258,7 +2294,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="41">
   <div class="recipe-illustration">
-    <img src="images/recipe_41.png?v=1777930817" class="recipe-img" alt="Sheet Pan Chicken Thighs &amp; Asparagus">
+    <img src="images/recipe_41.png?v=1777931339" class="recipe-img" alt="Sheet Pan Chicken Thighs &amp; Asparagus">
     <div class="recipe-num-badge">41</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2294,7 +2330,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="42">
   <div class="recipe-illustration">
-    <img src="images/recipe_42.png?v=1777930817" class="recipe-img" alt="Ground Turkey Stuffed Bell Peppers">
+    <img src="images/recipe_42.png?v=1777931339" class="recipe-img" alt="Ground Turkey Stuffed Bell Peppers">
     <div class="recipe-num-badge">42</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2331,7 +2367,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="43">
   <div class="recipe-illustration">
-    <img src="images/recipe_43.png?v=1777930817" class="recipe-img" alt="Beef &amp; Chopped Mushrooms One-Pot Stew">
+    <img src="images/recipe_43.png?v=1777931339" class="recipe-img" alt="Beef &amp; Chopped Mushrooms One-Pot Stew">
     <div class="recipe-num-badge">43</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -2367,7 +2403,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="44">
   <div class="recipe-illustration">
-    <img src="images/recipe_44.png?v=1777930817" class="recipe-img" alt="Creamy Tuscan Chicken">
+    <img src="images/recipe_44.png?v=1777931339" class="recipe-img" alt="Creamy Tuscan Chicken">
     <div class="recipe-num-badge">44</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -2404,7 +2440,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="45">
   <div class="recipe-illustration">
-    <img src="images/recipe_45.png?v=1777930817" class="recipe-img" alt="Diced Bell Peppers &amp; Beef Chili">
+    <img src="images/recipe_45.png?v=1777931339" class="recipe-img" alt="Diced Bell Peppers &amp; Beef Chili">
     <div class="recipe-num-badge">45</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -2440,7 +2476,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="46">
   <div class="recipe-illustration">
-    <img src="images/recipe_46.png?v=1777930817" class="recipe-img" alt="Teriyaki Salmon with Edamame Cauliflower Rice">
+    <img src="images/recipe_46.png?v=1777931339" class="recipe-img" alt="Teriyaki Salmon with Edamame Cauliflower Rice">
     <div class="recipe-num-badge">46</div>
     <div class="recipe-protein-badge">40g protein</div>
   </div>
@@ -2477,7 +2513,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="47">
   <div class="recipe-illustration">
-    <img src="images/recipe_47.png?v=1777930817" class="recipe-img" alt="Lemon Baked Cod with Roasted Broccoli">
+    <img src="images/recipe_47.png?v=1777931339" class="recipe-img" alt="Lemon Baked Cod with Roasted Broccoli">
     <div class="recipe-num-badge">47</div>
     <div class="recipe-protein-badge">35g protein</div>
   </div>
@@ -2513,7 +2549,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="48">
   <div class="recipe-illustration">
-    <img src="images/recipe_48.png?v=1777930817" class="recipe-img" alt="Chicken &amp; Broccoli Stir-Fry">
+    <img src="images/recipe_48.png?v=1777931339" class="recipe-img" alt="Chicken &amp; Broccoli Stir-Fry">
     <div class="recipe-num-badge">48</div>
     <div class="recipe-protein-badge">40g protein</div>
   </div>
@@ -2550,7 +2586,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="49">
   <div class="recipe-illustration">
-    <img src="images/recipe_49.png?v=1777930817" class="recipe-img" alt="Pork Tenderloin with Apple &amp; Dijon">
+    <img src="images/recipe_49.png?v=1777931339" class="recipe-img" alt="Pork Tenderloin with Apple &amp; Dijon">
     <div class="recipe-num-badge">49</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2586,7 +2622,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="50">
   <div class="recipe-illustration">
-    <img src="images/recipe_50.png?v=1777930817" class="recipe-img" alt="Turkey Taco Bowls">
+    <img src="images/recipe_50.png?v=1777931339" class="recipe-img" alt="Turkey Taco Bowls">
     <div class="recipe-num-badge">50</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2623,7 +2659,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="51">
   <div class="recipe-illustration">
-    <img src="images/recipe_51.png?v=1777930817" class="recipe-img" alt="Garlic Shrimp &amp; Zucchini Noodles">
+    <img src="images/recipe_51.png?v=1777931339" class="recipe-img" alt="Garlic Shrimp &amp; Zucchini Noodles">
     <div class="recipe-num-badge">51</div>
     <div class="recipe-protein-badge">42g protein</div>
   </div>
@@ -2659,7 +2695,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="52">
   <div class="recipe-illustration">
-    <img src="images/recipe_52.png?v=1777930817" class="recipe-img" alt="Honey Mustard Chicken Thighs">
+    <img src="images/recipe_52.png?v=1777931339" class="recipe-img" alt="Honey Mustard Chicken Thighs">
     <div class="recipe-num-badge">52</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2696,7 +2732,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="53">
   <div class="recipe-illustration">
-    <img src="images/recipe_53.png?v=1777930817" class="recipe-img" alt="Beef &amp; Broccoli with Cauliflower Rice">
+    <img src="images/recipe_53.png?v=1777931339" class="recipe-img" alt="Beef &amp; Broccoli with Cauliflower Rice">
     <div class="recipe-num-badge">53</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2732,7 +2768,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="54">
   <div class="recipe-illustration">
-    <img src="images/recipe_54.png?v=1777930817" class="recipe-img" alt="Baked Turkey Meatloaf">
+    <img src="images/recipe_54.png?v=1777931339" class="recipe-img" alt="Baked Turkey Meatloaf">
     <div class="recipe-num-badge">54</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2769,7 +2805,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="55">
   <div class="recipe-illustration">
-    <img src="images/recipe_55.png?v=1777930817" class="recipe-img" alt="Salmon &amp; Sweet Potato Sheet Pan">
+    <img src="images/recipe_55.png?v=1777931339" class="recipe-img" alt="Salmon &amp; Sweet Potato Sheet Pan">
     <div class="recipe-num-badge">55</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2805,7 +2841,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="56">
   <div class="recipe-illustration">
-    <img src="images/recipe_56.png?v=1777930817" class="recipe-img" alt="Chicken Tikka-Style Skillet">
+    <img src="images/recipe_56.png?v=1777931339" class="recipe-img" alt="Chicken Tikka-Style Skillet">
     <div class="recipe-num-badge">56</div>
     <div class="recipe-protein-badge">40g protein</div>
   </div>
@@ -2842,7 +2878,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="57">
   <div class="recipe-illustration">
-    <img src="images/recipe_57.png?v=1777930817" class="recipe-img" alt="Beef Taco Skillet">
+    <img src="images/recipe_57.png?v=1777931339" class="recipe-img" alt="Beef Taco Skillet">
     <div class="recipe-num-badge">57</div>
     <div class="recipe-protein-badge">38g protein</div>
   </div>
@@ -2878,7 +2914,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="58">
   <div class="recipe-illustration">
-    <img src="images/recipe_58.png?v=1777930817" class="recipe-img" alt="Lemon Garlic Chicken Breast">
+    <img src="images/recipe_58.png?v=1777931339" class="recipe-img" alt="Lemon Garlic Chicken Breast">
     <div class="recipe-num-badge">58</div>
     <div class="recipe-protein-badge">40g protein</div>
   </div>
@@ -2915,7 +2951,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="59">
   <div class="recipe-illustration">
-    <img src="images/recipe_59.png?v=1777930817" class="recipe-img" alt="Shrimp &amp; Cauliflower Rice Stir-Fry">
+    <img src="images/recipe_59.png?v=1777931339" class="recipe-img" alt="Shrimp &amp; Cauliflower Rice Stir-Fry">
     <div class="recipe-num-badge">59</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2951,7 +2987,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="60">
   <div class="recipe-illustration">
-    <img src="images/recipe_60.png?v=1777930817" class="recipe-img" alt="Turkey Bolognese with Penne">
+    <img src="images/recipe_60.png?v=1777931339" class="recipe-img" alt="Turkey Bolognese with Penne">
     <div class="recipe-num-badge">60</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -2988,7 +3024,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 4"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="61">
   <div class="recipe-illustration">
-    <img src="images/recipe_61.png?v=1777930817" class="recipe-img" alt="Slow Cooker Beef &amp; Diced Mushrooms Stew">
+    <img src="images/recipe_61.png?v=1777931339" class="recipe-img" alt="Slow Cooker Beef &amp; Diced Mushrooms Stew">
     <div class="recipe-num-badge">61</div>
     <div class="recipe-protein-badge">34g protein</div>
   </div>
@@ -3024,7 +3060,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="62">
   <div class="recipe-illustration">
-    <img src="images/recipe_62.png?v=1777930817" class="recipe-img" alt="Greek Chicken Thighs with Olives &amp; Tomatoes">
+    <img src="images/recipe_62.png?v=1777931339" class="recipe-img" alt="Greek Chicken Thighs with Olives &amp; Tomatoes">
     <div class="recipe-num-badge">62</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -3076,7 +3112,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="63">
   <div class="recipe-illustration">
-    <img src="images/recipe_63.png?v=1777930817" class="recipe-img" alt="No-Bake Peanut Butter Protein Balls">
+    <img src="images/recipe_63.png?v=1777931339" class="recipe-img" alt="No-Bake Peanut Butter Protein Balls">
     <div class="recipe-num-badge">63</div>
     <div class="recipe-protein-badge">12g protein</div>
   </div>
@@ -3112,7 +3148,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="64">
   <div class="recipe-illustration">
-    <img src="images/recipe_64.png?v=1777930817" class="recipe-img" alt="Hard-Boiled Egg &amp; Avocado Snack Box">
+    <img src="images/recipe_64.png?v=1777931339" class="recipe-img" alt="Hard-Boiled Egg &amp; Avocado Snack Box">
     <div class="recipe-num-badge">64</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -3149,7 +3185,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="65">
   <div class="recipe-illustration">
-    <img src="images/recipe_65.png?v=1777930817" class="recipe-img" alt="Turkey Roll-Ups with Hummus">
+    <img src="images/recipe_65.png?v=1777931339" class="recipe-img" alt="Turkey Roll-Ups with Hummus">
     <div class="recipe-num-badge">65</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -3185,7 +3221,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="66">
   <div class="recipe-illustration">
-    <img src="images/recipe_66.png?v=1777930817" class="recipe-img" alt="Cottage Cheese &amp; Cucumber Dip">
+    <img src="images/recipe_66.png?v=1777931339" class="recipe-img" alt="Cottage Cheese &amp; Cucumber Dip">
     <div class="recipe-num-badge">66</div>
     <div class="recipe-protein-badge">24g protein</div>
   </div>
@@ -3222,7 +3258,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="67">
   <div class="recipe-illustration">
-    <img src="images/recipe_67.png?v=1777930817" class="recipe-img" alt="Greek Yogurt Ranch Dip with Veggies">
+    <img src="images/recipe_67.png?v=1777931339" class="recipe-img" alt="Greek Yogurt Ranch Dip with Veggies">
     <div class="recipe-num-badge">67</div>
     <div class="recipe-protein-badge">14g protein</div>
   </div>
@@ -3258,7 +3294,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="68">
   <div class="recipe-illustration">
-    <img src="images/recipe_68.png?v=1777930817" class="recipe-img" alt="Tuna-Stuffed Mini Peppers">
+    <img src="images/recipe_68.png?v=1777931339" class="recipe-img" alt="Tuna-Stuffed Mini Peppers">
     <div class="recipe-num-badge">68</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -3295,7 +3331,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="69">
   <div class="recipe-illustration">
-    <img src="images/recipe_69.png?v=1777930817" class="recipe-img" alt="High-Protein Edamame with Sea Salt">
+    <img src="images/recipe_69.png?v=1777931339" class="recipe-img" alt="High-Protein Edamame with Sea Salt">
     <div class="recipe-num-badge">69</div>
     <div class="recipe-protein-badge">16g protein</div>
   </div>
@@ -3331,7 +3367,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="70">
   <div class="recipe-illustration">
-    <img src="images/recipe_70.png?v=1777930817" class="recipe-img" alt="Almond &amp; String Cheese Snack Pack">
+    <img src="images/recipe_70.png?v=1777931339" class="recipe-img" alt="Almond &amp; String Cheese Snack Pack">
     <div class="recipe-num-badge">70</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -3368,7 +3404,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="71">
   <div class="recipe-illustration">
-    <img src="images/recipe_71.png?v=1777930817" class="recipe-img" alt="Smoked Salmon Cucumber Rounds">
+    <img src="images/recipe_71.png?v=1777931339" class="recipe-img" alt="Smoked Salmon Cucumber Rounds">
     <div class="recipe-num-badge">71</div>
     <div class="recipe-protein-badge">24g protein</div>
   </div>
@@ -3404,7 +3440,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="72">
   <div class="recipe-illustration">
-    <img src="images/recipe_72.png?v=1777930817" class="recipe-img" alt="Roasted Chickpeas">
+    <img src="images/recipe_72.png?v=1777931339" class="recipe-img" alt="Roasted Chickpeas">
     <div class="recipe-num-badge">72</div>
     <div class="recipe-protein-badge">10g protein</div>
   </div>
@@ -3441,7 +3477,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="73">
   <div class="recipe-illustration">
-    <img src="images/recipe_73.png?v=1777930817" class="recipe-img" alt="Cottage Cheese &amp; Tomato Keto Toast">
+    <img src="images/recipe_73.png?v=1777931339" class="recipe-img" alt="Cottage Cheese &amp; Tomato Keto Toast">
     <div class="recipe-num-badge">73</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -3477,7 +3513,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="74">
   <div class="recipe-illustration">
-    <img src="images/recipe_74.png?v=1777930817" class="recipe-img" alt="Turkey &amp; Cheese Roll-Ups">
+    <img src="images/recipe_74.png?v=1777931339" class="recipe-img" alt="Turkey &amp; Cheese Roll-Ups">
     <div class="recipe-num-badge">74</div>
     <div class="recipe-protein-badge">30g protein</div>
   </div>
@@ -3514,7 +3550,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 5"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="75">
   <div class="recipe-illustration">
-    <img src="images/recipe_75.png?v=1777930817" class="recipe-img" alt="Greek Yogurt with Honey &amp; Walnuts">
+    <img src="images/recipe_75.png?v=1777931339" class="recipe-img" alt="Greek Yogurt with Honey &amp; Walnuts">
     <div class="recipe-num-badge">75</div>
     <div class="recipe-protein-badge">20g protein</div>
   </div>
@@ -3550,7 +3586,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="76">
   <div class="recipe-illustration">
-    <img src="images/recipe_76.png?v=1777930817" class="recipe-img" alt="Protein-Packed Trail Mix">
+    <img src="images/recipe_76.png?v=1777931339" class="recipe-img" alt="Protein-Packed Trail Mix">
     <div class="recipe-num-badge">76</div>
     <div class="recipe-protein-badge">12g protein</div>
   </div>
@@ -3602,7 +3638,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="77">
   <div class="recipe-illustration">
-    <img src="images/recipe_77.png?v=1777930817" class="recipe-img" alt="High-Protein Chicken Zucchini Noodles Soup">
+    <img src="images/recipe_77.png?v=1777931339" class="recipe-img" alt="High-Protein Chicken Zucchini Noodles Soup">
     <div class="recipe-num-badge">77</div>
     <div class="recipe-protein-badge">35g protein</div>
   </div>
@@ -3638,7 +3674,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="78">
   <div class="recipe-illustration">
-    <img src="images/recipe_78.png?v=1777930817" class="recipe-img" alt="White Bean &amp; Kale Turkey Soup">
+    <img src="images/recipe_78.png?v=1777931339" class="recipe-img" alt="White Bean &amp; Kale Turkey Soup">
     <div class="recipe-num-badge">78</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -3675,7 +3711,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="79">
   <div class="recipe-illustration">
-    <img src="images/recipe_79.png?v=1777930817" class="recipe-img" alt="Spicy Beef &amp; Chopped Mushrooms Stew">
+    <img src="images/recipe_79.png?v=1777931339" class="recipe-img" alt="Spicy Beef &amp; Chopped Mushrooms Stew">
     <div class="recipe-num-badge">79</div>
     <div class="recipe-protein-badge">30g protein</div>
   </div>
@@ -3711,7 +3747,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="80">
   <div class="recipe-illustration">
-    <img src="images/recipe_80.png?v=1777930817" class="recipe-img" alt="Creamy Broccoli &amp; Cheddar Protein Soup">
+    <img src="images/recipe_80.png?v=1777931339" class="recipe-img" alt="Creamy Broccoli &amp; Cheddar Protein Soup">
     <div class="recipe-num-badge">80</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -3748,7 +3784,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="81">
   <div class="recipe-illustration">
-    <img src="images/recipe_81.png?v=1777930817" class="recipe-img" alt="Shrimp &amp; Corn Chowder">
+    <img src="images/recipe_81.png?v=1777931339" class="recipe-img" alt="Shrimp &amp; Corn Chowder">
     <div class="recipe-num-badge">81</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -3784,7 +3820,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="82">
   <div class="recipe-illustration">
-    <img src="images/recipe_82.png?v=1777930817" class="recipe-img" alt="Smoky Chickpea &amp; Chicken Stew">
+    <img src="images/recipe_82.png?v=1777931339" class="recipe-img" alt="Smoky Chickpea &amp; Chicken Stew">
     <div class="recipe-num-badge">82</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -3821,7 +3857,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="83">
   <div class="recipe-illustration">
-    <img src="images/recipe_83.png?v=1777930817" class="recipe-img" alt="Beef &amp; Vegetable Minestrone">
+    <img src="images/recipe_83.png?v=1777931339" class="recipe-img" alt="Beef &amp; Vegetable Minestrone">
     <div class="recipe-num-badge">83</div>
     <div class="recipe-protein-badge">26g protein</div>
   </div>
@@ -3857,7 +3893,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="84">
   <div class="recipe-illustration">
-    <img src="images/recipe_84.png?v=1777930817" class="recipe-img" alt="Turkey &amp; Sweet Potato Chili">
+    <img src="images/recipe_84.png?v=1777931339" class="recipe-img" alt="Turkey &amp; Sweet Potato Chili">
     <div class="recipe-num-badge">84</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -3894,7 +3930,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="85">
   <div class="recipe-illustration">
-    <img src="images/recipe_85.png?v=1777930817" class="recipe-img" alt="Salmon &amp; Potato Chowder">
+    <img src="images/recipe_85.png?v=1777931339" class="recipe-img" alt="Salmon &amp; Potato Chowder">
     <div class="recipe-num-badge">85</div>
     <div class="recipe-protein-badge">32g protein</div>
   </div>
@@ -3930,7 +3966,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="86">
   <div class="recipe-illustration">
-    <img src="images/recipe_86.png?v=1777930817" class="recipe-img" alt="Chopped Mushrooms &amp; Spinach Soup">
+    <img src="images/recipe_86.png?v=1777931339" class="recipe-img" alt="Chopped Mushrooms &amp; Spinach Soup">
     <div class="recipe-num-badge">86</div>
     <div class="recipe-protein-badge">16g protein</div>
   </div>
@@ -3967,7 +4003,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="87">
   <div class="recipe-illustration">
-    <img src="images/recipe_87.png?v=1777930817" class="recipe-img" alt="Chicken Lettuce Wraps Soup">
+    <img src="images/recipe_87.png?v=1777931339" class="recipe-img" alt="Chicken Lettuce Wraps Soup">
     <div class="recipe-num-badge">87</div>
     <div class="recipe-protein-badge">34g protein</div>
   </div>
@@ -4003,7 +4039,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="88">
   <div class="recipe-illustration">
-    <img src="images/recipe_88.png?v=1777930817" class="recipe-img" alt="Diced Bell Peppers &amp; Beef Soup">
+    <img src="images/recipe_88.png?v=1777931339" class="recipe-img" alt="Diced Bell Peppers &amp; Beef Soup">
     <div class="recipe-num-badge">88</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -4040,7 +4076,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 6"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="89">
   <div class="recipe-illustration">
-    <img src="images/recipe_89.png?v=1777930817" class="recipe-img" alt="Creamy Chicken &amp; Mushroom Soup">
+    <img src="images/recipe_89.png?v=1777931339" class="recipe-img" alt="Creamy Chicken &amp; Mushroom Soup">
     <div class="recipe-num-badge">89</div>
     <div class="recipe-protein-badge">36g protein</div>
   </div>
@@ -4076,7 +4112,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="90">
   <div class="recipe-illustration">
-    <img src="images/recipe_90.png?v=1777930817" class="recipe-img" alt="Italian Egg Drop Soup (Stracciatella)">
+    <img src="images/recipe_90.png?v=1777931339" class="recipe-img" alt="Italian Egg Drop Soup (Stracciatella)">
     <div class="recipe-num-badge">90</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -4128,7 +4164,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 7"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="91">
   <div class="recipe-illustration">
-    <img src="images/recipe_91.png?v=1777930817" class="recipe-img" alt="Chocolate Peanut Butter Protein Fudge">
+    <img src="images/recipe_91.png?v=1777931339" class="recipe-img" alt="Chocolate Peanut Butter Protein Fudge">
     <div class="recipe-num-badge">91</div>
     <div class="recipe-protein-badge">13g protein</div>
   </div>
@@ -4164,7 +4200,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="92">
   <div class="recipe-illustration">
-    <img src="images/recipe_92.png?v=1777930817" class="recipe-img" alt="Lemon Cheesecake Protein Bars">
+    <img src="images/recipe_92.png?v=1777931339" class="recipe-img" alt="Lemon Cheesecake Protein Bars">
     <div class="recipe-num-badge">92</div>
     <div class="recipe-protein-badge">8g protein</div>
   </div>
@@ -4201,7 +4237,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 7"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="93">
   <div class="recipe-illustration">
-    <img src="images/recipe_93.png?v=1777930817" class="recipe-img" alt="Greek Yogurt Bark with Berries">
+    <img src="images/recipe_93.png?v=1777931339" class="recipe-img" alt="Greek Yogurt Bark with Berries">
     <div class="recipe-num-badge">93</div>
     <div class="recipe-protein-badge">13g protein</div>
   </div>
@@ -4237,7 +4273,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="94">
   <div class="recipe-illustration">
-    <img src="images/recipe_94.png?v=1777930817" class="recipe-img" alt="Cottage Cheese Chocolate Mousse">
+    <img src="images/recipe_94.png?v=1777931339" class="recipe-img" alt="Cottage Cheese Chocolate Mousse">
     <div class="recipe-num-badge">94</div>
     <div class="recipe-protein-badge">18g protein</div>
   </div>
@@ -4274,7 +4310,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 7"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="95">
   <div class="recipe-illustration">
-    <img src="images/recipe_95.png?v=1777930817" class="recipe-img" alt="Banana Protein Mug Cake">
+    <img src="images/recipe_95.png?v=1777931339" class="recipe-img" alt="Banana Protein Mug Cake">
     <div class="recipe-num-badge">95</div>
     <div class="recipe-protein-badge">18g protein</div>
   </div>
@@ -4310,7 +4346,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="96">
   <div class="recipe-illustration">
-    <img src="images/recipe_96.png?v=1777930817" class="recipe-img" alt="Peanut Butter Protein Cookies">
+    <img src="images/recipe_96.png?v=1777931339" class="recipe-img" alt="Peanut Butter Protein Cookies">
     <div class="recipe-num-badge">96</div>
     <div class="recipe-protein-badge">15g protein</div>
   </div>
@@ -4347,7 +4383,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 7"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="97">
   <div class="recipe-illustration">
-    <img src="images/recipe_97.png?v=1777930817" class="recipe-img" alt="Chocolate Protein Energy Bites">
+    <img src="images/recipe_97.png?v=1777931339" class="recipe-img" alt="Chocolate Protein Energy Bites">
     <div class="recipe-num-badge">97</div>
     <div class="recipe-protein-badge">10g protein</div>
   </div>
@@ -4383,7 +4419,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="98">
   <div class="recipe-illustration">
-    <img src="images/recipe_98.png?v=1777930817" class="recipe-img" alt="Vanilla Cottage Cheese Parfait">
+    <img src="images/recipe_98.png?v=1777931339" class="recipe-img" alt="Vanilla Cottage Cheese Parfait">
     <div class="recipe-num-badge">98</div>
     <div class="recipe-protein-badge">28g protein</div>
   </div>
@@ -4418,7 +4454,6 @@ html,body{
     
   </footer>
 </article></div></div></div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
@@ -4436,7 +4471,7 @@ html,body{
 </div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 8"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="99">
   <div class="recipe-illustration">
-    <img src="images/recipe_99.png?v=1777930817" class="recipe-img" alt="Chipotle Lime Marinade">
+    <img src="images/recipe_99.png?v=1777931339" class="recipe-img" alt="Chipotle Lime Marinade">
     <div class="recipe-num-badge">99</div>
     <div class="recipe-protein-badge">0g protein</div>
   </div>
@@ -4472,7 +4507,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="100">
   <div class="recipe-illustration">
-    <img src="images/recipe_100.png?v=1777930817" class="recipe-img" alt="Greek Yogurt Tzatziki">
+    <img src="images/recipe_100.png?v=1777931339" class="recipe-img" alt="Greek Yogurt Tzatziki">
     <div class="recipe-num-badge">100</div>
     <div class="recipe-protein-badge">5g protein</div>
   </div>
@@ -4509,7 +4544,7 @@ html,body{
 </article></div></div></div>
 <div class="page recipe-page recipe-page-pair" data-chapter="Chapter 8"><div class="page-content"><div class="recipe-grid"><article class="recipe-card" data-recipe="101">
   <div class="recipe-illustration">
-    <img src="images/recipe_101.png?v=1777930817" class="recipe-img" alt="High-Protein Caesar Dressing">
+    <img src="images/recipe_101.png?v=1777931339" class="recipe-img" alt="High-Protein Caesar Dressing">
     <div class="recipe-num-badge">101</div>
     <div class="recipe-protein-badge">6g protein</div>
   </div>
@@ -4545,7 +4580,7 @@ html,body{
   </footer>
 </article><article class="recipe-card" data-recipe="102">
   <div class="recipe-illustration">
-    <img src="images/recipe_102.png?v=1777930817" class="recipe-img" alt="Lemon Garlic Herb Sauce">
+    <img src="images/recipe_102.png?v=1777931339" class="recipe-img" alt="Lemon Garlic Herb Sauce">
     <div class="recipe-num-badge">102</div>
     <div class="recipe-protein-badge">0g protein</div>
   </div>
@@ -4580,7 +4615,6 @@ html,body{
     <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 1 week. Bring to room temperature and shake before use.</span></div>
   </footer>
 </article></div></div></div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
@@ -4596,7 +4630,6 @@ html,body{
     </div>
   </div>
 </div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page mealplan-intro">
   <div class="page-content">
     <header class="chapter-head">
@@ -4615,30 +4648,27 @@ html,body{
       <h2 class="week-title">WEEK 1 — Build the Habit</h2>
       <div class="week-rule"></div>
     </header>
-    <div class="prose week-body"><p class="week-objective">Objective: Establish one Sunday prep session. Keep it simple. No more than 4 different proteins this week. Prep time goal: under 90 minutes.</p><h4 class="week-h">Sunday Prep Guide</h4><p>Start oven at 400°F. Put Lemon Garlic Chicken Breast (R56) in the oven — 20 min.</p><p>While chicken cooks: hard-boil 12 eggs. Bring pot to boil, cook 10 min, ice bath.</p><p>Cook 4 cups brown rice in rice cooker.</p><p>Bake Spinach &amp; Feta Egg Bake (R5) — 30 min.</p><p>While everything is in the oven: prep overnight oats (R3) for Monday and Tuesday.</p><p>Mix Beef &amp; Lentil Stew (R41) — 40 min simmering hands-off.</p><p>Store everything in labeled containers.</p><h4 class="week-h">Daily Meal Plan</h4><table class="data-table compact"><thead><tr><th>Day</th><th>B</th><th>L</th><th>D</th><th>S</th></tr></thead><tbody><tr><td>Mon</td><td>R3 — Overnight Oats</td><td>R15 — Greek Chicken Bowls</td><td>R58 — Lemon Garlic Chicken</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Tue</td><td>R3 — Overnight Oats</td><td>R17 — Tuna &amp; White Bean Jars</td><td>R41 — Beef &amp; Lentil Stew</td><td>R65 — Turkey Roll-Ups</td></tr><tr><td>Wed</td><td>R5 — Spinach Egg Bake</td><td>R15 — Greek Chicken Bowls</td><td>R58 — Lemon Garlic Chicken</td><td>R73 — Greek Yogurt &amp; Honey</td></tr><tr><td>Thu</td><td>R5 — Spinach Egg Bake</td><td>R17 — Tuna &amp; White Bean Jars</td><td>R41 — Beef &amp; Lentil Stew</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Fri</td><td>R14 — Cottage Cheese Scramble</td><td>R15 — Greek Chicken Bowls</td><td>R58 — Lemon Garlic Chicken</td><td>R65 — Turkey Roll-Ups</td></tr><tr><td>Sat</td><td>R4 — Turkey Hash</td><td>R17 — Tuna &amp; White Bean Jars</td><td>R43 — Black Bean &amp; Beef Chili</td><td>R67 — Greek Yogurt Ranch</td></tr><tr><td>Sun</td><td>R4 — Turkey Hash</td><td>R28 — Beef &amp; Rice Bowls</td><td>R43 — Black Bean &amp; Beef Chili</td><td>R74 — Protein Trail Mix</td></tr></tbody></table></div>
+    <div class="prose week-body"><p class="week-objective">Objective: Establish one Sunday prep session. Keep it simple. No more than 4 different proteins this week. Prep time goal: under 90 minutes.</p><h4 class="week-h">Sunday Prep Guide</h4><p>Start oven at 400°F. Put Lemon Garlic Chicken Breast (R56) in the oven — 20 min.</p><p>While chicken cooks: hard-boil 12 eggs. Bring pot to boil, cook 10 min, ice bath.</p><p>Cook 4 cups brown rice in rice cooker.</p><p>Bake Spinach &amp; Feta Egg Bake (R5) — 30 min.</p><p>While everything is in the oven: prep overnight oats (R3) for Monday and Tuesday.</p><p>Mix Beef &amp; Lentil Stew (R41) — 40 min simmering hands-off.</p><p>Store everything in labeled containers.</p><h4 class="week-h">Daily Meal Plan</h4><table class="data-table compact"><thead><tr><th>Day</th><th>B</th><th>L</th><th>D</th><th>S</th></tr></thead><tbody><tr><td>Mon</td><td>R3 — Overnight Oats</td><td>R15 — Greek Chicken Bowls</td><td>R58 — Lemon Garlic Chicken</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Tue</td><td>R3 — Overnight Oats</td><td>R17 — Tuna &amp; White Bean Jars</td><td>R41 — Beef &amp; Lentil Stew</td><td>R65 — Turkey Roll-Ups</td></tr><tr><td>Wed</td><td>R5 — Spinach Egg Bake</td><td>R15 — Greek Chicken Bowls</td><td>R58 — Lemon Garlic Chicken</td><td>R73 — Greek Yogurt &amp; Honey</td></tr><tr><td>Thu</td><td>R5 — Spinach Egg Bake</td><td>R17 — Tuna &amp; White Bean Jars</td><td>R41 — Beef &amp; Lentil Stew</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Fri</td><td>R14 — Cottage Cheese Scramble</td><td>R15 — Greek Chicken Bowls</td><td>R58 — Lemon Garlic Chicken</td><td>R65 — Turkey Roll-Ups</td></tr><tr><td>Sat</td><td>R4 — Turkey Hash</td><td>R17 — Tuna &amp; White Bean Jars</td><td>R43 — Black Bean &amp; Beef Chili</td><td>R67 — Greek Yogurt Ranch</td></tr><tr><td>Sun</td><td>R4 — Turkey Hash</td><td>R28 — Beef &amp; Rice Bowls</td><td>R43 — Black Bean &amp; Beef Chili</td><td>R74 — Protein Trail Mix</td></tr></tbody></table><h4 class="week-h">Week 1 Grocery List</h4><p class="grocery-item"><strong>Produce:</strong>  spinach (1 large bag), cherry tomatoes, cucumbers (3), garlic (1 head), lemons (4), red bell pepper (2), avocados (4)</p><p class="grocery-item"><strong>Proteins:</strong>  chicken breast (3 lbs), lean ground beef (2 lbs), ground turkey (1 lb), deli turkey slices, eggs (2 dozen), canned tuna (6 cans 5 oz)</p><p class="grocery-item"><strong>Dairy:</strong>  Greek yogurt plain (64 oz), cottage cheese 2% (32 oz), feta cheese (4 oz), shredded cheddar (8 oz)</p><p class="grocery-item"><strong>Pantry:</strong>  brown rice (2 lbs), green lentils (1 lb), cannellini beans (2 cans), black beans (2 cans), canned diced tomatoes (2 cans), beef broth (32 oz), chicken broth (32 oz), olive oil, garlic powder, smoked paprika, cumin, Italian seasoning, oregano, red wine vinegar, rolled oats, honey, chia seeds, almond milk (1 carton)</p></div>
   </div>
 </div>
-<div class="page week-page-cont"><div class="page-content"><div class="prose week-body"><h4 class="week-h">Week 1 Grocery List</h4><p>Produce: spinach (1 large bag), cherry tomatoes, cucumbers (3), garlic (1 head), lemons (4), red bell pepper (2), avocados (4), lemon (4)</p><p>Proteins: chicken breast (3 lbs), lean ground beef (2 lbs), ground turkey (1 lb), deli turkey slices, eggs (2 dozen), canned tuna (6 cans 5 oz)</p><p>Dairy: Greek yogurt plain (64 oz), cottage cheese 2% (32 oz), feta cheese (4 oz), shredded cheddar (8 oz)</p><p>Pantry: brown rice (2 lbs), green lentils (1 lb), cannellini beans (2 cans), black beans (2 cans), canned diced tomatoes (2 cans), beef broth (32 oz), chicken broth (32 oz), olive oil, garlic powder, smoked paprika, cumin, Italian seasoning, oregano, red wine vinegar, rolled oats, honey, chia seeds, almond milk (1 carton), tuna cans (6)</p><p>Frozen: none needed this week</p></div></div></div>
 <div class="page week-page">
   <div class="page-content">
     <header class="week-header">
       <h2 class="week-title">WEEK 2 — Find Your Rhythm</h2>
       <div class="week-rule"></div>
     </header>
-    <div class="prose week-body"><p class="week-objective">Objective: Optimize the Sunday session. Introduce freezer prep. Start using components across multiple meals — cook one protein two ways.</p><h4 class="week-h">Sunday Prep Guide</h4><p>Season and bake 2 lbs chicken thighs (Sheet Pan R39) and 1 lb salmon (R35) at the same time on separate pans — 30 min at 425°F.</p><p>While proteins cook: boil 12 eggs. Cook 4 cups brown rice.</p><p>Make a full batch of Black Bean &amp; Beef Chili (R43) — freeze half immediately in individual portions.</p><p>Prep overnight oats for Mon–Tue (R11).</p><p>Mix Tzatziki (R97) — 5 min.</p><p>Roast chickpeas (R70) for snacks — 25 min.</p><h4 class="week-h">Daily Meal Plan</h4><table class="data-table compact"><thead><tr><th>Day</th><th>B</th><th>L</th><th>D</th><th>S</th></tr></thead><tbody><tr><td>Mon</td><td>R11 — PB Overnight Oats</td><td>R19 — Chicken Caesar Jars</td><td>R41 — Sheet Pan Chicken</td><td>R70 — Roasted Chickpeas</td></tr><tr><td>Tue</td><td>R11 — PB Overnight Oats</td><td>R23 — Buffalo Chicken Cups</td><td>R37 — Garlic Butter Salmon</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Wed</td><td>R1 — Egg &amp; Veggie Muffins</td><td>R19 — Chicken Caesar Jars</td><td>R41 — Sheet Pan Chicken</td><td>R70 — Roasted Chickpeas</td></tr><tr><td>Thu</td><td>R1 — Egg &amp; Veggie Muffins</td><td>R23 — Buffalo Chicken Cups</td><td>R37 — Garlic Butter Salmon</td><td>R68 — Almond &amp; Cheese Pack</td></tr><tr><td>Fri</td><td>R14 — Cottage Cheese Scramble</td><td>R18 — Lemon Herb Salmon</td><td>R43 — Chili (from freezer)</td><td>R66 — Tuna-Stuffed Peppers</td></tr><tr><td>Sat</td><td>R8 — Protein Pancakes</td><td>R21 — Egg Salad Wraps</td><td>R31 — Teriyaki Chicken Bowls</td><td>R73 — Greek Yogurt &amp; Honey</td></tr><tr><td>Sun</td><td>R8 — Protein Pancakes</td><td>R24 — Tuna Pasta Salad</td><td>R31 — Teriyaki Chicken Bowls</td><td>R61 — PB Protein Balls</td></tr></tbody></table></div>
+    <div class="prose week-body"><p class="week-objective">Objective: Optimize the Sunday session. Introduce freezer prep. Start using components across multiple meals — cook one protein two ways.</p><h4 class="week-h">Sunday Prep Guide</h4><p>Season and bake 2 lbs chicken thighs (Sheet Pan R39) and 1 lb salmon (R35) at the same time on separate pans — 30 min at 425°F.</p><p>While proteins cook: boil 12 eggs. Cook 4 cups brown rice.</p><p>Make a full batch of Black Bean &amp; Beef Chili (R43) — freeze half immediately in individual portions.</p><p>Prep overnight oats for Mon–Tue (R11).</p><p>Mix Tzatziki (R97) — 5 min.</p><p>Roast chickpeas (R70) for snacks — 25 min.</p><h4 class="week-h">Daily Meal Plan</h4><table class="data-table compact"><thead><tr><th>Day</th><th>B</th><th>L</th><th>D</th><th>S</th></tr></thead><tbody><tr><td>Mon</td><td>R11 — PB Overnight Oats</td><td>R19 — Chicken Caesar Jars</td><td>R41 — Sheet Pan Chicken</td><td>R70 — Roasted Chickpeas</td></tr><tr><td>Tue</td><td>R11 — PB Overnight Oats</td><td>R23 — Buffalo Chicken Cups</td><td>R37 — Garlic Butter Salmon</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Wed</td><td>R1 — Egg &amp; Veggie Muffins</td><td>R19 — Chicken Caesar Jars</td><td>R41 — Sheet Pan Chicken</td><td>R70 — Roasted Chickpeas</td></tr><tr><td>Thu</td><td>R1 — Egg &amp; Veggie Muffins</td><td>R23 — Buffalo Chicken Cups</td><td>R37 — Garlic Butter Salmon</td><td>R68 — Almond &amp; Cheese Pack</td></tr><tr><td>Fri</td><td>R14 — Cottage Cheese Scramble</td><td>R18 — Lemon Herb Salmon</td><td>R43 — Chili (from freezer)</td><td>R66 — Tuna-Stuffed Peppers</td></tr><tr><td>Sat</td><td>R8 — Protein Pancakes</td><td>R21 — Egg Salad Wraps</td><td>R31 — Teriyaki Chicken Bowls</td><td>R73 — Greek Yogurt &amp; Honey</td></tr><tr><td>Sun</td><td>R8 — Protein Pancakes</td><td>R24 — Tuna Pasta Salad</td><td>R31 — Teriyaki Chicken Bowls</td><td>R61 — PB Protein Balls</td></tr></tbody></table><h4 class="week-h">Week 2 Grocery List</h4><p class="grocery-item"><strong>Produce:</strong>  romaine lettuce (2 heads), cherry tomatoes, cucumbers (3), garlic, lemons (4), avocados (3), broccoli (1 head), asparagus (1 lb), mushrooms (8 oz)</p><p class="grocery-item"><strong>Proteins:</strong>  chicken thighs bone-in (2 lbs), chicken breast (2 lbs), salmon fillets (1.5 lbs), lean ground beef (1.5 lbs), eggs (2 dozen), canned tuna (6 cans)</p><p class="grocery-item"><strong>Dairy:</strong>  Greek yogurt plain (64 oz), cottage cheese (32 oz), shredded cheddar (8 oz), Parmesan (2 oz), mozzarella string cheese (8 count)</p><p class="grocery-item"><strong>Pantry:</strong>  whole wheat pasta (12 oz), brown rice (2 lbs), chickpeas (2 cans), black beans (2 cans), beef broth (32 oz), crushed tomatoes (1 large can), olive oil, soy sauce reduced-sodium, honey, sesame oil, rice vinegar, Dijon mustard, whole wheat breadcrumbs, rolled oats, peanut butter (natural)</p><p class="grocery-item"><strong>Frozen:</strong>  edamame (12 oz bag)</p></div>
   </div>
 </div>
-<div class="page week-page-cont"><div class="page-content"><div class="prose week-body"><h4 class="week-h">Week 2 Grocery List</h4><p>Produce: romaine lettuce (2 heads), cherry tomatoes, cucumbers (3), garlic, lemons (4), avocados (3), broccoli (1 head), asparagus (1 lb), mushrooms (8 oz)</p><p>Proteins: chicken thighs bone-in (2 lbs), chicken breast (2 lbs), salmon fillets (1.5 lbs), lean ground beef (1.5 lbs), eggs (2 dozen), canned tuna (6 cans)</p><p>Dairy: Greek yogurt plain (64 oz), cottage cheese (32 oz), shredded cheddar (8 oz), Parmesan (2 oz), mozzarella string cheese (8 count)</p><p>Pantry: whole wheat pasta (12 oz), brown rice (2 lbs), chickpeas (2 cans), black beans (2 cans), beef broth (32 oz), crushed tomatoes (1 large can), olive oil, soy sauce reduced-sodium, honey, sesame oil, rice vinegar, Dijon mustard, whole wheat breadcrumbs, rolled oats, peanut butter (natural)</p><p>Frozen: edamame (12 oz bag)</p></div></div></div>
 <div class="page week-page">
   <div class="page-content">
     <header class="week-header">
       <h2 class="week-title">WEEK 3 — Add Variety</h2>
       <div class="week-rule"></div>
     </header>
-    <div class="prose week-body"><p class="week-objective">Objective: Explore new protein sources. This week introduces fish and legumes as primary proteins — not just supporting ingredients. Use swap suggestions freely.</p><h4 class="week-h">Sunday Prep Guide</h4><p>Make a full batch of Turkey &amp; Sweet Potato Chili (R82) in the slow cooker — set it and forget it (6 hrs).</p><p>Bake Salmon &amp; Sweet Potato Sheet Pan (R53) — 25 min.</p><p>Cook a big batch of lentils from scratch (2 cups dry) for use across multiple recipes.</p><p>Prep 6 overnight oats jars for the whole week.</p><p>Make Peanut Sauce (R100) — 5 min.</p><p>Hard-boil 10 eggs.</p><h4 class="week-h">Daily Meal Plan</h4><table class="data-table compact"><thead><tr><th>Day</th><th>B</th><th>L</th><th>D</th><th>S</th></tr></thead><tbody><tr><td>Mon</td><td>R3 — Overnight Oats</td><td>R22 — Chickpea Veggie Bowl</td><td>R82 — Turkey Sweet Potato Chili</td><td>R64 — Cottage Cheese Dip</td></tr><tr><td>Tue</td><td>R3 — Overnight Oats</td><td>R26 — Asian Chicken Noodle Salad</td><td>R53 — Salmon Sweet Potato Sheet Pan</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Wed</td><td>R9 — Cottage Cheese Bowl</td><td>R22 — Chickpea Veggie Bowl</td><td>R82 — Turkey Sweet Potato Chili</td><td>R66 — Tuna-Stuffed Peppers</td></tr><tr><td>Thu</td><td>R9 — Cottage Cheese Bowl</td><td>R30 — Lentil Mason Jar Salad</td><td>R53 — Salmon Sweet Potato Sheet Pan</td><td>R64 — Cottage Cheese Dip</td></tr><tr><td>Fri</td><td>R13 — Banana Smoothie Bowl</td><td>R26 — Asian Chicken Noodle Salad</td><td>R81 — Shrimp &amp; Corn Chowder</td><td>R68 — Almond &amp; Cheese Pack</td></tr><tr><td>Sat</td><td>R7 — Black Bean Scramble</td><td>R30 — Lentil Mason Jar Salad</td><td>R81 — Shrimp &amp; Corn Chowder</td><td>R71 — Cottage Cheese Toast</td></tr><tr><td>Sun</td><td>R7 — Black Bean Scramble</td><td>R27 — White Bean &amp; Tuna Salad</td><td>R80 — Smoky Chickpea &amp; Chicken</td><td>R61 — PB Protein Balls</td></tr></tbody></table></div>
+    <div class="prose week-body"><p class="week-objective">Objective: Explore new protein sources. This week introduces fish and legumes as primary proteins — not just supporting ingredients. Use swap suggestions freely.</p><h4 class="week-h">Sunday Prep Guide</h4><p>Make a full batch of Turkey &amp; Sweet Potato Chili (R82) in the slow cooker — set it and forget it (6 hrs).</p><p>Bake Salmon &amp; Sweet Potato Sheet Pan (R53) — 25 min.</p><p>Cook a big batch of lentils from scratch (2 cups dry) for use across multiple recipes.</p><p>Prep 6 overnight oats jars for the whole week.</p><p>Make Peanut Sauce (R100) — 5 min.</p><p>Hard-boil 10 eggs.</p><h4 class="week-h">Daily Meal Plan</h4><table class="data-table compact"><thead><tr><th>Day</th><th>B</th><th>L</th><th>D</th><th>S</th></tr></thead><tbody><tr><td>Mon</td><td>R3 — Overnight Oats</td><td>R22 — Chickpea Veggie Bowl</td><td>R82 — Turkey Sweet Potato Chili</td><td>R64 — Cottage Cheese Dip</td></tr><tr><td>Tue</td><td>R3 — Overnight Oats</td><td>R26 — Asian Chicken Noodle Salad</td><td>R53 — Salmon Sweet Potato Sheet Pan</td><td>R62 — Egg &amp; Avocado Box</td></tr><tr><td>Wed</td><td>R9 — Cottage Cheese Bowl</td><td>R22 — Chickpea Veggie Bowl</td><td>R82 — Turkey Sweet Potato Chili</td><td>R66 — Tuna-Stuffed Peppers</td></tr><tr><td>Thu</td><td>R9 — Cottage Cheese Bowl</td><td>R30 — Lentil Mason Jar Salad</td><td>R53 — Salmon Sweet Potato Sheet Pan</td><td>R64 — Cottage Cheese Dip</td></tr><tr><td>Fri</td><td>R13 — Banana Smoothie Bowl</td><td>R26 — Asian Chicken Noodle Salad</td><td>R81 — Shrimp &amp; Corn Chowder</td><td>R68 — Almond &amp; Cheese Pack</td></tr><tr><td>Sat</td><td>R7 — Black Bean Scramble</td><td>R30 — Lentil Mason Jar Salad</td><td>R81 — Shrimp &amp; Corn Chowder</td><td>R71 — Cottage Cheese Toast</td></tr><tr><td>Sun</td><td>R7 — Black Bean Scramble</td><td>R27 — White Bean &amp; Tuna Salad</td><td>R80 — Smoky Chickpea &amp; Chicken</td><td>R61 — PB Protein Balls</td></tr></tbody></table><p class="week-callout">Swap It this week: Not a fan of salmon? Use cod (R45) instead. No shrimp? Use canned tuna mixed into the chowder. Do not eat legumes? Replace lentil salad with Chicken Caesar Jars (R19).</p><h4 class="week-h">Week 3 Grocery List</h4><p class="grocery-item"><strong>Produce:</strong>  sweet potatoes (4), broccoli, zucchini (2), red bell peppers (3), cucumber (3), cherry tomatoes, avocados (3), fresh spinach (1 bag), limes (4), banana (bunch)</p><p class="grocery-item"><strong>Proteins:</strong>  ground turkey (1.5 lbs), salmon fillets (1.5 lbs), shrimp 1.5 lbs (frozen OK), chicken breast (1 lb), eggs (1 dozen), canned tuna (4 cans)</p><p class="grocery-item"><strong>Dairy:</strong>  Greek yogurt plain (64 oz), cottage cheese 2% (48 oz), feta cheese (4 oz), almond butter (1 jar)</p><p class="grocery-item"><strong>Pantry:</strong>  green or brown lentils (2 lbs), chickpeas (3 cans), white beans (2 cans), black beans (1 can), cannellini beans (2 cans), diced tomatoes (2 cans), chicken broth (48 oz), brown rice (2 lbs), whole wheat pasta (8 oz), soy sauce, sesame oil, rice vinegar, peanut butter, olive oil, honey, rolled oats, chia seeds</p><p class="grocery-item"><strong>Frozen:</strong>  corn (1 bag), edamame (1 bag), potatoes (optional for chowder shortcut)</p></div>
   </div>
 </div>
-<div class="page week-page-cont"><div class="page-content"><div class="prose week-body"><p class="week-callout">Swap It this week: Not a fan of salmon? Use cod (R45) instead. No shrimp? Use canned tuna mixed into the chowder. Do not eat legumes? Replace lentil salad with Chicken Caesar Jars (R19).</p><h4 class="week-h">Week 3 Grocery List</h4><p>Produce: sweet potatoes (4), broccoli, zucchini (2), red bell peppers (3), cucumber (3), cherry tomatoes, avocados (3), fresh spinach (1 bag), limes (4), banana (bunch)</p><p>Proteins: ground turkey (1.5 lbs), salmon fillets (1.5 lbs), shrimp 1.5 lbs (frozen OK), chicken breast (1 lb), eggs (1 dozen), canned tuna (4 cans)</p><p>Dairy: Greek yogurt plain (64 oz), cottage cheese 2% (48 oz), feta cheese (4 oz), almond butter (1 jar)</p><p>Pantry: green or brown lentils (2 lbs), chickpeas (3 cans), white beans (2 cans), black beans (1 can), cannellini beans (2 cans), diced tomatoes (2 cans), chicken broth (48 oz), brown rice (2 lbs), whole wheat pasta (8 oz), soy sauce, sesame oil, rice vinegar, peanut butter, olive oil, honey, rolled oats, chia seeds</p><p>Frozen: corn (1 bag), edamame (1 bag), potatoes (optional for chowder shortcut)</p></div></div></div>
 <div class="page week-page">
   <div class="page-content">
     <header class="week-header">
@@ -4663,7 +4693,6 @@ html,body{
     </div>
   </div>
 </div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page bonus-page">
   <div class="page-content">
     <header class="chapter-head">
@@ -4676,7 +4705,6 @@ html,body{
 </div>
 <div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p>Do you enjoy meal prepping and eating the same meal multiple days in a row?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>I dislike it</li><li class="quiz-opt"><strong>2 pts</strong><br>It is fine for 2–3 days</li><li class="quiz-opt"><strong>3 pts</strong><br>No problem</li></ul><p>How important is it to you that your meals taste restaurant-quality?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Very — I easily abandon food that is not satisfying</li><li class="quiz-opt"><strong>2 pts</strong><br>Somewhat</li><li class="quiz-opt"><strong>3 pts</strong><br>Not very — function over flavor</li></ul><p>Do you have a history of food allergies or intolerances?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Yes, multiple restrictions</li><li class="quiz-opt"><strong>2 pts</strong><br>One or two</li><li class="quiz-opt"><strong>3 pts</strong><br>None</li></ul><h4 class="bonus-h4">DIET HISTORY</h4><p>How many times have you attempted a structured diet or meal plan?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>More than 5 times</li><li class="quiz-opt"><strong>2 pts</strong><br>2–4 times</li><li class="quiz-opt"><strong>3 pts</strong><br>1 time or never</li></ul><p>What is the longest you have ever stuck with a diet?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Less than 2 weeks</li><li class="quiz-opt"><strong>2 pts</strong><br>2–8 weeks</li><li class="quiz-opt"><strong>3 pts</strong><br>More than 2 months</li></ul><p>What is the primary reason your past diets have failed?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Willpower or cravings</li><li class="quiz-opt"><strong>2 pts</strong><br>Lack of time</li><li class="quiz-opt"><strong>3 pts</strong><br>Boredom with the food</li></ul><p>Have you ever used a meal prep system before?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>No</li><li class="quiz-opt"><strong>2 pts</strong><br>Yes, briefly</li><li class="quiz-opt"><strong>3 pts</strong><br>Yes, regularly</li></ul><h4 class="bonus-h4">GOALS AND ACTIVITY</h4><p>How much weight are you looking to lose?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>30+ lbs</li><li class="quiz-opt"><strong>2 pts</strong><br>15–30 lbs</li><li class="quiz-opt"><strong>3 pts</strong><br>Under 15 lbs</li></ul><p>How would you describe your current activity level?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Sedentary — mostly sitting</li><li class="quiz-opt"><strong>2 pts</strong><br>Lightly active — some walking</li><li class="quiz-opt"><strong>3 pts</strong><br>Active — exercise 3+ days per week</li></ul></div></div></div>
 <div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p>Do you currently track calories or macros?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>No, never</li><li class="quiz-opt"><strong>2 pts</strong><br>Occasionally</li><li class="quiz-opt"><strong>3 pts</strong><br>Yes, regularly</li></ul><p>What is your primary health goal?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Lose weight</li><li class="quiz-opt"><strong>2 pts</strong><br>Lose weight and build better habits</li><li class="quiz-opt"><strong>3 pts</strong><br>Lose weight and improve fitness</li></ul><h4 class="bonus-h4">MENTAL AND EMOTIONAL</h4><p>How confident are you that you will follow this plan for 30 days?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Low confidence</li><li class="quiz-opt"><strong>2 pts</strong><br>Moderate confidence</li><li class="quiz-opt"><strong>3 pts</strong><br>High confidence</li></ul><p>How do you handle a &quot;bad day&quot; where you eat off-plan?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>I usually give up entirely</li><li class="quiz-opt"><strong>2 pts</strong><br>I feel guilty but continue</li><li class="quiz-opt"><strong>3 pts</strong><br>I get back on track the next meal</li></ul><p>How important is seeing results quickly to staying motivated?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Very — I need results in week one or I lose motivation</li><li class="quiz-opt"><strong>2 pts</strong><br>Somewhat</li><li class="quiz-opt"><strong>3 pts</strong><br>I can stay patient for 2–4 weeks</li></ul><h4 class="bonus-q">YOUR SCORE</h4><p class="score-bucket">21–35 points — BEGINNER</p><p>Start with Week 1 of the plan and follow it exactly. Do not skip ahead. Your goal this month is not perfection — it is consistency. Complete your Sunday prep session every week, even if it is only 45 minutes and only three things. Focus on the Breakfasts, Snacks, and Soups chapters. Meals that reheat easily and require no assembly keep things simple.</p><p class="score-bucket">36–50 points — INTERMEDIATE</p><p>Start with Week 1 but you can move through the weeks more quickly. By Week 2, try introducing two new protein sources you have not used before. You are comfortable in the kitchen — trust that and experiment with the sauces in Chapter 8. The Mix-and-Match Matrix in Week 4 is made for you.</p><p class="score-bucket">51–63 points — ADVANCED</p><p>You already know how to cook and meal prep. What you need is variety and a smarter structure. Jump to Week 2 and go straight for the more complex recipes — Creamy Tuscan Chicken, Garlic Shrimp &amp; Zucchini Noodles, Chicken Tikka-Style Skillet. Build your own plan from Week 1 using the Mix-and-Match Matrix. Your focus is on the sauce chapter and ensuring all six protein sources rotate through your week.</p></div></div></div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page bonus-page">
   <div class="page-content">
     <header class="chapter-head">
@@ -4695,10 +4723,64 @@ html,body{
       <h1 class="chapter-h1">BONUS 3 — High-Protein Eating Out Guide</h1>
       <div class="chapter-rule"></div>
     </header>
-    <div class="prose bonus-body"><p>Staying on plan when life happens.</p><p>The plan works best at home. But life means restaurants, work lunches, and road trips. Here is how to stay on track at the 10 most common chains in the US.</p><p>McDonald&#x27;s</p><p> Order: Egg McMuffin + side of scrambled eggs (36g protein together) | Grilled Chicken Sandwich, no sauce</p><p> Avoid: McFlurry, French Fries as a main side, Crispy Chicken (fried)</p><p class="hint hint-hack">Protein hack: Order two Egg McMuffins for a quick 28g breakfast under $5.</p><p>Chipotle</p><p> Order: Burrito bowl with double chicken or steak, black beans, fajita veggies, fresh salsa, Greek yogurt instead of sour cream (40g+ protein)</p><p> Avoid: Chips and guacamole as your primary calories, cheese overload</p><p class="hint hint-hack">Protein hack: Double meat always. The extra cost is worth it. Get the bowl, not the burrito — saves 300 calories.</p><p>Panera Bread</p><p> Order: You Pick 2 — Ten Vegetable Soup + Chicken Noodle Soup | Fuji Apple Chicken Salad (full size)</p><p> Avoid: Mac &amp; Cheese bowls, pastries, lemonade</p><p class="hint hint-hack">Protein hack: Ask for an extra side of chicken on any salad.</p><p>Subway</p><p> Order: Oven-Roasted Chicken or Turkey Breast on whole wheat, load vegetables, no mayo (30g+ protein in a footlong)</p><p> Avoid: Meatball marinara, footlong cookies, creamy sauces</p><p class="hint hint-hack">Protein hack: Double the protein. It costs $1–2 extra and nearly doubles your protein count.</p><p>Chick-fil-A</p><p> Order: Grilled Chicken Sandwich (no sauce) + Grilled Nuggets 8pc | Grilled Market Salad</p><p> Avoid: Waffle fries as your only side, Chick-fil-A Sauce (280 calories), milkshakes</p><p class="hint hint-hack">Protein hack: Grilled Nuggets (25g protein, 130 calories) are one of the best fast food protein options in the country.</p><p>Olive Garden</p><p> Order: Herb-Grilled Salmon | Chicken Margherita | Soup and salad as lighter option</p><p> Avoid: Unlimited breadsticks (they will derail you before your meal arrives), Fettuccine Alfredo</p><p class="hint hint-hack">Protein hack: Ask for the grilled chicken upgrade on any pasta to add 20g protein while keeping the dish satisfying.</p><p>Applebee&#x27;s</p><p> Order: Cedar Salmon | 7 oz House Sirloin with steamed vegetables | Pepper-Crusted Sirloin &amp; Shrimp</p><p> Avoid: Full-size loaded appetizers as your meal, anything described as &quot;crispy&quot; or &quot;loaded&quot;</p><p class="hint hint-hack">Protein hack: Order from the &quot;under 550 calories&quot; menu. Most of those options are surprisingly high in protein.</p><p>Starbucks</p></div>
+    <div class="prose bonus-body"><div class="eating-out-grid">
+        <div class="eo-card">
+            <div class="eo-name">Staying on plan when life happens.</div>
+            <div class="eo-order"><strong>Best:</strong> </div>
+            <div class="eo-hack"><strong>Hack:</strong> </div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">McDonald&#x27;s</div>
+            <div class="eo-order"><strong>Best:</strong> Egg McMuffin + side of scrambled eggs (36g protein together)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Order two Egg McMuffins for a quick 28g breakfast under $5.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Chipotle</div>
+            <div class="eo-order"><strong>Best:</strong> Burrito bowl with double chicken or steak, black beans, fajita veggies, fresh salsa, Greek yogurt instead of sour cream (40g+ protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Double meat always. The extra cost is worth it. Get the bowl, not the burrito — saves 300 calories.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Panera Bread</div>
+            <div class="eo-order"><strong>Best:</strong> You Pick 2 — Ten Vegetable Soup + Chicken Noodle Soup</div>
+            <div class="eo-hack"><strong>Hack:</strong> Ask for an extra side of chicken on any salad.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Subway</div>
+            <div class="eo-order"><strong>Best:</strong> Oven-Roasted Chicken or Turkey Breast on whole wheat, load vegetables, no mayo (30g+ protein in a footlong)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Double the protein. It costs $1–2 extra and nearly doubles your protein count.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Chick-fil-A</div>
+            <div class="eo-order"><strong>Best:</strong> Grilled Chicken Sandwich (no sauce) + Grilled Nuggets 8pc</div>
+            <div class="eo-hack"><strong>Hack:</strong> Grilled Nuggets (25g protein, 130 calories) are one of the best fast food protein options in the country.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Olive Garden</div>
+            <div class="eo-order"><strong>Best:</strong> Herb-Grilled Salmon</div>
+            <div class="eo-hack"><strong>Hack:</strong> Ask for the grilled chicken upgrade on any pasta to add 20g protein while keeping the dish satisfying.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Applebee&#x27;s</div>
+            <div class="eo-order"><strong>Best:</strong> Cedar Salmon</div>
+            <div class="eo-hack"><strong>Hack:</strong> Order from the &quot;under 550 calories&quot; menu. Most of those options are surprisingly high in protein.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Starbucks</div>
+            <div class="eo-order"><strong>Best:</strong> Egg White &amp; Roasted Red Pepper Egg Bites (2 bites = 20g protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Pair two Egg Bites with a plain cold brew for a 20g protein breakfast under 300 calories.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">The Cheesecake Factory</div>
+            <div class="eo-order"><strong>Best:</strong> SkinnyLicious Grilled Salmon</div>
+            <div class="eo-hack"><strong>Hack:</strong> The SkinnyLicious menu is legitimate — use it every time.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Domino&#x27;s</div>
+            <div class="eo-order"><strong>Best:</strong> Pacific Veggie or Grilled Chicken pizza, thin crust, 2 slices</div>
+            <div class="eo-hack"><strong>Hack:</strong> Two thin crust slices with grilled chicken + a side of wings = 35g+ protein and still under 600 calories.</div>
+        </div></div></div>
   </div>
 </div>
-<div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p> Order: Egg White &amp; Roasted Red Pepper Egg Bites (2 bites = 20g protein) | Spinach, Feta &amp; Cage-Free Egg White Wrap (20g protein) | Protein Box with hardboiled eggs</p><p> Avoid: Grande Caramel Frappuccino (66g sugar), Banana Bread, Birthday Cake Pops</p><p class="hint hint-hack">Protein hack: Pair two Egg Bites with a plain cold brew for a 20g protein breakfast under 300 calories.</p><p>The Cheesecake Factory</p><p> Order: SkinnyLicious Grilled Salmon | SkinnyLicious Chicken Soft Tacos | Grilled Turkey Burger on lettuce wrap</p><p> Avoid: The famous portions — everything here is 2–3 servings. Ask for a to-go box immediately and pack half before eating.</p><p class="hint hint-hack">Protein hack: The SkinnyLicious menu is legitimate — use it every time.</p><p>Domino&#x27;s</p><p> Order: Pacific Veggie or Grilled Chicken pizza, thin crust, 2 slices | Chicken Wings (plain, not fried) as a protein addition</p><p> Avoid: Extra cheese, stuffed crust, extra-large combo deals that encourage over-ordering</p><p class="hint hint-hack">Protein hack: Two thin crust slices with grilled chicken + a side of wings = 35g+ protein and still under 600 calories.</p></div></div></div>
 <div class="page bonus-page">
   <div class="page-content">
     <header class="chapter-head">
@@ -4709,7 +4791,6 @@ html,body{
     <div class="prose bonus-body"><p>The scale is one data point. Not the only one.</p><p>Weight alone does not tell the full story. Muscle weighs more than fat. A week of weightlifting can make the scale go up while your body is actually improving. This tracker measures what actually matters.</p><p>Weekly Weigh-In and Measurement Log</p><p>Fill in every Sunday morning, before eating, after using the bathroom.</p><table class="data-table"><thead><tr><th>Week</th><th>Weight</th><th>Waist</th><th>Hips</th><th>Thigh</th><th>Arm</th></tr></thead><tbody><tr><td>Start</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 3</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 4</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total Change</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>Take measurements in inches. Measure waist at the narrowest point, hips at the widest point, thigh at the mid-thigh, and arm at the bicep.</p><p>Daily Energy &amp; Hunger Level Log</p><p>Rate each day from 1 (very low) to 5 (very high).</p><table class="data-table"><thead><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody><tr><td>Energy Level</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Hunger Level</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Mood</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>What to look for: As the weeks progress, hunger levels should decrease and energy levels should increase. If both stay high in week 2, increase portion sizes slightly. If energy drops consistently in week 3, make sure you are hitting your protein targets every day.</p><p>Weekly Win Journal</p><p>Every Sunday, write one win that has nothing to do with the scale.</p><table class="data-table"><thead><tr><th>Week</th><th>My non-scale win this week</th></tr></thead><tbody><tr><td>Week 1</td><td></td></tr><tr><td>Week 2</td><td></td></tr><tr><td>Week 3</td><td></td></tr><tr><td>Week 4</td><td></td></tr></tbody></table><p>Examples: &quot;I had energy after dinner for the first time in months.&quot; &quot;I said no to the office donuts and did not feel deprived.&quot; &quot;I fit into jeans I have not worn in two years.&quot; &quot;I cooked every meal this week.&quot; These are the wins that tell you the system is working.</p></div>
   </div>
 </div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page appendix-page"><div class="page-content"><header class="chapter-head">
   <p class="chapter-eyebrow">Appendix A</p>
   <h1 class="chapter-h1">Full Nutritional Index</h1>
@@ -4735,7 +4816,6 @@ html,body{
     <div class="conv-grid"><div class="conv-card"><h3 class="conv-h">Volume</h3><table class="data-table conv-table"><thead><tr><th>US Measurement</th><th>Equivalent</th></tr></thead><tbody><tr><td>1 teaspoon (tsp)</td><td>5 ml</td></tr><tr><td>1 tablespoon (tbsp)</td><td>15 ml / 3 tsp</td></tr><tr><td>1/4 cup</td><td>60 ml / 4 tbsp</td></tr><tr><td>1/3 cup</td><td>80 ml</td></tr><tr><td>1/2 cup</td><td>120 ml</td></tr><tr><td>1 cup</td><td>240 ml / 16 tbsp</td></tr><tr><td>1 fluid oz</td><td>30 ml</td></tr><tr><td>1 pint</td><td>480 ml / 2 cups</td></tr><tr><td>1 quart</td><td>960 ml / 4 cups</td></tr></tbody></table></div><div class="conv-card"><h3 class="conv-h">Weight</h3><table class="data-table conv-table"><thead><tr><th>US</th><th>Metric</th></tr></thead><tbody><tr><td>1 oz</td><td>28g</td></tr><tr><td>4 oz</td><td>113g</td></tr><tr><td>8 oz (1/2 lb)</td><td>227g</td></tr><tr><td>12 oz</td><td>340g</td></tr><tr><td>1 lb (16 oz)</td><td>454g</td></tr><tr><td>1.5 lbs</td><td>680g</td></tr><tr><td>2 lbs</td><td>907g</td></tr></tbody></table></div><div class="conv-card"><h3 class="conv-h">Oven Temperature</h3><table class="data-table conv-table"><thead><tr><th>Fahrenheit</th><th>Celsius</th></tr></thead><tbody><tr><td>325°F</td><td>163°C</td></tr><tr><td>350°F</td><td>177°C</td></tr><tr><td>375°F</td><td>191°C</td></tr><tr><td>400°F</td><td>204°C</td></tr><tr><td>425°F</td><td>218°C</td></tr><tr><td>450°F</td><td>232°C</td></tr></tbody></table></div></div>
   </div>
 </div>
-<div class="page blank-page" data-no-toc="true"></div>
 <div class="page conclusion-page">
   <div class="page-content">
     <header class="chapter-head">

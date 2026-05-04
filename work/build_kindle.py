@@ -923,6 +923,7 @@ body_html = '\n'.join(s if s != TOC_PLACEHOLDER else toc_nav for s in sections)
 
 BROWSER_TOOLBAR = '''<div class="toolbar" id="kindle-toolbar" data-preview-only>
   <a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook.html">Paperback</a>
+  <button id="btnDownload" onclick="downloadClean()">Download Kindle</button>
   <button id="btnPreview" onclick="document.body.classList.toggle('kindle-device');this.textContent=document.body.classList.contains('kindle-device')?'Exit Preview':'Kindle Preview'">Kindle Preview</button>
 </div>
 <div class="kindle-frame" id="kindleFrame" data-preview-only>

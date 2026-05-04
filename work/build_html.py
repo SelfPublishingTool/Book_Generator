@@ -397,12 +397,16 @@ def render_week_body(body_lines):
                 out.append(f'<p class="week-objective">{smart_html(l)}</p>')
             elif l.startswith('Swap It this week:') or l.startswith('Beyond Week'):
                 out.append(f'<p class="week-callout">{smart_html(l)}</p>')
+            elif any(l.startswith(x) for x in ['Produce:', 'Proteins:', 'Dairy:', 'Pantry:', 'Frozen:']):
+                # Compact grocery items
+                parts = l.split(':', 1)
+                out.append(f'<p class="grocery-item"><strong>{esc(parts[0])}:</strong> {smart_html(parts[1])}</p>')
             else:
                 out.append(f'<p>{smart_html(l)}</p>')
             i += 1
     return ''.join(out)
 
-_week_first_limits = [2000, 1940, 2000, 3000]  # per-week page-1 char limits
+_week_first_limits = [4000, 4000, 4000, 4000]  # Aggressively high limits to force single-page fit
 for _wi, w in enumerate(mp['weeks']):
     body_html = render_week_body(w['body_lines'])
     welems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
@@ -493,10 +497,42 @@ def render_bonus_body(body_lines):
                 out.append(f'<p>{smart_html(l)}</p>')
             i += 1
     return ''.join(out)
+def render_eating_out_guide(lines):
+    restaurants = []
+    current = None
+    for l in lines:
+        l = l.strip()
+        if not l: continue
+        # Simple detection for restaurant names vs attributes
+        if any(l.startswith(x) for x in ["Order:", "Avoid:", "Protein hack:"]):
+            if current:
+                if l.startswith("Order:"): current['order'] = l.replace("Order:", "").strip()
+                elif l.startswith("Protein hack:"): current['hack'] = l.replace("Protein hack:", "").strip()
+        else:
+            if len(l) < 35:
+                if current: restaurants.append(current)
+                current = {'name': l, 'order': '', 'hack': ''}
+    if current: restaurants.append(current)
+    
+    html = '<div class="eating-out-grid">'
+    for r in restaurants:
+        order = r['order'].split('|')[0].strip() # Take only the first option if multiple
+        html += f'''
+        <div class="eo-card">
+            <div class="eo-name">{esc(r['name'])}</div>
+            <div class="eo-order"><strong>Best:</strong> {smart_html(order)}</div>
+            <div class="eo-hack"><strong>Hack:</strong> {smart_html(r['hack'])}</div>
+        </div>'''
+    html += '</div>'
+    return html
 
 for b in book['bonus']['bonuses']:
     title = b['title']
-    body_html = render_bonus_body(b['body_lines'])
+    if "Eating Out Guide" in title:
+        # Use special compact grid for the guide
+        body_html = render_eating_out_guide(b['body_lines'])
+    else:
+        body_html = render_bonus_body(b['body_lines'])
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
     if not elems: elems = [body_html]
     # Glue related blocks so they never split across pages
@@ -644,16 +680,6 @@ def _is_chapter_start(html):
     if 'appendix-page' in html:
         return 'chapter-head' in html
     return True
-
-_final = []
-_pnum = 0
-for _p in parts:
-    _pnum += 1
-    if _is_chapter_start(_p) and _pnum % 2 == 0:
-        _final.append(_blank_page)
-        _pnum += 1
-    _final.append(_p)
-parts = _final
 
 body_html = '\n'.join(parts)
 
@@ -1159,6 +1185,10 @@ html,body{
   padding:6px 10px;font-style:italic;font-size:9.5pt;margin:0.4em 0 0.6em;
   font-family:'Source Sans Pro',sans-serif;color:var(--ink);
 }
+.grocery-item{
+  font-size:8.5pt;line-height:1.2;margin-bottom:0.1em;color:var(--ink-soft);
+}
+.grocery-item strong{color:var(--primary-dark);text-transform:uppercase;font-size:7.5pt;letter-spacing:0.04em;}
 .week-callout{
   background:var(--cream);border-left:3px solid var(--primary-dark);
   padding:6px 10px;font-style:italic;font-size:9.5pt;margin:0.4em 0;
@@ -1225,7 +1255,42 @@ html,body{
   font-family: 'Source Sans Pro', sans-serif;
 }
 .bonus-body{margin-top:0;}
-.bonus-body p{font-size:9.5pt;line-height:1.35;margin-bottom:0.2em;}
+.bonus-body p{font-size:9pt;line-height:1.3;margin-bottom:0.15em;}
+
+/* Eating Out Guide Grid */
+.eating-out-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 5px;
+}
+.eo-card {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  border-radius: 5px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.eo-name {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0 0 2px;
+  letter-spacing: 0.05em;
+}
+.eo-order, .eo-hack {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 7.8pt;
+  margin: 0 0 1px;
+  line-height: 1.15;
+  color: var(--ink-soft);
+}
+.eo-order strong, .eo-hack strong { color: var(--ink); }
+
 .score-bucket{
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--ink);
