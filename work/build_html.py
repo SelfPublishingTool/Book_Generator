@@ -634,6 +634,33 @@ parts.append(f'''<div class="page review-page">
   </div>
 </div>''')
 
+# Paperback: force every chapter to start on a recto (right/odd) page.
+# If a chapter-start page would land on an even page, insert a blank left page before it.
+_CHAPTER_STARTS = {
+    'intro-page', 'chapter-cover', 'chapter-cover-new',
+    'mealplan-intro', 'bonus-page', 'appendix-page', 'conclusion-page',
+}
+_blank_page = '<div class="page blank-page" data-no-toc="true"></div>'
+
+def _is_chapter_start(html):
+    has_class = any(f'"page {c}"' in html or f'"page {c} ' in html for c in _CHAPTER_STARTS)
+    if not has_class:
+        return False
+    # Appendix continuation pages (no header) must NOT force recto — only the heading page does
+    if 'appendix-page' in html:
+        return 'chapter-head' in html
+    return True
+
+_final = []
+_pnum = 0
+for _p in parts:
+    _pnum += 1
+    if _is_chapter_start(_p) and _pnum % 2 == 0:
+        _final.append(_blank_page)
+        _pnum += 1
+    _final.append(_p)
+parts = _final
+
 body_html = '\n'.join(parts)
 
 # ----------- CSS -----------
@@ -724,7 +751,9 @@ html,body{
 }
 .page.title-page::after,
 .page.chapter-cover::after,
-.page.legal-page::after{content:none;}
+.page.legal-page::after,
+.page.blank-page::after{content:none;}
+.page.blank-page{background:var(--paper);}
 
 /* Overflow flag (preview only) */
 .page[data-overflow="true"]::before{
@@ -1200,9 +1229,8 @@ html,body{
   color: var(--ink-soft);
   font-family: 'Source Sans Pro', sans-serif;
 }
-.bonus-body{margin-top:1em;}
-.bonus-page-cont .bonus-body{margin-top:0;}
-.bonus-body p{font-size:9.5pt;line-height:1.4;margin-bottom:0.35em;}
+.bonus-body{margin-top:0;}
+.bonus-body p{font-size:9.5pt;line-height:1.35;margin-bottom:0.2em;}
 .score-bucket{
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--ink);
