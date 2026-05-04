@@ -405,17 +405,30 @@ def render_week_body(body_lines):
             i += 1
     return ''.join(out)
 
-for w in mp['weeks']:
+_week_first_limits = [2000, 1940, 2000, 3000]  # per-week page-1 char limits
+for _wi, w in enumerate(mp['weeks']):
     body_html = render_week_body(w['body_lines'])
+    welems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
+    if not welems: welems = [body_html]
+    wlimit, wcont = _week_first_limits[_wi], 2200
+    wchunks = []; wcur = ''
+    for el in welems:
+        if len(wcur) + len(el) > wlimit and wcur:
+            wchunks.append(wcur); wcur = el; wlimit = wcont
+        else:
+            wcur += el
+    if wcur: wchunks.append(wcur)
     parts.append(f'''<div class="page week-page">
   <div class="page-content">
     <header class="week-header">
       <h2 class="week-title">{esc(w['title'])}</h2>
       <div class="week-rule"></div>
     </header>
-    <div class="prose week-body">{body_html}</div>
+    <div class="prose week-body">{wchunks[0]}</div>
   </div>
 </div>''')
+    for wch in wchunks[1:]:
+        parts.append(f'<div class="page week-page-cont"><div class="page-content"><div class="prose week-body">{wch}</div></div></div>')
 
 # 8. Bonus Toolkit
 parts.append(chapter_cover('Chapter 10', 'Your Bonus Toolkit', 'Beyond the recipes', '', color_class='cover-burgundy', ch_intro=book['bonus'].get('intro')))
@@ -518,13 +531,13 @@ for b in book['bonus']['bonuses']:
             merged.append(elems[i]); i += 1
     elems = merged
     if 'Quiz' in title:
-        limit, cont_limit = 2600, 3000
+        limit, cont_limit = 2300, 3000
     elif 'Eating Out' in title:
         limit, cont_limit = 2700, 2200
     elif 'Workout' in title:
         limit, cont_limit = 1100, 2200
     else:
-        limit, cont_limit = 1600, 2200
+        limit, cont_limit = 2200, 2200
     chunks = []; cur = ''
     for el in elems:
         if len(cur) + len(el) > limit and cur:
@@ -620,19 +633,6 @@ parts.append(f'''<div class="page conclusion-page">
   </div>
 </div>''')
 
-# 12. Review section
-review = book['review_section']
-rev_paras = ''.join(f'<p>{smart_html(p)}</p>' for p in review['paragraphs'])
-parts.append(f'''<div class="page review-page">
-  <div class="page-content">
-    <header class="chapter-head">
-      <h2 class="chapter-h1">{esc(review['title'])}</h2>
-      <div class="chapter-rule"></div>
-    </header>
-    <div class="prose">{rev_paras}</div>
-    <div class="end-mark">— End —</div>
-  </div>
-</div>''')
 
 # Paperback: force every chapter to start on a recto (right/odd) page.
 # If a chapter-start page would land on an even page, insert a blank left page before it.
@@ -1142,7 +1142,8 @@ html,body{
 
 /* Meal plan */
 .mealplan-intro .page-content,
-.week-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
+.week-page .page-content,
+.week-page-cont .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
 .mealplan-intro .chapter-h1{font-size:22pt;}
 .checklist{padding-left:1.2em;font-family:'Source Sans Pro',sans-serif;font-size:10pt;}
 .checklist li{margin-bottom:5px;}
@@ -1537,5 +1538,5 @@ html_out = f'''<!DOCTYPE html>
 out = ROOT_DIR / 'High_Protein_Meal_Prep_Cookbook.html'
 out.write_text(html_out, encoding='utf-8')
 print('Wrote', out, 'size:', len(html_out), 'bytes')
-print('Pages:', html_out.count('class="page'))
+print('Pages:', html_out.count('<div class="page '))
 print('Recipe cards:', html_out.count('class="recipe-card"'))
