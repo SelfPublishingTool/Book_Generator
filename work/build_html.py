@@ -183,7 +183,7 @@ def render_recipe(r):
       <span class="badge badge-yield">Yield · {esc(r['yield'])}</span>
       <span class="badge badge-prep">Prep · {esc(r['prep'])}</span>
       <span class="badge badge-cook">{esc(cook_label)} · {esc(r['cook'])}</span>
-      {f'<span class="badge badge-cost">~{esc(r["cost_per_serving"])}/serving</span>' if r.get('cost_per_serving') else ''}
+      {f'<span class="badge badge-cost">{esc(r["cost_per_serving"])}/serving</span>' if r.get('cost_per_serving') else ''}
     </div>
   </header>
   <div class="recipe-body">
@@ -221,9 +221,6 @@ parts.append(f'''<div class="page title-page" data-no-toc="true">
     <div class="title-page-inner">
       <h1 class="tp-title">{esc(book['title'])}</h1>
       <p class="tp-subtitle">{esc(book['subtitle'])}</p>
-      <div class="tp-icon-row">
-        <span class="tp-icon">Eggs</span> <span class="tp-icon">Chicken</span> <span class="tp-icon">Fish</span> <span class="tp-icon">Beef</span> <span class="tp-icon">Legumes</span> <span class="tp-icon">Dairy</span>
-      </div>
       <p class="tp-author">By <strong>{esc(book['author'].replace('By ',''))}</strong></p>
     </div>
   </div>
@@ -1454,17 +1451,55 @@ js = r'''
     bar.className = 'toolbar';
     bar.innerHTML = ''
       + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html">Kindle</a>'
-      + '<a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook_Kindle.html" download="High_Protein_Meal_Prep_Cookbook_Kindle.html">Download Kindle</a>'
       + '<span class="status" id="fitStatus">Checking layout...</span>'
       + '<button id="btnFit" title="Re-run live overflow check">Re-check fit</button>'
       + '<button class="primary" id="btnPDF" title="Save as PDF (8.5 x 11 in portrait)">Convert to PDF</button>';
     document.body.appendChild(bar);
+
     $('#btnPDF').addEventListener('click', function(){
+      var btn = $('#btnPDF');
+      if(btn.disabled) return;
+      btn.disabled = true;
+      btn.textContent = 'Compressing...';
       fitAllPages();
-      window.print();
+      numberPages();
+
+      /* Compress recipe images to JPEG 72% — data URLs load synchronously */
+      var imgs = $$('.recipe-img');
+      var origSrcs = imgs.map(function(img){ return img.src; });
+
+      imgs.forEach(function(img){
+        if(!img.complete || img.naturalWidth === 0) return;
+        try{
+          var c = document.createElement('canvas');
+          var scale = Math.min(1, 540 / img.naturalWidth);
+          c.width  = Math.round(img.naturalWidth  * scale);
+          c.height = Math.round(img.naturalHeight * scale);
+          var ctx = c.getContext('2d');
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          img.src = c.toDataURL('image/jpeg', 0.72);
+        } catch(e){}
+      });
+
+      function restore(){
+        imgs.forEach(function(img,i){ img.src = origSrcs[i]; });
+        btn.disabled = false;
+        btn.textContent = 'Convert to PDF';
+      }
+
+      function onAfterPrint(){
+        window.removeEventListener('afterprint', onAfterPrint);
+        restore();
+      }
+      window.addEventListener('afterprint', onAfterPrint);
+
+      setTimeout(function(){ window.print(); }, 100);
     });
+
     $('#btnFit').addEventListener('click', function(){
-      $('#fitStatus').textContent = 'Re-fitting…';
+      $('#fitStatus').textContent = 'Re-fitting...';
       requestAnimationFrame(function(){ fitAllPages(); updateStatus(); });
     });
   }
@@ -1473,13 +1508,21 @@ js = r'''
     var s = $('#fitStatus');
     if(!s) return;
     var total = $$('.page').length;
-    var overflowed = $$('.page[data-overflow="true"]').length;
+    var tightPages = $$('.page[data-overflow="true"]');
+    var overflowed = tightPages.length;
     if(overflowed === 0){
       s.textContent = 'OK - All ' + total + ' pages fit';
       s.style.color = '#1d1812';
+      s.style.cursor = 'default';
+      s.onclick = null;
     } else {
-      s.textContent = '! ' + overflowed + '/' + total + ' tight pages';
+      var nums = tightPages.map(function(p){ return p.getAttribute('data-page') || '?'; });
+      s.textContent = 'Tight: ' + overflowed + '/' + total + ' (click to list)';
       s.style.color = '#c69c00';
+      s.style.cursor = 'pointer';
+      s.onclick = function(){
+        alert('Tight pages (' + overflowed + '):\n' + nums.join(', '));
+      };
     }
   }
 

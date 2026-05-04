@@ -922,9 +922,8 @@ toc_nav = f'''<nav epub:type="toc" id="toc">
 body_html = '\n'.join(s if s != TOC_PLACEHOLDER else toc_nav for s in sections)
 
 BROWSER_TOOLBAR = '''<div class="toolbar" id="kindle-toolbar" data-preview-only>
-  <a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook.html">📖 Paperback</a>
-  <button id="btnDownload" onclick="downloadClean()">⬇ Download Kindle</button>
-  <button id="btnPreview" onclick="document.body.classList.toggle('kindle-device');this.textContent=document.body.classList.contains('kindle-device')?'✕ Exit Preview':'📱 Kindle Preview'">📱 Kindle Preview</button>
+  <a class="toolbar-link" href="High_Protein_Meal_Prep_Cookbook.html">Paperback</a>
+  <button id="btnPreview" onclick="document.body.classList.toggle('kindle-device');this.textContent=document.body.classList.contains('kindle-device')?'Exit Preview':'Kindle Preview'">Kindle Preview</button>
 </div>
 <div class="kindle-frame" id="kindleFrame" data-preview-only>
   <div class="kindle-screen" id="kindleScreen"></div>
@@ -1048,39 +1047,7 @@ html_out = f'''<?xml version="1.0" encoding="UTF-8"?>
 </body>
 </html>'''
 
-# ─── Embed images as base64 JPEG data URIs ─────────────────────────────────────
-try:
-    from PIL import Image
-    _images_dir = ROOT_DIR / 'images'
-    _KINDLE_MAX_W = 1280
-    _JPEG_Q = 82
-    _cache = {}
-
-    def _img_to_datauri(png_path: Path) -> str:
-        if png_path in _cache:
-            return _cache[png_path]
-        img = Image.open(png_path).convert('RGB')
-        if img.width > _KINDLE_MAX_W:
-            img = img.resize((_KINDLE_MAX_W, int(img.height * _KINDLE_MAX_W / img.width)), Image.LANCZOS)
-        buf = io.BytesIO()
-        img.save(buf, format='JPEG', quality=_JPEG_Q, optimize=True, progressive=True)
-        uri = 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
-        _cache[png_path] = uri
-        return uri
-
-    def _replace_img(m):
-        rel = m.group(1)          # e.g. images/recipe_1.png
-        # strip cache-busting ?v=...
-        rel_clean = re.sub(r'\?.*$', '', rel)
-        png = ROOT_DIR / rel_clean
-        if png.exists():
-            return f'src="{_img_to_datauri(png)}"'
-        return m.group(0)
-
-    html_out = re.sub(r'src="(images/[^"]+)"', _replace_img, html_out)
-    print(f'Images embedded ({len(_cache)} files)')
-except ImportError:
-    print('WARNING: Pillow not installed — images NOT embedded (run: pip install Pillow)')
+# Images remain as external links to keep HTML light; use create_kindle_zip.py for submission.
 
 # ─── Strip emoji (KDP rejects them — triggers LucidaGrande-Bold error) ─────────
 EMOJI_MAP = {
