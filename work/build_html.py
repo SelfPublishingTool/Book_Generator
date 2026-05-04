@@ -467,10 +467,21 @@ def render_bonus_body(body_lines):
                 out.append(f'<p class="hint hint-{cls}">{smart_html(display_l)}</p>')
             elif re.search(r'[abc]\) .*\| [abc]\) ', l):
                 opts = [o.strip() for o in l.split('|')]
-                opts_html = ''.join(f'<div class="quiz-opt">{smart_html(o)}</div>' for o in opts)
-                out.append(f'<div class="quiz-opts">{opts_html}</div>')
-            elif len(l) < 40 and not any(l.startswith(x) for x in ['✅','❌','Protein hack','Session','⏱️']) and i+1 < len(body_lines) and any(body_lines[i+1].strip().startswith(x) for x in ['✅','❌','Protein hack']):
-                out.append(f'<h5 class="restaurant-name">{esc(l)}</h5>')
+                def fmt_opt(o):
+                    m = re.match(r'[abc]\)\s*(.*?)\s*\((\d+ pts?)\)\s*$', o)
+                    if m:
+                        return f'<li class="quiz-opt"><strong>{m.group(2)}</strong><br>{esc(m.group(1))}</li>'
+                    return f'<li class="quiz-opt">{smart_html(o)}</li>'
+                opts_html = ''.join(fmt_opt(o) for o in opts)
+                out.append(f'<ul class="quiz-opts">{opts_html}</ul>')
+            elif len(l) < 40 and not any(l.startswith(x) for x in ['✅','❌','Protein hack','Session','⏱️']):
+                j = i + 1
+                while j < len(body_lines) and not body_lines[j].strip():
+                    j += 1
+                if j < len(body_lines) and any(body_lines[j].strip().startswith(x) for x in ['✅','❌','Protein hack']):
+                    out.append(f'<h5 class="restaurant-name">{esc(l)}</h5>')
+                else:
+                    out.append(f'<p>{smart_html(l)}</p>')
             else:
                 out.append(f'<p>{smart_html(l)}</p>')
             i += 1
@@ -481,11 +492,44 @@ for b in book['bonus']['bonuses']:
     body_html = render_bonus_body(b['body_lines'])
     elems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
     if not elems: elems = [body_html]
-    chunks = []; cur = ''; limit = 1600 # Higher limit because layout is now more compact
+    # Glue related blocks so they never split across pages
+    merged = []
+    i = 0
+    while i < len(elems):
+        if (i + 1 < len(elems) and elems[i].startswith('<p>') and
+                elems[i+1].startswith('<ul class="quiz-opts">')):
+            # Quiz question + answer grid
+            merged.append(elems[i] + elems[i+1]); i += 2
+        elif (elems[i].startswith('<h5') and i + 1 < len(elems) and 'hint' in elems[i+1]):
+            # Restaurant name + all 3 hint lines (order/avoid/hack)
+            block = elems[i]; i += 1
+            while i < len(elems) and 'hint' in elems[i]:
+                block += elems[i]; i += 1
+            merged.append(block)
+        elif ('hint-session' in elems[i] and i + 1 < len(elems) and
+              re.match(r'^<p(?:\s|>)', elems[i+1]) and not re.match(r'^<p\s', elems[i+1])):
+            # Session header + all exercise lines (plain <p> no class) kept together
+            block = elems[i]; i += 1
+            while (i < len(elems) and re.match(r'^<p(?:\s|>)', elems[i]) and
+                   not re.match(r'^<p\s', elems[i])):
+                block += elems[i]; i += 1
+            merged.append(block)
+        else:
+            merged.append(elems[i]); i += 1
+    elems = merged
+    if 'Quiz' in title:
+        limit, cont_limit = 2600, 3000
+    elif 'Eating Out' in title:
+        limit, cont_limit = 2700, 2200
+    elif 'Workout' in title:
+        limit, cont_limit = 1100, 2200
+    else:
+        limit, cont_limit = 1600, 2200
+    chunks = []; cur = ''
     for el in elems:
         if len(cur) + len(el) > limit and cur:
             chunks.append(cur); cur = el
-            limit = 2200 # More for subsequent pages
+            limit = cont_limit
         else:
             cur += el
     if cur: chunks.append(cur)
@@ -1144,6 +1188,8 @@ html,body{
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
   margin-bottom: 1em;
+  list-style: none;
+  padding: 0;
 }
 .quiz-opt{
   background: var(--paper-2);
