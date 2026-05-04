@@ -2,7 +2,8 @@
 """Build Kindle-optimized HTML from book.json for Amazon KDP.
 
 Output: High_Protein_Meal_Prep_Cookbook_Kindle.html (in root dir)
-Submit to KDP as a ZIP: include this HTML + images/ folder.
+Single self-contained file — images embedded as base64 JPEG data URIs.
+Upload this HTML directly to KDP (no ZIP needed).
 
 Key differences from paperback build:
 - Reflowable layout (no fixed 8.5x11 pages)
@@ -11,7 +12,7 @@ Key differences from paperback build:
 - Single-column recipe layout
 - em-based typography (no pt units)
 """
-import json, html, re
+import json, html, re, base64, io
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -19,12 +20,6 @@ ROOT_DIR = BASE_DIR.parent
 
 book = json.loads((BASE_DIR / 'book.json').read_text(encoding='utf-8'))
 
-# Override subtitle for Kindle edition
-KINDLE_SUBTITLE = (
-    "101 Fridge-Friendly Lean & Delicious Low-Carb Recipes with 25g+ Protein Per Meal. "
-    "Cook Once, Eat All Week, and Never Get Bored"
-)
-book['subtitle'] = KINDLE_SUBTITLE
 
 def esc(s):
     return html.escape(s, quote=True) if s else ''
@@ -910,14 +905,6 @@ sections.append(f'''<section class="chapter-section conclusion-section" epub:typ
   <div class="prose">{conc_paras}</div>
 </section>''')
 
-# 12. Review section
-review = book['review_section']
-rev_paras = ''.join(f'<p>{smart_html(p)}</p>' for p in review['paragraphs'])
-sections.append(f'''<section class="review-section" id="review">
-  <h2>{esc(review['title'])}</h2>
-  <div class="prose">{rev_paras}</div>
-  <p class="end-mark">— End —</p>
-</section>''')
 
 # ─── Build TOC nav ─────────────────────────────────────────────────────────────
 toc_items = ''
@@ -993,9 +980,43 @@ html_out = f'''<?xml version="1.0" encoding="UTF-8"?>
 </body>
 </html>'''
 
+# ─── Embed images as base64 JPEG data URIs ─────────────────────────────────────
+try:
+    from PIL import Image
+    _images_dir = ROOT_DIR / 'images'
+    _KINDLE_MAX_W = 1280
+    _JPEG_Q = 82
+    _cache = {}
+
+    def _img_to_datauri(png_path: Path) -> str:
+        if png_path in _cache:
+            return _cache[png_path]
+        img = Image.open(png_path).convert('RGB')
+        if img.width > _KINDLE_MAX_W:
+            img = img.resize((_KINDLE_MAX_W, int(img.height * _KINDLE_MAX_W / img.width)), Image.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format='JPEG', quality=_JPEG_Q, optimize=True, progressive=True)
+        uri = 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
+        _cache[png_path] = uri
+        return uri
+
+    def _replace_img(m):
+        rel = m.group(1)          # e.g. images/recipe_1.png
+        # strip cache-busting ?v=...
+        rel_clean = re.sub(r'\?.*$', '', rel)
+        png = ROOT_DIR / rel_clean
+        if png.exists():
+            return f'src="{_img_to_datauri(png)}"'
+        return m.group(0)
+
+    html_out = re.sub(r'src="(images/[^"]+)"', _replace_img, html_out)
+    print(f'Images embedded ({len(_cache)} files)')
+except ImportError:
+    print('WARNING: Pillow not installed — images NOT embedded (run: pip install Pillow)')
+
 out = ROOT_DIR / 'High_Protein_Meal_Prep_Cookbook_Kindle.html'
 out.write_text(html_out, encoding='utf-8')
 print('Wrote', out)
-print('Size:', len(html_out), 'bytes')
+print(f'Size: {len(html_out)/1e6:.1f} MB')
 print('TOC entries:', len(toc_entries))
 print('Recipes:', len(book['recipes']))
