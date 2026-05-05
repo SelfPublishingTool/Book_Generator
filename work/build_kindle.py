@@ -13,6 +13,7 @@ Key differences from paperback build:
 - em-based typography (no pt units)
 """
 import json, html, re, base64, io
+from PIL import Image
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -1048,7 +1049,27 @@ html_out = f'''<?xml version="1.0" encoding="UTF-8"?>
 </body>
 </html>'''
 
-# Images remain as external links to keep HTML light; use create_kindle_zip.py for submission.
+# ─── Embed images as base64 JPEG data URIs (single self-contained file) ──────
+_KINDLE_MAX_W = 1280
+_JPEG_Q = 82
+_images_dir = ROOT_DIR / 'images'
+
+def _replace_img(m):
+    rel = m.group(1)
+    png_path = ROOT_DIR / rel
+    if not png_path.exists():
+        return m.group(0)
+    img = Image.open(png_path).convert('RGB')
+    if img.width > _KINDLE_MAX_W:
+        ratio = _KINDLE_MAX_W / img.width
+        img = img.resize((_KINDLE_MAX_W, int(img.height * ratio)), Image.LANCZOS)
+    buf = io.BytesIO()
+    img.save(buf, format='JPEG', quality=_JPEG_Q, optimize=True, progressive=True)
+    b64 = base64.b64encode(buf.getvalue()).decode('ascii')
+    return f'src="data:image/jpeg;base64,{b64}"'
+
+html_out = re.sub(r'src="(images/[^"]+)"', _replace_img, html_out)
+print('Images embedded')
 
 # ─── Strip emoji (KDP rejects them — triggers LucidaGrande-Bold error) ─────────
 EMOJI_MAP = {

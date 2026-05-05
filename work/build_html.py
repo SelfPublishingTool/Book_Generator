@@ -406,7 +406,7 @@ def render_week_body(body_lines):
             i += 1
     return ''.join(out)
 
-_week_first_limits = [4000, 4000, 4000, 4000]  # Aggressively high limits to force single-page fit
+_week_first_limits = [1975, 1920, 1900, 1290]  # break: W1 after table, W2 after table, W3 after table, W4 after Mix&Match
 for _wi, w in enumerate(mp['weeks']):
     body_html = render_week_body(w['body_lines'])
     welems = re.findall(r'<(?:h\d|p|table|ul|ol)[^>]*>.*?</(?:h\d|p|table|ul|ol)>', body_html, re.DOTALL)
