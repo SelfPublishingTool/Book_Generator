@@ -45,7 +45,7 @@ html,body{
   padding:24px 0 80px;gap:18px;
 }
 
-/* PAGE — fixed 8.5x11 portrait, no inner hardcoded heights */
+
 .page{
   width:8.5in;
   height:11in;
@@ -61,10 +61,7 @@ html,body{
 }
 .page.title-page,
 .page.chapter-cover{padding:0;}
-/* KDP 8.5×11 paperback margins (revised, more efficient — still KDP-compliant):
-   top/left/right 0.5in (above the 0.5in minimum required), bottom 0.75in to
-   reserve space for the page number + 5mm safety. Gutter on bound side is also
-   0.5in which is KDP-safe up to 300 pages. */
+
 .page{ 
   --page-margin-x: 0.6in; 
   --page-margin-top: 0.6in; 
@@ -75,7 +72,7 @@ html,body{
   height:100%;
   padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);
   display:flex;flex-direction:column;
-  /* top center keeps left/right margins symmetric when auto-fit scales the content */
+  
   transform-origin:top center;
 }
 .page.title-page .page-content,
@@ -95,7 +92,7 @@ html,body{
 .page.blank-page::after{content:none;}
 .page.blank-page{background:var(--paper);}
 
-/* Overflow flag (preview only) */
+
 .page[data-overflow="true"]::before{
   content:'CONTENT TIGHT';
   position:absolute;top:8px;right:8px;
@@ -104,7 +101,7 @@ html,body{
   font-family:'Source Sans Pro',sans-serif;z-index:10;
 }
 
-/* Title page */
+
 .title-page{
   background:var(--paper);
   color:var(--ink);
@@ -138,7 +135,7 @@ html,body{
 }
 .tp-author strong{color:var(--ink);}
 
-/* Copyright page */
+
 .legal-inner{font-size:11.2pt;line-height:1.5;color:var(--ink);}
 .legal-h{
   text-align:center;font-family:'Source Sans Pro',sans-serif;
@@ -181,7 +178,7 @@ html,body{
   background-size:6px 1px;
   background-position:0 calc(100% - 0.18em);
   background-repeat:repeat-x;
-  white-space:normal !important; /* Fix: allow wrap */
+  white-space:normal !important; 
   overflow:hidden;
 }
 .toc-list .toc-text-inner{background:var(--paper);padding-right:0.4em;}
@@ -196,7 +193,7 @@ html,body{
 .toc-list .toc-h2 .toc-text-inner{font-style:italic;}
 .toc-list .toc-h3{font-size:7.5pt;padding-left:0.3em;color:var(--ink-soft);opacity:0.9;}
 
-/* Chapter heads */
+
 .chapter-head{margin:0 0 1.0em;}
 .chapter-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
@@ -214,7 +211,7 @@ html,body{
 }
 .chapter-rule{width:64px;height:2px;background:var(--primary);margin:0.4em 0 0;}
 
-/* Chapter cover — white background, no heavy ink for lower KDP cost */
+
 .chapter-cover{color:var(--ink);background:var(--paper);}
 .chapter-cover .page-content{align-items:center;justify-content:center;}
 .chapter-cover-inner{
@@ -270,7 +267,7 @@ html,body{
 .chapter-strategy li::before{
   content:'*';position:absolute;left:-1.2em;color:var(--primary-dark);font-weight:700;
 }
-/* All chapter cover variants use white background for low ink cost */
+
 .chapter-cover.cover-night,
 .chapter-cover.cover-charcoal,
 .chapter-cover.cover-coffee,
@@ -279,7 +276,7 @@ html,body{
 .chapter-cover.cover-burgundy,
 .chapter-cover.cover-ink{background:var(--paper);}
 
-/* Prose */
+
 .prose p{margin:0 0 1.2em;text-align:justify;font-size:11pt;line-height:1.55;}
 .prose p strong{color:var(--primary-dark);}
 .prose-h3{
@@ -287,7 +284,7 @@ html,body{
   font-size:15pt;color:var(--primary-dark);margin:1em 0 0.4em;font-weight:700;
 }
 
-/* Chapter 1 */
+
 .page-frame{display:flex;flex-direction:column;gap:1em;}
 .prep-section{padding:0.5em 0;}
 .prep-h2{
@@ -297,7 +294,7 @@ html,body{
 }
 .prep-section .prose p{font-size:11pt;line-height:1.5;margin-bottom:0.45em;}
 
-/* Tables */
+
 .data-table{
   width:100%;border-collapse:collapse;font-size:9.5pt;
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
@@ -315,7 +312,7 @@ html,body{
 .data-table tbody tr:nth-child(even) td{background:var(--cream-2);}
 .data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:9pt;}
 
-/* RECIPE PAGE — 2 columns side by side, same KDP margins as content pages */
+
 .recipe-page .page-content{padding:0.85in var(--page-margin-x) var(--page-margin-bottom);}
 .recipe-page::before{
   content:attr(data-chapter);
@@ -326,9 +323,9 @@ html,body{
 }
 .recipe-grid{
   display:grid;
-  /* minmax(0, 1fr) prevents card content from making one column wider than the other */
+  
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  /* 1fr row fills the entire available vertical space — cards stretch to full height */
+  
   grid-template-rows:1fr;
   gap:0.18in;
   flex:1 1 auto;min-height:0;
@@ -352,7 +349,7 @@ html,body{
   z-index:2;
 }
 
-/* Illustration banner */
+
 .recipe-illustration{
   position:relative;height:1.9in;flex:0 0 auto;
   border-bottom:1px solid var(--line);
@@ -435,7 +432,7 @@ html,body{
   display:flex;flex-direction:column;gap:5px;
   border-top:1px solid var(--line);
   background:var(--cream);
-  /* Fixed min-height keeps nutrition-box anchored at the top (alignment "a pari") */
+  
   min-height:1.30in;
   justify-content:flex-start;
 }
@@ -470,7 +467,7 @@ html,body{
   font-family:'Source Sans Pro','Helvetica Neue',sans-serif;
   font-size:7.5pt;color:var(--muted);font-style:italic;line-height:1.32;
   border-left:2px solid var(--primary);padding:1px 0 1px 6px;
-  /* Same height across paired cards regardless of text wrap */
+  
   min-height:0.5in;height:0.5in;
 }
 .recipe-storage .storage-text{flex:1 1 auto;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
@@ -480,7 +477,7 @@ html,body{
   background:var(--primary);padding:1px 5px;border-radius:3px;flex:0 0 auto;
 }
 
-/* Meal plan */
+
 .mealplan-intro .page-content,
 .week-page .page-content,
 .week-page-cont .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
@@ -515,7 +512,7 @@ html,body{
   font-family:'Source Sans Pro',sans-serif;color:var(--ink-soft);
 }
 
-/* Bonus */
+
 .bonus-header{margin:0 0 1.2em;padding:0;}
 .bonus-eyebrow{
   font-family:'Source Sans Pro',sans-serif;
@@ -577,7 +574,7 @@ html,body{
 .bonus-body{margin-top:0;}
 .bonus-body p{font-size:11pt;line-height:1.4;margin-bottom:0.2em;}
 
-/* Eating Out Guide Grid */
+
 .eating-out-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -661,14 +658,14 @@ html,body{
 .hint-hack{background:var(--primary-bg);border-left:4px solid var(--primary-dark);color:var(--ink-soft);font-style:italic;border-color:var(--primary-dark);}
 .hint-session{background:#f0f7ff;border-left:4px solid #2196f3;font-weight:700;margin-top:0.6em !important;border-color:#2196f3;}
 .hint-level{background:#fdf4ff;border-left:4px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.8em !important;border-color:#9c27b0;}
-/* Tracker Grid */
+
 .tracker-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
 .tracker-full{margin-top:10px;}
 .tracker-label{font-family:'Source Sans Pro',sans-serif;font-size:10pt;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary-dark);border-bottom:2px solid var(--primary);padding-bottom:3px;margin-bottom:4px;}
 .tracker-note{font-family:'Source Sans Pro',sans-serif;font-size:9pt;color:var(--ink-soft);line-height:1.3;margin-bottom:6px;}
 .tracker-table th,.tracker-table td{padding:6px 8px;font-size:9pt;}
 .tracker-win td:last-child{min-width:3in;}
-/* Workout Grid */
+
 .workout-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;}
 .wk-col{border:1px solid var(--line);border-radius:6px;overflow:hidden;}
 .wk-level{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--ink);font-family:'Source Sans Pro',sans-serif;font-weight:800;font-size:11pt;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;}
@@ -682,7 +679,7 @@ html,body{
   margin:0.4em 0 0.15em;border-bottom:2px solid var(--primary-soft);padding-bottom:2px;
 }
 
-/* Appendix */
+
 .appendix-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
 .app-table th, .app-table td{font-size:9pt;padding:2px 6px;}
 .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;}
@@ -695,7 +692,7 @@ html,body{
 .conv-table th{font-size:9pt;}
 .conv-table td{font-size:9.5pt;}
 
-/* Conclusion / review */
+
 .conclusion-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
 .conclusion-page .prose p{font-size:11pt;line-height:1.55;}
 .review-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);text-align:center;}
@@ -706,7 +703,7 @@ html,body{
   font-size:10pt;font-weight:600;
 }
 
-/* Toolbar */
+
 .toolbar{
   position:fixed;top:14px;right:14px;z-index:1000;
   display:flex;gap:8px;
@@ -740,7 +737,7 @@ html,body{
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* PRINT — explicit portrait, no toolbar, no overflow indicator */
+
 @page{
   size:letter portrait !important;
   margin:0 !important;
@@ -826,6 +823,7 @@ html,body{
 <div class="page ch1-page"><div class="page-content"><div class="page-frame"><section class="prep-section"><h2 class="prep-h2">The 6 Strategic Protein Sources in This Book</h2><div class="prose"><p>Variety is the key to longevity in any eating plan. To prevent &#x27;chicken breast burnout,&#x27; we rotate through six distinct sources, each offering unique nutritional benefits:</p><p>1. Chicken &amp; Poultry — Lean, versatile, and the most affordable high-protein option. We use both chicken breast and thighs. <strong>Pro Tip:</strong> Chicken thighs add more flavor and hold up significantly better in meal prep containers without drying out during reheating compared to breasts.</p><p>2. Beef — Ground beef (90/10 or leaner), sirloin, and stew meat bring essential iron, zinc, and B-vitamins. Beef has a high &#x27;satiety score,&#x27; meaning it keeps you feeling full for longer than almost any other food. We use it in hearty bowls, stews, and chili to provide that &#x27;heavy&#x27; meal feel that many diets lack.</p><p>3. Fish &amp; Seafood — Salmon, cod, tuna, and shrimp deliver omega-3 fatty acids alongside high-quality protein. Salmon in particular is a weight-loss &#x27;superfood&#x27; because it contains healthy fats that satisfy the brain&#x27;s hunger signals. <strong>Pro Tip:</strong> Frozen shrimp is one of the fastest proteins to cook—it goes from frozen to finished in under 5 minutes.</p><p>4. Eggs — Often called the &#x27;perfect protein&#x27; because they contain all the essential amino acids in the right proportions. Whole eggs, egg whites, and hard-boiled eggs appear throughout our breakfast and snack chapters. They are the ultimate budget-friendly protein source.</p><p>5. Legumes — Black beans, white beans, chickpeas, and lentils bring plant-based protein plus a massive amount of fiber. Fiber extends the feeling of fullness and keeps your digestion regular. We often pair legumes with animal proteins to boost the total protein count while adding satisfying volume to the meal.</p><p>6. Dairy — Greek yogurt, cottage cheese, and reduced-fat cheeses are protein powerhouses hiding in plain sight. Plain Greek yogurt has twice the protein of regular yogurt, and cottage cheese is arguably the most versatile ingredient in this book, used in everything from pancakes to savory scrambles.</p><p>No single protein source exceeds 30 percent of the total recipes in this book. That is our variety guarantee—you will never eat the same thing two days in a row unless you choose to.</p></div></section></div></div></div>
 <div class="page ch1-page"><div class="page-content"><div class="page-frame"><section class="prep-section"><h2 class="prep-h2">The Simple Plate Formula: The 50/25/25 Rule</h2><div class="prose"><p>While every recipe in this book is already balanced, understanding the formula behind them will help you when you are eating out or traveling. Every meal follows the same invisible structure:</p><p><strong>50% High-Quality Protein:</strong> This is the anchor of your plate. It should be the first thing you put on your plate and the primary focus of the meal.</p><p><strong>25% Smart Carbohydrates:</strong> We focus on complex, slow-digesting carbs like brown rice, quinoa, sweet potatoes, and oats. These provide the energy your brain needs without the &#x27;crash&#x27; associated with white bread or sugar.</p><p><strong>25% Fibrous Vegetables:</strong> Broccoli, spinach, peppers, and greens add volume and micronutrients. They allow you to eat a larger portion of food for very few calories.</p><p>Add a small amount of healthy fats (olive oil, avocado, nuts) or one of our custom sauces from Chapter 8, and you have a perfect, metabolism-boosting meal. Once you start seeing your meals through this 50/25/25 lens, you will never look at a plate of pasta or a sandwich the same way again.</p></div></section><section class="prep-section"><h2 class="prep-h2">The Sunday Method: The 2-Hour Master Workflow</h2><div class="prose"><p>The entire week of food comes together in one organized prep session. The key is &#x27;parallel processing&#x27;—doing multiple things at once so you aren&#x27;t waiting around. Here is the master sequence:</p><p><strong>0:00 - 0:15: The Pre-Heat &amp; Chop.</strong> Preheat your oven to 400°F. While it heats, chop all the vegetables for the week&#x27;s recipes. Group them by recipe so they are ready to go.</p><p><strong>0:15 - 1:00: The Big Heat.</strong> Start with the proteins that take the longest. Sheet pan chicken or salmon goes in the oven. Ground meat goes on the stovetop. While the meat browns, get your &#x27;batch bases&#x27; started—boil a large pot of water for hard-boiled eggs and start your rice cooker or quinoa pot. These are &#x27;passive&#x27; tasks; they don&#x27;t need your constant attention.</p><p><strong>1:00 - 1:30: The Assembly Line.</strong> As the proteins come out of the oven or off the stove, let them rest for 5 minutes. While they rest, mix any sauces or dressings from Chapter 8. Line up your meal prep containers like an assembly line.</p><p><strong>1:30 - 2:00: The Portion &amp; Pack.</strong> Divide your bases (rice/quinoa) into the containers first, followed by the vegetables, and finally the protein. Let everything cool slightly before putting the lids on to prevent excess condensation, which makes food soggy.</p><p>Total active time: under 2 hours. You have just saved yourself 10+ hours of cooking and cleaning during the work week.</p></div></section></div></div></div>
 <div class="page ch1-page"><div class="page-content"><div class="page-frame"><section class="prep-section"><h2 class="prep-h2">Fridge vs. Freezer: The Golden Rules of Food Safety</h2><div class="prose"><p>To keep your food tasting fresh on Wednesday and Thursday, follow these storage guidelines:</p><p><strong>The 4-Day Fridge Rule:</strong> Most cooked proteins (chicken, beef, pork) and vegetables stay fresh and safe in the fridge for up to 4 days. If you prep on Sunday, your Thursday lunch is the &#x27;cutoff&#x27; for peak freshness.</p><p><strong>The Freezer Backup:</strong> If you prep a full 7 days of meals on Sunday, put the meals for Friday, Saturday, and Sunday in the freezer immediately. Transfer them to the fridge on Thursday night to thaw safely.</p><p><strong>What Freezes Well:</strong> Chili, soups, stews, meatballs, cooked ground beef, and most casseroles freeze beautifully. <strong>What Does NOT Freeze Well:</strong> Fried eggs, cooked fish (it becomes rubbery), raw leafy greens, and anything with avocado or mayo.</p><p><strong>Pro Tip:</strong> Use clear glass containers if possible. They don&#x27;t stain, they are safe for the microwave, and seeing the beautiful food you made makes you much more likely to actually eat it instead of ordering takeout.</p></div></section><section class="prep-section"><h2 class="prep-h2">The High-Protein Pantry: Your &#x27;Emergency&#x27; Kit</h2><div class="prose"><p>Life happens. Sometimes you miss your Sunday prep session. Keep these &#x27;Emergency 5-Minute Protein&#x27; staples in your kitchen at all times, and you&#x27;ll never be tempted by the drive-thru:</p><p>- <strong>Canned Tuna &amp; Salmon:</strong> The ultimate &#x27;no-cook&#x27; protein. Mix with Greek yogurt and lemon for a 30g protein snack in 60 seconds.</p><p>- <strong>Cottage Cheese:</strong> High protein, zero prep. Eat it with fruit for breakfast or black pepper for a savory snack.</p><p>- <strong>Hard-Boiled Eggs:</strong> Keep a dozen in the fridge at all times. They are the perfect &#x27;grab-and-go&#x27; fuel.</p><p>- <strong>Frozen Shrimp:</strong> Defrosts in 5 minutes under cold water and cooks in 3 minutes in a pan.</p><p>- <strong>Greek Yogurt (Plain):</strong> Use it as a base for smoothies, a topping for chili, or as a high-protein substitute for sour cream.</p><p>- <strong>Canned Beans &amp; Lentils:</strong> Drained and rinsed, they add instant protein and fiber to any salad or soup.</p><p>If you have these staples, you are always less than five minutes away from a goal-aligned meal.</p></div></section></div></div></div>
+<div class="page blank-page" data-no-toc="true"><div class="page-content"></div></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
@@ -4493,6 +4491,8 @@ html,body{
     
   </footer>
 </article></div></div></div>
+
+<div class="page blank-page" data-no-toc="true"><div class="page-content"></div></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
@@ -4654,6 +4654,7 @@ html,body{
     <div class="recipe-storage"><span class="storage-label">Storage</span><span class="storage-text">Store in the fridge for up to 1 week. Bring to room temperature and shake before use.</span></div>
   </footer>
 </article></div></div></div>
+<div class="page blank-page" data-no-toc="true"><div class="page-content"></div></div>
 <div class="page chapter-cover-new">
   <div class="page-content">
     <header class="chapter-head">
