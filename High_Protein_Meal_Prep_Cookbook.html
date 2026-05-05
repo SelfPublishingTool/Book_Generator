@@ -280,7 +280,7 @@ html,body{
 .chapter-cover.cover-ink{background:var(--paper);}
 
 /* Prose */
-.prose p{margin:0 0 1.2em;text-align:justify;font-size:11.2pt;line-height:1.55;}
+.prose p{margin:0 0 1.2em;text-align:justify;font-size:11pt;line-height:1.55;}
 .prose p strong{color:var(--primary-dark);}
 .prose-h3{
   font-family:'Cormorant Garamond','Georgia',serif;
@@ -295,7 +295,7 @@ html,body{
   font-size:16pt;font-weight:700;color:var(--primary-dark);
   margin:0 0 0.5em;border-bottom:1px solid var(--line);padding-bottom:0.3em;
 }
-.prep-section .prose p{font-size:12pt;line-height:1.5;margin-bottom:0.45em;}
+.prep-section .prose p{font-size:11pt;line-height:1.5;margin-bottom:0.45em;}
 
 /* Tables */
 .data-table{
@@ -313,7 +313,7 @@ html,body{
   vertical-align:top;
 }
 .data-table tbody tr:nth-child(even) td{background:var(--cream-2);}
-.data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:8.5pt;}
+.data-table.compact th, .data-table.compact td{padding:3px 7px;font-size:9pt;}
 
 /* RECIPE PAGE — 2 columns side by side, same KDP margins as content pages */
 .recipe-page .page-content{padding:0.85in var(--page-margin-x) var(--page-margin-bottom);}
@@ -575,38 +575,62 @@ html,body{
   font-family: 'Source Sans Pro', sans-serif;
 }
 .bonus-body{margin-top:0;}
-.bonus-body p{font-size:9pt;line-height:1.3;margin-bottom:0.15em;}
+.bonus-body p{font-size:11pt;line-height:1.4;margin-bottom:0.2em;}
 
 /* Eating Out Guide Grid */
 .eating-out-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin-top: 4px;
 }
 .eo-card {
   border: 1px solid var(--line);
-  padding: 6px 8px;
-  border-radius: 5px;
+  padding: 5px 8px;
+  border-radius: 4px;
   background: var(--cream);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+}
+.eo-card-header {
+  grid-column: 1 / 4;
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 10px;
+}
+.eo-header-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  font-size: 9pt;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.eo-header-legend {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 7pt;
+  color: var(--ink-soft);
+  line-height: 1.3;
 }
 .eo-name {
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
-  font-size: 8.5pt;
+  font-size: 9.5pt;
   font-weight: 800;
   color: var(--primary-dark);
-  margin: 0 0 2px;
-  letter-spacing: 0.05em;
+  margin: 0 0 3px;
+  letter-spacing: 0.04em;
 }
 .eo-order, .eo-hack {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 7.8pt;
+  font-size: 9pt;
   margin: 0 0 1px;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--ink-soft);
 }
 .eo-order strong, .eo-hack strong { color: var(--ink); }
@@ -637,6 +661,21 @@ html,body{
 .hint-hack{background:var(--primary-bg);border-left:4px solid var(--primary-dark);color:var(--ink-soft);font-style:italic;border-color:var(--primary-dark);}
 .hint-session{background:#f0f7ff;border-left:4px solid #2196f3;font-weight:700;margin-top:0.6em !important;border-color:#2196f3;}
 .hint-level{background:#fdf4ff;border-left:4px solid #9c27b0;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.8em !important;border-color:#9c27b0;}
+/* Tracker Grid */
+.tracker-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
+.tracker-full{margin-top:10px;}
+.tracker-label{font-family:'Source Sans Pro',sans-serif;font-size:10pt;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary-dark);border-bottom:2px solid var(--primary);padding-bottom:3px;margin-bottom:4px;}
+.tracker-note{font-family:'Source Sans Pro',sans-serif;font-size:9pt;color:var(--ink-soft);line-height:1.3;margin-bottom:6px;}
+.tracker-table th,.tracker-table td{padding:6px 8px;font-size:9pt;}
+.tracker-win td:last-child{min-width:3in;}
+/* Workout Grid */
+.workout-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px;}
+.wk-col{border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+.wk-level{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--ink);font-family:'Source Sans Pro',sans-serif;font-weight:800;font-size:11pt;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;}
+.wk-timing{font-family:'Source Sans Pro',sans-serif;font-size:11pt;color:var(--ink-soft);padding:4px 10px 6px;border-bottom:1px solid var(--line);background:var(--cream-2);}
+.wk-session{font-family:'Source Sans Pro',sans-serif;font-size:11pt;font-weight:700;color:#1565c0;padding:7px 10px 3px;text-transform:uppercase;letter-spacing:0.06em;}
+.wk-list{margin:0;padding:2px 10px 10px 26px;list-style:disc;}
+.wk-list li{font-family:'Source Sans Pro',sans-serif;font-size:11pt;line-height:1.4;color:var(--ink);padding:2px 0;}
 .restaurant-name{
   font-family:'Cormorant Garamond','Georgia',serif;
   font-size:14pt;font-weight:700;color:var(--ink);
@@ -645,7 +684,7 @@ html,body{
 
 /* Appendix */
 .appendix-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
-.app-table th, .app-table td{font-size:8.5pt;padding:4px 8px;}
+.app-table th, .app-table td{font-size:9pt;padding:2px 6px;}
 .conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3in;}
 .conv-card{background:var(--cream-2);border:1px solid var(--line);border-radius:6px;padding:0.18in;}
 .conv-card:first-child{grid-column:1 / 3;}
@@ -653,12 +692,12 @@ html,body{
   font-family:'Cormorant Garamond','Georgia',serif;
   color:var(--primary-dark);font-size:14pt;margin:0 0 0.3em;font-weight:700;
 }
-.conv-table th{font-size:8.5pt;}
+.conv-table th{font-size:9pt;}
 .conv-table td{font-size:9.5pt;}
 
 /* Conclusion / review */
 .conclusion-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);}
-.conclusion-page .prose p{font-size:11.5pt;line-height:1.55;}
+.conclusion-page .prose p{font-size:11pt;line-height:1.55;}
 .review-page .page-content{padding:var(--page-margin-top) var(--page-margin-x) var(--page-margin-bottom);text-align:center;}
 .review-page .prose p{font-size:11pt;line-height:1.55;text-align:left;}
 .end-mark{
@@ -4708,7 +4747,7 @@ html,body{
   </div>
 </div>
 <div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p>Do you enjoy meal prepping and eating the same meal multiple days in a row?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>I dislike it</li><li class="quiz-opt"><strong>2 pts</strong><br>It is fine for 2–3 days</li><li class="quiz-opt"><strong>3 pts</strong><br>No problem</li></ul><p>How important is it to you that your meals taste restaurant-quality?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Very — I easily abandon food that is not satisfying</li><li class="quiz-opt"><strong>2 pts</strong><br>Somewhat</li><li class="quiz-opt"><strong>3 pts</strong><br>Not very — function over flavor</li></ul><p>Do you have a history of food allergies or intolerances?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Yes, multiple restrictions</li><li class="quiz-opt"><strong>2 pts</strong><br>One or two</li><li class="quiz-opt"><strong>3 pts</strong><br>None</li></ul><h4 class="bonus-h4">DIET HISTORY</h4><p>How many times have you attempted a structured diet or meal plan?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>More than 5 times</li><li class="quiz-opt"><strong>2 pts</strong><br>2–4 times</li><li class="quiz-opt"><strong>3 pts</strong><br>1 time or never</li></ul><p>What is the longest you have ever stuck with a diet?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Less than 2 weeks</li><li class="quiz-opt"><strong>2 pts</strong><br>2–8 weeks</li><li class="quiz-opt"><strong>3 pts</strong><br>More than 2 months</li></ul><p>What is the primary reason your past diets have failed?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Willpower or cravings</li><li class="quiz-opt"><strong>2 pts</strong><br>Lack of time</li><li class="quiz-opt"><strong>3 pts</strong><br>Boredom with the food</li></ul><p>Have you ever used a meal prep system before?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>No</li><li class="quiz-opt"><strong>2 pts</strong><br>Yes, briefly</li><li class="quiz-opt"><strong>3 pts</strong><br>Yes, regularly</li></ul><h4 class="bonus-h4">GOALS AND ACTIVITY</h4><p>How much weight are you looking to lose?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>30+ lbs</li><li class="quiz-opt"><strong>2 pts</strong><br>15–30 lbs</li><li class="quiz-opt"><strong>3 pts</strong><br>Under 15 lbs</li></ul><p>How would you describe your current activity level?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Sedentary — mostly sitting</li><li class="quiz-opt"><strong>2 pts</strong><br>Lightly active — some walking</li><li class="quiz-opt"><strong>3 pts</strong><br>Active — exercise 3+ days per week</li></ul></div></div></div>
-<div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p>Do you currently track calories or macros?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>No, never</li><li class="quiz-opt"><strong>2 pts</strong><br>Occasionally</li><li class="quiz-opt"><strong>3 pts</strong><br>Yes, regularly</li></ul><p>What is your primary health goal?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Lose weight</li><li class="quiz-opt"><strong>2 pts</strong><br>Lose weight and build better habits</li><li class="quiz-opt"><strong>3 pts</strong><br>Lose weight and improve fitness</li></ul><h4 class="bonus-h4">MENTAL AND EMOTIONAL</h4><p>How confident are you that you will follow this plan for 30 days?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Low confidence</li><li class="quiz-opt"><strong>2 pts</strong><br>Moderate confidence</li><li class="quiz-opt"><strong>3 pts</strong><br>High confidence</li></ul><p>How do you handle a &quot;bad day&quot; where you eat off-plan?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>I usually give up entirely</li><li class="quiz-opt"><strong>2 pts</strong><br>I feel guilty but continue</li><li class="quiz-opt"><strong>3 pts</strong><br>I get back on track the next meal</li></ul><p>How important is seeing results quickly to staying motivated?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Very — I need results in week one or I lose motivation</li><li class="quiz-opt"><strong>2 pts</strong><br>Somewhat</li><li class="quiz-opt"><strong>3 pts</strong><br>I can stay patient for 2–4 weeks</li></ul><h4 class="bonus-q">YOUR SCORE</h4><p class="score-bucket">21–35 points — BEGINNER</p><p>Start with Week 1 of the plan and follow it exactly. Do not skip ahead. Your goal this month is not perfection — it is consistency. Complete your Sunday prep session every week, even if it is only 45 minutes and only three things. Focus on the Breakfasts, Snacks, and Soups chapters. Meals that reheat easily and require no assembly keep things simple.</p><p class="score-bucket">36–50 points — INTERMEDIATE</p><p>Start with Week 1 but you can move through the weeks more quickly. By Week 2, try introducing two new protein sources you have not used before. You are comfortable in the kitchen — trust that and experiment with the sauces in Chapter 8. The Mix-and-Match Matrix in Week 4 is made for you.</p><p class="score-bucket">51–63 points — ADVANCED</p><p>You already know how to cook and meal prep. What you need is variety and a smarter structure. Jump to Week 2 and go straight for the more complex recipes — Creamy Tuscan Chicken, Garlic Shrimp &amp; Zucchini Noodles, Chicken Tikka-Style Skillet. Build your own plan from Week 1 using the Mix-and-Match Matrix. Your focus is on the sauce chapter and ensuring all six protein sources rotate through your week.</p></div></div></div>
+<div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p>Do you currently track calories or macros?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>No, never</li><li class="quiz-opt"><strong>2 pts</strong><br>Occasionally</li><li class="quiz-opt"><strong>3 pts</strong><br>Yes, regularly</li></ul><p>What is your primary health goal?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Lose weight</li><li class="quiz-opt"><strong>2 pts</strong><br>Lose weight and build better habits</li><li class="quiz-opt"><strong>3 pts</strong><br>Lose weight and improve fitness</li></ul><h4 class="bonus-h4">MENTAL AND EMOTIONAL</h4><p>How confident are you that you will follow this plan for 30 days?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Low confidence</li><li class="quiz-opt"><strong>2 pts</strong><br>Moderate confidence</li><li class="quiz-opt"><strong>3 pts</strong><br>High confidence</li></ul><p>How do you handle a &quot;bad day&quot; where you eat off-plan?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>I usually give up entirely</li><li class="quiz-opt"><strong>2 pts</strong><br>I feel guilty but continue</li><li class="quiz-opt"><strong>3 pts</strong><br>I get back on track the next meal</li></ul><p>How important is seeing results quickly to staying motivated?</p><ul class="quiz-opts"><li class="quiz-opt"><strong>1 pt</strong><br>Very — I need results in week one or I lose motivation</li><li class="quiz-opt"><strong>2 pts</strong><br>Somewhat</li><li class="quiz-opt"><strong>3 pts</strong><br>I can stay patient for 2–4 weeks</li></ul><h4 class="bonus-q">YOUR SCORE</h4><p class="score-bucket">21–35 points — BEGINNER</p><p>Start with Week 1 of the plan and follow it exactly. Do not skip ahead. Your goal this month is not perfection — it is consistency. Complete your Sunday prep session every week, even if it is only 45 minutes and only three things. Focus on the Breakfasts, Snacks, and Soups chapters. Meals that reheat easily and require no assembly keep things simple.</p><p class="score-bucket">36–50 points — INTERMEDIATE</p><p>Start with Week 1 but you can move through the weeks more quickly. By Week 2, try introducing two new protein sources you have not used before. You are comfortable in the kitchen — trust that and experiment with the sauces in Chapter 8. The Mix-and-Match Matrix in Week 4 is made for you.</p><p class="score-bucket">51–63 points — ADVANCED</p><p>You know how to cook. What you need is variety and structure. Jump to Week 2 — Creamy Tuscan Chicken, Garlic Shrimp &amp; Zucchini Noodles, Chicken Tikka-Style Skillet. Use the Mix-and-Match Matrix and rotate all six protein sources through your week.</p></div></div></div>
 <div class="page bonus-page">
   <div class="page-content">
     <header class="chapter-head">
@@ -4716,10 +4755,70 @@ html,body{
       <h1 class="chapter-h1">BONUS 2 — 4-Week Home Workout Plan</h1>
       <div class="chapter-rule"></div>
     </header>
-    <div class="prose bonus-body"><p>No equipment. No gym. 15 minutes per session. Three sessions per week.</p><p>Why exercise matters alongside this plan: protein preserves muscle. Exercise builds it. The combination means your body composition changes faster than diet alone — you are not just losing fat, you are reshaping where the weight comes from. These workouts are designed to complement the meal plan, not replace anything. Do three sessions per week on non-consecutive days.</p><p class="hint hint-level">BEGINNER LEVEL — Weeks 1 &amp; 2</p><p>30 seconds work / 20 seconds rest / 3 rounds / 15 minutes total</p><p class="hint hint-session">Session A:</p><p>Wall sit (30 sec)</p><p>Modified push-ups on knees (30 sec)</p><p>Glute bridges (30 sec)</p><p>Standing marching in place (30 sec)</p><p>Bird-dog — alternate sides (30 sec)</p><p class="hint hint-session">Session B:</p><p>Step-touch side to side (30 sec)</p><p>Standing leg raises (30 sec)</p><p>Seated leg lifts (30 sec)</p><p>Superman back extensions (30 sec)</p><p>Standing calf raises (30 sec)</p></div>
+    <div class="prose bonus-body"><p>No equipment. No gym. 3 sessions per week on non-consecutive days. Protein preserves muscle — exercise builds it. Together they reshape your body faster than diet alone.</p><div class="workout-grid">
+      <div class="wk-col">
+        <div class="wk-level">Beginner — Weeks 1 &amp; 2</div>
+        <div class="wk-timing">30s work / 20s rest / 3 rounds / 15 min</div>
+        <div class="wk-session">Session A</div>
+        <ul class="wk-list">
+          <li>Wall sit</li>
+          <li>Modified push-ups on knees</li>
+          <li>Glute bridges</li>
+          <li>Standing marching in place</li>
+          <li>Bird-dog — alternate sides</li>
+        </ul>
+        <div class="wk-session">Session B</div>
+        <ul class="wk-list">
+          <li>Step-touch side to side</li>
+          <li>Standing leg raises</li>
+          <li>Seated leg lifts</li>
+          <li>Superman back extensions</li>
+          <li>Standing calf raises</li>
+        </ul>
+      </div>
+      <div class="wk-col">
+        <div class="wk-level">Intermediate — Weeks 2 &amp; 3</div>
+        <div class="wk-timing">40s work / 20s rest / 3 rounds / 18 min</div>
+        <div class="wk-session">Session A</div>
+        <ul class="wk-list">
+          <li>Bodyweight squats</li>
+          <li>Push-ups</li>
+          <li>Reverse lunges alternating</li>
+          <li>Plank hold</li>
+          <li>Mountain climbers</li>
+        </ul>
+        <div class="wk-session">Session B</div>
+        <ul class="wk-list">
+          <li>Jump squats</li>
+          <li>Tricep dips on a chair</li>
+          <li>Side lunges alternating</li>
+          <li>Hip thrusts</li>
+          <li>High knees</li>
+        </ul>
+      </div>
+      <div class="wk-col">
+        <div class="wk-level">Advanced — Weeks 3 &amp; 4</div>
+        <div class="wk-timing">45s work / 15s rest / 3 rounds / 18 min</div>
+        <div class="wk-session">Session A</div>
+        <ul class="wk-list">
+          <li>Jump squats</li>
+          <li>Push-up to downward dog</li>
+          <li>Bulgarian split squats (each leg)</li>
+          <li>Plank to shoulder tap</li>
+          <li>Burpees</li>
+        </ul>
+        <div class="wk-session">Session B</div>
+        <ul class="wk-list">
+          <li>Speed skaters</li>
+          <li>Decline push-ups (feet on couch)</li>
+          <li>Lateral band walks — slow, controlled</li>
+          <li>Single-leg glute bridge (each side)</li>
+          <li>Tuck jumps</li>
+        </ul>
+      </div>
+    </div></div>
   </div>
 </div>
-<div class="page bonus-page-cont"><div class="page-content"><div class="prose bonus-body"><p class="hint hint-level">INTERMEDIATE LEVEL — Weeks 2 &amp; 3</p><p>40 seconds work / 20 seconds rest / 3 rounds / 18 minutes total</p><p class="hint hint-session">Session A:</p><p>Bodyweight squats (40 sec)</p><p>Push-ups (40 sec)</p><p>Reverse lunges alternating legs (40 sec)</p><p>Plank hold (40 sec)</p><p>Mountain climbers (40 sec)</p><p class="hint hint-session">Session B:</p><p>Jump squats (40 sec)</p><p>Tricep dips on a chair (40 sec)</p><p>Side lunges alternating (40 sec)</p><p>Hip thrusts (40 sec)</p><p>High knees (40 sec)</p><p class="hint hint-level">ADVANCED LEVEL — Weeks 3 &amp; 4</p><p>45 seconds work / 15 seconds rest / 3 rounds / 18 minutes total</p><p class="hint hint-session">Session A:</p><p>Jump squats (45 sec)</p><p>Push-up to downward dog (45 sec)</p><p>Bulgarian split squats (45 sec each leg)</p><p>Plank to alternating shoulder tap (45 sec)</p><p>Burpees (45 sec)</p><p class="hint hint-session">Session B:</p><p>Speed skaters (45 sec)</p><p>Decline push-ups — feet on couch (45 sec)</p><p>Lateral band walks — no band needed, just slow controlled steps (45 sec)</p><p>Single-leg glute bridge (45 sec each side)</p><p>Tuck jumps (45 sec)</p></div></div></div>
 <div class="page bonus-page">
   <div class="page-content">
     <header class="chapter-head">
@@ -4728,11 +4827,7 @@ html,body{
       <div class="chapter-rule"></div>
     </header>
     <div class="prose bonus-body"><div class="eating-out-grid">
-        <div class="eo-card">
-            <div class="eo-name">Staying on plan when life happens.</div>
-            <div class="eo-order"><strong>Best:</strong> </div>
-            <div class="eo-hack"><strong>Hack:</strong> </div>
-        </div>
+
         <div class="eo-card">
             <div class="eo-name">McDonald&#x27;s</div>
             <div class="eo-order"><strong>Best:</strong> Egg McMuffin + side of scrambled eggs (36g protein together)</div>
@@ -4781,7 +4876,47 @@ html,body{
         <div class="eo-card">
             <div class="eo-name">Domino&#x27;s</div>
             <div class="eo-order"><strong>Best:</strong> Pacific Veggie or Grilled Chicken pizza, thin crust, 2 slices</div>
-            <div class="eo-hack"><strong>Hack:</strong> Two thin crust slices with grilled chicken + a side of wings = 35g+ protein and still under 600 calories.</div>
+            <div class="eo-hack"><strong>Hack:</strong> Two thin crust slices with grilled chicken + a side of wings = 35g+ protein, under 600 cal.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Taco Bell</div>
+            <div class="eo-order"><strong>Best:</strong> Power Menu Bowl with double steak or chicken (36g+ protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Order "Fresco-style" to swap cheese/sour cream for salsa — cuts 100+ cal with zero protein loss.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Wendy&#x27;s</div>
+            <div class="eo-order"><strong>Best:</strong> Grilled Chicken Sandwich + Small Chili (38g protein combined)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Small chili = 170 cal and 15g protein. Cheapest high-protein side at any fast food chain.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Sweetgreen</div>
+            <div class="eo-order"><strong>Best:</strong> Harvest Bowl or any bowl with double chicken (40g+ protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Always double the protein. Ask for dressing on the side — most add 200+ hidden calories.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Jersey Mike&#x27;s</div>
+            <div class="eo-order"><strong>Best:</strong> #7 Turkey &amp; Provolone on whole wheat, no oil, load veggies (30g+ protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Double the turkey for $2 extra. Skip the oil — Mike's Way adds 200 cal you can't taste.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Wingstop</div>
+            <div class="eo-order"><strong>Best:</strong> 10 classic bone-in wings, plain or lemon pepper dry rub (44g protein, ~350 cal)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Bone-in over boneless — boneless are breaded and add 15g+ carbs per serving.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Five Guys</div>
+            <div class="eo-order"><strong>Best:</strong> Bunless bacon cheeseburger in a lettuce wrap (38g protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Ask for a lettuce wrap — saves 240 cal and the burger is still just as filling.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Shake Shack</div>
+            <div class="eo-order"><strong>Best:</strong> Single ShackBurger, no bun (protein-style), add extra patty (34g protein)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Order protein-style (lettuce wrap). Second patty adds 10g protein for under $3.</div>
+        </div>
+        <div class="eo-card">
+            <div class="eo-name">Panda Express</div>
+            <div class="eo-order"><strong>Best:</strong> Grilled Teriyaki Chicken bowl, mixed veggies, no rice (36g protein, 300 cal)</div>
+            <div class="eo-hack"><strong>Hack:</strong> Swap rice for a double veggie side. Cuts 380 cal and adds fiber with zero protein loss.</div>
         </div></div></div>
   </div>
 </div>
@@ -4792,7 +4927,25 @@ html,body{
       <h1 class="chapter-h1">BONUS 4 — Progress Tracker &amp; Measurement Log</h1>
       <div class="chapter-rule"></div>
     </header>
-    <div class="prose bonus-body"><p>The scale is one data point. Not the only one.</p><p>Weight alone does not tell the full story. Muscle weighs more than fat. A week of weightlifting can make the scale go up while your body is actually improving. This tracker measures what actually matters.</p><p>Weekly Weigh-In and Measurement Log</p><p>Fill in every Sunday morning, before eating, after using the bathroom.</p><table class="data-table"><thead><tr><th>Week</th><th>Weight</th><th>Waist</th><th>Hips</th><th>Thigh</th><th>Arm</th></tr></thead><tbody><tr><td>Start</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 3</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 4</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total Change</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>Take measurements in inches. Measure waist at the narrowest point, hips at the widest point, thigh at the mid-thigh, and arm at the bicep.</p><p>Daily Energy &amp; Hunger Level Log</p><p>Rate each day from 1 (very low) to 5 (very high).</p><table class="data-table"><thead><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody><tr><td>Energy Level</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Hunger Level</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Mood</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>What to look for: As the weeks progress, hunger levels should decrease and energy levels should increase. If both stay high in week 2, increase portion sizes slightly. If energy drops consistently in week 3, make sure you are hitting your protein targets every day.</p><p>Weekly Win Journal</p><p>Every Sunday, write one win that has nothing to do with the scale.</p><table class="data-table"><thead><tr><th>Week</th><th>My non-scale win this week</th></tr></thead><tbody><tr><td>Week 1</td><td></td></tr><tr><td>Week 2</td><td></td></tr><tr><td>Week 3</td><td></td></tr><tr><td>Week 4</td><td></td></tr></tbody></table><p>Examples: &quot;I had energy after dinner for the first time in months.&quot; &quot;I said no to the office donuts and did not feel deprived.&quot; &quot;I fit into jeans I have not worn in two years.&quot; &quot;I cooked every meal this week.&quot; These are the wins that tell you the system is working.</p></div>
+    <div class="prose bonus-body"><p>The scale is one data point. Muscle weighs more than fat — track what actually matters.</p>
+      <div class="tracker-grid">
+        <div>
+          <div class="tracker-label">Weekly Weigh-In &amp; Measurements</div>
+          <div class="tracker-note">Fill every Sunday AM, before eating. Inches: waist at narrowest, hips at widest, thigh at mid-thigh, arm at bicep.</div>
+          <table class="data-table tracker-table"><thead><tr><th>Week</th><th>Weight</th><th>Waist</th><th>Hips</th><th>Thigh</th><th>Arm</th></tr></thead><tbody><tr><td>Start</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 3</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Week 4</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Change</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+        </div>
+        <div>
+          <div class="tracker-label">Daily Energy &amp; Hunger Log</div>
+          <div class="tracker-note">Rate 1 (low) to 5 (high). As weeks pass: hunger drops, energy rises. If both stay high in Week 2, increase portions slightly.</div>
+          <table class="data-table tracker-table"><thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody><tr><td>Energy</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Hunger</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Mood</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="tracker-full">
+        <div class="tracker-label">Weekly Win Journal</div>
+        <div class="tracker-note">Every Sunday: one win that has nothing to do with the scale. e.g. "I had energy after dinner." · "I said no to the office donuts." · "I fit into jeans I haven't worn in years."</div>
+        <table class="data-table tracker-table tracker-win"><thead><tr><th>Week</th><th>My non-scale win this week</th></tr></thead><tbody><tr><td>Week 1</td><td></td></tr><tr><td>Week 2</td><td></td></tr><tr><td>Week 3</td><td></td></tr><tr><td>Week 4</td><td></td></tr></tbody></table>
+      </div>
+    </div>
   </div>
 </div>
 <div class="page appendix-page"><div class="page-content"><header class="chapter-head">
